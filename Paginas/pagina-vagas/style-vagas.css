@@ -115,14 +115,14 @@ main{ margin:20px 0 }
 .oportunidades-vagas .card-vagas .btn-primary-vagas{ margin-top:auto; align-self:flex-end }
 .card-vagas:hover{ transform:translateY(-3px); box-shadow:0 6px 12px rgba(0,0,0,.12) }
 
-/* Inscrições – sem hover */
+/* Inscrições */
 .inscricoes-vagas{ padding:40px 0; background:#F8F9FA }
 .inscricoes-vagas .card-vagas{
   width:100%; padding:10px 28px 20px;
   border-radius:12px; background:#fff;
   box-shadow:0 3px 6px rgba(0,0,0,.08);
   box-sizing:border-box; margin-top:32px;
-  transition:none; /* remove animação */
+  transition:none; 
 }
 .inscricoes-vagas .card-vagas:hover{
   transform:none;
@@ -145,7 +145,7 @@ main{ margin:20px 0 }
   margin-top:20px; padding:20px; box-sizing:border-box;
 }
 
-/* Como ingressar — 3 colunas e sem hover */
+/* Como ingressar — 3 colunas  */
 .comoingressar-vagas{ padding:40px 0 }
 .comoingressar-vagas .cards-ingressar-vagas{
   display:grid;
