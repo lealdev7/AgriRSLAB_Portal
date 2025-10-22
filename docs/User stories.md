@@ -1,5 +1,4 @@
-[14:57, 10/22/2025] Eloah Sousa: gNRf$HG^qg39e#0R
-[15:09, 10/22/2025] Eloah Sousa: # Requisitos e User Stories
+#Requisitos e User Stories
 
 | Requisito | Sub-Requisito | User Story |
 |-----------|---------------|------------|
