@@ -1,4 +1,3 @@
-/* Variáveis para cores (opcional, mas recomendado para consistência) */
 :root {
     --vdEscuro: #36794E;
     /* verde escuro */
@@ -19,8 +18,6 @@
 
     --cor-sombra: rgba(0, 0, 0, 0.3);
     /* Sombra suave */
-
-    --fonteTitulo: 
 }
 
 body {
@@ -30,100 +27,198 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: var(--fundo);
-    /* Fundo leve para destacar o card */
 }
 
-.container-projetos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px;
-    gap: 30px; /* Adiciona um espaço de 30px entre os cards */
+/* Container Principal (Galeria) */
+.projetos-galeria {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    /* Espaço entre os itens */
+    padding: 20px;
 }
 
-.card-projeto {
-    width: 300px;
-    /* Largura fixa, ajuste conforme necessário */
-    background-color: var(--vdClaro);
-    border-radius: 12px;
-    /* Sombra suave e um pouco de profundidade, como no exemplo */
-    box-shadow: 0 10px 20px var(--vdEscuro), 0 6px 6px var(--vdEscuro);
+/* Estilo Básico dos Itens */
+.item-galeria {
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
     overflow: hidden;
-    /* Garante que a imagem siga o border-radius superior */
+    /* Garante que a imagem não saia do limite */
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    border-radius: 5%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--vdClaro);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) ;
+    /* Adiciona uma sombra ao texto para melhor legibilidade */
 }
 
-/* Estilo para a imagem */
-.card-imagem {
-    padding: 15px;
-    /* Padding interno para a borda verde ao redor da imagem */
-}
-
-.card-imagem img {
+.item-galeria img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Garante que a imagem seja exibida por completo, sem cortes */
+    display: block;
+    /* Melhora o comportamento padrão da imagem */
+    transition: transform 0.3s ease;
+    /* Efeito de zoom no hover */
+}
+
+/* Efeito de Zoom (opcional) */
+.item-galeria:hover img {
+    transform: scale(1.02);
+}
+
+/* Estilo do Item em Destaque (Maior) */
+.item-destaque {
+    /* Faz o item ocupar 2 colunas */
+    grid-column: 1 / span 2;
+    border-radius: clamp(10px, 1.25vw, 20px);
+    /* Você pode ajustar o grid-row se quiser que ele ocupe mais linhas também */
+}
+
+/* Estilo do Overlay de Texto (Legenda) */
+.overlay-texto {
+    position: absolute;
+    top: 50%;
+    /* Alterado de bottom para top */
+    left: 0;
+    /* Ocupa toda a largura */
+    right: 0;
+    /* Ocupa toda a largura */
+    background: rgba(0, 0, 0, 0.4);
+    /* Fundo semi-transparente */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 4vw, 2em);
+    display: flex;
+    /* Adicionado para usar flexbox */
+    justify-content: center;
+    /* Adicionado para centralizar horizontalmente */
+    align-items: center;
+    /* Alterado para centralizar verticalmente */
+    padding: 15px 10%;
+    /* Adiciona espaçamento vertical e horizontal */
+    transform: translateY(-50%);
+    /* Adicionado para centralizar verticalmente de forma precisa */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    /* Adiciona uma sombra ao texto para melhor legibilidade */
+}
+
+/* Responsividade: Exemplo para telas menores */
+@media (max-width: 768px) {
+    .projetos-galeria {
+        /* Em telas menores, todos os itens (incluindo o destaque) ocupam uma única coluna */
+        grid-template-columns: 1fr;
+    }
+
+    .item-destaque {
+        /* Reseta para 1 coluna em telas menores */
+        grid-column: 1 / span 1;
+    }
+}
+
+/* --------------------------------------------------------------------------- */
+/* página de detalhes do projeto */
+
+/* Estilos CSS */
+.detalhes_projetos {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo);
+}
+
+/* O CONTAINER OCUPA A LARGURA TOTAL SEM LIMITES */
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de conteúdo interno: aplicamos um padding horizontal (à esquerda e à direita)
+   para o texto não "colar" nas bordas da tela. */
+.header-top,
+h1,
+.integrantes,
+.objetivo-pesquisa {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Estilo para o ícone de seta (simulado com texto) */
+.header-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
+.back-arrow {
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Título Principal */
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Informações dos Integrantes */
+.integrantes {
+    font-size: 25px;
+    color: #555;
+    margin-bottom: 30px;
+    padding-left: 45px;
+    text-align: center;
+    /* Leve recuo para alinhar com o texto abaixo */
+}
+
+/* Parágrafo de Objetivo da Pesquisa */
+.objetivo-pesquisa {
+    font-size: 30px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+}
+
+/* Destaque das palavras sublinhadas */
+.objetivo-pesquisa u {
+    text-decoration: underline;
+    text-decoration-color: #000000;
+    text-decoration-thickness: 1px;
+}
+
+/* Bloco do Diagrama/Fluxograma - OCUPA A LARGURA TOTAL */
+.diagrama-bloco {
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.diagrama-img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura da tela */
     height: auto;
     display: block;
+    margin: 0;
     border-radius: 8px;
     border: 1.5px solid #000000;
-    /* Borda arredondada na imagem interna */
-    /* Garante que a imagem mantenha o aspecto visual do exemplo (cobertura total) */
-    object-fit: cover;
-}
-
-/* Estilo para o conteúdo (título e resumo) */
-.card-conteudo {
-    /* dir. bot. esq.*/
-    padding: 0 20px 20px 20px;
-    /* Padding ao redor do texto e do botão */
-    color: var(--fundo);
-}
-
-.card-titulo {
-    font-size: 1.25rem;
-    font-family: 'Montserrat', sans-serif; /* Adicionado do HTML */
-    /* Tamanho do título */
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-
-.card-resumo {
-    font-size: 0.95rem;
-    font-family: 'Libre Baskerville', serif; /* Adicionado do HTML */
-    /* Tamanho do resumo */
-    margin-bottom: 25px;
-    line-height: 1.5;
-    /* Opacidade para simular o texto "mais claro" do resumo */
-    opacity: 0.9;
-}
-
-/* Estilo para o botão */
-.card-botao {
-    display: block;
-    /* Ocupa a largura total */
-    width: max-content;
-    /* Ocupa apenas o espaço necessário */
-    margin-left: auto;
-    /* Alinha o botão à direita */
-    padding: 10px 25px;
-    background-color: var(--vdClarinho);
-    color: var(--vdEscuro);
-    /* Cor do texto no botão é o verde escuro do card */
-    text-decoration: none;
-    /* Remove o sublinhado */
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    /* Transição suave para o hover */
-    /* Sombra interna sutil para dar o efeito de "elevado" */
-    box-shadow: inset 0 -2px 0 rgba(0, 0.5, 0, 0.5);
-}
-
-/* Efeito de hover no botão */
-.card-botao:hover {
-    background-color: var(--vdEscuro);
-    /* Um tom um pouco mais claro no hover */
-    color: var(--vdClarinho);
 }
