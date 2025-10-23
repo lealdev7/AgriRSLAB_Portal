@@ -25,24 +25,24 @@ A equipe entregou para o cliente o prototipo do site, seguindo os requisitos par
 
 | item | Funcionalidade | Descrição | Prioridade |
 |------|----------------|-----------|------------|
-|  RF01    |  Linkar o usuário às outras páginas.              |  Criar protótipo da página home.          |    Alta  🟥       |
-|  RF01    |  Linkar o usuário às outras páginas.              |  Criar protótipo mobile (home).         |    Média  🟧      |
-|  RF01.2    |  Exibir prévias dos conteúdos do site ao usuário.              |   Criar cards em destaque na home (notícias, projetos, publicações)         |    Alta  🟥      |
-|  RF02/RF02.1/RF02.02    |                |  Criar protótipo da página "Sobre" – objetivo e foco do laboratório.         |    Alta   🟥      |
-|  RF02    |  Manter o usuário informado sobre o Laboratório.              |  Criar protótipo mobile (sobre).         |      Média  🟧    |
-|  RF03/RF03.1    |  Apresentar ao usuário a equipe do laboratório.              |   Criar protótipo da página de membros (nome, foto, função, descrição).         |     Alta   🟥     |
-|  RF03    |  Apresentar ao usuário a equipe do laboratório.              |  Criar protótipo mobile (membros).         |     Média  🟧     |
-|  RF04    |  Manter o usuário informado sobre possíveis vagas, concursos etc.              |  Criar protótipo da página de vagas.         |    Alta   🟥      |
-|  RF04    |  Manter o usuário informado sobre possíveis vagas, concursos etc.              |  Criar protótipo mobile (vagas).         |    Média  🟧      |
-|  RF05    |  Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.              |  Criar protótipo da página de projetos.         |    Alta   🟥      |
-|  RF05    |  Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.              |  Criar protótipo mobile (projetos).         |    Média  🟧      |
-|  RF06    |  Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.              |  Criar protótipo da página de notícias.         |    Alta   🟥      |
-|  RF06    |  Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.              |  Criar protótipo mobile (notícias).         |    Média  🟧      |
-|  RF07    |  Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo. |  Criar protótipo da página de publicações.         |    Alta   🟥      |
-|  RF07    |  Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo. |  Criar protótipo mobile (publicações).         |    Média  🟧      |
-|  RF08    | Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente               |  Criar protótipo da página de contato.         |    Alta   🟥      |
-|  RF08    | Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente               |  Criar protótipo mobile (contato).         |    Média  🟧       |
-|  RNF06    | Transmitir credibilidade, confiança, profissionalismo e higiene.               |  Definir identidade visual do site.         |    Alta   🟥      |
+|  RF01    |  Linkar o usuário às outras páginas.              |  Criar protótipo da página home.          |    Alta 🟥       |
+|  RF01    |  Linkar o usuário às outras páginas.              |  Criar protótipo mobile (home).         |    Média 🟧      |
+|  RF01.2    |  Exibir prévias dos conteúdos do site ao usuário.              |   Criar cards em destaque na home (notícias, projetos, publicações)         |    Alta 🟥      |
+|  RF02/RF02.1/RF02.02    | Manter o usuário informado sobre o Laboratório               |  Criar protótipo da página "Sobre" – objetivo e foco do laboratório.         |    Alta 🟥      |
+|  RF02    |  Manter o usuário informado sobre o Laboratório.              |  Criar protótipo mobile (sobre).         |      Média 🟧    |
+|  RF03/RF03.1    |  Apresentar ao usuário a equipe do laboratório.              |   Criar protótipo da página de membros (nome, foto, função, descrição).         |     Alta 🟥     |
+|  RF03    |  Apresentar ao usuário a equipe do laboratório.              |  Criar protótipo mobile (membros).         |     Média 🟧     |
+|  RF04    |  Manter o usuário informado sobre possíveis vagas, concursos etc.              |  Criar protótipo da página de vagas.         |    Alta 🟥      |
+|  RF04    |  Manter o usuário informado sobre possíveis vagas, concursos etc.              |  Criar protótipo mobile (vagas).         |    Média 🟧      |
+|  RF05    |  Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.              |  Criar protótipo da página de projetos.         |    Alta 🟥      |
+|  RF05    |  Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.              |  Criar protótipo mobile (projetos).         |    Média 🟧      |
+|  RF06    |  Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.              |  Criar protótipo da página de notícias.         |    Alta 🟥      |
+|  RF06    |  Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.              |  Criar protótipo mobile (notícias).         |    Média 🟧      |
+|  RF07    |  Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo. |  Criar protótipo da página de publicações.         |    Alta 🟥      |
+|  RF07    |  Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo. |  Criar protótipo mobile (publicações).         |    Média 🟧      |
+|  RF08    | Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente               |  Criar protótipo da página de contato.         |    Alta 🟥      |
+|  RF08    | Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente               |  Criar protótipo mobile (contato).         |    Média 🟧       |
+|  RNF06    | Transmitir credibilidade, confiança, profissionalismo e higiene.               |  Definir identidade visual do site.         |    Alta 🟥      |
 
 
 ## Burndown Sprint 1
