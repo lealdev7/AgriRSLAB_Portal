@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriRS - Página Inicial</title>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pg_inicial_style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
 
     <header>
         <div class="headerTop">
-            <img class="imageLogo" src="imagens\logo.png" alt="Logo do site">
+            <img class="imageLogo" src="/imagens/Imagens do laboratorio/logo.svg" alt="Logo do site">
             <h1 class="h1HEADER">AgriRS</h1>
 
             <div class="searchBar">
@@ -50,8 +50,17 @@
 
 
     <section class="anuncio">
-        <h1>AgriRS</h1>
-        <p>Conectando tecnologia, ciência e responsabilidade socioambiental para gerar conhecimento e apoiar a tomada de decisões.</p>
+        <div class="anuncio_img">
+            <img src="/imagens/Imagens do laboratorio/Imagem_AgrisRs.svg" alt="Imagem do AgriRS" class="imagem_anuncio">
+
+                <div class="anuncio_container">
+                    <div class="anuncio_texto">
+                        <h1>AgriRS</h1>
+                        <p class="anuncio_p">Conectando tecnologia, ciência e responsabilidade socioambiental para gerar conhecimento e apoiar a tomada de decisões.</p>
+                    </div>
+                </div>
+        </div>
+        
     </section>
 
     <section class="section-areas">
@@ -87,17 +96,22 @@
     </section>
 
     <section class="section-projetos">
-        <p class="projetos-slogan">Nossas pesquisas transformam dados de satélite em <br>soluções inovadoras para uma agricultura mais produtiva e sustentável.</p>
-        <div class="linha-divisoria-projetos"></div>
-                <div class="projeto-img">
-                    <img src="/imagens/2.1 Projetos/Figura_P2_MG.JPG" alt="Imagem do projeto"  class="imagem">
-                        <div class="projeto-destaque-txt">
-                            <h2 class="projeto-destaque-titulo">Sensoriamento de Resíduos Culturais no Solo</h2>
-                            <p class="projeto-destaque-p">Estimativa do Percentual de Cobertura do Solo por Resíduos Culturais através de Sensoriamento Remoto Orbital</p>
-                        </div>   
-                </div>
-        <button class="acesso-projetos-bt">Ver todos os projetos</button>
-    </section>
+    <p class="projetos-slogan">Nossas pesquisas transformam dados de satélite em <br>soluções inovadoras para uma agricultura mais produtiva e sustentável.</p>
+    <div class="linha-divisoria-projetos"></div>
+    <div class="projeto-img">
+        <img src="/imagens/2.1 Projetos/Figura_P2_MG.JPG" alt="Imagem do projeto" class="imagem_projeto">
+        
+        <div class="projeto-destaque-container">
+            <div class="projeto-destaque-txt">
+                <h2 class="projeto-destaque-titulo">Sensoriamento de Resíduos Culturais no Solo</h2>
+                <p class="projeto-destaque-p">Estimativa do Percentual de Cobertura do Solo por Resíduos Culturais através de Sensoriamento Remoto Orbital</p>
+            </div>  
+            <button class="ver-projeto-bt">Ver projeto</button>
+        </div>
+        
+    </div>
+    <button class="acesso-projetos-bt">Ver todos os projetos</button>
+</section>
     
     <section class="noticia-section">
         <p class="noticia-titulo">Últimas Notícias: A ciência que está moldando o futuro da agricultura e do meio ambiente.</p>
@@ -106,7 +120,7 @@
             <div class="noticia-principal-card">
                 <div class="noticia-principal-content">
                     <div class="noticia-principal-img">
-                        <img src="">
+                        <img src="/imagens/Noticias/noticia_IA.png" alt="Imagem da notícia principal" class="noticia-principal-imagem">
                     </div>
                     <p class="noticia-principal-texto">AgriRS Lab Lança Plataforma de Monitoramento de Culturas para Mitigação de Riscos Climáticos</p>
                     <div class="noticias-btn-fundo">

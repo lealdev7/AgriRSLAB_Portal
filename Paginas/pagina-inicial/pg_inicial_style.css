@@ -171,29 +171,54 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 }
 
 
-/* 2. HERO SECTION */
+/* 2. ANUNCIO SECTION */
 
 .anuncio {
-    height: 50vh;
-    background: url('https://via.placeholder.com/1500x800/228B22/004d00?text=Background+Image+Forest') no-repeat center center/cover; /* Placeholder Imagem */
+    width: 100%;
+    height: 744px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    background-color: var(--cor-fundo);
+}
+
+
+.anuncio_img{
+   width: 100%;
+   height: 100%;
+}
+
+/*---TEXTO DO ANÚNCIO---*/
+.anuncio_container{
+    /* CHAVE 2: Posiciona o container ABSOLUTAMENTE sobre a imagem */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* CHAVE 3: Usa Flexbox para centralizar o conteúdo verticalmente e horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    margin-top: 50px;
+    align-items: center; /* Alinha o conteúdo ao centro da imagem */
+    padding: 0 50px; /* Adiciona um padding para o texto não colar nas bordas */
+}
+
+.anuncio_texto{
     text-align: center;
-    color: var(--cor-texto-claro);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--cor-fundo);
 }
 
-.anuncio h1 {
-    font-size: 48px;
-    color: var(--cor-texto-claro);
-    margin-bottom: 10px;
-}
-
-.anuncio p {
-    font-size: 18px;
-    max-width: 600px;
+.anuncio_p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 
@@ -236,7 +261,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     background-color: var(--cor-azul-terciaria);
     border-radius: 10px;
     overflow: hidden;
-    padding: 15px;
+    padding: 20px;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     transform: translateX(0);
 }
@@ -249,7 +274,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     font-family: var(--fonte-principal);
     font-size: 20px;
     font-weight: 600;
-    text-align: center;
+    text-align: start;
 }
 
 
@@ -260,15 +285,15 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 .section-projetos {
     display: flex;
     flex-direction: column;
-    height: 960px;
+    height: 960px;  
     background-color: var(--cor-verde-fundo);
     padding: 50px 80px;
     position: relative;
-    /*text-align: center;*/
 }
 
+
 .linha-divisoria-projetos{
-    background-color: var(--cor-verde-secundaria);
+    background-color: var(--cor-verde-primaria);
     width: 90%;
     height: 5px;
     border-radius: 10px;
@@ -281,57 +306,89 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     font-weight: 500;
     color: var(--cor-fonte);
     text-align: start;
+    /* Adicionado margem inferior, como na primeira imagem */
+    margin-bottom: 20px; 
 }
 
 .projeto-img{
     width: 90%;
-    height: 600px;
-    margin: 15px;
-    margin-left: 50px;
+    height: 600px; 
+    /* Removido margin-left: 50px; para centralizar melhor */
+    
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
+    /* CHAVE 1: Define o contexto para posicionamento absoluto */
+    position: relative; 
+    /* Garante que o conteúdo que vaza da imagem não apareça */
+    overflow: hidden; 
 }
-.imagem{
+
+.imagem_projeto{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
+/* Novo container para posicionar o texto e o botão sobre a imagem */
+.projeto-destaque-container {
+    /* CHAVE 2: Posiciona o container ABSOLUTAMENTE sobre a imagem */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* CHAVE 3: Usa Flexbox para centralizar o conteúdo verticalmente e horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    margin-top: 50px;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    padding: 0 50px; /* Adiciona um padding para o texto não colar nas bordas */
+}
+
 .projeto-destaque-txt{
- 
-  margin-left: 20px;
+    margin-left: 0;
+    /* O texto parece estar alinhado à esquerda e não centralizado na segunda imagem */
+    text-align: left; 
 }
 
 .projeto-destaque-titulo{
     font-family: var(--fonte-principal);
-    color: var(--cor-fundo);
-    font-size: 30px;
+    color: var(--cor-fundo); 
+    font-size: 40px; /* Aumentado para corresponder ao tamanho da segunda imagem */
+    font-weight: 600; /* Pode ser necessário para dar destaque */
+    /* Remove a margem superior padrão do h2 */
+    margin-top: 0; 
+    margin-bottom: 10px;
 }
 
 .projeto-destaque-p{
     font-family: var(--fonte-principal);
-    font-size: 20px;
-    color: var(--cor-fundo);
+    font-size: 25px; 
+    color: var(--cor-fundo); 
+    margin-top: 0;
+    margin-bottom: 30px; /* Adiciona espaço antes do botão */
 }
 
-.projeto-card-footer {
-    padding: 15px;
-}
-
-.projeto-card-footer button {
-    background-color: var(--cor-verde-escuro);
-    color: var(--cor-fundo);
-    padding: 10px 20px;
+.ver-projeto-bt {
+    background-color: var(--cor-verde-secundaria); 
+    color: var(--cor-fundo); 
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    padding: 12px 25px; 
+    border-radius: 5px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
+    font-size: 18px;
+    /* Ajuste de cor e estilo para corresponder exatamente à imagem */
+    background-color: rgba(94, 150, 94, 0.9); /* Um verde com leve transparência/sombra, ou apenas sólido (verde-secundaria) */
 }
 
+/* Manter o botão "Ver todos os projetos" no mesmo lugar (canto inferior direito da SECTION) */
 .acesso-projetos-bt{
     background-color: var(--cor-verde-secundaria);
     color: var(--cor-fundo);
@@ -343,13 +400,12 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     border: none;
     position: absolute;
     bottom: 60px;
-    right: 160px;
+    right: 80px; 
 }
 
 .acesso-projetos-bt:active{
     background-color: var(--cor-verde-primaria);
-    /*transform: translateY(5px);*/
-    transform: scale(0.90); /* Diminui o tamanho em 2% */
+    transform: scale(0.90);
 }
 
 
@@ -407,6 +463,13 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     height: 400px;
     width: 100%;
     background-color: var(--cor-azul-secundaria);
+    border-radius: 10px;
+}
+
+.noticia-principal-imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -587,17 +650,17 @@ footer{
 
 
 /* ---------------------------------------------------- */
-/* MEDIA QUERIES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 768PX) */
+/* MEDIA QUERIES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 720PX) */
 /* ---------------------------------------------------- */
 @media (max-width: 720px) {
     :root {
-        
+        /* ... (Mantenha suas variáveis se houver) ... */
     }
 
     /* 2. ESTILOS GERAIS */
-    .section-areas, 
-    .section-projetos, 
-    .noticia-section, 
+    .section-areas,
+    .section-projetos,
+    .noticia-section,
     .footer {
         width: 100%;
         padding: 30px 20px;
@@ -606,126 +669,130 @@ footer{
 
     /* 3. CABEÇALHO E NAVEGAÇÃO */
     /* --- HEADER --- */
-.headerTop {
-  height: 20vh; 
-  min-height: 60px; 
-  flex-wrap: wrap;
-  padding: 5px 0;
-}
+    .headerTop {
+        height: 20vh;
+        min-height: 60px;
+        flex-wrap: wrap;
+        padding: 5px 0;
+    }
 
-.imageLogo {
-  height: 75%; 
-  aspect-ratio: 1 / 1;
-  margin: auto 10px auto 15px;
-}
-.headerBottom {
-    height: auto; /* Altura automática para a nova fonte */
-    padding: 8px 0; /* Um pouco de espaço vertical */
-    
-    /* Propriedades de Scroll (movidas do .ulNav) */
-    overflow-x: auto;  
-    overflow-y: hidden;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    .imageLogo {
+        height: 75%;
+        aspect-ratio: 1 / 1;
+        margin: auto 10px auto 15px;
+    }
+    .headerBottom {
+        height: auto; /* Altura automática para a nova fonte */
+        padding: 8px 0; /* Um pouco de espaço vertical */
 
-}
-.h1HEADER {
-    font-size: clamp(18px, 5vw, 24px); 
-}
+        /* Propriedades de Scroll (movidas do .ulNav) */
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
 
-.searchBar {
-    margin: 10px 15px 5px 15px;
-    min-width: 120px;
-    width: auto; /* Deixa o flex-basis cuidar da largura */
-    order: 3; 
-}
+    }
+    .h1HEADER {
+        font-size: clamp(18px, 5vw, 24px);
+    }
 
-.headerBottom::-webkit-scrollbar {
-  display: none; /* sumir a barra scroll no chrome */
-}
+    .searchBar {
+        margin: 10px 15px 5px 15px;
+        min-width: 120px;
+        width: auto; /* Deixa o flex-basis cuidar da largura */
+        order: 3;
+    }
 
-.ulNav {
-  gap: 10px 15px; /* Espaço vertical e horizontal */
-  margin-left: 0; /* Remove margem esquerda */
-  padding: 0 40px;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding: 0 45px;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  width: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+    .headerBottom::-webkit-scrollbar {
+        display: none; /* sumir a barra scroll no chrome */
+    }
 
-}
+    .ulNav {
+        gap: 20px; /* Reduzi o gap da versão desktop */
+        margin-left: 0;
+        padding: 0 45px;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
 
-.ulNav::-webkit-scrollbar {
-    display: none;
-}
+    }
 
-.ulNav li {
-    /* Diz para CADA item da lista "travar" no centro */
-    scroll-snap-align: center;
-}
+    .ulNav::-webkit-scrollbar {
+        display: none;
+    }
 
-.ulNav li:first-child {
-  padding-left: 0;
-} 
+    .ulNav li {
+        /* Mantido scroll-snap-align para o efeito de "travamento" */
+        scroll-snap-align: center;
+    }
 
-.ulNav li {
-    scroll-snap-align: center;
-}
+    .ulNav li:first-child {
+        padding-left: 0;
+    }
 
-/* Aumenta a fonte e o peso dos links no menu */
-.decorationHeaderMenu {
-    font-size: 1.15rem; 
-    font-weight: 400;   
-}
+    /* Aumenta a fonte e o peso dos links no menu */
+    .decorationHeaderMenu {
+        font-size: 1.15rem;
+        font-weight: 400;
+    }
 
-.item-direita {
-    margin: 0; 
-}
+    .item-direita {
+        margin: 0;
+    }
 
     /*--------------------------------------------*/
     /* 4. HERO SECTION (ANÚNCIO) */
     .anuncio {
         height: 40vh; /* Diminui um pouco a altura */
     }
-    
-    .anuncio h1 {
-        font-size: 32px; /* Reduz o tamanho da fonte do título */
+
+    .anuncio_container {
+        /* Garante que o texto fique centralizado horizontalmente */
+        align-items: center;
+        /* Remove o margin-top que estava puxando para baixo */
+        margin-top: 0;
+        padding: 0 20px;
     }
 
-    .anuncio p {
-        font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
-        padding: 0 10px;
+    .anuncio_texto {
+        font-size: 24px; /* Ajuste para o celular */
     }
 
+    .anuncio_p {
+        font-size: 16px; /* Ajuste para o celular */
+        margin-top: 5px;
+    }
 
 
     /*-----------------------------------------------*/
     /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
+    .section-areas h2 {
+        font-size: 26px; /* Ajuste para celular */
+    }
+
     .areas-grid {
         gap: 20px;
     }
 
     .area-card-fundo{
-        width: 420px;
+        /* Centraliza o card no meio da tela */
+        width: 100%;
+        max-width: 420px; /* Mantém um máximo se o container for muito grande */
         height: 250px;
         padding: 0px 0px 10px 10px;
     }
     .area-card {
-        width: 100%; 
+        width: 100%;
         height: 240px;
     }
 
     .area-card p{
-        text-align: start;
+        font-size: 18px; /* Ajuste de fonte */
     }
-
 
 
     /*----------------------------------------------------*/
@@ -735,46 +802,70 @@ footer{
     }
 
     .linha-divisoria-projetos {
-        width: 100%; 
+        width: 100%;
         margin-bottom: 30px;
     }
 
     .projetos-slogan {
-        font-size: 24px;
+        font-size: 22px; /* Reduzido um pouco */
         text-align: start;
         font-weight: 600;
+        margin-bottom: 15px;
     }
 
     .projeto-img {
-        width: 100%; 
-        height: 300px; 
-        margin: 15px 0 0 0; 
+        width: 100%;
+        height: 350px; /* Aumentei um pouco a altura da imagem para melhor visualização */
+        margin: 0; /* Removendo margens desnecessárias */
     }
 
-    .projeto-destaque-txt {
-       
-        margin-top: 90px;
-        margin-left: 10px;
+    /* ********** CHAVE PARA MOBILE ********** */
+    .projeto-destaque-container {
+        /* Ajuste do padding e alinhamento para o mobile */
+        padding: 0 20px;
+        justify-content: flex-end; /* Posiciona o texto na parte inferior */
+        padding-bottom: 20px;
+        margin-top: 0; /* Remove o margin-top */
     }
 
     .projeto-destaque-titulo {
-        font-size: 20px;
+        font-size: 24px; /* Aumentei o título para ser mais legível */
+        /* Garante quebra de linha em telas pequenas */
+        line-height: 1.2; 
     }
 
     .projeto-destaque-p {
-        font-size: 15px;
+        font-size: 16px;
+        margin-bottom: 15px; /* Reduz o espaço antes do botão */
     }
 
+    .ver-projeto-bt {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    /* *************************************** */
+
     .acesso-projetos-bt {
-        position: static; 
+        position: static;
         width: 50%;
+        max-width: 200px;
         height: 45px;
-        margin-top: 30px; 
-        margin-left: auto;
+        margin-top: 30px;
+        margin-left: auto; /* Alinha o botão à direita na linha */
+        align-self: flex-end; /* Alinha o botão à direita na coluna flexível */
     }
 
     /*----------------------------------------------------*/
     /* 7. SEÇÃO NOTÍCIAS (News) */
+    .noticia-section {
+        font-size: 26px; /* Ajuste do tamanho do título da seção */
+    }
+    
+    .linha-divisoria-noticia {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
     .noticia-layout {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -783,90 +874,90 @@ footer{
     .noticia-principal-card {
         width: 100%;
         height: auto;
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .noticia-principal-img {
-        height: 250px; 
+        height: 200px; /* Reduzido um pouco mais */
     }
-
-    .noticia-titulo {
-        font-size: 24px;
-        font-weight: 600;
+    
+    .noticia-principal-content {
+        padding: 15px;
+        gap: 15px;
     }
 
     .noticia-principal-texto {
-        font-size: 20px;
+        font-size: 18px; /* Ajuste para o corpo do texto */
+    }
+    
+    .noticias-btn-fundo {
+        margin: 20px auto 10px auto; /* Centraliza o botão e ajusta margens */
     }
 
     .noticias-secundarias-item {
         width: 100%;
-        height: 200px;
+        height: 180px; /* Altura um pouco menor */
         padding: 15px;
     }
-    
-    .noticia-texto {
-        font-size: 20px;
-    }
 
-    .noticias-btn-fundo {
-        margin-top: 40px;
+    .noticia-texto {
+        font-size: 18px; /* Ajuste para o texto secundário */
     }
 
 
     /* 8. FOOTER */
    .footerDad {
-    flex-direction: column; 
+    flex-direction: column;
     min-height: auto;
-    padding: 30px 15px; 
+    padding: 30px 15px;
     align-items: center;
-    gap: 30px; 
+    gap: 30px;
 }
 .footerSection {
-    width: 95%; 
-    max-width: unset; 
-    height: auto; 
-    align-items: center; 
+    width: 95%;
+    max-width: unset;
+    height: auto;
+    align-items: center;
     text-align: center;
-    padding: 0; 
+    padding: 0;
 }
 
 .logoFooterSection {
-    align-self: center; 
-    margin: 0 0 15px 0; 
+    align-self: center;
+    margin: 0 0 15px 0;
 }
 
 .footerSection:first-child::after {
-    display: none; 
+    display: none;
 }
 
 .emailLineFooter {
-    justify-content: center; 
+    justify-content: center;
 }
 
 .imagensFooter {
-    justify-content: center; 
+    justify-content: center;
     padding: 10px 0;
 }
 
 .buttonFooter {
-    width: 50%; 
+    width: 50%;
     min-width: 150px;
 }
 
-  #Map {
-      padding: 20px 0 0 0;
-      width: 100%;
-  }
-  
-  .mapa-estilizado {
-    max-width: 100%; 
-  }
+ #Map {
+     padding: 20px 0 0 0;
+     width: 100%;
+ }
 
-  #AdmAcess {
-      align-self: center; 
-      margin-top: 20px;
-  }
+ .mapa-estilizado {
+    max-width: 100%;
+ }
+
+ #AdmAcess {
+     align-self: center;
+     margin-top: 20px;
+ }
 }
 
 
@@ -884,25 +975,25 @@ footer{
     }
 
     /* 3. CABEÇALHO E NAVEGAÇÃO */
-    .header {
-        padding: 10px 30px;
+    .ulNav {
+        /* Ajuste para tablets */
+        gap: 20px;
     }
-
-    .nav-links {
-        gap: 15px;
+    
+    .decorationHeaderMenu {
+        font-size: 16px;
     }
 
     /*-----------------------------------------------*/
     /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
     .areas-grid {
-        /* Permite que o flex-wrap entre em ação se 3 cards não couberem bem, ou ajusta o tamanho do card */
-        justify-content: space-around;
+        justify-content: space-evenly; /* Usei space-evenly para melhor espaçamento */
         gap: 25px;
     }
 
     .area-card-fundo {
         padding: 0px 0px 10px 10px;
-        width: 300px;
+        width: 300px; /* Mantém um tamanho razoável */
         height: 400px;
     }
 
@@ -914,37 +1005,41 @@ footer{
     /* 6. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
     .section-projetos {
         width: 100%;
-        height: 750px; /* Ajusta a altura para tablets */
+        height: 700px; /* Reduzi um pouco a altura */
         padding: 40px 40px;
     }
 
     .projetos-slogan {
-        font-size: 24px;
+        font-size: 26px; /* Ajuste de fonte */
         font-weight: 600;
     }
 
     .projeto-img {
         width: 100%;
-        height: 450px; 
-        margin: 15px 0 0 0;
+        height: 450px;
+        margin: 15px auto 0 auto; /* Centraliza a imagem no container */
     }
 
-    .projeto-destaque-txt {
-        margin-top: 200px;
-        margin-left: 15px;
+    /* ********** CHAVE PARA TABLET ********** */
+    .projeto-destaque-container {
+        /* Ajuste de posicionamento */
+        padding: 0 40px;
+        justify-content: center; /* Centraliza verticalmente como no desktop */
+        margin-top: 0;
     }
 
     .projeto-destaque-titulo {
-        font-size: 26px;
+        font-size: 32px; /* Ajuste para tablets */
     }
 
     .projeto-destaque-p {
-        font-size: 18px;
+        font-size: 20px; /* Ajuste para tablets */
     }
+    /* *************************************** */
 
     .acesso-projetos-bt {
-        right: 40px; 
-        bottom: 10px;
+        right: 40px;
+        bottom: 60px; /* Mantém a posição inferior direita */
         width: 180px;
         height: 45px;
     }
@@ -960,56 +1055,56 @@ footer{
     }
 
     .noticia-layout {
+        /* Mantém a coluna única, que funciona bem para tablets e celulares */
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
     .noticia-principal-card {
-        width: 100%; /* Ocupa a largura da coluna de 2fr */
-        height: 550px; /* Altura reduzida */
+        width: 100%;
+        height: 500px; /* Altura ajustada */
     }
 
     .noticia-principal-img {
-        height: 300px; /* Altura da imagem ajustada */
+        height: 250px; /* Altura da imagem ajustada */
     }
 
     .noticias-secundarias-item {
         width: 100%;
-        height: 200px;
+        height: 180px;
         padding: 15px;
     }
 
     .noticia-principal-texto,
     .noticia-texto {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .noticias-btn-fundo {
-      margin-top: 40px; 
-       
+      margin: 30px auto 10px auto; /* Centraliza o botão */
     }
 
     /* 8. FOOTER */
     .footerDad {
-    padding: 30px 2%;
-    min-height: auto; 
-}
+        padding: 30px 2%;
+        min-height: auto;
+    }
 
-.footerSection {
-    width: 48%; 
-    padding: 0 10px;
-}
+    .footerSection {
+        width: 48%;
+        padding: 0 10px;
+    }
 
-.footerSection:first-child::after {
-    height: 70%; 
-    right: -2%; 
-}
+    .footerSection:first-child::after {
+        height: 70%;
+        right: -2%;
+    }
 
-#Map {
-    padding: 20px 0 0 0; 
-}
+    #Map {
+        padding: 20px 0 0 0;
+    }
 
-.buttonFooter {
-    width: 30%; 
-}
+    .buttonFooter {
+        width: 30%;
+    }
 }
