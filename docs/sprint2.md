@@ -50,7 +50,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-001.6 | Estilização dos cards                    | Eloah            | 21/10  |    10       |    DW        |            RF07         |  ✅    |
 | DW-001.7 | Adicionar as cores e fontes padrões aos cards             | Eloah  |21/10  |    10       |      DW      |           RF07          |  ✅    |
 | DW-001.8 | Adicionar imagens dos artigos                 | Eloah            | 21/10  |    10       |     DW       |        RF07             |   ✅   |
-| DW-002 | Criaçaõ da estrutura da página inicial em HTML | Pedro           | 07/10 |           |            |                     | ✅     |
+| DW-002 | Criaçaõ da estrutura da página inicial em HTML | Pedro           | 07/10 |    10       |     DW       |       RF01              | ✅     |
 | DW-002.1 | Criação da estrutura dos cards da section "Atuação" em HTML                    | Pedro            | 07/10 |    00       |     DW       |           RF01          | ✅     |
 | DW-002.2 | Criação da estrutura do cards da section "Projetos" em HTML       | Pedro            | 07/10 |     00      |      DW      |         RF01            | ✅     |
 | DW-002.3 | Criação da estrutura do cards da section "Notícias" em HTML                  | Pedro            | 08/10 |     00      |      DW      |          RF01           | ✅     |
