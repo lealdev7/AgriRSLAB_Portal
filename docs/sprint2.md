@@ -44,7 +44,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-001 | Criação da estrutura da página de publicações em HTML                   |   Eloah        |    21/10   |    10       |   DW         |      RF07               |   ✅   |
 | DW-001.1 | Criação da estrutura dos cards das publicações em HTML                    | Eloah          |   21/10    |       10    |      DW      |         RF07             |  ✅    |
 | DW-001.2 | Criação da estrutura dos filtros de pesquisa em HTML                    | Eloah          |   21/10     |  10         |       DW     |      RF07               |    ✅  |
-| DW-001.3 | Criação de um arquivo CSS para a estiliação                     | Eloah          |   21/10   |10|            |          DW           |   RF07   |   |    ✅  |
+| DW-001.3 | Criação de um arquivo CSS para a estiliação                     | Eloah          |   21/10   |10|     DW       |          RF07           |   ✅   |  
 | DW-001.4 | Adicionar cores padrões                   | Eloah           |  21/10     |      10     |       DW     |           RF07          |   ✅   |
 | DW-001.5 | Adicionar fontes padrão              | Eloah            | 21/10  |   10        |     DW       |    RF07                 |  ✅    |
 | DW-001.6 | Estilização dos cards                    | Eloah            | 21/10  |    10       |    DW        |            RF07         |  ✅    |
