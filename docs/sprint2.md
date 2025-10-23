@@ -60,7 +60,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-002.7 | Estilização dos cards da section "Atuação" em CSS                  | Pedro            | 09/10 |     00      |      DW      |         RF01            | ✅     |
 | DW-002.8 | Estilização dos cards da section "Projetos" em CSS                  | Pedro            | 10/10 |     00      |      DW      |          RF01           | ✅     |
 | DW-002.9 | Estilização dos cards da section "Notícias" em CSS                  | Pedro            | 10/10 |     00      |      DW      |          RF01           | ✅     |
-| DW-02.10 |  Adicionar imagens                  | Pedro            | 00/00 |     00      |      DW      |          RF01           |      |
+| DW-02.10 |  Adicionar imagens                  | Pedro            | 23/10 |     00      |      DW      |          RF01           |  ✅    |
 | DW-003 |       Criação da estrutura da página de notícias em HTML          | Willian            | 21/10 |     00      |      DW       |          RF06           |   ✅   |
 | DW-003.1 |        Criação da estrutura dos cards das notícias em HTML          | Willian            | 21/10 |     00      |      DW      |          RF06           |   ✅   |
 | DW-003.2 |         Criação da estrutura da página de carrossel de notícias em HTML          | Willian            | 21/10 |     00      |      DW      |          RF06           |   ✅   |
