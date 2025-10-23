@@ -10,21 +10,21 @@
 
 | item | Funcionalidade | Descrição | Prioridade |
 |------|----------------|-----------|------------|
-|  RF01    |   Linkar o usuário às outras páginas.             |  Aplicar as linguagens (HTML, CSS e JavaScript) na página Home.        |     ALTA 🟥      |
-|  RF02    |   Manter o usuário informado sobre o Laboratório.             | Aplicar as linguagens (HTML, CSS e JavaScript) na página Sobre.          |   ALTA 🟥        |
-|  RF03    |   Apresentar ao usuário a equipe do laboratório.             |  Aplicar as linguagens (HTML, CSS e JavaScript) na página de Membros.         |    ALTA 🟥       |
-|  RF04    |   Manter o usuário informado sobre possíveis vagas, concursos etc.              |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Vagas.         |    ALTA 🟥       |
-|  RF05    |   Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.             |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Projetos.        |   ALTA 🟥        |
-|  RF06    |   Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.             |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Notícias        |    ALTA 🟥       |
-|  RF07    |   Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo.             |    Aplicar as linguagens (HTML, CSS e JavaScript) na página de Publicações.        |   ALTA 🟥        |
-|  RF08    |  Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente.              |  Aplicar as linguagens (HTML, CSS e JavaScript) na página de Contato.         |    ALTA 🟥       |
-|  RF01.1    |  Navegação e Identidade.              | Aplicar as linguagens (HTML, CSS e JavaScript) no Header.         |    ALTA 🟥       |
-| RF01.3     |  Credibilidade, Referência e Informações Legais.              | Aplicar as linguagens (HTML e CSS ) no Footer.         |   ALTA 🟥        |
-| RNF02     |  Permitir o acesso seguro aos recursos de gerenciamento e edição do site.              |  Aplicar as linguagens (HTML, CSS e JavaScript) na página Administrativa.         |     ALTA 🟥      |
-| RNF01     |  Garantir a usabilidade, melhorar o acesso e o engajamento, flexibilidade de layout etc.            |   Implementar responsividade (media queries para mobile, tablet e desktop).         |   ALTA 🟥        |
-| RNF01.1     | Validar e garantir a experiência do usuário (UX) em um ambiente real e diversificado.               |  Testar responsividade e compatibilidade entre navegadores.         |  ALTA 🟥         |
-| RNF04     | Garantir a acessibilidade global do seu conteúdo, atendendo tanto ao público local quanto à comunidade científica internacional.               |   Seletor de idioma (Português/Inglês.         |   ALTA 🟥        |
-| RNF03     | Garantir que o site seja rápido, eficiente e leve para todos os usuários.               | Otimizar imagens e verificar tempo de carregamento.          |  ALTA 🟥         |
+|  RF01    |   Linkar o usuário às outras páginas.             |  Aplicar as linguagens (HTML, CSS e JavaScript) na página Home.        |     Alta 🟥      |
+|  RF02    |   Manter o usuário informado sobre o Laboratório.             | Aplicar as linguagens (HTML, CSS e JavaScript) na página Sobre.          |   Alta 🟥        |
+|  RF03    |   Apresentar ao usuário a equipe do laboratório.             |  Aplicar as linguagens (HTML, CSS e JavaScript) na página de Membros.         |    Alta 🟥       |
+|  RF04    |   Manter o usuário informado sobre possíveis vagas, concursos etc.              |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Vagas.         |    Alta 🟥       |
+|  RF05    |   Documentar e divulgar a produção científica e as atividades em andamento do laboratório para a comunidade acadêmica, agências de fomento, potenciais parceiros e o público em geral.             |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Projetos.        |   Alta 🟥        |
+|  RF06    |   Atuar como um canal de comunicação dinâmico e atualizado, demonstrando a vitalidade e a relevância contínua do grupo.             |   Aplicar as linguagens (HTML, CSS e JavaScript) na página de Notícias        |    Alta 🟥       |
+|  RF07    |   Atuar como o registro oficial e o repositório organizado da produção intelectual do laboratório, comprovando o impacto e o rigor científico do grupo.             |    Aplicar as linguagens (HTML, CSS e JavaScript) na página de Publicações.        |   Alta 🟥        |
+|  RF08    |  Garantir que qualquer pessoa (seja um estudante, um pesquisador parceiro, um representante da mídia ou a comunidade em geral) possa se comunicar com o laboratório de forma eficiente.              |  Aplicar as linguagens (HTML, CSS e JavaScript) na página de Contato.         |    Alta 🟥       |
+|  RF01.1    |  Navegação e Identidade.              | Aplicar as linguagens (HTML, CSS e JavaScript) no Header.         |    Alta 🟥       |
+| RF01.3     |  Credibilidade, Referência e Informações Legais.              | Aplicar as linguagens (HTML e CSS ) no Footer.         |   Alta 🟥        |
+| RNF02     |  Permitir o acesso seguro aos recursos de gerenciamento e edição do site.              |  Aplicar as linguagens (HTML, CSS e JavaScript) na página Administrativa.         |     Alta 🟥      |
+| RNF01     |  Garantir a usabilidade, melhorar o acesso e o engajamento, flexibilidade de layout etc.            |   Implementar responsividade (media queries para mobile, tablet e desktop).         |   Alta 🟥        |
+| RNF01.1     | Validar e garantir a experiência do usuário (UX) em um ambiente real e diversificado.               |  Testar responsividade e compatibilidade entre navegadores.         |  Alta 🟥         |
+| RNF04     | Garantir a acessibilidade global do seu conteúdo, atendendo tanto ao público local quanto à comunidade científica internacional.               |   Seletor de idioma (Português/Inglês.         |   Média 🟧        |
+| RNF03     | Garantir que o site seja rápido, eficiente e leve para todos os usuários.               | Otimizar imagens e verificar tempo de carregamento.          |  Alta 🟥         |
 
 
 
