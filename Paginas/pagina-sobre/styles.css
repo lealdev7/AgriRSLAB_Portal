@@ -1,33 +1,3 @@
-/* Paleta de Cores e Fontes */
-:root {
-    --color-dark-purple: #36794E; /* Cor principal de cabeçalho e rodapé */
-    --color-medium-purple: #55A357; /* Um tom um pouco mais claro para variações */
-    --color-green: #67b553; /* Cor do destaque (logo, borda, botão) */
-    --color-text-dark: #333;
-    --color-text-light: #fff;
-    --color-background-light: #f7f7f7;
-    --font-stack: Arial, sans-serif;
-}
-
-/* Reset Básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-stack);
-    line-height: 1.6;
-    color: var(--color-text-dark);
-    background-color: var(--color-background-light);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* Estrutura de Conteúdo Central */
 .header-content-inner, .content-wrapper, .footer-content-inner {
     max-width: 1100px; /* Largura ajustada para simular o layout da captura */
@@ -35,114 +5,11 @@ a {
     padding: 0 15px;
 }
 
-/* ------------------- 1. CABEÇALHO E NAVEGAÇÃO ------------------- */
-
-.main-header {
-    background-color: var(--color-dark-purple);
-    color: var(--color-text-light);
-}
-
-.header-top {
-    padding: 10px 0;
-}
-
-.header-top .header-content-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-title {
-    display: flex;
-    align-items: center;
-}
-
-.logo-title .logo {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-}
-
-.logo-title h1 {
-    font-size: 1.4em;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-
-.search-box {
-    display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-.search-box input {
-    padding: 5px 10px;
-    border: none;
-    outline: none;
-    width: 150px;
-    color: var(--color-text-dark);
-    font-size: 0.9em;
-}
-
-.search-box button {
-    background-color: #fff;
-    border: none;
-    color: var(--color-text-dark);
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-/* Navegação Principal */
-.main-nav {
-    background-color: var(--color-medium-purple);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: stretch;
-    padding: 0;
-}
-
-.main-nav li {
-    position: relative;
-}
-
-.main-nav li a {
-    display: block;
-    padding: 10px 15px;
-    color: var(--color-text-light);
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.main-nav li a:hover {
-    background-color: var(--color-dark-purple);
-}
-
-.main-nav .nav-active {
-    background-color: var(--color-dark-purple);
-    position: relative;
-}
-
-.fale-conosco-item {
-    margin-left: auto;
-}
-
-.btn-fale-conosco {
-    background-color: var(--color-medium-purple) !important; /* Mantém a cor original */
-}
-
-/* ------------------- 2. CONTEÚDO PRINCIPAL (SOBRE) ------------------- */
 
 .about-section {
     padding: 20px 0;
 }
+
 
 .grid-container {
     display: grid;
@@ -152,46 +19,30 @@ a {
     gap: 0;
     position: relative;
 }
-
-.text-box {
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    font-size: 0.95em;
-    line-height: 1.5;
-}
-
+    
 .text-box-1 {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    background-color:var(--color-dark-purple); /* Borda verde de destaque */
+    background-color:#55A357; /* Borda verde de destaque */
     margin-right: -10px; /* Leve sobreposição na imagem */
     z-index: 2;
     display: flex;
     align-items: center; /* Centraliza verticalmente o texto curto */
 }
 
-.team-image-container {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    overflow: hidden;
-    z-index: 1;
-    display: block;
-}
 
-.team-photo {
-    width:540px;
-    height:330px;
-    /* Altura da imagem baseada na proporção da captura (1440x210) */
-    aspect-ratio: 1440 / 210;
-    object-fit: cover;
-    display: block;
+.text-box {
+    padding: 30px;
+    background-color: #55A357;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+    line-height: 1.5;
 }
 
 .text-box-2 {
     grid-column: 1 / 3; /* Ocupa as duas colunas */
     grid-row: 2 / 3;
-    background-color: var(--color-green);
+    background-color:#3b743e;
     color: var(--color-text-light);
     margin-top: -30px; /* Sobreposição na imagem */
     z-index: 3;
@@ -204,193 +55,247 @@ a {
     margin-bottom: 15px;
 }
 
-/* ------------------- 3. AGÊNCIAS DE FOMENTO ------------------- */
-
-.partners-section {
+    .partners-section {
     text-align: center;
     padding: 40px 0;
 }
 
-.partners-section h2 {
-    color: (--color-dark-purple);
-    font-size: 1.1em;
-    margin-bottom: 25px;
-    border-bottom: 2px solid var(--color-dark-purple);
-    display: inline-block;
-    padding-bottom: 5px;
-    font-weight: bold;
-}
 
-.partners-logos {
+.headerTop{
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(141, 38%, 34%);
     align-items: center;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    width: 100vw;
+    height: 5vw;
+    padding: 0;
+    margin: 0;
+    min-height: 50px; /* minimo de diminuição*/
 }
 
-.partners-logos img {
-    height: 60px; /* Altura dos logos */
-    object-fit: contain;
-    filter: grayscale(10%); /* Levemente acinzentado, como na imagem */
+body{
+ margin: 0;
+ padding: 0;
 }
 
-/* ------------------- 4. RODAPÉ (FOOTER) ------------------- */
-
-.main-footer {
-    background-color: var(--color-dark-purple);
-    color: var(--color-text-light);
-    padding-top: 40px;
+*{
+   font-family: "Montserrat", sans-serif;
 }
 
-.footer-content-inner {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 30px;
-}
-
-.footer-contact, .footer-location {
-    flex: 1;
-    min-width: 300px;
-    padding-right: 30px;
-}
-
-.footer-logo-img {
-    width: 35px;
-    height: 35px;
-    margin-bottom: 10px;
-}
-
-.btn-fale-conosco-footer {
-    display: inline-block;
-    background-color: var(--color-green);
-    color: var(--color-text-light);
-    padding: 5px 15px;
-    border-radius: 4px;
-    margin: 10px 0 20px;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-.footer-email-label {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.footer-email-address {
-    margin-bottom: 15px;
-}
-
-.footer-location h2 {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.map-placeholder {
-    width: 250px;
-    height: 150px;
-    border: 3px solid var(--color-green);
-    margin-top: 10px;
-    overflow: hidden;
-}
-
-.map-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.social-icons a {
-    /* Estilo para simular os botões do rodapé (cor de fundo branca) */
-    background-color: #fff;
-    color: var(--color-dark-purple);
-    width: 30px;
-    height: 30px;
+.imageLogo{
+    /*height: 80%; 
+    aspect-ratio: 1 / 1; 
+    margin: auto 20px auto 30px; 
+    width: auto;
     border-radius: 50%;
+    box-sizing: border-box;
+    padding: 1vw;*/
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    margin: auto 15px auto 25px; 
+    width: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 0.5vw;
+    
+    /* Impede que a logo seja esmagada pelo flexbox */
+    flex-shrink: 0; 
+}   
+
+/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
+.searchBar{
+    /*position: relative; 
+    display: flex; 
+    align-items: center;
+    margin-right: 35px;
+    margin-left: auto;*/
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 35px 0 auto; /* Remove margens verticais e ajusta as laterais */
+
+    /* Permite que a barra de busca encolha se não houver espaço */
+    flex-shrink: 1;
+    min-width: 150px;
+   
+}
+
+.searchBtn {
+  position: absolute; /* Posição absoluta em relação ao .search-container */
+  right: 5px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 35px; 
+  width: 35px; 
+}
+
+/* Montserrat - Google Fonts */
+.montserrat-normal {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20;
+  font-style: normal;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20;
+  font-style: bold;
+}
+
+.montserrat-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20;
+  font-style: italic;
+}
+/* Libre Baskerville - Google Fonts */
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.h1HEADER{
+    font-size: 30px;
+    color: white;
+    
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 1;
+    white-space: nowrap;
+    
+    font-family: "Montserrat", sans-serif;
+}
+
+.decorationHeaderMenu{
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  transition: 0.5s;
+  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
+  display: block; 
+}
+
+/* Elementos  nav*/
+.headerBottom{
+    background-color: #55A357;
+    height: 35px;
+    display: flex;  
+    align-items: center; 
+    width: 100vw;
+}
+
+.navBar{
+  width: 100%;
+  display: flex;
+}
+
+.ulNav{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  width: 100%; 
+  align-items: center;
+  margin-left: 20px;
+}
+
+.item-direita {
+    margin-left: auto; 
+    margin-right: 50px;
+}
+
+.inputSearch{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 4px;
+}
+
+/* Efeito hover nos links do menu */
+.decorationHeaderMenu:hover{
+    text-decoration: solid underline #E0F9D5 2px;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+ul:hover  .decorationHeaderMenu:not(:hover){
+    opacity: 0.7;
+}
+
+/*=============================================================================================*/
+/* Footer*/
+footer{
+  font-family: "Montserrat", sans-serif;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.footerDad{
+    background-color: #604639;
+    height: 400px;
+    width: vw;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
+    font-family: "Montserrat", sans-serif;
+    color: white;
 }
 
-.copyright-bar {
-    text-align: center;
+.footerSection{
+  width: 45%;
+}
+
+.textFooter{
+  text-decoration: solid underline #55A357 2px;
+  font-size: 20px;
+}
+
+.mapa-estilizado {
+    border: 5px solid rgb(14, 12, 12);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.buttonFooter{
+    background-color: #55A357;
+    border: none;
+    color: white;
     padding: 10px 20px;
-    font-size: 0.8em;
-    background-color: rgba(0, 0, 0, 0.1);
-}
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 
-
-/* ------------------- RESPONSIVIDADE ------------------- */
-
-@media (max-width: 850px) {
-    /* Layout "Sobre" em coluna única */
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-
-    .text-box-1 {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        margin-right: 0;
-        border-right: none;
-        border-radius: 5px 5px 0 0;
-    }
-
-    .team-image-container {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        height: 200px; /* Altura fixa para a imagem em mobile */
-    }
-
-    .text-box-2 {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
-        margin-top: 0;
-        padding-top: 30px;
-        border-radius: 0 0 5px 5px;
-    }
-
-    /* Rodapé em coluna única */
-    .footer-content-inner {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-location {
-        padding-right: 0;
-        padding-top: 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .fale-conosco-item {
-        margin: 5px 0 0 0;
-        width: 100%;
-    }
-
-    .btn-fale-conosco {
-        text-align: center;
-        width: 100%;
-    }
-
-    .header-top .header-content-inner {
-        flex-direction: column;
-        gap: 10px;
-    }
+    /* Sombra deslocada para o canto superior esquerdo */
+    box-shadow: -5px -5px 0 0 #3b743e; 
 }
