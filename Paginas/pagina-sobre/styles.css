@@ -299,3 +299,157 @@ footer{
     /* Sombra deslocada para o canto superior esquerdo */
     box-shadow: -5px -5px 0 0 #3b743e; 
 }
+
+/* =============== MOBILE (ABAIXO DE 768px) =============== */
+@media (max-width: 767px) {
+
+/* --- HEADER --- */
+.headerTop {
+  height: 20vh; 
+  min-height: 60px; 
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.imageLogo {
+  height: 75%; 
+  aspect-ratio: 1 / 1;
+  margin: auto 10px auto 15px;
+}
+.headerBottom {
+    height: auto; /* Altura automática para a nova fonte */
+    padding: 8px 0; /* Um pouco de espaço vertical */
+    
+    /* Propriedades de Scroll (movidas do .ulNav) */
+    overflow-x: auto;  
+    overflow-y: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+
+}
+.h1HEADER {
+    font-size: clamp(18px, 5vw, 24px); 
+}
+
+.searchBar {
+    margin: 10px 15px 5px 15px;
+    min-width: 120px;
+    width: auto; /* Deixa o flex-basis cuidar da largura */
+    order: 3; 
+}
+
+.headerBottom::-webkit-scrollbar {
+  display: none; /* sumir a barra scroll no chrome */
+}
+
+.ulNav {
+ 
+  gap: 10px 15px; /* Espaço vertical e horizontal */
+  margin-left: 0; /* Remove margem esquerda */
+  padding: 0 40px;
+  
+  gap: 20px;
+
+  scroll-snap-type: x mandatory;
+
+  padding: 0 45px;
+
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  width: auto;
+  white-space: nowrap;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.ulNav::-webkit-scrollbar {
+    display: none;
+}
+
+.ulNav li {
+    /* Diz para CADA item da lista "travar" no centro */
+    scroll-snap-align: center;
+}
+
+.ulNav li:first-child {
+  padding-left: 0;
+} 
+
+.ulNav li {
+    scroll-snap-align: center;
+}
+
+/* Aumenta a fonte e o peso dos links no menu */
+.decorationHeaderMenu {
+    font-size: 1.15rem; 
+    font-weight: 400;   
+}
+
+.item-direita {
+    margin: 0; 
+}
+
+/* --- MAIN --- */
+main {
+    padding: 15px; 
+}
+/* --- FOOTER --- */
+.footerDad {
+    flex-direction: column; 
+    min-height: auto;
+    padding: 30px 15px; 
+    align-items: center;
+    gap: 30px; 
+}
+
+.footerSection {
+    width: 95%; 
+    max-width: unset; 
+    height: auto; 
+    align-items: center; 
+    text-align: center;
+    padding: 0; 
+}
+
+.logoFooterSection {
+    align-self: center; 
+    margin: 0 0 15px 0; 
+}
+
+.footerSection:first-child::after {
+    display: none; 
+}
+
+.emailLineFooter {
+    justify-content: center; 
+}
+
+.imagensFooter {
+    justify-content: center; 
+    padding: 10px 0;
+}
+
+.buttonFooter {
+    width: 50%; 
+    min-width: 150px;
+}
+
+  #Map {
+      padding: 20px 0 0 0;
+      width: 100%;
+  }
+  
+  .mapa-estilizado {
+    max-width: 100%; 
+  }
+
+  #AdmAcess {
+      align-self: center; 
+      margin-top: 20px;
+  }
+}

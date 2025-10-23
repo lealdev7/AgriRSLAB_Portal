@@ -1,11 +1,10 @@
 /* Variáveis para cores baseadas na imagem */
 :root {
-    --color-background-page: #e9f5e9; /* Verde muito claro, quase branco */
-    --color-header-footer: #0a4f0a; /* Verde escuro para barra e rodapé */
+    --color-background-page: #F8F9Fa; /* Verde muito claro, quase branco */
     --color-card-background: #d4e8f8; /* Azul claro para o card */
     --color-text-dark: #333;
-    --color-title-green: #006000; /* Verde escuro para títulos de seção */
-    --color-link-blue: #007bff; /* Azul padrão para links */
+    --color-title-green: #55A357; /* Verde escuro para títulos de seção */
+    --color-link-blue: #0F5289; /* Azul padrão para links */
     --color-search-btn: #f0f0f0;
 }
 
@@ -23,24 +22,8 @@ body {
 }
 
 /* 1. Container Principal do Cabeçalho */
-.main-header {
-    background-color: var(--color-header-footer);
-    color: white;
-}
 
-/* 2. Top Bar (Logo, Título e Pesquisa/Contato) */
-.top-header {
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
-}
 
-.header-content {
-    max-width: 1850px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 /* Estilo para a área do Logo e Título Juntos */
 .logo-title-area {
@@ -51,19 +34,6 @@ body {
 .site-logo {
     width: 120px; 
     height: auto; 
-}
-
-/* Estilo do Título "Publicações" no Header */
-.page-header-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-left: 10px; 
-    color: white;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
 }
 
 .search-box {
@@ -307,57 +277,441 @@ body {
     color: white;
 }
 
-/* 7. Rodapé */
-.main-footer {
-    background-color: #f7f7f7; 
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
-    padding: 30px 20px;
+/* ================================= HEADER E FOOTER     ================================= */
+
+:root {
+  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho2: #BCE2F7;
+  --verde-1: #36794E;
+  --verde-2: #55A357;
+  --marrom: #604639;
+  --azul1:#0F5289;
+  --azul2: #487DB4;
+}
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main{
+  flex-grow: 1;
+  /* alinhamento com o header */
+  padding: 20px 50px 20px 20px;
+}
+*{
+   font-family: "Montserrat", sans-serif;
+   /*Garante que o tamanho de elemento considera padding*/
+   box-sizing: border-box; 
+}
+/*====================FONTES==================================*/
+/* Montserrat - Google Fonts (weight 100-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Merriweather - Google Fonts (weight 400-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.merriweather{
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/*====================== HEADER ======================*/
+.headerTop{
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-size: 0.9rem;
-}
-
-.footer-left {
-    flex: 1;
-    max-width: 400px;
-}
-
-.footer-logo-footer img {
-    width: 100px; 
-    margin-bottom: 10px;
-}
-
-.footer-left p {
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.social-icons {
-    margin-top: 15px;
-}
-
-.social-icons a {
-    color: #555;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
-.footer-right {
-    flex: 1;
-    max-width: 400px;
-}
-
-.footer-right h4 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.map-placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--verde-1);
+    align-items: center;
     width: 100%;
-    height: 180px;
-    background-color: #ccc; 
-    border: 1px solid #999;
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+    min-height: 50px; /* minimo de diminuição*/
+}
+.imageLogo{
+  height: 90%;
+  aspect-ratio: 1 / 1;
+  margin: auto 1.5vw auto 2.5vw; 
+  width: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 3px;
+  /* Impede esmagamento */
+  flex-shrink: 0; 
+}   
+.h1HEADER{
+    font-size: 30px;
+    color: white;
+    
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 1;
+    white-space: nowrap;
+    
+    font-family: "Montserrat", sans-serif;
+}
+.decorationHeaderMenu{
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  transition: 0.5s;
+  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
+  display: block; 
+}
+/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
+.searchBar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 50px 0 auto;
+
+    flex-shrink: 1;
+    min-width: 150px;
+   
+}
+.searchBtn {
+  position: absolute; /* Posição absoluta em relação ao .search-container */
+  right: 5px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 35px; 
+  width: 35px; 
+}
+/* Elementos  nav  VER HEIGHT RESPONSIVO*/
+.headerBottom{
+    background-color: var(--verde-2);
+    height: 5vh;
+    display: flex;  
+    align-items: center; 
+    width: 100%;
+}
+.navBar{
+  width: 100%;
+  display: flex;
+}
+.ulNav{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  width: 100%; 
+  align-items: center;
+  margin-left: 2.5vw;
+  padding-left: 0; /* existe um padding pagraõ de 40px do navegador para listas*/
+}
+.ulNav li:first-child {
+    /* garantir alinhamento com o centro da logo*/
+    padding-left: 7.05vh;
+}
+.item-direita {
+    margin-left: auto; 
+    margin-right: 50px;
+}
+.inputSearch{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 4px;
+}
+/* Efeito hover nos links do menu */
+.decorationHeaderMenu:hover{
+    text-decoration: solid underline #E0F9D5 2px;
+    opacity: 1;
+    transform: scale(1.2);
+}
+ul:hover  .decorationHeaderMenu:not(:hover){
+    opacity: 0.7;
+}
+/*=======================FOOTER===============================*/
+footer{
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footerDad{
+  padding: 10px 0;
+  background-color: var(--marrom);
+  min-height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-background-page);
+  align-items: center;
+  gap: 40px;
+}
+.logoFooterSection{
+  flex: 1;           /* divide igualmente */
+  padding: 5px;
+}
+.imageLogoFooter {
+  max-width: 80px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+.footerSection{
+  position: relative;
+  width: 45%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+.footerSection:first-child::after{
+  content: '';
+  background-color: white; 
+  height: 25vw;               
+  width: 1.5px;
+  position: absolute;
+  
+  right: 7%; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+.textFooter{
+  text-decoration: solid underline #55A357 2px;
+  font-size: 20px;
+}
+.emailLineFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; 
+    gap: 10px; 
+}
+.mapa-estilizado {
+  border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+
+    width: 100%;       
+    max-width: 400px;  
+    height: 250px;
+}
+.buttonFooter{
+  width: 30%;
+  background-color: var(--verde-2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 10px 2px;
+  border-radius: 5px;
+  /* Sombra deslocada para o canto superior esquerdo */
+  box-shadow: -5px -5px 0 0 var(--verde-1); 
+}
+#Map{
+  display: flex;
+  padding: 6vh 5vw 0 0;
+  justify-content: center;
+}
+#AdmAcess{
+  display: flex;
+  margin-top: 15px; 
+  align-self: flex-end;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.imagensFooter a svg {
+    max-width: 50px; /* Define um tamanho máximo */
+    height: auto;    /* Mantém a proporção */
+}
+
+.imagensFooter {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+  }
+
+
+/* =============== MOBILE (ABAIXO DE 768px) =============== */
+@media (max-width: 767px) {
+
+/* --- HEADER --- */
+.headerTop {
+  height: 20vh; 
+  min-height: 60px; 
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.imageLogo {
+  height: 75%; 
+  aspect-ratio: 1 / 1;
+  margin: auto 10px auto 15px;
+}
+.headerBottom {
+    height: auto; /* Altura automática para a nova fonte */
+    padding: 8px 0; /* Um pouco de espaço vertical */
+    
+    /* Propriedades de Scroll (movidas do .ulNav) */
+    overflow-x: auto;  
+    overflow-y: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+
+}
+.h1HEADER {
+    font-size: clamp(18px, 5vw, 24px); 
+}
+
+.searchBar {
+    margin: 10px 15px 5px 15px;
+    min-width: 120px;
+    width: auto; /* Deixa o flex-basis cuidar da largura */
+    order: 3; 
+}
+
+.headerBottom::-webkit-scrollbar {
+  display: none; /* sumir a barra scroll no chrome */
+}
+
+.ulNav {
+ 
+  gap: 10px 15px; /* Espaço vertical e horizontal */
+  margin-left: 0; /* Remove margem esquerda */
+  padding: 0 40px;
+  
+  gap: 20px;
+
+  scroll-snap-type: x mandatory;
+
+  padding: 0 45px;
+
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  width: auto;
+  white-space: nowrap;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.ulNav::-webkit-scrollbar {
+    display: none;
+}
+
+.ulNav li {
+    /* Diz para CADA item da lista "travar" no centro */
+    scroll-snap-align: center;
+}
+
+.ulNav li:first-child {
+  padding-left: 0;
+} 
+
+.ulNav li {
+    scroll-snap-align: center;
+}
+
+/* Aumenta a fonte e o peso dos links no menu */
+.decorationHeaderMenu {
+    font-size: 1.15rem; 
+    font-weight: 400;   
+}
+
+.item-direita {
+    margin: 0; 
+}
+
+/* --- MAIN --- */
+main {
+    padding: 15px; 
+}
+/* --- FOOTER --- */
+.footerDad {
+    flex-direction: column; 
+    min-height: auto;
+    padding: 30px 15px; 
+    align-items: center;
+    gap: 30px; 
+}
+.footerSection {
+    width: 95%; 
+    max-width: unset; 
+    height: auto; 
+    align-items: center; 
+    text-align: center;
+    padding: 0; 
+}
+
+.logoFooterSection {
+    align-self: center; 
+    margin: 0 0 15px 0; 
+}
+
+.footerSection:first-child::after {
+    display: none; 
+}
+
+.emailLineFooter {
+    justify-content: center; 
+}
+
+.imagensFooter {
+    justify-content: center; 
+    padding: 10px 0;
+}
+
+.buttonFooter {
+    width: 50%; 
+    min-width: 150px;
+}
+
+  #Map {
+      padding: 20px 0 0 0;
+      width: 100%;
+  }
+  
+  .mapa-estilizado {
+    max-width: 100%; 
+  }
+
+  #AdmAcess {
+      align-self: center; 
+      margin-top: 20px;
+  }
 }
