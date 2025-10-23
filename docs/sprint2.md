@@ -99,14 +99,14 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-006.3 |       Adicionar cores padrões         | Ariana            | 10/10 |     00      |      DW      |          RF03           |   ✅   |
 | DW-006.4 |       Adicionar fontes padrão         | Ariana            | 10/10 |     00      |      DW      |          RF03           |   ✅   |
 | DW-006.5 |       Estilização dos cards de membros         | Ariana            | 10/10 |     00      |      DW      |          RF03           |   ✅   |
-| DW-007 |      Criação da estrutura da página de contatos em HTML           |  João Otávio            | 10/10 |     00      |      DW      |          RF03           |      |
-| DW-007.1 |     Criação da estrutura do formulário de contato HTML           | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.2 |      Criação da estrutura do card de localização em  HTML            | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.4 |      Criação de um arquivo CSS para a estlização           | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.5 |      Adicionar cores padrões          | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.6 |      Adicionar fontes padrão         | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.7 |      Estilização do formulário          | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
-| DW-007.8 |       Estilização do card de localização          | João Otávio            | 10/10 |     00      |      DW      |          RF08           |      |
+| DW-007 |      Criação da estrutura da página de contatos em HTML           |  João Otávio            | 10/10 |     00      |      DW      |          RF03           |  ⬜     |
+| DW-007.1 |     Criação da estrutura do formulário de contato HTML           | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
+| DW-007.2 |      Criação da estrutura do card de localização em  HTML            | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
+| DW-007.4 |      Criação de um arquivo CSS para a estlização           | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
+| DW-007.5 |      Adicionar cores padrões          | João Otávio            | 10/10 |     00      |      DW      |          RF08           | ⬜      |
+| DW-007.6 |      Adicionar fontes padrão         | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
+| DW-007.7 |      Estilização do formulário          | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
+| DW-007.8 |       Estilização do card de localização          | João Otávio            | 10/10 |     00      |      DW      |          RF08           |  ⬜     |
 | DW-008 |       Criação da estrutura da página sobre em HTML          | João Augusto            | 21/10 |     00      |      DW      |          RF02           |  ✅    |
 | DW-008.1 |      Adicionar imagem e logo de colaboradores           | João Augusto            | 21/10 |     00      |      DW      |          RF02           |  ✅    |
 | DW-008.2 |      Criação de um arquivo CSS para a estlização           | João Augusto            | 21/10 |     00      |      DW      |          RF02           |  ✅    |
@@ -116,9 +116,9 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-009.1 |       Estilizar o Header em CSS          | Willian            | 10/10 |     00      |      DW      |          RF01.1           |   ✅   |
 | DW-010 |        Criar a estrutura em HTML para o Footer         | Willian            | 10/10 |     00      |      DW      |          RF01.3           |   ✅   |
 | DW-00.1 |        Estilizar o footer em CSS         | Willian            | 10/10 |     00      |      DW      |          RF01.3           |   ✅   |
-| DW-011 |        Criar a estrutura da página administrativa em HTML          |             | 10/10 |     00      |      DW      |                     |      |
-| DW-11.1 |        Estilizar a página administrativa em CSS          |             | 10/10 |     00      |      DW      |                     |      |
-| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |      |
+| DW-011 |        Criar a estrutura da página administrativa em HTML          |             | 10/10 |     00      |      DW      |                     |  ⬜     |
+| DW-11.1 |        Estilizar a página administrativa em CSS          |             | 10/10 |     00      |      DW      |                     |  ⬜     |
+| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
 
 
 
