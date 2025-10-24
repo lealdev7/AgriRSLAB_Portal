@@ -134,11 +134,11 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-001 |        Refinamento página de artigos.              | Ariana            | 23/10 |     00      |      DW      |                     |  ⬜     |
 | DW-004 |        Refinamento página de projetos.         |  Ariana           | 23/10 |     00      |      DW      |                     |  ⬜     |
 | DW-003 |        Refinamento página de notícias.         |  João Augusto           | 23/10 |     00      |      DW      |                     |  ⬜     |
-| AL-001 |        Ligação com o BD        |   Felipe          | 23/10 |     00      |      AL     |                     |  ⬜     |
-| MB-001 |        Testes no BD         |   Felipe          | 23/10 |     00      |      MB      |                     |  ⬜     |
-| AL-001 |        Ligação com o BD        |   William          | 23/10 |     00      |      AL     |                     |  ⬜     |
-| MB-001 |        Testes no BD         |   William         | 23/10 |     00      |      MB      |                     |  ⬜     |
-| MB-001 |        Testes no BD         |   João Otávio         | 23/10 |     00      |      MB      |                     |  ⬜     |
+| AL-001 |        Ligação com o BD        |   Felipe          | 23/10 |     20      |      AL     |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   Felipe          | 23/10 |     20      |      MB      |                     |  ⬜     |
+| AL-001 |        Ligação com o BD        |   William          | 23/10 |     20      |      AL     |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   William         | 23/10 |     20      |      MB      |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   João Otávio         | 23/10 |     20      |      MB      |                     |  ⬜     |
 
 
 
