@@ -1,0 +1,337 @@
+:root{
+  --verde:#2d6a4f;       /* topo (logo + busca) */
+  --verde-acao:#55A357;   /* barra de navegação */
+  --verde-claro:#d8f3dc;
+  --verde-borda:#cfe9d7;
+  --cinza:#f8f9fa;
+  --cinza-borda:#e6e6e6;
+  --cinza-escuro:#3a3a3a;
+  --texto:#333;
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+
+.body-canditadura{
+  margin:0;
+  font-family:"Montserrat",sans-serif;
+  background:#F8F9FA;
+  color:var(--texto);
+  line-height:1.5;
+}
+
+.container-canditadura{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 60px;
+}
+
+/* ===== HEADER (2 tons) ===== */
+.headerTop{
+  display:flex;
+  align-items:center;
+  background-color:hsl(141,38%,34%);
+  width:100%;
+  min-height:50px;
+  padding:0;
+  margin:0;
+}
+
+.imageLogo{
+  height:80%;
+  aspect-ratio:1/1;
+  margin:auto 15px auto 25px;
+  width:auto;
+  border-radius:50%;
+  padding:.5vw;
+  flex-shrink:0;
+}
+
+.h1HEADER{
+  font-size:clamp(20px,2.5vw,30px);
+  color:#fff;
+  white-space:nowrap;
+  margin:0;
+}
+
+.searchBar{
+  position:relative;
+  display:flex;
+  align-items:center;
+  margin:0 35px 0 auto;
+  min-width:150px;
+}
+
+.inputSearch{
+  display:flex;
+  align-items:center;
+  margin:0;
+  border-radius:4px;
+}
+
+.searchBtn{
+  position:absolute;
+  right:5px;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  height:35px;
+  width:35px;
+}
+
+/* Barra de navegação (verde claro) */
+.headerBottom{
+  background-color:var(--verde-acao);
+  height:35px;
+  display:flex;
+  align-items:center;
+  width:100%;
+  margin-bottom:18px; /* respiro entre header e conteúdo */
+}
+
+.navBar{ width:100%; display:flex }
+
+.ulNav{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  margin:0 0 0 20px;
+  width:100%;
+  align-items:center;
+}
+.item-direita{ margin-left:auto; margin-right:50px }
+
+.decorationHeaderMenu{
+  text-decoration:none;
+  color:#fff;
+  font-size:16px;
+  transition:.5s;
+  display:block;
+}
+.decorationHeaderMenu:hover{
+  text-decoration:underline var(--verde-claro) 2px;
+  transform:scale(1.2);
+}
+.ulNav:hover .decorationHeaderMenu:not(:hover){ opacity:.7 }
+
+/* ===== FOOTER ===== */
+footer{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+.footerDad{
+  background-color:#604639;
+  height:400px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  color:#fff;
+}
+.footerSection{ width:45% }
+.textFooter{ text-decoration:underline #55A357 2px; font-size:20px }
+.mapa-estilizado{
+  border:5px solid #0e0c0c;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+.buttonFooter{
+  background-color:#55A357;
+  border:none;
+  color:#fff;
+  padding:10px 20px;
+  text-align:center;
+  text-decoration:none;
+  display:inline-block;
+  font-size:16px;
+  margin:10px 2px;
+  cursor:pointer;
+  border-radius:5px;
+  box-shadow:-5px -5px 0 0 #3b743e;
+}
+
+/* ===== CONTEÚDO (Candidatura) ===== */
+.section-title-canditadura{
+  font-size:1.35rem;
+  font-weight:600;
+  margin:0 0 32px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:relative;
+}
+.section-title-canditadura::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  height:3px;
+  width:100%;
+  background:var(--verde-acao); /* mesmo tom da barra */
+  border-radius:2px;
+}
+
+.section-plain-canditadura{ background:transparent; border:0; box-shadow:none; padding:0; margin:0 0 22px }
+.section-plain-canditadura .section-title-canditadura{ margin-top:6px }
+
+.card-canditadura{
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:12px;
+  padding:10px 28px 28px;
+  box-shadow:0 3px 6px rgba(0,0,0,.08);
+  margin-bottom:22px;
+}
+
+.lead-canditadura{ margin:0 0 16px }
+.muted-canditadura{ opacity:.85 }
+.mini-title-canditadura{ font-size:15px; margin:18px 0 8px; font-weight:600; color:#2a2a2a }
+
+.ul-clean-canditadura{ margin:0; padding-left:20px }
+.ul-clean-canditadura li{ margin:6px 0 }
+
+.ul-dash-canditadura{ list-style:none; margin:0; padding:0 }
+.ul-dash-canditadura li{ position:relative; padding-left:20px; margin:6px 0 }
+.ul-dash-canditadura li::before{ content:"–"; position:absolute; left:0; top:0; color:#2c2c2c }
+
+.form-canditadura{ display:grid; grid-template-columns:1fr; gap:14px }
+.label-canditadura{ display:flex; flex-direction:column; gap:8px; font-weight:600; font-size:14px }
+
+.input-canditadura,
+.textarea-canditadura{
+  width:100%;
+  background:#fff;
+  border:1px solid var(--cinza-borda);
+  border-radius:10px;
+  padding:12px;
+  font:inherit;
+  outline:none;
+}
+.input-canditadura:focus,
+.textarea-canditadura:focus{
+  border-color:var(--verde-borda);
+  box-shadow:0 0 0 3px var(--verde-claro);
+}
+
+.file-canditadura::file-selector-button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid var(--cinza-borda);
+  background:#f2f2f2;
+  cursor:pointer;
+  font:inherit;
+}
+
+.textarea-canditadura{ resize:vertical }
+
+.form-actions-canditadura{ display:flex; justify-content:flex-end; margin-top:6px }
+
+.btn-canditadura{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  border-radius:8px;
+  padding:12px 24px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .1s ease-in-out, box-shadow .2s ease, background-color .2s ease;
+  text-decoration:none;
+}
+.btn-primary-canditadura{
+  background:#55A357;
+  color:#fff;
+  box-shadow:0 4px 0 #36794E;
+}
+.btn-primary-canditadura:hover{ background:#4b924d }
+.btn-primary-canditadura:active{
+  transform:translateY(3px);
+  box-shadow:0 1px 0 #36794E;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:1024px){
+  .container-canditadura{ padding:0 32px }
+  .ulNav{ gap:14px }
+  .item-direita{ margin-right:20px }
+  .imageLogo{ height:36px; padding:0 }
+  .h1HEADER{ font-size:clamp(18px,2vw,26px) }
+  .section-title-canditadura{ margin-bottom:26px }
+  .card-canditadura{ padding:10px 22px 22px }
+}
+
+/* Busca igual à última página: no mobile na mesma linha, à direita */
+@media (max-width:900px){
+  .headerTop{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:"logo titulo busca";
+    align-items:center;
+    padding:8px 0;
+  }
+  .imageLogo{ grid-area:logo; height:32px; margin:0 8px 0 16px }
+  .h1HEADER{ grid-area:titulo; font-size:18px; margin:0 }
+  .searchBar{ grid-area:busca; margin:0 16px 0 8px; min-width:140px }
+  .inputSearch{ height:34px; padding:0 38px 0 10px; font-size:14px }
+  .searchBtn{ width:30px; height:30px; right:6px }
+
+  .ulNav{ flex-wrap:wrap; gap:12px 18px; margin-left:16px; padding:6px 0 }
+  .decorationHeaderMenu{ font-size:15px; padding:4px 0 }
+  .item-direita{ margin-left:auto; margin-right:16px }
+
+  .container-canditadura{ padding:0 24px }
+  .mini-title-canditadura{ font-size:14.5px }
+
+  /* respiro ligeiramente menor abaixo do menu no mobile */
+  .headerBottom{ margin-bottom:14px }
+}
+
+@media (max-width:560px){
+  .ulNav{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    gap:16px;
+    scrollbar-width:thin;
+  }
+  .ulNav li{ flex:0 0 auto }
+
+  .body-canditadura{ font-size:15px }
+  .h1HEADER{ font-size:17px }
+  .section-title-canditadura{ font-size:1.05rem }
+  .mini-title-canditadura{ font-size:13.5px }
+  .btn-canditadura{ font-size:13.5px }
+}
+
+@media (max-width:400px){
+  .imageLogo{ height:28px }
+  .inputSearch{ height:32px; font-size:13px }
+  .searchBtn{ width:28px; height:28px }
+  .decorationHeaderMenu{ font-size:13px }
+  .btn-canditadura{ width:100%; justify-content:center }
+}
+
+/* Ícones do rodapé */
+@media (max-width:768px){
+  .imagensFooter svg{ width:36px; height:36px }
+  .imagensFooter img{ width:36px; height:auto }
+  .imagensFooter a{ margin-right:10px }
+}
+@media (max-width:560px){
+  .imagensFooter svg{ width:30px; height:30px }
+  .imagensFooter img{ width:30px }
+  .imagensFooter a{ margin-right:8px }
+}
+@media (max-width:420px){
+  .imagensFooter svg{ width:26px; height:26px }
+  .imagensFooter img{ width:26px }
+}
+
+

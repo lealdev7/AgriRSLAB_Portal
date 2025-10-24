@@ -1,129 +1,183 @@
-# Link do Figma
-https://www.figma.com/design/lOquh5Rjs8hRw0eabhfMRE/AGRIRS?t=vFFsgACUIBLXJYoF-0
+# AgriRSLAB-Portal - ABP1
 
-# Apresentação da equipe
-A equipe 404 Not Found é constituída de alunos do primeiro semestre do curso de Desenvolvimento de Software Multiplataforma.
-
-1. Eloah Sousa da Silva (Project Owner)
-- Git. https.//github.com/eloahsousaa
-- LinkedIn. https.//www.linkedin.com/in/eloah-sousa-650038349/
- 
-Pedro Gonçalves Sampaio (Scrum Master)
-- Git. https.//github.com/PedroSmp
-- LinkedIn. https.//www.linkedin.com/in/pedro-sampaio-463a77375
- 
-Ariana Ferreira dos Santos (Desenvolvedora)
-- Git. https.//github.com/arianaferresan
-- Linkedin. https.//br.linkedin.com/in/arianaferreira
- 
-Felipe Faria Machado (Desenvolvedor)
-- Git. https.//github.com/Felipe1781
-- LinkedIn. https.//www.linkedin.com/in/felipefariamachado
- 
-João Augusto Leal Neto (Desenvolvedor)
-- Git. https.//github.com/lealdev7
-- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-leal-558071385/
- 
-João Otávio Nunes de Mesquita (Desenvolvedor)
-- Git. https.//github.com/jotavionm
-- LinkedIn. https.//www.linkedin.com/in/jo%C3%A3o-ot%C3%A1vio-nunes-mesquita/
- 
-Luiza Gonçales Manchini (Desenvolvedora)
-- Git: https://github.com/Luiza-Manchini
-- LinkedIn: https://www.linkedin.com/in/luiza-manchini-b51a7b336/
- 
-William Max dos Santos Silva Silva (Desenvolvedor)
-- Git: https.//github.com/WilliamM4x
-- LinkedIn. https.//www.linkedin.com/in/william-max-7b8036140/
-
-7. Eloah Sousa da Silva (Project Owner)
-- Git. https.//github.com/eloahsousaa
-- LinkedIn. https.//www.linkedin.com/in/eloah-sousa-650038349/
-
-8. Luiza (Desenvolvedora)
-- Git. https.//github.com/luiza-manchini
-- LinkedIn. https://www.linkedin.com/in/luiza-manchini-b51a7b336/
-
-# Titulo do projeto
-Website do Laboratório de Sensoriamento Remoto Agrícola do INPE (AgriRS Lab).
-
-# Descrição do desafio
-A criação de um website para o Laboratório de Sensoriamento Remoto Agrícola do INPE (AgriRS Lab) tem como propósito principal centralizar as informações importantes do laboratório, ampliar a visibilidade do laboratório e facilitar o acesso do público às pesquisas, projetos e iniciativas. Além disso, seria importante para divulgar informações importantes, como os integrantes da equipe, suas respectivas áreas de atuação, publicações científicas, oportunidades de trabalho e formas de contato. Isso ajudaria a manter as atividades e descobertas científicas atualizadas para a comunidade e promoveria a divulgação do laboratório para quem quiser conhecer ou se aproximar do trabalho do laboratório.
-
-# Dor do cliente
-1. Necessidade de um site para divulgação do Laboratório de Sensoriamento Remoto Agrícola do INPE
-2. Cliente com pouca ou nenhuma experiencia em desenvolvimento de websites
-> É importante que ele seja de fácil manuseio e atualização pelos próprios responsáveis do laboratório. Há portanto a necessidade de um gerenciamento fácil e objetivo, considerando a pouca experiência que eles possuem.
-3. Necessidade de compliance com estrutura e regras do INPE, especialmente por ser uma instituição pública
-
-# Backlog de produto
-
-### PRIORIDADE ALTA
-01. Página inicial com navegação.
-02. Cards em destaque na home (notícias, projetos, publicações).
-03. Links para redes sociais e contato no rodapé.
-04. Página "Sobre" – objetivo e foco do laboratório.
-05. Página de membros com nome, foto, função e descrição.
-06. Página de oportunidades (estágio, IC, pós-graduação).
-07. Listagem de projetos (título, resumo, ano, status, equipe).
-08. Publicação de notícias (título, data, imagem, texto).
-09. Lista de publicações científicas.
-10. Formulário de contato funcional.
+<a id="topo"></a>
 
 
-> RNF01. Responsividade.
 
-> RNF03. Site deve carregar rapidamente.
+<p align="center">
+  <img src="imagens/1.1Imagens%20Git/logo_404notfound.png"
+       alt="Logo 404NotFound"
+       style="max-width: 260px; width: 60%; height: auto;">
+</p>
 
-> RNF02. Facilidade de atualização de conteúdo.
+
+<p align="center">
+  <a href="#sobre">Sobre o Projeto</a> |
+  <a href="#backlogs">Product Backlog</a> |
+  <a href="#sprint">Entrega de Sprints</a> |
+  <a href="#tecnologias">Tecnologias</a> |
+  <a href="#equipe">Nossa Equipe</a>
+</p>
+
+<a id="sobre"></a>
+## Sobre o Projeto 📋
+
+A criação de um website para o Laboratório de Sensoriamento Remoto Agrícola do INPE (AgriRS Lab).
+
+O site do AgriRS está sendo desenvolvido pela **404NotFound** com o objetivo de centralizar informações essenciais do laboratório, ampliar sua visibilidade e facilitar o acesso do público às pesquisas, projetos e iniciativas. O portal reunirá perfis da equipe e áreas de atuação, publicações científicas, oportunidades (vagas, editais, estágios) e canais de contato.  
+Nossa meta é manter a comunidade atualizada sobre as atividades e descobertas do laboratório e aproximar estudantes, parceiros e a sociedade do conhecimento produzido.
 
 
-### PRIORIDADE MÉDIA
-01. Exibir colaboradores e financiadores.
-02. Explicação das áreas de atuação.
-03. Categorizar membros por tipo (pesquisadores, bolsistas, etc.).
-04. Informações de como se candidatar a vagas.
-05. Inclusão de imagens/links adicionais nos projetos.
-06. Organização cronológica das notícias.
-07. Campo de pesquisa por palavra-chave em publicações.
-08. Exibir informações institucionais (telefone, e-mail, endereço).
 
-> RNF04. Versão em português e inglês.
+[↑ Voltar ao topo](#topo)
 
-> RNF06. Identidade visual definida.
+<a id="sprint"></a>
+## Entregas de Sprints
 
-### PRIORIDADE BAIXA
-01. Ordenar membros alfabeticamente dentro de cada categoria.
-02. Links para redes sociais na página de contato (além do rodapé).
-03. Mapa com localização do laboratório.
+Todas as entregas serão realizadas conforme os prazos acordados com o cliente. Para cada ciclo de desenvolvimento, será gerado um relatório completo por sprint e uma planilha de tarefas, na aba **Tasks**, que detalha cada atividade executada, o responsável, a data de conclusão e uma descrição do trabalho realizado. A relação detalhada das sprints e tarefas é apresentada abaixo.
 
-> RNF05. Hospedagem e domínio próprio (pode ser feito após protótipo).
+<div align="center">
 
-# Tabela descritiva das sprints com as colunas
-| ID     | Nome da Tarefa                                    | Pontos | Diciplina | Requisitos Atendidos|
-|--------|---------------------------------------------------|------- |-----------|---------------------|
-| **DD-001** | Definir identidade visual do site             | 5      | DD        | RNF06               |
-| **DD-002** | Criar protótipo da página inicial             | 8      | DD        | PA-01              |
-| **DD-003** | Cards em destaque na home (notícias, projetos, publicações). | 9      | DD        | PA-02               |
-| **DD-004** | Criar  página "Sobre" – objetivo e foco do laboratório.| 4      | DD        | PA-04               |
-| **DD-005** | Criar página de membros com nome, foto, função e descrição.| 6      | DD        | PA-05               |
-| **DD-006** | Criar  página de oportunidades (estágio, IC, pós-graduação).| 3      | DD        | PA-06               |
-| **DD-007** | Criar página de listagem de projetos (título, resumo, ano, status, equipe).| 1   |  DD| PA-07              |
-| **DD-008** | Criar página de publicação de notícias (título, data, imagem, texto).| 7     | DD | PA-08             |
-| **DD-009** | Criar protótipo de lista de publicações científicas.| 4      | DD | PA-09                      |
-| **DD-0010** | Criar protótipo de formulário de contato funcional. | 2     | DD | RF-010                      |
-| **DW-001** | Criar o arquivo HTML para página inicial        | 10      | Dw        | PA-01               |
-| **Dw-002** | Aplicar a estilização da página inicial em CSS  | 10      | Dw        | PA-01               |
-| **Dw-003** | Criar arquivo HTML para a página de notícias                | 9      | Dw        | PA-08               |
-| **Dw-004** | Aplicar a estilização da página de notícias em CSS                 | 9      | Dw        | PA-08               |
-| **Dw-005** | Criar o arquivo HTML para página de projetos | 3      | Dw        | PA-07               |
-| **Dw-006** | Criar a estilização para página de projetos | 3      | Dw        | PA-07               |
-| **Dw-007** | Criar o arquivo HTML para página de públicações | 3      | Dw        | PA-09               |
-| **Dw-008** | Criar a estilização para a página de publicações | 3      | Dw        | PA-09               |
-| **Dw-009** | Criar o arquivo HTML para página de sobre | 3      | Dw        | PA-04               |
-| **Dw-0010** | Criar a estilização da página sobre  | 3      | Dw        | PA-04               |
-| **ES-001** | Criar um estudo de caso do projeto  | 10      | ES        |                |
-| **Dw-002** | Criar diagrama de caso do projeto  | 10      | ES        |                |
-- Periodo da sprints
-- Link para a documentação da sprint
-- Link para o video no youtube do Incremento entregue
+| Sprint | Entrega       | Status |                 Relatório                  | Tasks |
+|------: |---------------|:------:|:------------------------------------------:|:-----:|
+| 1      | 📅 08/10/2025 | ✅     | [Ver Backlog](docs/sprint1.md#backlog)     | —     |
+| 2      | 📅 04/11/2025 | 🚧  | [Ver Backlog](docs/sprint2.md#backlog)                                         | —     |
+| 3      | 📅 25/11/2025 | —      | —                                          | —     |
+
+
+</div>
+
+**Legenda:**
+- ✅ **Finalizada**
+- 🚧 **Em Progresso**
+- `—` **Não iniciado**
+
+A apresentação da Sprint 1 em vídeo pode ser acessada [aqui](https://youtu.be/8NwBtAC9zXE).
+
+[↑ Voltar ao topo](#topo)
+
+<a id="dor"></a>
+## Dor do Cliente
+
+1. Necessidade de um site para divulgação do Laboratório de Sensoriamento Remoto Agrícola do INPE.  
+2. Cliente com pouca experiência em desenvolvimento de websites — portanto, é essencial que o gerenciamento de conteúdo seja simples e objetivo.  
+3. Necessidade de compliance com estrutura e regras do INPE (instituição pública).
+
+[↑ Voltar ao topo](#topo)
+
+# 📌 Backlog Geral do Projeto
+
+| ID      | Seção / Atividade | Pontuação | Disciplina | Sprint |
+|---------|-------------------|-----------|------------|--------|
+| DD-001  | Definir cores, tipografia, espaçamento e estilos de botões | 8  | DD | 1 |
+| DD-002  | Criar header e footer padrão (figma) | 5  | DD | 1 |
+| DD-003  | Criar guia de estilo | 8  | DD | 1 |
+| DD-004  | Criar layout no Figma (Home) | 13 | DD | 1 |
+| DW-001  | Criar arquivo HTML (Home) | 5  | DW | 1 |
+| DW-002  | Aplicar design CSS (Home) | 8  | DW | 1 |
+| DW-003  | Inserir cards de destaques (notícias, projetos, publicações) back-end | 20 | DW | 2 |
+| DW-004  | Inserir links para redes sociais e contato | 5  | DW | 1 |
+| DD-005  | Criar layout no Figma (Sobre) | 8  | DD | 1 |
+| DW-005  | Criar arquivo HTML (Sobre) | 5  | DW | 1 |
+| DW-006  | Aplicar design CSS (Sobre) | 8  | DW | 1 |
+| DW-007  | Inserir textos e imagens do laboratório | 8  | DW | 1 |
+| DD-006  | Criar layout no Figma (Membros) | 8  | DD | 1 |
+| DW-008  | Criar arquivo HTML (Membros) | 5  | DW | 1 |
+| DW-009  | Aplicar design CSS (Membros) | 8  | DW | 1 |
+| DW-010  | Inserir imagens e textos | 8  | DW | 1 |
+| ES-001  | Implementar CRUD de membros (back-end) | 13 | ES | 2 |
+| ES-002  | Categorizar membros por tipo | 13 | ES | 2 |
+| ES-003  | Ordenar membros por ordem alfabética | 5  | ES | 2 |
+| DD-007  | Criar layout no Figma (Vagas) | 20 | DD | 1 |
+| DW-011  | Criar arquivo HTML (Vagas) | 5  | DW | 1 |
+| DW-012  | Aplicar design CSS (Vagas) | 8  | DW | 1 |
+| ES-004  | Implementar CRUD de vagas (back-end) | 13 | ES | 2 |
+| DW-013  | Inserir informações sobre candidaturas | 5  | DW | 1 |
+| DD-008  | Criar layout no Figma (Projetos) | 13 | DD | 1 |
+| DW-014  | Criar arquivo HTML (Projetos) | 5  | DW | 1 |
+| DW-015  | Aplicar design CSS (Projetos) | 8  | DW | 1 |
+| ES-005  | Implementar CRUD de projetos (back-end) | 13 | ES | 2 |
+| DW-016  | Inserir imagens e links adicionais | 5  | DW | 1 |
+| DD-009  | Criar layout no Figma (Notícias) | 13 | DD | 2 |
+| DW-017  | Criar arquivo HTML (Notícias) | 8  | DW | 1 |
+| DW-018  | Aplicar design CSS (Notícias) | 8  | DW | 1 |
+| ES-006  | Implementar CRUD de notícias (back-end) | 13 | ES | 2 |
+| DW-019  | Organizar notícias cronologicamente | 8  | DW | 2 |
+| DD-010  | Criar layout no Figma (Publicações) | 8  | DD | 1 |
+| DW-020  | Criar arquivo HTML (Publicações) | 5  | DW | 1 |
+| DW-021  | Aplicar design CSS (Publicações) | 8  | DW | 1 |
+| ES-007  | Implementar CRUD de publicações (back-end) | 13 | ES | 2 |
+| ES-008  | Criar campo de pesquisa por palavra-chave | 13 | ES | 2 |
+| DD-011  | Criar layout no Figma (Contato) | 8  | DD | 1 |
+| DW-022  | Criar arquivo HTML (Contato) | 5  | DW | 1 |
+| DW-023  | Aplicar design CSS (Contato) | 8  | DW | 1 |
+| ES-009  | Criar API para envio de e-mail via formulário | 20 | ES | 2 |
+| DW-024  | Inserir mapa do laboratório dentro do INPE | 13 | DW | 1 |
+| DW-025  | Inserir informações institucionais e links para redes sociais | 20 | DW | 3 |
+| SO-001  | Criar media-queries para 3 resoluções diferentes | 20 | SO | 2 |
+| SO-002  | Testar responsividade em dispositivos distintos | 20 | SO | 2 |
+| AL-001  | Sistema de login para área administrativa | 40 | AL | 3 |
+| AL-002  | Seletor de idioma (Português/Inglês) | 20 | AL | 2 |
+| SO-003  | Subir projeto | 13 | SO | 3 |
+| MB-001  | Modelagem do banco de dados | 40 | MB | 3 |
+| MB-002  | Criar API para requisições do front-end | 20 | MB | 2 |
+| MB-003  | Layout e funcionalidades da área de administração | 20 | MB | 3 |
+| MB-004  | Inserir dados iniciais de teste no banco | 13 | MB | 2 |
+| ES-010  | Documentar passo a passo de atualização de conteúdo pelos membros | 20 | ES | 2 |
+| ES-011  | DoD (Definition of Done) | 5  | ES | 1 |
+| ES-012  | DoR (Definiton of Ready) | 5  | ES | 1 |
+| DD-012  | Criar layout no Figma (Administrativo) | 20 | DD | 2 |
+| DW-025  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
+| DW-026  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
+| ES-013  | UML - User Cases | 5  | ES | 1 |
+| DW-027  | Criar header e footer padrão (HTML e CSS) | 13 | DW | 1 |
+| SO-004  | Configuração VScode | 5 | SO | 1 |
+| SO-005  | Configuração Git/Github | 5 | SO | 1 |
+
+
+# 📌 Backlog de Gestão do Projeto
+
+| ID      | Seção / Atividade | Pontuação | Disciplina | Sprint |
+|---------|-------------------|-----------|------------|--------|
+| *ES-014* | *Scrum Master:* Facilitar cerimônias ágeis, acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD. | 20 | ES | 1, 2, 3 |
+| *ES-015* | *Product Owner:* Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação. | 20 | ES | 1, 2, 3 |
+
+<a id="tecnologias"></a>
+## Tecnologias
+
+<p align="center">
+
+ <a href="https://www.figma.com/" style="">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="30" height="30">
+</a>
+
+
+
+<a href="https://trello.com/" >
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" alt="Trello" width="30" height="30">
+</a>
+
+
+<a href="https://code.visualstudio.com/" >
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="30" height="30">
+</a>
+
+[↑ Voltar ao topo](#topo)
+
+<a id="equipe"></a>
+## Nossa Equipe
+
+A equipe **404 Not Found** é constituída de alunos do primeiro semestre do curso de Desenvolvimento de Software Multiplataforma.
+
+| Função        | Nome                          | Links |
+|---------------|-------------------------------|-------|
+| Project Owner | Eloah Sousa da Silva          | [GitHub](https://github.com/eloahsousaa) / [LinkedIn](https://www.linkedin.com/in/eloah-sousa-650038349/) |
+| Scrum Master  | Pedro Gonçalves Sampaio       | [GitHub](https://github.com/PedroSmp) / [LinkedIn](https://www.linkedin.com/in/pedro-sampaio-463a77375) |
+| Dev Team      | Ariana Ferreira dos Santos    | [GitHub](https://github.com/arianaferresan) / [LinkedIn](https://br.linkedin.com/in/arianaferreira) |
+| Dev Team      | Felipe Faria Machado          | [GitHub](https://github.com/Felipe1781) / [LinkedIn](https://www.linkedin.com/in/felipefariamachado) |
+| Dev Team      | João Augusto Leal Neto        | [GitHub](https://github.com/lealdev7) / [LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-leal-558071385/) |
+| Dev Team      | João Otávio Nunes de Mesquita | [GitHub](https://github.com/jotavionm) / [LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-ot%C3%A1vio-nunes-mesquita/) |
+| Dev Team      | Luiza Gonçalves Manchini      | [GitHub](https://github.com/luiza-manchini) / [LinkedIn](https://www.linkedin.com/in/luiza-manchini-b51a7b336/) |
+| Dev Team      | William Max dos Santos Silva  | [GitHub](https://github.com/WilliamM4x) / [LinkedIn](https://www.linkedin.com/in/william-max-7b8036140/) |
+
+[↑ Voltar ao topo](#topo)

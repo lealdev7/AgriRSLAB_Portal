@@ -1,0 +1,459 @@
+:root {
+  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho2: #BCE2F7;
+  --verde-1: #36794E;
+  --verde-2: #55A357;
+  --marrom: #604639;
+  --azul1:#0F5289;
+  --azul2: #487DB4;
+}
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main{
+  flex-grow: 1;
+  /* alinhamento com o header */
+  padding: 20px 50px 20px 20px;
+}
+*{
+   font-family: "Montserrat", sans-serif;
+   /*Garante que o tamanho de elemento considera padding*/
+   box-sizing: border-box; 
+}
+/*====================FONTES==================================*/
+/* Montserrat - Google Fonts (weight 100-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Merriweather - Google Fonts (weight 400-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.merriweather{
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/*====================== HEADER ======================*/
+.headerTop{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--verde-1);
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+    min-height: 50px; /* minimo de diminuição*/
+}
+.imageLogo{
+  height: 90%;
+  aspect-ratio: 1 / 1;
+  margin: auto 1.5vw auto 2.5vw; 
+  width: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 3px;
+  /* Impede esmagamento */
+  flex-shrink: 0; 
+}   
+.h1HEADER{
+    font-size: 30px;
+    color: white;
+    
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 1;
+    white-space: nowrap;
+    
+    font-family: "Montserrat", sans-serif;
+}
+.decorationHeaderMenu{
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  transition: 0.5s;
+  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
+  display: block; 
+}
+/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
+.searchBar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 50px 0 auto;
+
+    flex-shrink: 1;
+    min-width: 150px;
+   
+}
+.searchBtn {
+  position: absolute; /* Posição absoluta em relação ao .search-container */
+  right: 5px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 35px; 
+  width: 35px; 
+}
+/* Elementos  nav  VER HEIGHT RESPONSIVO*/
+.headerBottom{
+    background-color: var(--verde-2);
+    height: 5vh;
+    display: flex;  
+    align-items: center; 
+    width: 100%;
+}
+.navBar{
+  width: 100%;
+  display: flex;
+}
+.ulNav{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  width: 100%; 
+  align-items: center;
+  margin-left: 2.5vw;
+  padding-left: 0; /* existe um padding pagraõ de 40px do navegador para listas*/
+}
+.ulNav li:first-child {
+    /* garantir alinhamento com o centro da logo*/
+    padding-left: 7.05vh;
+}
+.item-direita {
+    margin-left: auto; 
+    margin-right: 50px;
+}
+.inputSearch{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 4px;
+}
+/* Efeito hover nos links do menu */
+.decorationHeaderMenu:hover{
+    text-decoration: solid underline #E0F9D5 2px;
+    opacity: 1;
+    transform: scale(1.2);
+}
+ul:hover  .decorationHeaderMenu:not(:hover){
+    opacity: 0.7;
+}
+/*=======================FOOTER===============================*/
+footer{
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footerDad{
+  padding: 20px 0;
+  background-color: var(--marrom);
+  min-height: 70vh;
+  
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  align-items: center;
+}
+.logoFooterSection{
+  height: 12vh;
+  width: 12vh;
+  margin: 2vh 2vw 0 0;
+  flex-shrink: 0; 
+}
+.imageLogoFooter{
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px var(--verde-2);
+}
+.footerSection{
+  position: relative;
+  width: 45%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+.footerSection:first-child::after{
+  content: '';
+  background-color: white; 
+  height: 25vw;               
+  width: 1.5px;
+  position: absolute;
+  
+  right: 7%; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+.textFooter{
+  text-decoration: solid underline #55A357 2px;
+  font-size: 20px;
+}
+.emailLineFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; 
+    gap: 10px; 
+}
+.mapa-estilizado {
+    border: 5px solid rgb(14, 12, 12);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+
+    width: 100%;       
+    max-width: 400px;  
+    height: 250px;
+}
+.buttonFooter{
+  width: 20%;
+  background-color: var(--verde-2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 10px 2px;
+  border-radius: 5px;
+  /* Sombra deslocada para o canto superior esquerdo */
+  box-shadow: -5px -5px 0 0 var(--verde-1); 
+}
+#Map{
+  display: flex;
+  padding: 6vh 5vw 0 0;
+  justify-content: center;
+}
+#AdmAcess{
+  display: flex;
+  margin-top: 15px; 
+  align-self: flex-end;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.imagensFooter a svg {
+    max-width: 50px; /* Define um tamanho máximo */
+    height: auto;    /* Mantém a proporção */
+}
+
+.imagensFooter {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+  }
+/*================MAIN===================MAIN=======================*/
+
+
+/* ==========================================================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ========================================================================== */
+
+/* =============== TELAS GRANDES (1200px E ACIMA) =============== */
+@media (min-width: 1200px) {
+  /* Você pode aumentar a largura máxima de alguns containers se quiser */
+  main {
+    /* Exemplo: Aumentar um pouco o padding lateral */
+    padding: 30px 80px 30px 40px; 
+  }
+
+  .footerDad {
+      /* Exemplo: Aumentar um pouco o padding */
+      padding: 50px 5%;
+  }
+
+  /* Outros ajustes específicos para telas bem largas podem vir aqui */
+}
+
+
+/* =============== TABLET (768px ATÉ 1199px) =============== */
+@media (max-width: 1199px) {
+    main {
+        padding: 20px 30px 20px 20px; /* Reduz padding lateral */
+    }
+
+    .ulNav {
+        gap: 15px; /* Diminui espaço entre links da nav */
+    }
+
+    .item-direita,
+    .searchBar {
+        margin-right: 30px; /* Diminui margem direita */
+    }
+
+    .footerDad {
+        padding: 30px 2%; /* Reduz padding do footer */
+        min-height: auto; /* Altura automática */
+    }
+
+    .footerSection {
+        width: 48%; /* Ajusta largura das seções do footer */
+        padding: 0 10px;
+    }
+
+    .footerSection:first-child::after {
+        height: 70%; /* Ajusta altura da linha */
+        right: -2%; /* Ajusta posição da linha */
+    }
+
+    #Map {
+        padding: 20px 0 0 0; /* Remove padding lateral do mapa */
+    }
+
+    .buttonFooter {
+        width: 30%; /* Botão um pouco maior */
+    }
+}
+
+
+/* =============== MOBILE (ABAIXO DE 768px) =============== */
+@media (max-width: 767px) {
+  /* --- HEADER --- */
+  .headerTop {
+      height: auto; /* Altura automática */
+      min-height: 60px; /* Mantém um mínimo */
+      flex-wrap: wrap; /* Permite que itens quebrem linha se necessário */
+      padding: 5px 0;
+  }
+
+  .imageLogo {
+      height: 50px; /* Logo menor */
+      width: 50px;
+      margin: auto 10px auto 15px; /* Ajusta margens */
+  }
+
+  .h1HEADER {
+      font-size: clamp(18px, 5vw, 24px); /* Fonte do título menor */
+      margin-right: auto; /* Empurra searchBar para baixo se quebrar linha */
+  }
+
+  .searchBar {
+      margin: 5px 15px 5px auto; /* Ajusta margem e permite quebra */
+      min-width: 120px;
+      width: calc(100% - 30px); /* Ocupa quase toda a largura se quebrar */
+      order: 3; /* Força a ir para baixo se quebrar linha */
+  }
+
+  .headerBottom {
+      height: auto; /* Altura automática */
+      padding: 5px 0;
+  }
+
+  .ulNav {
+      flex-wrap: wrap; /* Permite que links quebrem linha */
+      justify-content: center; /* Centraliza links */
+      gap: 10px 15px; /* Espaço vertical e horizontal */
+      margin-left: 0; /* Remove margem esquerda */
+      padding: 0 10px; /* Adiciona padding lateral */
+  }
+
+  .ulNav li:first-child {
+      padding-left: 0; /* Remove padding especial do primeiro item */
+  }
+
+  .item-direita {
+      margin: 0; /* Remove margens especiais */
+  }
+
+
+/* --- MAIN --- */
+  main {
+      padding: 15px; /* Padding geral menor */
+  }
+
+
+  /* --- FOOTER --- */
+  .footerDad {
+      flex-direction: column; /* Empilha seções do footer */
+      min-height: auto; /* Altura automática */
+      padding: 30px 15px; /* Padding vertical e horizontal */
+      align-items: center; /* Centraliza seções */
+      gap: 30px; /* Espaço entre as seções empilhadas */
+  }
+
+  .footerSection {
+      width: 95%; /* Seções ocupam quase toda a largura */
+      max-width: unset; /* Remove largura máxima */
+      height: auto; /* Altura automática */
+      align-items: center; /* Centraliza conteúdo interno */
+      text-align: center; /* Centraliza texto */
+      padding: 0; /* Remove padding lateral (já tem no pai) */
+  }
+  
+  .logoFooterSection {
+      align-self: center; /* Garante que a logo fique centralizada */
+      margin: 0 0 15px 0; /* Apenas margem abaixo */
+  }
+
+  .footerSection:first-child::after {
+      display: none; /* Esconde linha divisória */
+  }
+
+  .emailLineFooter {
+      justify-content: center; /* Centraliza email */
+  }
+  
+  .imagensFooter {
+      justify-content: center; /* Centraliza ícones */
+      padding: 10px 0;
+  }
+
+  .buttonFooter {
+      width: 50%; /* Botão maior */
+      min-width: 150px;
+  }
+
+  #Map {
+      padding: 20px 0 0 0; /* Remove padding */
+      width: 100%;
+  }
+  
+  .mapa-estilizado {
+    max-width: 100%; /* Mapa ocupa largura total */
+  }
+
+  #AdmAcess {
+      align-self: center; /* Centraliza link */
+      margin-top: 20px;
+  }
+}
