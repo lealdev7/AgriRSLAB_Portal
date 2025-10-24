@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 /* Variáveis para cores baseadas na imagem */
 :root {
     --color-background-page: #F8F9Fa; /* Verde muito claro, quase branco */
@@ -6,6 +8,8 @@
     --color-title-green: #55A357; /* Verde escuro para títulos de seção */
     --color-link-blue: #0F5289; /* Azul padrão para links */
     --color-search-btn: #f0f0f0;
+    --cor-amarelo-ver: #D3D840;
+
 }
 
 /* Reset e Fonte */
@@ -16,15 +20,12 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--color-background-page);
     color: var(--color-text-dark);
 }
 
 /* 1. Container Principal do Cabeçalho */
-
-
-
 /* Estilo para a área do Logo e Título Juntos */
 .logo-title-area {
     display: flex;
@@ -37,39 +38,47 @@ body {
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid white;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-right: 15px; 
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .search-box input {
-    padding: 4px 8px;
-    border: none;
-    outline: none;
-    width: 150px;
-    font-size: 0.85rem;
-    color: var(--color-text-dark);
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  background-color: #fff;
 }
 
 .search-box button {
-    padding: 4px 8px;
-    border: none;
-    background-color: var(--color-search-btn);
-    color: var(--color-text-dark);
-    cursor: pointer;
+  background-color: var(--color-background-page);
+  color: var(--color-text-dark);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .btn-contato {
-    background-color: #f4c20d; /* Amarelo */
+    background-color: var(--cor-amarelo-ver); /* Amarelo */
     color: var(--color-text-dark);
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 4px;
     font-weight: bold;
     font-size: 0.9rem;
+}
+.search-box button:hover {
+  background-color: #eaeaea;
 }
 
 /* 3. Navigation Bar (Links principais) */
@@ -96,101 +105,111 @@ body {
 
 /* 4. Filtros de Navegação (Barra de botões de filtro) */
 /* 4. Filtros Interativos (Dropdowns) */
+
+
 .interactive-filters {
-    background-color: white;
-    padding: 10px 0;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center; /* Centraliza a barra na horizontal */
-    border-bottom: 1px solid #ddd;
-    gap: 15px; /* Espaçamento entre os filtros */
-    position: relative; /* Necessário para posicionar os painéis */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+  flex-wrap: wrap; /* permite quebrar se a tela for menor */
+  background-color: var(--color-background-page);
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .filter-dropdown {
-    position: relative;
-    z-index: 10; /* Garante que os dropdowns apareçam sobre o conteúdo abaixo */
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
 }
 
 .filter-toggle {
-    /* Estilo do botão visível (o que o usuário clica) */
-    background-color: white; 
-    color: var(--color-text-dark);
-    border: 1px solid #ccc;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+  color: var(--color-text-dark);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
 .filter-toggle:hover {
-    background-color: #f5f5f5;
-    border-color: #aaa;
+  background-color: #f8f8f8;
+  border-color: var(--color-title-green);
 }
 
 /* Estilo para o botão ATIVO (após o clique) */
 .filter-dropdown.open .filter-toggle {
-    background-color: var(--color-link-blue); /* Fundo azul quando aberto */
-    color: white;
-    border-color: var(--color-link-blue);
+  background-color: var(--color-background-page);
+  border-color: var(--color-title-green);
+  color: var(--color-text-dark);
 }
 
 /* Estilo para o Painel de Opções (Dropdown Content) */
 .filter-panel {
-    position: absolute;
-    top: 100%; /* Posiciona logo abaixo do botão */
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 10px;
-    margin-top: 5px;
-    min-width: 220px;
-    z-index: 20;
-    
-    /* Inicialmente escondido pelo CSS */
-    display: none; 
-    flex-direction: column;
-    gap: 8px;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
 }
 
 /* Estado de exibição forçado pelo JavaScript */
 .filter-dropdown.open .filter-panel {
-    display: flex; 
+  display: flex;
 }
 
 /* Estilo dos elementos internos (inputs e labels) */
-.filter-panel label {
-    display: block;
-    font-size: 0.9rem;
-    cursor: pointer;
+.filter-panel label,
+.filter-panel input,
+.filter-panel .filter-input-text {
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+}
+
+.filter-panel input[type="checkbox"] {
+  accent-color: var(--color-title-green);
 }
 
 .filter-input-text {
-    width: 100%;
-    padding: 6px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--color-background-page);
+  font-size: 0.9rem;
 }
 
 .btn-apply-filter {
-    background-color: var(--color-link-blue);
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    align-self: flex-end; /* Alinha o botão à direita */
+  width: 100%;
+  background-color: var(--color-title-green);
+  color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+.btn-apply-filter:hover {
+  background-color: var(--color-link-blue);
+}
 
 .publicacao.hidden {
     display: none !important; 
@@ -205,11 +224,13 @@ body {
 }
 
 .section-title {
-    color: var(--color-title-green);
-    margin: 25px 0 15px;
+    color: var(--color-text-dark);
+    margin: 25px 10px 15px;
     font-size: 1.3rem;
     font-weight: 700;
+    border-bottom: 1px solid var(--color-title-green);
 }
+
 
 .cards-grid {
     display: grid;
@@ -246,7 +267,7 @@ body {
 .card-title {
     font-size: 0.95rem;
     font-weight: 400;
-    color: #444;
+    color: var(--color-text-dark);
     flex-grow: 1; 
     margin-bottom: 15px;
     line-height: 1.4;
@@ -277,6 +298,151 @@ body {
     color: white;
 }
 
+@media (max-width: 767px) {
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px;
+}
+
+/* ================================ MOBILE (TESTE CHECKBOXES E BARRA DE PESQUISA) ================================ */
+
+/* --- FILTROS  --- */
+.interactive-filters {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border: none;
+  background-color: var(--color-background-page);
+}
+
+/* Barra de pesquisa */
+.search-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  background-color: #fff;
+}
+
+.search-box button {
+  background-color: #f5f5f5;
+  color: var(--color-text-dark);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #eaeaea;
+}
+
+/* Dropdown base */
+.filter-dropdown {
+  width: 100%;
+}
+
+/* Botão do filtro (fechado e aberto, todos claros) */
+.filter-toggle {
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.filter-toggle:hover {
+  background-color: #f8f8f8;
+}
+
+/* Estado aberto mantém claro */
+.filter-dropdown.open .filter-toggle {
+  background-color: #f8f8f8;
+  border-color: var(--verde-2);
+  color: var(--color-text-dark);
+}
+
+/* Painel (lista de checkboxes) */
+.filter-panel {
+  position: static;
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 100%;
+  box-shadow: none;
+}
+
+.filter-dropdown.open .filter-panel {
+  display: flex;
+}
+
+/* Texto e inputs */
+.filter-panel label,
+.filter-panel input,
+.filter-panel .filter-input-text {
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+}
+
+.filter-panel input[type="checkbox"] {
+  accent-color: var(--verde-2);
+}
+
+.filter-input-text {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--color-background-page);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: var(--color-background-page);
+}
+
+/* Botão "Aplicar" */
+.btn-apply-filter {
+  width: 100%;
+  background-color: var(--color-background-page);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid var(--color-background-page);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-apply-filter:hover {
+  background-color: var(--color-background-page);
+}
+
+}
+
+
+
 /* ================================= HEADER E FOOTER     ================================= */
 
 :root {
@@ -301,7 +467,7 @@ main{
   padding: 20px 50px 20px 20px;
 }
 *{
-   font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
    /*Garante que o tamanho de elemento considera padding*/
    box-sizing: border-box; 
 }
@@ -324,7 +490,7 @@ light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
 styles: normal ou italic
 */
 .merriweather{
-  font-family: "Merriweather", serif;
+    font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -335,7 +501,7 @@ styles: normal ou italic
 /*====================== HEADER ======================*/
 .headerTop{
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--verde-1);
     align-items: center;
     width: 100%;
@@ -368,37 +534,43 @@ styles: normal ou italic
 .decorationHeaderMenu{
   text-decoration: none;
   color: white;
-  font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   transition: 0.5s;
   /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
   display: block; 
 }
 /* Barra de pesquisa  TESTE RESPONSIVIDADE*/
-.searchBar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 50px 0 auto;
-
-    flex-shrink: 1;
-    min-width: 150px;
-   
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 38px;
+  min-width: 240px;
+  max-width: 280px;
 }
 .searchBtn {
-  position: absolute; /* Posição absoluta em relação ao .search-container */
-  right: 5px; 
-  top: 50%;
-  transform: translateY(-50%); 
-  background: none;
+  background-color: var(--verde-2);
   border: none;
-  cursor: pointer;
+  height: 100%;              /* mesma altura do input */
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  height: 35px; 
-  width: 35px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.searchBtn:hover {
+  background-color: var(--verde-1);
+}
+.searchBtn svg {
+  fill: white;
+  width: 18px;
+  height: 18px;
 }
 /* Elementos  nav  VER HEIGHT RESPONSIVO*/
 .headerBottom{
@@ -430,15 +602,21 @@ styles: normal ou italic
     margin-left: auto; 
     margin-right: 50px;
 }
-.inputSearch{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 4px;
+
+.inputSearch {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;              /* iguala a altura */
+  padding: 0 10px;           /* mantém proporção lateral */
+  font-size: 0.95rem;
+  color: #333;
+  background-color: white;
+  box-sizing: border-box;    /* evita que o padding ultrapasse a altura */
+}
+
+.inputSearch::placeholder {
+  color: #777;
 }
 /* Efeito hover nos links do menu */
 .decorationHeaderMenu:hover{
@@ -450,28 +628,36 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     opacity: 0.7;
 }
 /*=======================FOOTER===============================*/
-footer{
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.footerDad{
-  padding: 10px 0;
+
+.footerDad {
+  padding: 10px;
+  /* espaço interno, afasta o conteúdo das bordas */
   background-color: var(--marrom);
-  min-height: 20vh;
+  /* cor de fundo */
+  min-height: 0;
+  /* altura mínima do footer */
   width: 100%;
+  /* ocupa toda a largura da página */
   display: flex;
-  justify-content: flex-end;
-  font-family: "Montserrat", sans-serif;
+  /* coloca os filhos lado a lado */
+  justify-content: center;
+  /* centraliza horizontalmente o conteúdo */
+  font-family: 'Montserrat', sans-serif;
+  /* define a fonte */
   color: var(--color-background-page);
+  /* cor do texto */
   align-items: center;
-  gap: 40px;
+  /* centraliza verticalmente */
+  gap: 10px;
+  /* espaçamento entre as colunas */
 }
-.logoFooterSection{
-  flex: 1;           /* divide igualmente */
-  padding: 5px;
+
+.logoFooterSection {
+  flex: 1;
+  /* divide igualmente */
+  padding: 2px;
 }
+
 .imageLogoFooter {
   max-width: 80px;
   height: auto;
@@ -480,44 +666,61 @@ footer{
   object-fit: cover;
 
 }
-.footerSection{
+
+.footerSection {
   position: relative;
   width: 45%;
   padding: 0 15px;
   display: flex;
+  align-items: right;
   flex-direction: column;
   height: 100%;
 
 }
-.footerSection:first-child::after{
+
+/* Linha vertical separadora entre as seções do footer */
+.footerSection:first-child::after {
   content: '';
-  background-color: white; 
-  height: 25vw;               
+  /* gera um pseudo-elemento */
+  background-color: var(--color-background-page);
+  /* cor da linha */
+  height: 80%;
+  /* altura da linha */
+  max-height: 220px;
+  /* limite máximo da altura */
   width: 1.5px;
+  /* espessura da linha */
   position: absolute;
-  
-  right: 7%; 
+  /* posiciona dentro da section */
+
+  right: 0;
+  /* distância da borda direita */
   top: 50%;
+  /* centraliza verticalmente */
   transform: translateY(-50%);
+  /* ajusta o centro exato */
 }
-.textFooter{
-  text-decoration: solid underline #55A357 2px;
-  font-size: 20px;
+
+.textFooter {
+  text-decoration: solid underline var(--verde-2) 0.5px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
+
 .emailLineFooter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    gap: 10px; 
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
 }
+
 .mapa-estilizado {
   border: none;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 
-    width: 100%;       
-    max-width: 400px;  
-    height: 250px;
+  width: 90%;
+  height: 200px;
 }
 .buttonFooter{
   width: 30%;
@@ -530,14 +733,21 @@ footer{
   display: inline-block;
   font-size: 1rem;
   margin: 10px 2px;
-  border-radius: 5px;
+  border-radius: 2px;
   /* Sombra deslocada para o canto superior esquerdo */
   box-shadow: -5px -5px 0 0 var(--verde-1); 
 }
-#Map{
+#Map {
   display: flex;
-  padding: 6vh 5vw 0 0;
-  justify-content: center;
+  flex-direction: column; /* mantém um abaixo do outro */
+  align-items: flex-start; /* alinha à esquerda */
+  gap: 10px; /* espaçamento entre o texto e o mapa */
+  padding: 20px 0;
+}
+
+#Map p {
+  margin: 0;
+  text-align: left;
 }
 #AdmAcess{
   display: flex;
@@ -552,7 +762,7 @@ footer{
   text-decoration: none;
 }
 .imagensFooter a svg {
-    max-width: 50px; /* Define um tamanho máximo */
+    max-width: 40px; /* Define um tamanho máximo */
     height: auto;    /* Mantém a proporção */
 }
 
@@ -575,9 +785,8 @@ footer{
 }
 
 .imageLogo {
-  height: 75%; 
-  aspect-ratio: 1 / 1;
-  margin: auto 10px auto 15px;
+  width: 80px;
+  height: auto;
 }
 .headerBottom {
     height: auto; /* Altura automática para a nova fonte */
