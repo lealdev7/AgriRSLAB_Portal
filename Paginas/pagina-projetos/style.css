@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 :root {
     --vdEscuro: #36794E;
     /* verde escuro */
@@ -31,7 +33,7 @@ body {
 
 /* Container Principal (Galeria) */
 .projetos-galeria {
-    max-width: 80%;
+    max-width: 75%;
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
@@ -39,6 +41,14 @@ body {
     gap: 15px;
     /* Espaço entre os itens */
     padding: 20px;
+}
+
+.projetos-galeria .item-galeria img {
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 /* Estilo Básico dos Itens */
@@ -50,10 +60,11 @@ body {
     text-decoration: none;
     color: white;
     align-items: center;
-    border-radius: 5%;
+    border-radius: 2.5%;
     border-width: 2px;
     border-style: solid;
-    border-color: #bebebe00; /* Borda das imagens */
+    border-color: #bebebe00;
+    /* Borda das imagens */
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
     /* Adiciona uma sombra ao texto para melhor legibilidade */
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -63,9 +74,13 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* sombra igual à do texto */
-    z-index: 1; /* fica acima da imagem */
-      z-index: 1;
+    background-color: rgba(0, 0, 0, 0.37);
+    /* COR DA SOMBRA */
+    /* sombra verde suave */
+    opacity: 0;
+    /* começa invisível */
+    transition: opacity 0.4s ease;
+    z-index: 1;
 }
 
 .item-galeria img {
@@ -77,21 +92,22 @@ body {
     /* Melhora o comportamento padrão da imagem */
     transition: transform 0.3s ease;
     /* Efeito de zoom no hover */
-    z-index: 0; /* fica atrás da sombra */
-    
+    z-index: 0;
+    /* fica atrás da sombra */
+
 }
 
 /* Efeito de Zoom (opcional) */
 .item-galeria:hover img {
     transform: scale(1.02);
-    
+
 }
 
 /* Estilo do Item em Destaque (Maior) */
 .item-destaque {
     /* Faz o item ocupar 2 colunas */
     grid-column: 1 / span 2;
-    border-radius: clamp(10px, 1.25vw, 20px);
+    border-radius: clamp(5px, 1.25vw, 20px);
     /* Você pode ajustar o grid-row se quiser que ele ocupe mais linhas também */
 }
 
@@ -109,7 +125,7 @@ body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.2rem, 4vw, 2em);
+    font-size: clamp(1.2rem, 4vw, 1em);
     display: flex;
     /* Adicionado para usar flexbox */
     justify-content: center;
@@ -122,9 +138,18 @@ body {
     /* Adicionado para centralizar verticalmente de forma precisa */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     /* Adiciona uma sombra ao texto para melhor legibilidade */
-      z-index: 2; /* fica acima da sombra */
-    
+    z-index: 2;
+    /* fica acima da sombra */
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
+
+.item-galeria:hover::before,
+.item-galeria:hover .overlay-texto {
+    opacity: 2;
+}
+
+
 
 /* Responsividade: Exemplo para telas menores */
 @media (max-width: 768px) {
@@ -145,9 +170,23 @@ body {
 /* Estilos CSS */
 .detalhes_projetos {
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: var(--fundo);
+    background-color: white;
+    /* novo layout */
+    max-width: 1200px;
+    /* limite da largura do conteúdo */
+    margin: 20px auto;
+    /* centraliza na tela e dá espaçamento vertical */
+    padding: 40px 0px;
+    /* espaço interno nas laterais e topo/fundo */
+
+    border-left: 3px solid rgba(85, 163, 87, 0.123);
+    /* borda lateral verde suave */
+    border-right: 3px solid rgba(85, 163, 87, 0.123);
+
+    box-sizing: border-box;
+    /* garante que padding e borda entrem no cálculo da largura */
+    border-radius: 8px;
+    /* bordas levemente arredondadas */
 }
 
 /* O CONTAINER OCUPA A LARGURA TOTAL SEM LIMITES */
@@ -192,7 +231,7 @@ h1,
 
 /* Título Principal */
 h1 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     color: #333;
     padding-bottom: 0;
@@ -202,7 +241,7 @@ h1 {
 
 /* Informações dos Integrantes */
 .integrantes {
-    font-size: 25px;
+    font-size: 16px;
     color: #555;
     margin-bottom: 30px;
     padding-left: 45px;
@@ -212,7 +251,7 @@ h1 {
 
 /* Parágrafo de Objetivo da Pesquisa */
 .objetivo-pesquisa {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.8;
     text-align: justify;
     color: #333;
@@ -240,57 +279,59 @@ h1 {
     height: auto;
     display: block;
     margin: 0;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1.5px solid #000000;
 }
 
 /* ========================= FILTROS DE PROJETOS ========================= */
 
 .filtros-section {
-  width: 100%;
-  text-align: center;
-  background-color: var(--fundo);
-  padding: 25px 0;
-  border-bottom: 1px solid #ddd;
+    width: 100%;
+    text-align: center;
+    background-color: var(--fundo);
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .filtros {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 /* BOTÕES IGUAIS */
 .botao-filtro {
-  background-color: #fff;
-  color: var(--color-text-dark);
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px 0; /* altura proporcional */
-  width: 180px; /* todos terão o mesmo tamanho */
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    color: var(--color-text-dark);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 0;
+    /* altura proporcional */
+    width: 180px;
+    /* todos terão o mesmo tamanho */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .botao-filtro:hover {
-  background-color: white;
-  border-color: var(--verde-2);
+    background-color: white;
+    border-color: var(--verde-2);
 }
 
 /* Estado ativo */
 .botao-filtro.ativo {
-  background-color: var(--verde-2);
-  color: white;
-  border-color: var(--verde-2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+    background-color: var(--verde-2);
+    color: white;
+    border-color: var(--verde-2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 /* ================================= HEADER E FOOTER     ================================= */
