@@ -62,6 +62,9 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-002.8 | Estilização dos cards da section "Projetos" em CSS                  | Pedro            | 13/10 |     00      |      DW      |          RF01           | ✅     |
 | DW-002.9 | Estilização dos cards da section "Notícias" em CSS                  | Pedro            | 13/10 |     00      |      DW      |          RF01           | ✅     |
 | DW-02.10 |  Adicionar imagens                  | Pedro            | 15/10 |     00      |      DW      |          RF01           |  ✅    |
+| ES-014 |   Facilitar cerimônias ágeis, acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD.                  | Pedro            | 17/10 |     00      |      ES      |                     |  ✅    |
+| ES-014 |   Facilitar cerimônias ágeis, acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD.                  | Pedro            | 21/10 |     00      |      ES      |                     |  ✅    |
+| ES-014 |   Facilitar cerimônias ágeis, acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD.                  | Pedro            | 23/10 |     00      |      ES      |                     |  ✅    |
 | DW-003 |       Criação da estrutura da página de notícias em HTML          | Willian            | 13/10 |     00      |      DW       |          RF06           |   ✅   |
 | DW-003.1 |        Criação da estrutura dos cards das notícias em HTML          | Willian            | 13/10 |     00      |      DW      |          RF06           |   ✅   |
 | DW-003.2 |         Criação da estrutura da página de carrossel de notícias em HTML          | Willian            | 13/10 |     00      |      DW      |          RF06           |   ✅   |
@@ -85,7 +88,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-004.7 |       Estilização dos cards da página de projetos          | Felipe            | 17/10 |     00      |      DW      |          RF05           |   ✅   |
 | DW-004.8 |        Adicionar as cores e fontes padrões aos cards e na descrição do projeto        | Felipe            | 21/10 |     00      |      DW      |          RF05           |  ✅    |
 | DW-004.9 |       Adicionar imagens dos projetos           | Felipe            | 21/10 |     00      |      DW      |          RF05           |  ✅    |
-| SO-005 |         Configuração GitHub        | Felipe            | 15/10 |     00      |      DW      |                     |  ✅    |
+| SO-005 |         Configuração GitHub        | Felipe            | 15/10 |     00      |      SO      |                     |  ✅    |
 | DW-005 |        Criação da estrutura da página de vagas em HTML            | Luiza            | 13/10 |     00      |      DW      |          RF04           |  ✅    |
 | DW-005.1 |       Criação da estrutura da página de candidatura em HTML          | Luiza            | 13/10 |     00      |      DW      |          RF04           |  ✅    |
 | DW-005.2 |       Criação da estrutura dos cards das vagas em HTML           | Luiza            | 13/10 |     00      |      DW      |          RF04           |  ✅    |
@@ -125,13 +128,17 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-009.1 |       Estilizar o Header em CSS          | Willian            | 15/10 |     00      |      DW      |          RF01.1           |   ✅   |
 | DW-010 |        Criar a estrutura em HTML para o Footer         | Willian            | 15/10 |     00      |      DW      |          RF01.3           |   ✅   |
 | DW-00.1 |        Estilizar o footer em CSS         | Willian            | 15/10 |     00      |      DW      |          RF01.3           |   ✅   |
-| DW-011 |        Criar a estrutura da página administrativa em HTML          |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-11.1 |        Estilizar a página administrativa em CSS          |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-013 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
-| DW-012 |        Aplicar responsividade em todas as telas usando @mediaqueries         |             | 10/10 |     00      |      DW      |                     |  ⬜     |
+| DW-011 |        Criar a estrutura da página administrativa em HTML          |   João Otávio            | ---- |     00      |      DW      |                     |  ⬜     |
+| DW-11.1 |       Estilizar a página administrativa em CSS          |    João Otávio         | ---- |     00      |      DW      |                     |  ⬜     |
+| DW-007 |        Refinamento página de contato.       |   Luiza          | 23/10 |     00      |      DW      |                     |  ⬜     |
+| DW-001 |        Refinamento página de artigos.              | Ariana            | 23/10 |     00      |      DW      |                     |  ⬜     |
+| DW-004 |        Refinamento página de projetos.         |  Ariana           | 23/10 |     00      |      DW      |                     |  ⬜     |
+| DW-003 |        Refinamento página de notícias.         |  João Augusto           | 23/10 |     00      |      DW      |                     |  ⬜     |
+| AL-001 |        Ligação com o BD        |   Felipe          | 23/10 |     00      |      AL     |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   Felipe          | 23/10 |     00      |      MB      |                     |  ⬜     |
+| AL-001 |        Ligação com o BD        |   William          | 23/10 |     00      |      AL     |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   William         | 23/10 |     00      |      MB      |                     |  ⬜     |
+| MB-001 |        Testes no BD         |   João Otávio         | 23/10 |     00      |      MB      |                     |  ⬜     |
 
 
 
