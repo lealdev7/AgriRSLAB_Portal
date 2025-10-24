@@ -436,213 +436,338 @@ footer{
 }
 
 /* Responsivo */
-@media (min-width:1000px){
-  .headerTop{ height:5vw }
-  .inputSearch{ margin:35px 5px }
+
+/* <= 1200px: dá um respiro lateral sem quebrar o layout */
+@media (max-width: 1200px){
+  .container-vagas{ padding: 0 40px; }
+  .card-vagas{ padding: 10px 24px 24px; }
 }
 
-@media (max-width:1024px){
+/* <= 1024px: 2 colunas nos grids principais */
+@media (max-width: 1024px){
+  .container-vagas{ padding: 0 32px; }
+
+  .cards-vagas{
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  .cards-grid-vagas{
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .section-title-vagas{ font-size: 1.25rem; }
+  .card-full-vagas{ padding: 18px; }
+
+  .btn-primary-vagas{ padding: 10px 14px; font-size: .95rem; }
+}
+
+/* <= 900px: tipografia um pouco menor e cards mais compactos */
+@media (max-width: 900px){
+  .banner-vagas{ padding: 0 10px 24px; }
+  .card-vagas h5{ margin: 14px 0 6px; }
+  .card-vagas{ padding: 10px 20px 20px; }
+}
+
+/* <= 768px: 1 coluna geral, botões mais fáceis de tocar */
+@media (max-width: 768px){
+  .container-vagas{ padding: 0 24px; }
+
+  .cards-vagas,
+  .cards-grid-vagas{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .comoingressar-vagas .cards-ingressar-vagas{
-    grid-template-columns:repeat(2, minmax(260px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* títulos e textos do banner */
+  .banner-vagas .chamada-vagas{ font-size: .85rem; }
+  .banner-vagas h2{ font-size: clamp(1.25rem, 5vw, 1.5rem); }
+  .section-title-vagas{ font-size: 1.15rem; }
+
+  /* botões ocupam a largura do card no mobile */
+  .oportunidades-vagas .card-vagas .btn-primary-vagas,
+  .inscricoes-vagas .btn-primary-vagas{
+    width: 100%;
+    justify-content: center;
   }
 }
 
-@media (max-width:900px){
-  .headerTop{
-    display:grid; grid-template-columns:auto 1fr auto; grid-template-areas:"logo titulo busca";
-    align-items:center; padding:8px 0;
-  }
-  .imageLogo{ grid-area:logo; height:34px; margin:0 8px 0 16px; padding:0 }
-  .h1HEADER{ grid-area:titulo; font-size:18px; margin:0; white-space:nowrap }
-  .searchBar{ grid-area:busca; margin:0 16px 0 8px; min-width:140px }
-  .inputSearch{ height:34px; padding:0 38px 0 10px; font-size:14px }
-  .searchBtn{ width:30px; height:30px; right:6px }
 
-  .ulNav{ flex-wrap:wrap; gap:10px 14px; margin-left:12px; padding:8px 0 }
-  .decorationHeaderMenu{ font-size:14px; padding:4px 0 }
 
-  .container-vagas{ padding:0 22px }
-  .banner-vagas{ padding:14px 0 18px }
-  .banner-vagas .container-vagas{ padding:0 16px }
-  .banner-vagas .chamada-vagas{ font-size:.82rem; padding:6px 10px }
-  .banner-vagas h2{ font-size:1.15rem; line-height:1.25; margin:8px 0 }
-  .banner-vagas p{ font-size:.95rem; margin:0 0 10px }
-  .btn-vagas{ font-size:.9rem; padding:10px 14px; box-shadow:0 3px 0 #36794E }
 
-  .cards-vagas{ grid-template-columns:1fr; gap:20px }
-  .cards-grid-vagas{ grid-template-columns:1fr; gap:18px }
-  .card-vagas{ padding:10px 18px 18px }
-  .card-full-vagas{ padding:16px }
+/* <= 600px: mais respiro, listas e parágrafos legíveis */
+@media (max-width: 600px){
+  .container-vagas{ padding: 0 20px; }
+  .card-vagas{ padding: 10px 18px 18px; }
+  .card-vagas p, 
+  .card-vagas li{ font-size: .95rem; line-height: 1.45; }
+  .card-full-vagas{ padding: 16px; }
+  .inscricoes-vagas .card-vagas{ padding: 10px 18px 18px; }
 }
 
-@media (max-width:680px){
-  .comoingressar-vagas .cards-ingressar-vagas{
-    grid-template-columns:1fr;
-  }
+/* <= 480px: super compacto, mantém hierarquia */
+@media (max-width: 480px){
+  .container-vagas{ padding: 0 16px; }
+
+  .cards-vagas, .cards-grid-vagas{ gap: 16px; }
+  .section-title-vagas{ font-size: 1.05rem; }
+  .section-title-vagas::after{ bottom: -6px; }
+
+  .banner-vagas{ padding-bottom: 18px; }
+  .btn-sm-vagas{ padding: 8px 12px; font-size: .9rem; }
 }
 
-@media (max-width:560px){
-  .card-vagas a.btn-vagas,
+/* === Ajustes do botão apenas no mobile === */
+@media (max-width: 768px){
+
+  /* sobrescreve a regra “não esticar” dos cards */
   .card-vagas a.btn-primary-vagas,
-  .card-vagas button.btn-vagas,
   .card-vagas button.btn-primary-vagas{
-    white-space:normal; overflow-wrap:anywhere;
-    max-width:100%; justify-content:center; text-align:center;
-    line-height:1.25; padding:12px 16px; margin:12px 0;
+    display: flex !important;
+    width: 100% !important;     /* ocupa a largura do card */
+    max-width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    white-space: normal !important;  /* permite quebrar linha */
+    overflow-wrap: anywhere;         /* quebra palavras longas se precisar */
+    line-height: 1.25;
+    padding: 12px 14px;              /* confortável no toque */
+    box-sizing: border-box;
   }
-}
 
-@media (max-width:400px){
-  .imageLogo{ height:28px }
-  .h1HEADER{ font-size:17px }
-  .inputSearch{ height:32px; font-size:13px }
-  .searchBtn{ width:28px; height:28px }
-}
-
-@media (max-width:768px){
-  .imagensFooter svg{ width:36px; height:36px }
-  .imagensFooter img{ width:36px; height:auto; display:inline-block }
-  .imagensFooter a{ margin-right:10px }
-}
-
-@media (max-width:480px){
-  .imagensFooter svg{ width:28px; height:28px }
-  .imagensFooter img{ width:28px }
-  .imagensFooter a{ margin-right:8px }
-}
-
-/* =============== TELAS GRANDES (1200px E ACIMA) =============== */
-@media (min-width:1200px){
-  main{
-    padding:30px 80px 30px 40px; 
+  /* pequeno ajuste de tipografia e espaçamento nesse card */
+  .inscricoes-vagas .card-vagas .btn-primary-vagas{
+    font-size: .95rem;
+    margin-top: 10px;
   }
-  .cardNotice{
-    max-width:1100px; 
-  }
-  .footerDad{
-    padding:50px 5%;
-  }
+
+  /* opcional: dá um respiro lateral no container no mobile */
+  .container-vagas{ padding: 0 20px; }
 }
 
+
+/* Acessibilidade: reduz animações quando o usuário prefere menos movimento */
+@media (prefers-reduced-motion: reduce){
+  .btn-vagas,
+  .card-vagas{
+    transition: none !important;
+  }
+  .card-vagas:hover{ transform: none !important; }
+}
+
+
+
+/* header e footer do will 
+
+@media (min-width: 1200px) {
+main {
+
+  padding: 30px 80px 30px 40px; 
+}
+.cardNotice {
+ 
+  max-width: 1100px; 
+}
+
+.footerDad {
+   
+    padding: 50px 5%;
+}
+
+}
 /* =============== TABLET (768px ATÉ 1199px) =============== */
-@media (max-width:1199px){
-  main{ padding:20px 30px 20px 20px; }
-
-  .ulNav{ gap:15px; }
-
-  .item-direita,
-  .searchBar{ margin-right:30px; }
-
-  .footerDad{
-    padding:30px 2%;
-    min-height:auto; 
-  }
-  .footerSection{
-    width:48%; 
-    padding:0 10px;
-  }
-  .footerSection:first-child::after{
-    height:70%; 
-    right:-2%; 
-  }
-  #Map{ padding:20px 0 0 0; }
-  .buttonFooter{ width:30%; }
+@media (max-width: 1199px) {
+   
+main {
+    padding: 20px 30px 20px 20px; /* Reduz padding lateral */
 }
 
+.ulNav {
+    gap: 15px; 
+}
+
+.item-direita,
+.searchBar {
+    margin-right: 30px; 
+}
+
+.footerDad {
+    padding: 30px 2%;
+    min-height: auto; 
+}
+
+.footerSection {
+    width: 48%; 
+    padding: 0 10px;
+}
+
+.footerSection:first-child::after {
+    height: 70%; 
+    right: -2%; 
+}
+
+#Map {
+    padding: 20px 0 0 0; 
+}
+
+.buttonFooter {
+    width: 30%; 
+}
+}
 /* =============== MOBILE (ABAIXO DE 768px) =============== */
-@media (max-width:767px){
+@media (max-width: 767px) {
 
-  /* --- HEADER --- */
-  .headerTop{
-    height:20vh; 
-    min-height:60px; 
-    flex-wrap:wrap;
-    padding:5px 0;
+/* --- HEADER --- */
+.headerTop {
+  height: 15vh; 
+  min-height: 60px; 
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+.imageLogo {
+  height: 75%; 
+  aspect-ratio: 1 / 1;
+  margin: auto 10px auto 15px;
+}
+.headerBottom {
+    height: auto; /* Altura automática para a nova fonte */
+    padding: 8px 0; /* Um pouco de espaço vertical */
+    
+    /* Propriedades de Scroll (movidas do .ulNav) */
+    overflow-x: auto;  
+    overflow-y: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+
+}
+.h1HEADER {
+    font-size: clamp(18px, 5vw, 24px); 
+}
+
+.searchBar {
+    margin: 10px 15px 5px 15px;
+    min-width: 120px;
+    width: auto; /* Deixa o flex-basis cuidar da largura */
+    order: 3; 
+}
+
+.headerBottom::-webkit-scrollbar {
+  display: none; /* sumir a barra scroll no chrome */
+}
+
+.ulNav {
+ 
+  gap: 10px 15px; /* Espaço vertical e horizontal */
+  margin-left: 0; /* Remove margem esquerda */
+  padding: 0 40px;
+  
+  gap: 20px;
+
+  scroll-snap-type: x mandatory;
+
+  padding: 0 45px;
+
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  width: auto;
+  white-space: nowrap;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.ulNav::-webkit-scrollbar {
+    display: none;
+}
+
+.ulNav li {
+    /* Diz para CADA item da lista "travar" no centro */
+    scroll-snap-align: center;
+}
+
+.ulNav li:first-child {
+  padding-left: 0;
+} 
+
+.ulNav li {
+    scroll-snap-align: center;
+}
+
+/* Aumenta a fonte e o peso dos links no menu */
+.decorationHeaderMenu {
+    font-size: 1.15rem; 
+    font-weight: 400;   
+}
+
+.item-direita {
+    margin: 0; 
+}
+
+/* --- MAIN --- */
+main {
+    padding: 15px; 
+}
+/* --- FOOTER --- */
+.footerDad {
+    flex-direction: column; 
+    min-height: auto;
+    padding: 30px 15px; 
+    align-items: center;
+    gap: 30px; 
+}
+.footerSection {
+    width: 95%; 
+    max-width: unset; 
+    height: auto; 
+    align-items: center; 
+    text-align: center;
+    padding: 0; 
+}
+
+.logoFooterSection {
+    align-self: center; 
+    margin: 0 0 15px 0; 
+}
+
+.footerSection:first-child::after {
+    display: none; 
+}
+
+.emailLineFooter {
+    justify-content: center; 
+}
+
+.imagensFooter {
+    justify-content: center; 
+    padding: 10px 0;
+}
+
+.buttonFooter {
+    width: 50%; 
+    min-width: 150px;
+}
+
+  #Map {
+      padding: 20px 0 0 0;
+      width: 100%;
+  }
+  
+  .mapa-estilizado {
+    max-width: 100%; 
   }
 
-  .imageLogo{
-    height:75%; 
-    margin:10px 10px 10px 15px;
+  #AdmAcess {
+      align-self: center; 
+      margin-top: 20px;
   }
-
-  .headerBottom{
-    height:auto;
-    padding:8px 0;
-    overflow-x:auto;  
-    overflow-y:hidden;
-    scrollbar-width:none; 
-    -ms-overflow-style:none; 
-  }
-
-  .headerBottom::-webkit-scrollbar{ display:none; }
-
-  .h1HEADER{ font-size:clamp(18px, 5vw, 24px); }
-
-  .searchBar{
-    margin:10px 15px 5px 15px;
-    min-width:120px;
-    width:auto;
-    order:3; 
-  }
-
-  .ulNav{
-    display:flex;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-snap-type:x mandatory;
-    gap:20px;
-    padding:0 45px;
-    margin-left:0;
-    width:auto;
-    white-space:nowrap;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-  }
-  .ulNav::-webkit-scrollbar{ display:none; }
-  .ulNav li{ scroll-snap-align:center; }
-  .ulNav li:first-child{ padding-left:0; }
-
-  /* Aumenta a fonte e o peso dos links no menu */
-  .decorationHeaderMenu{
-    font-size:1.15rem; 
-    font-weight:400;   
-  }
-
-  .item-direita{ margin:0; }
-
-  /* --- MAIN --- */
-  main{ padding:15px; }
-
-  /* --- FOOTER --- */
-  .footerDad{
-    flex-direction:column; 
-    min-height:auto;
-    padding:30px 15px; 
-    align-items:center;
-    gap:30px; 
-  }
-  .footerSection{
-    width:95%; 
-    max-width:unset; 
-    height:auto; 
-    align-items:center; 
-    text-align:center;
-    padding:0; 
-  }
-  .logoFooterSection{
-    align-self:center; 
-    margin:0 0 15px 0; 
-  }
-  .footerSection:first-child::after{ display:none; }
-  .emailLineFooter{ justify-content:center; }
-  .imagensFooter{
-    justify-content:center; 
-    padding:10px 0;
-  }
-  .buttonFooter{
-    width:50%; 
-    min-width:150px;
-  }
-  #Map{ padding:20px 0 0 0; width:100%; }
-  .mapa-estilizado{ max-width:100%; }
 }
