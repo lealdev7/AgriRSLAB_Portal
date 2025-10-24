@@ -562,8 +562,7 @@ footer{
 
   .imageLogo{
     height:75%; 
-    aspect-ratio:1/1;
-    margin:auto 10px auto 15px;
+    margin:10px 10px 10px 15px;
   }
 
   .headerBottom{
