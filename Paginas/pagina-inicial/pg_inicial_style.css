@@ -33,11 +33,6 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: var(--fonte-principal);
-    color: var(--cor-texto-escuro);
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -69,9 +64,8 @@ a {
   flex-shrink: 0; 
 }   
 .h1HEADER{
-    font-size: 30px;
+    font-size: 40px;
     color: var(--cor-fundo);
-    font-size: clamp(20px, 2.5vw, 30px);
     flex-shrink: 1;
     white-space: nowrap;
     font-family: "Montserrat", sans-serif;
@@ -80,7 +74,7 @@ a {
   text-decoration: none;
   color: var(--cor-fundo);
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 25px;
   transition: 0.5s;
   /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
   display: block; 
@@ -98,24 +92,23 @@ a {
    
 }
 .searchBtn {
-  position: absolute; /* Posição absoluta em relação ao .search-container */
-  right: 5px; 
-  top: 50%;
-  transform: translateY(-50%); 
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  height: 35px; 
-  width: 35px; 
+    height: 40px; 
+    width: 40px; 
+    position: absolute; /* Posição absoluta em relação ao .search-container */
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* Elementos  nav  VER HEIGHT RESPONSIVO*/
 .headerBottom{
     background-color: var(--cor-verde-secundaria);
-    height: 5vh;
+    height: 60px;
     display: flex;  
     align-items: center; 
     width: 100%;
@@ -148,14 +141,21 @@ a {
 }
 
 .inputSearch{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 4px;
+    background-color: var(--cor-fundo);
+    width: 300px;
+    height: 60px; 
+    border-radius: 10px; 
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 20px;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
 }
 
 
@@ -231,7 +231,10 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 }
 
 
-.section-areas h2 {
+.areas-titulo{
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+    font-weight: 600;
     text-align: start;
     margin-bottom: 5px;
 }
@@ -303,7 +306,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 .projetos-slogan{
     font-family: var(--fonte-principal);
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--cor-fonte);
     text-align: start;
     /* Adicionado margem inferior, como na primeira imagem */
@@ -421,6 +424,15 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     color: var(--cor-fonte);
 }
 
+.noticia-titulo{
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: start;
+    margin-bottom: 5px;
+    color: var(--cor-fonte);
+}
+
 .linha-divisoria-noticia{
     background-color: var(--cor-azul-primaria);
     width: 90%;
@@ -527,14 +539,13 @@ footer{
   font-family: "Montserrat", sans-serif;
   width: 100%;
   margin: 0;
-  padding: 0;
+  
 }
 
 .footerDad{
-  padding: 20px 0;
+  padding: 65px 60px 65px 60px;
   background-color: var(--cor-footer);
   min-height: 70vh;
-  
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -544,8 +555,8 @@ footer{
 }
 
 .logoFooterSection{
-  height: 12vh;
-  width: 12vh;
+  height: 100px;
+  width: 100px;
   margin: 2vh 2vw 0 0;
   flex-shrink: 0; 
 }
