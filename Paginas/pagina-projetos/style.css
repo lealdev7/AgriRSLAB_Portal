@@ -21,11 +21,11 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--fundo);
 }
 
@@ -54,7 +54,7 @@ body {
     border-width: 2px;
     border-style: solid;
     border-color: var(--vdClaro);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) ;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     /* Adiciona uma sombra ao texto para melhor legibilidade */
 }
 
@@ -144,6 +144,13 @@ body {
 
 /* Estilos de conteúdo interno: aplicamos um padding horizontal (à esquerda e à direita)
    para o texto não "colar" nas bordas da tela. */
+
+header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .header-top,
 h1,
 .integrantes,
@@ -173,10 +180,9 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     color: #333;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+    padding-bottom: 0;
     margin-top: 0;
-    text-align: center;
+    text-align: right;
 }
 
 /* Informações dos Integrantes */
@@ -221,4 +227,532 @@ h1 {
     margin: 0;
     border-radius: 8px;
     border: 1.5px solid #000000;
+}
+
+
+
+/* ================================= HEADER E FOOTER     ================================= */
+
+:root {
+    --azul-clarinho1: #DDF1FB;
+    --azul-clarinho2: #BCE2F7;
+    --verde-1: #36794E;
+    --verde-2: #55A357;
+    --marrom: #604639;
+    --azul1: #0F5289;
+    --azul2: #487DB4;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    /* alinhamento com o header */
+    padding: 20px 50px 20px 20px;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    /*Garante que o tamanho de elemento considera padding*/
+    box-sizing: border-box;
+}
+
+/*====================FONTES==================================*/
+/* Montserrat - Google Fonts (weight 100-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Merriweather - Google Fonts (weight 400-900) 
+Defina o  font-weight conforme:
+light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
+styles: normal ou italic
+*/
+.merriweather {
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/*====================== HEADER ======================*/
+.headerTop {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--verde-1);
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+    /* minimo de diminuição*/
+}
+
+.imageLogo {
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    margin: auto 1.5vw auto 2.5vw;
+    width: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 3px;
+    /* Impede esmagamento */
+    flex-shrink: 0;
+}
+
+.h1HEADER {
+    font-size: 30px;
+    color: white;
+
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 1;
+    white-space: nowrap;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.decorationHeaderMenu {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    transition: 0.5s;
+    /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
+    display: block;
+}
+
+/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
+.searchBar {
+    display: flex;
+    align-items: center;
+    margin: 0 50px 0 auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 38px;
+    min-width: 240px;
+    max-width: 280px;
+}
+
+.searchBtn {
+    background-color: var(--verde-2);
+    border: none;
+    height: 100%;
+    /* mesma altura do input */
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchBtn:hover {
+    background-color: var(--verde-1);
+}
+
+.searchBtn svg {
+    fill: white;
+    width: 18px;
+    height: 18px;
+}
+
+/* Elementos  nav  VER HEIGHT RESPONSIVO*/
+.headerBottom {
+    background-color: var(--verde-2);
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navBar {
+    width: 100%;
+    display: flex;
+}
+
+.ulNav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    margin-left: 2.5vw;
+    padding-left: 0;
+    /* existe um padding pagraõ de 40px do navegador para listas*/
+}
+
+.ulNav li:first-child {
+    /* garantir alinhamento com o centro da logo*/
+    padding-left: 7.05vh;
+}
+
+.item-direita {
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.inputSearch {
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 100%;
+    /* iguala a altura */
+    padding: 0 10px;
+    /* mantém proporção lateral */
+    font-size: 0.95rem;
+    color: #333;
+    background-color: white;
+    box-sizing: border-box;
+    /* evita que o padding ultrapasse a altura */
+}
+
+.inputSearch::placeholder {
+    color: #777;
+}
+
+/* Efeito hover nos links do menu */
+.decorationHeaderMenu:hover {
+    text-decoration: solid underline #E0F9D5 2px;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+ul:hover .decorationHeaderMenu:not(:hover) {
+    opacity: 0.7;
+}
+
+/*=======================FOOTER===============================*/
+
+.footerDad {
+    padding: 10px;
+    /* espaço interno, afasta o conteúdo das bordas */
+    background-color: var(--marrom);
+    /* cor de fundo */
+    min-height: 0;
+    /* altura mínima do footer */
+    width: 100%;
+    /* ocupa toda a largura da página */
+    display: flex;
+    /* coloca os filhos lado a lado */
+    justify-content: center;
+    /* centraliza horizontalmente o conteúdo */
+    font-family: 'Montserrat', sans-serif;
+    /* define a fonte */
+    color: var(--color-background-page);
+    /* cor do texto */
+    align-items: center;
+    /* centraliza verticalmente */
+    gap: 10px;
+    /* espaçamento entre as colunas */
+}
+
+.logoFooterSection {
+    flex: 1;
+    /* divide igualmente */
+    padding: 2px;
+}
+
+.imageLogoFooter {
+    max-width: 80px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.footerSection {
+    position: relative;
+    width: 45%;
+    padding: 0 15px;
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+/* Linha vertical separadora entre as seções do footer */
+.footerSection:first-child::after {
+    content: '';
+    /* gera um pseudo-elemento */
+    background-color: var(--color-background-page);
+    /* cor da linha */
+    height: 80%;
+    /* altura da linha */
+    max-height: 220px;
+    /* limite máximo da altura */
+    width: 1.5px;
+    /* espessura da linha */
+    position: absolute;
+    /* posiciona dentro da section */
+
+    right: 0;
+    /* distância da borda direita */
+    top: 50%;
+    /* centraliza verticalmente */
+    transform: translateY(-50%);
+    /* ajusta o centro exato */
+}
+
+.textFooter {
+    text-decoration: solid underline var(--verde-2) 0.5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.emailLineFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.mapa-estilizado {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+
+    width: 90%;
+    height: 200px;
+}
+
+.buttonFooter {
+    width: 30%;
+    background-color: var(--verde-2);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 10px 2px;
+    border-radius: 2px;
+    /* Sombra deslocada para o canto superior esquerdo */
+    box-shadow: -5px -5px 0 0 var(--verde-1);
+}
+
+#Map {
+    display: flex;
+    flex-direction: column;
+    /* mantém um abaixo do outro */
+    align-items: flex-start;
+    /* alinha à esquerda */
+    gap: 10px;
+    /* espaçamento entre o texto e o mapa */
+    padding: 20px 0;
+}
+
+#Map p {
+    margin: 0;
+    text-align: left;
+}
+
+#AdmAcess {
+    display: flex;
+    margin-top: 15px;
+    align-self: flex-end;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.imagensFooter a svg {
+    max-width: 40px;
+    /* Define um tamanho máximo */
+    height: auto;
+    /* Mantém a proporção */
+}
+
+.imagensFooter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =============== MOBILE (ABAIXO DE 768px) =============== */
+@media (max-width: 767px) {
+
+    /* --- HEADER --- */
+    .headerTop {
+        height: 20vh;
+        min-height: 60px;
+        flex-wrap: wrap;
+        padding: 5px 0;
+    }
+
+    .imageLogo {
+        width: 80px;
+        height: auto;
+    }
+
+    .headerBottom {
+        height: auto;
+        /* Altura automática para a nova fonte */
+        padding: 8px 0;
+        /* Um pouco de espaço vertical */
+
+        /* Propriedades de Scroll (movidas do .ulNav) */
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+    }
+
+    .h1HEADER {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .searchBar {
+        margin: 10px 15px 5px 15px;
+        min-width: 120px;
+        width: auto;
+        /* Deixa o flex-basis cuidar da largura */
+        order: 3;
+    }
+
+    .headerBottom::-webkit-scrollbar {
+        display: none;
+        /* sumir a barra scroll no chrome */
+    }
+
+    .ulNav {
+
+        gap: 10px 15px;
+        /* Espaço vertical e horizontal */
+        margin-left: 0;
+        /* Remove margem esquerda */
+        padding: 0 40px;
+
+        gap: 20px;
+
+        scroll-snap-type: x mandatory;
+
+        padding: 0 45px;
+
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+
+        width: auto;
+        white-space: nowrap;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+    }
+
+    .ulNav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ulNav li {
+        /* Diz para CADA item da lista "travar" no centro */
+        scroll-snap-align: center;
+    }
+
+    .ulNav li:first-child {
+        padding-left: 0;
+    }
+
+    .ulNav li {
+        scroll-snap-align: center;
+    }
+
+    /* Aumenta a fonte e o peso dos links no menu */
+    .decorationHeaderMenu {
+        font-size: 1.15rem;
+        font-weight: 400;
+    }
+
+    .item-direita {
+        margin: 0;
+    }
+
+    /* --- MAIN --- */
+    main {
+        padding: 15px;
+    }
+
+    /* --- FOOTER --- */
+    .footerDad {
+        flex-direction: column;
+        min-height: auto;
+        padding: 30px 15px;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footerSection {
+        width: 95%;
+        max-width: unset;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .logoFooterSection {
+        align-self: center;
+        margin: 0 0 15px 0;
+    }
+
+    .footerSection:first-child::after {
+        display: none;
+    }
+
+    .emailLineFooter {
+        justify-content: center;
+    }
+
+    .imagensFooter {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .buttonFooter {
+        width: 50%;
+        min-width: 150px;
+    }
+
+    #Map {
+        padding: 20px 0 0 0;
+        width: 100%;
+    }
+
+    .mapa-estilizado {
+        max-width: 100%;
+    }
+
+    #AdmAcess {
+        align-self: center;
+        margin-top: 20px;
+    }
 }
