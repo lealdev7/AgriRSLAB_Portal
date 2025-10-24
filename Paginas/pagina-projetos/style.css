@@ -53,9 +53,19 @@ body {
     border-radius: 5%;
     border-width: 2px;
     border-style: solid;
-    border-color: var(--vdClaro);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    border-color: #bebebe00; /* Borda das imagens */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
     /* Adiciona uma sombra ao texto para melhor legibilidade */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.item-galeria::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* sombra igual à do texto */
+    z-index: 1; /* fica acima da imagem */
+      z-index: 1;
 }
 
 .item-galeria img {
@@ -67,11 +77,14 @@ body {
     /* Melhora o comportamento padrão da imagem */
     transition: transform 0.3s ease;
     /* Efeito de zoom no hover */
+    z-index: 0; /* fica atrás da sombra */
+    
 }
 
 /* Efeito de Zoom (opcional) */
 .item-galeria:hover img {
     transform: scale(1.02);
+    
 }
 
 /* Estilo do Item em Destaque (Maior) */
@@ -91,7 +104,7 @@ body {
     /* Ocupa toda a largura */
     right: 0;
     /* Ocupa toda a largura */
-    background: rgba(0, 0, 0, 0.4);
+    background: none;
     /* Fundo semi-transparente */
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -109,6 +122,8 @@ body {
     /* Adicionado para centralizar verticalmente de forma precisa */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     /* Adiciona uma sombra ao texto para melhor legibilidade */
+      z-index: 2; /* fica acima da sombra */
+    
 }
 
 /* Responsividade: Exemplo para telas menores */
@@ -229,7 +244,54 @@ h1 {
     border: 1.5px solid #000000;
 }
 
+/* ========================= FILTROS DE PROJETOS ========================= */
 
+.filtros-section {
+  width: 100%;
+  text-align: center;
+  background-color: var(--fundo);
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BOTÕES IGUAIS */
+.botao-filtro {
+  background-color: #fff;
+  color: var(--color-text-dark);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 0; /* altura proporcional */
+  width: 180px; /* todos terão o mesmo tamanho */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.botao-filtro:hover {
+  background-color: white;
+  border-color: var(--verde-2);
+}
+
+/* Estado ativo */
+.botao-filtro.ativo {
+  background-color: var(--verde-2);
+  color: white;
+  border-color: var(--verde-2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
 
 /* ================================= HEADER E FOOTER     ================================= */
 
@@ -457,7 +519,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     /* centraliza horizontalmente o conteúdo */
     font-family: 'Montserrat', sans-serif;
     /* define a fonte */
-    color: var(--color-background-page);
+    color: var(--cor-texto);
     /* cor do texto */
     align-items: center;
     /* centraliza verticalmente */
