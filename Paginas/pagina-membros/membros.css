@@ -53,12 +53,7 @@ ul li {
     height: 50px;
 }
 
-.header nav a {
-    margin: 15 15px;
-    text-decoration: none;
-    color: var(--cor-texto-claro);
-    font-weight: normal;
-}
+
 
 /*    BANNER "JUNTE-SE AO TIME" */
 .junte-time {
@@ -733,7 +728,7 @@ styles: normal ou italic
 }
 
 .imageLogo {
-    height: 70px;
+    height: 80px;
     aspect-ratio: 1 / 1;
     margin: auto 1.5vw auto 2.5vw;
     width: auto;

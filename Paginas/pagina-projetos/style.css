@@ -33,23 +33,22 @@ body {
 
 /* Container Principal (Galeria) */
 .projetos-galeria {
-    max-width: 75%;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    /* Espaço entre os itens */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas fixas */
+    gap: 20px;
     padding: 20px;
 }
 
-.projetos-galeria .item-galeria img {
+/* .projetos-galeria .item-galeria img {
     width: 100%;
     max-height: 350px;
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
-}
+} */
 
 /* Estilo Básico dos Itens */
 .item-galeria {
@@ -60,7 +59,7 @@ body {
     text-decoration: none;
     color: white;
     align-items: center;
-    border-radius: 2.5%;
+    border-radius: 2.5px;
     border-width: 2px;
     border-style: solid;
     border-color: #bebebe00;
@@ -85,8 +84,8 @@ body {
 
 .item-galeria img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 300px;
+    object-fit: cover;
     /* Garante que a imagem seja exibida por completo, sem cortes */
     display: block;
     /* Melhora o comportamento padrão da imagem */
@@ -94,7 +93,7 @@ body {
     /* Efeito de zoom no hover */
     z-index: 0;
     /* fica atrás da sombra */
-
+    border-radius: 2.5px;
 }
 
 /* Efeito de Zoom (opcional) */
@@ -105,10 +104,10 @@ body {
 
 /* Estilo do Item em Destaque (Maior) */
 .item-destaque {
-    /* Faz o item ocupar 2 colunas */
-    grid-column: 1 / span 2;
-    border-radius: clamp(5px, 1.25vw, 20px);
-    /* Você pode ajustar o grid-row se quiser que ele ocupe mais linhas também */
+    grid-column: span 2;
+    /* ocupa duas colunas */
+    height: 300px;
+    /* mesma altura dos outros */
 }
 
 /* Estilo do Overlay de Texto (Legenda) */
@@ -123,7 +122,7 @@ body {
     background: none;
     /* Fundo semi-transparente */
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: clamp(1.2rem, 4vw, 1em);
     display: flex;
@@ -152,17 +151,24 @@ body {
 
 
 /* Responsividade: Exemplo para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .projetos-galeria {
         /* Em telas menores, todos os itens (incluindo o destaque) ocupam uma única coluna */
         grid-template-columns: 1fr;
+        margin: 0 10%;
+        /* ocupa 80% da tela */
+        padding: 0;
     }
 
     .item-destaque {
         /* Reseta para 1 coluna em telas menores */
         grid-column: 1 / span 1;
     }
-}
+
+.botao-filtro {
+    width: 150px;
+    /* tamanho dos botoes do filtro*/
+}}
 
 /* --------------------------------------------------------------------------- */
 /* página de detalhes do projeto */
@@ -185,8 +191,16 @@ body {
 
     box-sizing: border-box;
     /* garante que padding e borda entrem no cálculo da largura */
-    border-radius: 8px;
+    border-radius: 2.5px;
     /* bordas levemente arredondadas */
+}
+
+#mensagem {
+    display: none;
+    text-align: center;
+    color: var(--color-text-dark);
+    width: 100%;
+    grid-column: 1 / span 2;
 }
 
 /* O CONTAINER OCUPA A LARGURA TOTAL SEM LIMITES */
@@ -231,11 +245,10 @@ h1,
 
 /* Título Principal */
 h1 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     color: #333;
     padding-bottom: 0;
-    margin-top: 0;
     text-align: right;
 }
 
@@ -251,7 +264,7 @@ h1 {
 
 /* Parágrafo de Objetivo da Pesquisa */
 .objetivo-pesquisa {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     text-align: justify;
     color: #333;
@@ -312,7 +325,7 @@ h1 {
     width: 180px;
     /* todos terão o mesmo tamanho */
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
@@ -361,7 +374,7 @@ main {
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /*Garante que o tamanho de elemento considera padding*/
     box-sizing: border-box;
 }
@@ -373,7 +386,7 @@ light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
 styles: normal ou italic
 */
 .montserrat {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -385,7 +398,7 @@ light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
 styles: normal ou italic
 */
 .merriweather {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -396,7 +409,7 @@ styles: normal ou italic
 /*====================== HEADER ======================*/
 .headerTop {
     display: flex;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--verde-1);
     align-items: center;
     width: 100%;
@@ -427,13 +440,14 @@ styles: normal ou italic
     flex-shrink: 1;
     white-space: nowrap;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 .decorationHeaderMenu {
     text-decoration: none;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     transition: 0.5s;
     /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
@@ -558,7 +572,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     /* coloca os filhos lado a lado */
     justify-content: center;
     /* centraliza horizontalmente o conteúdo */
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /* define a fonte */
     color: var(--cor-texto);
     /* cor do texto */
@@ -677,7 +691,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     align-self: flex-end;
     bottom: 10px;
     right: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 15px;
     color: white;

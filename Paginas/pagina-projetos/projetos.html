@@ -19,7 +19,10 @@
     <header>
         <div class="headerTop">
             <img class="imageLogo" src="../HeaderFooter/imagens/logo.png" alt="Logo do site">
-            <h1 class="h1HEADER">Projetos</h1>
+            <h1 class="h1HEADER" style="
+    padding-left: 0px;
+    padding-right: 0px;
+">Projetos</h1>
 
             <div class="searchBar">
                 <input id="search" class="inputSearch" type="search" placeholder="Pesquisar...">
@@ -60,15 +63,15 @@
     <section class="filtros-section">
         <div class="filtros">
             <button class="botao-filtro ativo" data-filtro="todos">Todos</button>
-            <button class="botao-filtro" data-filtro="em-atividade">Em andamento</button>
+            <button class="botao-filtro" data-filtro="em-andamento">Em andamento</button>
             <button class="botao-filtro" data-filtro="finalizado">Finalizados</button>
         </div>
     </section>
 
     <section class="projetos-galeria">
-        <a href="proj1.html" class="item-galeria item-destaque em-atividade">
-            <img src="../../imagens/2.1 Projetos/Figura_P2_MG.JPG"
-                alt="Mapeamento e Monitoramento de Cultivos Agrícolas no Brasil">
+        <a href="proj1.html" class="item-galeria item-destaque finalizado ">
+            <img src="../../imagens/2.1 Projetos/Figura_P2_MG.JPG" alt="Estimativa do Percentual de Cobertura do Solo por Resíduos Culturais através de Sensoriamento Remoto
+                Orbital">
             <div class="overlay-texto">
                 Estimativa do Percentual de Cobertura do Solo por Resíduos Culturais através de Sensoriamento Remoto
                 Orbital
@@ -76,19 +79,39 @@
         </a>
 
         <a href="proj2.html" class="item-galeria finalizado">
-            <img src="../../imagens/2.1 Projetos/Figura_P1_PS.png" alt="Mapeamento de Áreas Agrícolas junto ao CONAB">
+            <img src="../../imagens/2.1 Projetos/4.Mapeamento e Monitoramento de Cultivos Agrícolas no Brasil.png"
+                alt="Mapeamento e Monitoramento de Cultivos Agrícolas no Brasil">
             <div class="overlay-texto">
                 Mapeamento e Monitoramento de Cultivos Agrícolas no Brasil
             </div>
         </a>
 
+        <a href="#" class="item-galeria em-andamento">
+            <img src="../../imagens/2.1 Projetos/2. Mapeamento de áreas agrícolas junto a CONAB.png"
+                alt="Mapeamento de áreas agrícolas junto a CONAB">
+            <div class="overlay-texto">
+                Mapeamento de áreas agrícolas junto a CONAB
+            </div>
+        </a>
+
         <a href="#" class="item-galeria finalizado">
-            <img src="../../imagens/3.0 Publicações/Figura_A5_CS.jpeg"
+            <img src="../../imagens/2.1 Projetos/3. Detecção de Distúrbios no Cerrado com Redes Neurais.png"
                 alt="Detecção de Distúrbios no Cerrado com Redes Neurais">
             <div class="overlay-texto">
                 Detecção de Distúrbios no Cerrado com Redes Neurais
             </div>
         </a>
+
+
+        <a href="#" class="item-galeria finalizado">
+            <img src="../../imagens/2.1 Projetos/5.Mapeamento Hídrico Inteligente em Regiões Semiáridas.png"
+                alt="Mapeamento Hídrico Inteligente em Regiões Semiáridas">
+            <div class="overlay-texto">
+                Mapeamento Hídrico Inteligente em Regiões Semiáridas
+            </div>
+        </a>
+
+        <div id="mensagem">Nenhum projeto encontrado para este filtro.</div>
 
     </section>
 
