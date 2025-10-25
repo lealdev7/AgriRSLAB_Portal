@@ -65,110 +65,82 @@ A apresentação da Sprint 1 em vídeo pode ser acessada [aqui](https://youtu.be
 
 [↑ Voltar ao topo](#topo)
 
-<a id="backlogs"></a>
-## Backlog do Produto
+# 📌 Backlog Geral do Projeto
 
-### Prioridade Alta
-1. Página inicial com navegação.  
-2. Cards em destaque na home (notícias, projetos, publicações).  
-3. Links para redes sociais e contato no rodapé.  
-4. Página "Sobre" — objetivo e foco do laboratório.  
-5. Página de membros com nome, foto, função e descrição.  
-6. Página de oportunidades (estágio, IC, pós-graduação).  
-7. Listagem de projetos (título, resumo, ano, status, equipe).  
-8. Publicação de notícias (título, data, imagem, texto).  
-9. Lista de publicações científicas.  
-10. Formulário de contato funcional.
+| ID      | Seção / Atividade | Pontuação | Disciplina | Sprint |
+|---------|-------------------|-----------|------------|--------|
+| DD-001  | Definir cores, tipografia, espaçamento e estilos de botões | 8  | DD | 1 |
+| DD-002  | Criar header e footer padrão (figma) | 5  | DD | 1 |
+| DD-003  | Criar guia de estilo | 8  | DD | 1 |
+| DD-004  | Criar layout no Figma (Home) | 13 | DD | 1 |
+| DW-001  | Criar arquivo HTML (Home) | 5  | DW | 1 |
+| DW-002  | Aplicar design CSS (Home) | 8  | DW | 1 |
+| DW-003  | Inserir cards de destaques (notícias, projetos, publicações) back-end | 20 | DW | 2 |
+| DW-004  | Inserir links para redes sociais e contato | 5  | DW | 1 |
+| DD-005  | Criar layout no Figma (Sobre) | 8  | DD | 1 |
+| DW-005  | Criar arquivo HTML (Sobre) | 5  | DW | 1 |
+| DW-006  | Aplicar design CSS (Sobre) | 8  | DW | 1 |
+| DW-007  | Inserir textos e imagens do laboratório | 8  | DW | 1 |
+| DD-006  | Criar layout no Figma (Membros) | 8  | DD | 1 |
+| DW-008  | Criar arquivo HTML (Membros) | 5  | DW | 1 |
+| DW-009  | Aplicar design CSS (Membros) | 8  | DW | 1 |
+| DW-010  | Inserir imagens e textos | 8  | DW | 1 |
+| ES-001  | Implementar CRUD de membros (back-end) | 13 | ES | 2 |
+| ES-002  | Categorizar membros por tipo | 13 | ES | 2 |
+| ES-003  | Ordenar membros por ordem alfabética | 5  | ES | 2 |
+| DD-007  | Criar layout no Figma (Vagas) | 20 | DD | 1 |
+| DW-011  | Criar arquivo HTML (Vagas) | 5  | DW | 1 |
+| DW-012  | Aplicar design CSS (Vagas) | 8  | DW | 1 |
+| ES-004  | Implementar CRUD de vagas (back-end) | 13 | ES | 2 |
+| DW-013  | Inserir informações sobre candidaturas | 5  | DW | 1 |
+| DD-008  | Criar layout no Figma (Projetos) | 13 | DD | 1 |
+| DW-014  | Criar arquivo HTML (Projetos) | 5  | DW | 1 |
+| DW-015  | Aplicar design CSS (Projetos) | 8  | DW | 1 |
+| ES-005  | Implementar CRUD de projetos (back-end) | 13 | ES | 2 |
+| DW-016  | Inserir imagens e links adicionais | 5  | DW | 1 |
+| DD-009  | Criar layout no Figma (Notícias) | 13 | DD | 2 |
+| DW-017  | Criar arquivo HTML (Notícias) | 8  | DW | 1 |
+| DW-018  | Aplicar design CSS (Notícias) | 8  | DW | 1 |
+| ES-006  | Implementar CRUD de notícias (back-end) | 13 | ES | 2 |
+| DW-019  | Organizar notícias cronologicamente | 8  | DW | 2 |
+| DD-010  | Criar layout no Figma (Publicações) | 8  | DD | 1 |
+| DW-020  | Criar arquivo HTML (Publicações) | 5  | DW | 1 |
+| DW-021  | Aplicar design CSS (Publicações) | 8  | DW | 1 |
+| ES-007  | Implementar CRUD de publicações (back-end) | 13 | ES | 2 |
+| ES-008  | Criar campo de pesquisa por palavra-chave | 13 | ES | 2 |
+| DD-011  | Criar layout no Figma (Contato) | 8  | DD | 1 |
+| DW-022  | Criar arquivo HTML (Contato) | 5  | DW | 1 |
+| DW-023  | Aplicar design CSS (Contato) | 8  | DW | 1 |
+| ES-009  | Criar API para envio de e-mail via formulário | 20 | ES | 2 |
+| DW-024  | Inserir mapa do laboratório dentro do INPE | 13 | DW | 1 |
+| DW-025  | Inserir informações institucionais e links para redes sociais | 20 | DW | 3 |
+| SO-001  | Criar media-queries para 3 resoluções diferentes | 20 | SO | 2 |
+| SO-002  | Testar responsividade em dispositivos distintos | 20 | SO | 2 |
+| AL-001  | Sistema de login para área administrativa | 40 | AL | 3 |
+| AL-002  | Seletor de idioma (Português/Inglês) | 20 | AL | 2 |
+| SO-003  | Subir projeto | 13 | SO | 3 |
+| MB-001  | Modelagem do banco de dados | 40 | MB | 3 |
+| MB-002  | Criar API para requisições do front-end | 20 | MB | 2 |
+| MB-003  | Layout e funcionalidades da área de administração | 20 | MB | 3 |
+| MB-004  | Inserir dados iniciais de teste no banco | 13 | MB | 2 |
+| ES-010  | Documentar passo a passo de atualização de conteúdo pelos membros | 20 | ES | 2 |
+| ES-011  | DoD (Definition of Done) | 5  | ES | 1 |
+| ES-012  | DoR (Definiton of Ready) | 5  | ES | 1 |
+| DD-012  | Criar layout no Figma (Administrativo) | 20 | DD | 2 |
+| DW-025  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
+| DW-026  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
+| ES-013  | UML - User Cases | 5  | ES | 1 |
+| DW-027  | Criar header e footer padrão (HTML e CSS) | 13 | DW | 1 |
+| SO-004  | Configuração VScode | 5 | SO | 1 |
+| SO-005  | Configuração Git/Github | 5 | SO | 1 |
 
-> RNF01. Responsividade.  
-> RNF03. Site deve carregar rapidamente.  
-> RNF02. Facilidade de atualização de conteúdo.
 
-### Prioridade Média
-1. Exibir colaboradores e financiadores.  
-2. Explicação das áreas de atuação.  
-3. Categorizar membros por tipo (pesquisadores, bolsistas, etc.).  
-4. Informações de como se candidatar a vagas.  
-5. Inclusão de imagens/links adicionais nos projetos.  
-6. Organização cronológica das notícias.  
-7. Campo de pesquisa por palavra-chave em publicações.  
-8. Exibir informações institucionais (telefone, e-mail, endereço).
+# 📌 Backlog de Gestão do Projeto
 
-> RNF04. Versão em português e inglês.  
-> RNF06. Identidade visual definida.
-
-### Prioridade Baixa
-1. Ordenar membros alfabeticamente dentro de cada categoria.  
-2. Links para redes sociais na página de contato (além do rodapé).  
-3. Mapa com localização do laboratório.
-
-> RNF05. Hospedagem e domínio próprio (pode ser feito após protótipo).
-
-# Tabela descritiva das sprints com as colunas
-| ID     | Nome da Tarefa                                    | Pontos | Diciplina | Requisitos Atendidos|
-|--------|---------------------------------------------------|------- |-----------|---------------------|
-| **DD-001** | Definir identidade visual do site             | 5      | DD        | RNF06               |
-| **DD-002** | Criar protótipo da página inicial             | 8      | DD        | PA-01              |
-| **DD-003** | Cards em destaque na home (notícias, projetos, publicações). | 9      | DD        | PA-02               |
-| **DD-004** | Criar  página "Sobre" – objetivo e foco do laboratório.| 4      | DD        | PA-04               |
-| **DD-005** | Criar página de membros com nome, foto, função e descrição.| 6      | DD        | PA-05               |
-| **DD-006** | Criar  página de oportunidades (estágio, IC, pós-graduação).| 3      | DD        | PA-06               |
-| **DD-007** | Criar página de listagem de projetos (título, resumo, ano, status, equipe).| 1   |  DD| PA-07              |
-| **DD-008** | Criar página de publicação de notícias (título, data, imagem, texto).| 7     | DD | PA-08             |
-| **DD-009** | Criar protótipo de lista de publicações científicas.| 4      | DD | PA-09                      |
-| **DD-0010** | Criar protótipo de formulário de contato funcional. | 2     | DD | RF-010                      |
-| **DW-001** | Criar o arquivo HTML para página inicial        | 10      | Dw        | PA-01               |
-| **Dw-002** | Aplicar a estilização da página inicial em CSS  | 10      | Dw        | PA-01               |
-| **Dw-003** | Criar arquivo HTML para a página de notícias                | 9      | Dw        | PA-08               |
-| **Dw-004** | Aplicar a estilização da página de notícias em CSS                 | 9      | Dw        | PA-08               |
-| **Dw-005** | Criar o arquivo HTML para página de projetos | 3      | Dw        | PA-07               |
-| **Dw-006** | Criar a estilização para página de projetos | 3      | Dw        | PA-07               |
-| **Dw-007** | Criar o arquivo HTML para página de públicações | 3      | Dw        | PA-09               |
-| **Dw-008** | Criar a estilização para a página de publicações | 3      | Dw        | PA-09               |
-| **Dw-009** | Criar o arquivo HTML para página de sobre | 3      | Dw        | PA-04               |
-| **Dw-0010** | Criar a estilização da página sobre  | 3      | Dw        | PA-04               |
-| **Dw-0011** | Criar o arquivo HTML para a página membros  | 6      | Dw        | PA-05              |
-| **Dw-0012** | Criar a estilização  para a página membros  | 6      | Dw        | PA-05              |
-| **Dw-0013** | Criar o arquivo em HTML para a página de oportunidades  | 8     | Dw        | PA-06              |
-| **Dw-0013** | Criar a estilização para a página de oportunidades  | 8     | Dw        | PA-06              |
-| **ES-001** | Criar um estudo de caso do projeto  | 10      | ES        |                |
-| **Dw-002** | Criar diagrama de caso do projeto  | 10      | ES        |                |
-- Periodo da sprints
-- Link para a documentação da sprint
-- Link para o video no youtube do Incremento entregue
-=======
-## Tabela descritiva das sprints com as colunas
-
-| ID       | Nome da Tarefa                                              | Pontos | Disciplina | Requisitos Atendidos |
-|----------|-------------------------------------------------------------|:------:|:----------:|----------------------|
-| **DD-001** | Definir identidade visual do site                          | 5      | DD         | RNF06                |
-| **DD-002** | Criar protótipo da página inicial                          | 8      | DD         | PA-01                |
-| **DD-003** | Cards em destaque na home (notícias, projetos, publicações) | 9      | DD         | PA-02                |
-| **DD-004** | Criar página "Sobre" – objetivo e foco do laboratório      | 4      | DD         | PA-04                |
-| **DD-005** | Criar página de membros (nome, foto, função, descrição)    | 6      | DD         | PA-05                |
-| **DD-006** | Criar página de oportunidades                              | 3      | DD         | PA-06                |
-| **DD-007** | Criar listagem de projetos                                 | 1      | DD         | PA-07                |
-| **DD-008** | Criar página de notícias                                   | 7      | DD         | PA-08                |
-| **DD-009** | Criar lista de publicações científicas                     | 4      | DD         | PA-09                |
-| **DD-010** | Protótipo de formulário de contato funcional               | 2      | DD         | RF-010               |
-| **DW-001** | HTML da página inicial                                     | 10     | DW         | PA-01                |
-| **DW-002** | CSS da página inicial                                      | 10     | DW         | PA-01                |
-| **DW-003** | HTML da página de notícias                                 | 9      | DW         | PA-08                |
-| **DW-004** | CSS da página de notícias                                  | 9      | DW         | PA-08                |
-| **DW-005** | HTML da página de projetos                                 | 3      | DW         | PA-07                |
-| **DW-006** | CSS da página de projetos                                  | 3      | DW         | PA-07                |
-| **DW-007** | HTML da página de publicações                              | 3      | DW         | PA-09                |
-| **DW-008** | CSS da página de publicações                               | 3      | DW         | PA-09                |
-| **DW-009** | HTML da página "Sobre"                                     | 3      | DW         | PA-04                |
-| **DW-010** | CSS da página "Sobre"                                      | 3      | DW         | PA-04                |
-| **DW-011** | HTML da página de membros                                  | 6      | DW         | PA-05                |
-| **DW-012** | CSS da página de membros                                   | 6      | DW         | PA-05                |
-| **DW-013** | HTML da página de oportunidades                            | 8      | DW         | PA-06                |
-| **DW-014** | CSS da página de oportunidades                             | 8      | DW         | PA-06                |
-| **ES-001** | Estudo de caso do projeto                                  | 10     | ES         | —                    |
-| **ES-002** | Diagrama de caso do projeto                                | 10     | ES         | —                    |
-
-[↑ Voltar ao topo](#topo)
+| ID      | Seção / Atividade | Pontuação | Disciplina | Sprint |
+|---------|-------------------|-----------|------------|--------|
+| *ES-014* | *Scrum Master:* Facilitar cerimônias ágeis, acompanhar impedimentos, garantir comunicação eficaz e apoiar a equipe na aplicação do DoD. | 20 | ES | 1, 2, 3 |
+| *ES-015* | *Product Owner:* Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação. | 20 | ES | 1, 2, 3 |
 
 <a id="tecnologias"></a>
 ## Tecnologias
