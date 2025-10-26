@@ -1,29 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho1: #d4e8f8;
   --azul-clarinho2: #BCE2F7;
   --verde-1: #36794E;
   --verde-2: #55A357;
   --marrom: #604639;
-  --azul1:#0F5289;
+  --azul1: #0F5289;
   --azul2: #487DB4;
+  --cor-fundo-branco: #F8F9Fa;
+  --cor-texto-claro: #f0f2f5;
+  --cor-amarelo-ver: #D3D840;
+  --cor-verde-clarinho: #E0F9D5;
+  --cor-texto-escuro: #333;
+
+  --fonte-principal: 'Roboto', sans-serif;
+  --fonte-titulos: 'Libre Baskerville';
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-main{
+
+main {
   flex-grow: 1;
   /* alinhamento com o header */
-  padding: 20px 50px 20px 20px;
 }
-*{
-   font-family: "Montserrat", sans-serif;
-   /*Garante que o tamanho de elemento considera padding*/
-   box-sizing: border-box; 
+
+* {
+  font-family: "Montserrat", sans-serif;
+  /*Garante que o tamanho de elemento considera padding*/
+  box-sizing: border-box;
 }
+
 /*====================FONTES==================================*/
 /* Montserrat - Google Fonts (weight 100-900) 
 Defina o  font-weight conforme:
@@ -42,7 +56,7 @@ Defina o  font-weight conforme:
 light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
 styles: normal ou italic
 */
-.merriweather{
+.merriweather {
   font-family: "Merriweather", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -54,7 +68,7 @@ styles: normal ou italic
 /*====================== HEADER ======================*/
 .headerTop{
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--verde-1);
     align-items: center;
     width: 100%;
@@ -64,7 +78,7 @@ styles: normal ou italic
     min-height: 50px; /* minimo de diminuição*/
 }
 .imageLogo{
-  height: 90%;
+  height: 80px;
   aspect-ratio: 1 / 1;
   margin: auto 1.5vw auto 2.5vw; 
   width: auto;
@@ -87,37 +101,43 @@ styles: normal ou italic
 .decorationHeaderMenu{
   text-decoration: none;
   color: white;
-  font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   transition: 0.5s;
   /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
   display: block; 
 }
 /* Barra de pesquisa  TESTE RESPONSIVIDADE*/
-.searchBar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 50px 0 auto;
-
-    flex-shrink: 1;
-    min-width: 150px;
-   
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 38px;
+  min-width: 240px;
+  max-width: 280px;
 }
 .searchBtn {
-  position: absolute; /* Posição absoluta em relação ao .search-container */
-  right: 5px; 
-  top: 50%;
-  transform: translateY(-50%); 
-  background: none;
+  background-color: var(--verde-2);
   border: none;
-  cursor: pointer;
+  height: 100%;              /* mesma altura do input */
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  height: 35px; 
-  width: 35px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.searchBtn:hover {
+  background-color: var(--verde-1);
+}
+.searchBtn svg {
+  fill: white;
+  width: 18px;
+  height: 18px;
 }
 /* Elementos  nav  VER HEIGHT RESPONSIVO*/
 .headerBottom{
@@ -149,15 +169,21 @@ styles: normal ou italic
     margin-left: auto; 
     margin-right: 50px;
 }
-.inputSearch{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 4px;
+
+.inputSearch {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;              /* iguala a altura */
+  padding: 0 10px;           /* mantém proporção lateral */
+  font-size: 0.95rem;
+  color: #333;
+  background-color: white;
+  box-sizing: border-box;    /* evita que o padding ultrapasse a altura */
+}
+
+.inputSearch::placeholder {
+  color: #777;
 }
 /* Efeito hover nos links do menu */
 .decorationHeaderMenu:hover{
@@ -169,76 +195,99 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     opacity: 0.7;
 }
 /*=======================FOOTER===============================*/
-footer{
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.footerDad{
-  padding: 20px 0;
+
+.footerDad {
+  padding: 10px;
+  /* espaço interno, afasta o conteúdo das bordas */
   background-color: var(--marrom);
-  min-height: 70vh;
-  
+  /* cor de fundo */
+  min-height: 0;
+  /* altura mínima do footer */
   width: 100%;
+  /* ocupa toda a largura da página */
   display: flex;
-  justify-content: space-evenly;
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  /* coloca os filhos lado a lado */
+  justify-content: center;
+  /* centraliza horizontalmente o conteúdo */
+  font-family: 'Montserrat', sans-serif;
+  /* define a fonte */
+  color: var(--cor-texto-claro);
+  /* cor do texto */
   align-items: center;
+  /* centraliza verticalmente */
+  gap: 10px;
+  /* espaçamento entre as colunas */
 }
-.logoFooterSection{
-  height: 12vh;
-  width: 12vh;
-  margin: 2vh 2vw 0 0;
-  flex-shrink: 0; 
+
+.logoFooterSection {
+  flex: 1;
+  /* divide igualmente */
+  padding: 2px;
 }
-.imageLogoFooter{
-  height: 100%;
-  width: 100%;
+
+.imageLogoFooter {
+  max-width: 80px;
+  height: auto;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  box-sizing: border-box;
-  box-shadow: 0 3px 10px var(--verde-2);
+  object-fit: cover;
+
 }
-.footerSection{
+
+.footerSection {
   position: relative;
   width: 45%;
   padding: 0 15px;
   display: flex;
+  align-items: right;
   flex-direction: column;
   height: 100%;
 
 }
-.footerSection:first-child::after{
+
+/* Linha vertical separadora entre as seções do footer */
+.footerSection:first-child::after {
   content: '';
-  background-color: white; 
-  height: 25vw;               
+  /* gera um pseudo-elemento */
+  background-color: var(--color-background-page);
+  /* cor da linha */
+  height: 80%;
+  /* altura da linha */
+  max-height: 220px;
+  /* limite máximo da altura */
   width: 1.5px;
+  /* espessura da linha */
   position: absolute;
-  
-  right: 7%; 
+  /* posiciona dentro da section */
+
+  right: 0;
+  /* distância da borda direita */
   top: 50%;
+  /* centraliza verticalmente */
   transform: translateY(-50%);
+  /* ajusta o centro exato */
 }
-.textFooter{
-  text-decoration: solid underline #55A357 2px;
-  font-size: 20px;
+
+.textFooter {
+  text-decoration: solid underline var(--verde-2) 0.5px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
+
 .emailLineFooter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    gap: 10px; 
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
 }
+
 .mapa-estilizado {
   border: none;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 
-    width: 100%;       
-    max-width: 400px;  
-    height: 250px;
+  width: 90%;
+  height: 200px;
 }
 .buttonFooter{
   width: 30%;
@@ -251,14 +300,21 @@ footer{
   display: inline-block;
   font-size: 1rem;
   margin: 10px 2px;
-  border-radius: 5px;
+  border-radius: 2px;
   /* Sombra deslocada para o canto superior esquerdo */
   box-shadow: -5px -5px 0 0 var(--verde-1); 
 }
-#Map{
+#Map {
   display: flex;
-  padding: 6vh 5vw 0 0;
-  justify-content: center;
+  flex-direction: column; /* mantém um abaixo do outro */
+  align-items: flex-start; /* alinha à esquerda */
+  gap: 10px; /* espaçamento entre o texto e o mapa */
+  padding: 20px 0;
+}
+
+#Map p {
+  margin: 0;
+  text-align: left;
 }
 #AdmAcess{
   display: flex;
@@ -273,7 +329,7 @@ footer{
   text-decoration: none;
 }
 .imagensFooter a svg {
-    max-width: 50px; /* Define um tamanho máximo */
+    max-width: 40px; /* Define um tamanho máximo */
     height: auto;    /* Mantém a proporção */
 }
 
@@ -283,215 +339,172 @@ footer{
     gap: 15px; 
   }
 
-  /* ==========================================================================
+
+/* ==========================================================================
    MEDIA QUERIES PARA RESPONSIVIDADE
    ========================================================================== */
 
-/* =============== TELAS GRANDES (1200px E ACIMA) =============== */
-@media (min-width: 1200px) {
-main {
 
-  padding: 30px 80px 30px 40px; 
-}
-.cardNotice {
- 
-  max-width: 1100px; 
-}
 
-.footerDad {
-   
-    padding: 50px 5%;
-}
-
-}
-/* =============== TABLET (768px ATÉ 1199px) =============== */
-@media (max-width: 1199px) {
-   
-main {
-    padding: 20px 30px 20px 20px; /* Reduz padding lateral */
-}
-
-.ulNav {
-    gap: 15px; 
-}
-
-.item-direita,
-.searchBar {
-    margin-right: 30px; 
-}
-
-.footerDad {
-    padding: 30px 2%;
-    min-height: auto; 
-}
-
-.footerSection {
-    width: 48%; 
-    padding: 0 10px;
-}
-
-.footerSection:first-child::after {
-    height: 70%; 
-    right: -2%; 
-}
-
-#Map {
-    padding: 20px 0 0 0; 
-}
-
-.buttonFooter {
-    width: 30%; 
-}
-}
 /* =============== MOBILE (ABAIXO DE 768px) =============== */
 @media (max-width: 767px) {
 
-/* --- HEADER --- */
-.headerTop {
-  height: 20vh; 
-  min-height: 60px; 
-  flex-wrap: wrap;
-  padding: 5px 0;
-}
+  /* --- HEADER --- */
+  .headerTop {
+    height: 20vh;
+    min-height: 60px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+  }
 
-.imageLogo {
-  height: 75%; 
-  aspect-ratio: 1 / 1;
-  margin: auto 10px auto 15px;
-}
-.headerBottom {
-    height: auto; /* Altura automática para a nova fonte */
-    padding: 8px 0; /* Um pouco de espaço vertical */
-    
+  .imageLogo {
+    height: 80px;
+    aspect-ratio: 1 / 1;
+    margin: auto 10px auto 15px;
+  }
+
+  .headerBottom {
+    height: auto;
+    /* Altura automática para a nova fonte */
+    padding: 8px 0;
+    /* Um pouco de espaço vertical */
+
     /* Propriedades de Scroll (movidas do .ulNav) */
-    overflow-x: auto;  
+    overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-}
-.h1HEADER {
-    font-size: clamp(18px, 5vw, 24px); 
-}
+  }
 
-.searchBar {
+  .h1HEADER {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .searchBar {
     margin: 10px 15px 5px 15px;
     min-width: 120px;
-    width: auto; /* Deixa o flex-basis cuidar da largura */
-    order: 3; 
-}
+    width: auto;
+    /* Deixa o flex-basis cuidar da largura */
+    order: 3;
+  }
 
-.headerBottom::-webkit-scrollbar {
-  display: none; /* sumir a barra scroll no chrome */
-}
-
-.ulNav {
- 
-  gap: 10px 15px; /* Espaço vertical e horizontal */
-  margin-left: 0; /* Remove margem esquerda */
-  padding: 0 40px;
-  
-  gap: 20px;
-
-  scroll-snap-type: x mandatory;
-
-  padding: 0 45px;
-
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-
-  width: auto;
-  white-space: nowrap;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-}
-
-.ulNav::-webkit-scrollbar {
+  .headerBottom::-webkit-scrollbar {
     display: none;
-}
+    /* sumir a barra scroll no chrome */
+  }
 
-.ulNav li {
+  .ulNav {
+
+    gap: 10px 15px;
+    /* Espaço vertical e horizontal */
+    margin-left: 0;
+    /* Remove margem esquerda */
+    padding: 0 40px;
+
+    gap: 20px;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 0 45px;
+
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    width: auto;
+    white-space: nowrap;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+  }
+
+  .ulNav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ulNav li {
     /* Diz para CADA item da lista "travar" no centro */
     scroll-snap-align: center;
-}
+  }
 
-.ulNav li:first-child {
-  padding-left: 0;
-} 
+  .ulNav li:first-child {
+    padding-left: 0;
+  }
 
-.ulNav li {
+  .ulNav li {
     scroll-snap-align: center;
-}
+  }
 
-/* Aumenta a fonte e o peso dos links no menu */
-.decorationHeaderMenu {
-    font-size: 1.15rem; 
-    font-weight: 400;   
-}
+  /* Aumenta a fonte e o peso dos links no menu */
+  .decorationHeaderMenu {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
 
-.item-direita {
-    margin: 0; 
-}
+  .item-direita {
+    margin: 0;
+  }
 
-/* --- MAIN --- */
-main {
-    padding: 15px; 
-}
-/* --- FOOTER --- */
-.footerDad {
-    flex-direction: column; 
+  /* --- MAIN --- */
+  main {
+    padding: 15px;
+  }
+
+  /* --- FOOTER --- */
+  .footerDad {
+    flex-direction: column;
     min-height: auto;
-    padding: 30px 15px; 
+    padding: 30px 15px;
     align-items: center;
-    gap: 30px; 
-}
-.footerSection {
-    width: 95%; 
-    max-width: unset; 
-    height: auto; 
-    align-items: center; 
+    gap: 30px;
+  }
+
+  .footerSection {
+    width: 95%;
+    max-width: unset;
+    height: auto;
+    align-items: center;
     text-align: center;
-    padding: 0; 
-}
+    padding: 0;
+  }
 
-.logoFooterSection {
-    align-self: center; 
-    margin: 0 0 15px 0; 
-}
+  .logoFooterSection {
+    align-self: center;
+    margin: 0 0 15px 0;
+  }
 
-.footerSection:first-child::after {
-    display: none; 
-}
+  .footerSection:first-child::after {
+    display: none;
+  }
 
-.emailLineFooter {
-    justify-content: center; 
-}
+  .emailLineFooter {
+    justify-content: center;
+  }
 
-.imagensFooter {
-    justify-content: center; 
+  .imagensFooter {
+    justify-content: center;
     padding: 10px 0;
-}
+  }
 
-.buttonFooter {
-    width: 50%; 
+  .buttonFooter {
+    width: 50%;
     min-width: 150px;
-}
+  }
 
   #Map {
-      padding: 20px 0 0 0;
-      width: 100%;
+    padding: 20px 0 0 0;
+    width: 100%;
   }
-  
+
   .mapa-estilizado {
-    max-width: 100%; 
+    max-width: 100%;
   }
 
   #AdmAcess {
-      align-self: center; 
-      margin-top: 20px;
+    align-self: center;
+    margin-top: 20px;
   }
 }

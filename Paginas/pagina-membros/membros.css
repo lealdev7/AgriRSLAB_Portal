@@ -128,7 +128,6 @@ ul li {
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
-    padding: 10px 60px;
     box-sizing: border-box;
 }
 
@@ -218,7 +217,7 @@ h2 {
 }
 
 .card-membro {
-    width: 100%;
+    width: 280px;
     height: 350px;
     position: relative;
     overflow: hidden;
@@ -290,13 +289,14 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+
 }
 
 .card-verso p {
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin: 0;
+    text-align: center;
+
 }
 
 .card-membro:hover .card-frente {
@@ -316,7 +316,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 0;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
@@ -343,12 +343,12 @@ h2 {
 }
 
 .lattes-curriculo {
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 500;
 }
 
 .lattes-lattes {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 900;
 }
 
@@ -378,24 +378,6 @@ h2 {
 ==================================== */
 
 @media (max-width: 768px) {
-    :root {
-        --cor-verde-principal: #55A357;
-        --cor-fundo-footer: #604639;
-        --cor-fundo-branco: #F8F9Fa;
-        --cor-texto-claro: #f0f2f5;
-        --cor-azul-verso: #0F5289;
-        --cor-amarelo-ver: #D3D840;
-        --cor-azul-2: #487DB4;
-        --cor-verde-claro: #E0F9D5;
-        --cor-texto-escuro: #333;
-    }
-
-    body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        background-color: var(--cor-fundo-branco);
-        color: var(--cor-texto-escuro);
-    }
 
     /*    HEADER */
     .menu ul {
@@ -479,8 +461,6 @@ h2 {
     }
 
 
-
-
     /* CONTEÚDO PRINCIPAL E CARDS*/
     .container {
         max-width: 1200px;
@@ -511,15 +491,10 @@ h2 {
         margin-top: 40px;
     }
 
-    .grade-membros {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 30px;
-    }
 
     .card-membro {
         width: 100%;
-        height: 350px;
+        height: 300px;
         position: relative;
         overflow: hidden;
         border-radius: 10px;
@@ -554,37 +529,35 @@ h2 {
         z-index: 1;
     }
 
+    .grade-membros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 por linha */
+        gap: 15px;
+        justify-items: center;
+        /* centraliza os cards */
+    }
+
     .nome-membro-banner {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        height: 55px;
-        background-color: var(--cor-azul-verso);
-        color: var(--cor-texto-claro);
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-bottom: 1px groove var(--cor-azul-2);
+        height: 40px;
+
     }
 
     .nome-membro-banner h3 {
         margin: 0;
-        font-size: 1.1em;
+        font-size: 0.7em;
         text-transform: uppercase;
     }
 
     .nome-membro-banner p {
         margin: 5px 0 0;
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
 
     .card-verso {
         background-color: var(--cor-azul-verso);
         color: var(--cor-texto-claro);
-        padding: 20px;
+        padding: 2px;
         z-index: 1;
         opacity: 0;
         display: flex;
@@ -595,7 +568,7 @@ h2 {
     }
 
     .card-verso p {
-        font-size: 0.9em;
+        font-size: 0.7em;
         margin: 0;
     }
 
@@ -611,8 +584,8 @@ h2 {
 
     .lattes-link {
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 0;
+        right: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -631,7 +604,7 @@ h2 {
 
     .lattes-ver {
         color: var(--cor-amarelo-ver);
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 600;
     }
 
@@ -676,8 +649,6 @@ body {
 
 main {
     flex-grow: 1;
-    /* alinhamento com o header */
-    padding: 20px 50px 20px 20px;
 }
 
 * {
@@ -861,372 +832,4 @@ styles: normal ou italic
 
 ul:hover .decorationHeaderMenu:not(:hover) {
     opacity: 0.7;
-}
-
-/*=======================FOOTER===============================*/
-footer {
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.footerDad {
-    padding: 10px;
-    /* espaço interno, afasta o conteúdo das bordas */
-    background-color: var(--marrom);
-    /* cor de fundo */
-    min-height: 0;
-    /* altura mínima do footer */
-    width: 100%;
-    /* ocupa toda a largura da página */
-    display: flex;
-    /* coloca os filhos lado a lado */
-    justify-content: center;
-    /* centraliza horizontalmente o conteúdo */
-    font-family: 'Montserrat', sans-serif;
-    /* define a fonte */
-    color: var(--cor-fundo-branco);
-    /* cor do texto */
-    align-items: center;
-    /* centraliza verticalmente */
-    gap: 10px;
-    /* espaçamento entre as colunas */
-}
-
-.logoFooterSection {
-    flex: 1;
-    /* divide igualmente */
-    padding: 2px;
-}
-
-.imageLogoFooter {
-    max-width: 80px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-
-}
-
-.footerSection {
-    position: relative;
-    width: 45%;
-    padding: 0 15px;
-    display: flex;
-    align-items: right;
-    flex-direction: column;
-    height: 100%;
-
-}
-
-/* Linha vertical separadora entre as seções do footer */
-.footerSection:first-child::after {
-    content: '';
-    /* gera um pseudo-elemento */
-    background-color: var(--cor-fundo-branco);
-    /* cor da linha */
-    height: 80%;
-    /* altura da linha */
-    max-height: 220px;
-    /* limite máximo da altura */
-    width: 1.5px;
-    /* espessura da linha */
-    position: absolute;
-    /* posiciona dentro da section */
-
-    right: 0;
-    /* distância da borda direita */
-    top: 50%;
-    /* centraliza verticalmente */
-    transform: translateY(-50%);
-    /* ajusta o centro exato */
-}
-
-.textFooter {
-    text-decoration: solid underline var(--verde-2) 0.5px;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.emailLineFooter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 10px;
-}
-
-.mapa-estilizado {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-
-    width: 90%;
-    height: 200px;
-}
-
-.buttonFooter {
-    width: 30%;
-    background-color: var(--verde-2);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 10px 2px;
-    border-radius: 5px;
-    /* Sombra deslocada para o canto superior esquerdo */
-    box-shadow: -5px -5px 0 0 var(--verde-1);
-}
-
-#Map {
-    display: flex;
-    flex-direction: column;
-    /* mantém um abaixo do outro */
-    align-items: flex-start;
-    /* alinha à esquerda */
-    gap: 10px;
-    /* espaçamento entre o texto e o mapa */
-    padding: 20px;
-}
-
-#Map p {
-    margin: 0;
-    text-align: left;
-}
-
-#AdmAcess {
-    display: flex;
-    margin-top: 15px;
-    align-self: flex-end;
-    bottom: 10px;
-    right: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: white;
-    text-decoration: none;
-}
-
-.imagensFooter a svg {
-    max-width: 50px;
-    /* Define um tamanho máximo */
-    height: auto;
-    /* Mantém a proporção */
-}
-
-.imagensFooter {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-
-/* =============== MOBILE (ABAIXO DE 768px) =============== */
-@media (max-width: 767px) {
-
-    /* --- HEADER --- */
-
-    /* === Header: barra de pesquisa responsiva (apenas mobile) === */
-    .headerTop {
-        flex-wrap: wrap;
-        /* quebra linha pra caber abaixo do título */
-        gap: 6px 10px;
-        /* respiro entre elementos */
-    }
-
-    .searchBar {
-        order: 3;
-        /* já está abaixo no seu código, reforço aqui */
-        width: 92%;
-        /* ocupa quase toda a largura */
-        max-width: none;
-        /* remove limite de 280px do desktop */
-        min-width: 0;
-        /* permite encolher sem quebrar */
-        margin: 10px auto 6px;
-        /* centraliza */
-        height: 40px;
-        /* um pouco maior pro toque */
-        box-sizing: border-box;
-        /* evita “vazar” por causa do padding/borda */
-    }
-
-    .inputSearch {
-        height: 100%;
-        padding: 0 12px;
-        font-size: 1rem;
-    }
-
-    .searchBtn {
-        width: 44px;
-    }
-
-    .searchBtn svg {
-        width: 18px;
-        height: 18px;
-        fill: #fff;
-    }
-
-    /* REVISAR ESSE TRECHO ACIMA */
-
-    .headerTop {
-        height: 20vh;
-        min-height: 60px;
-        flex-wrap: wrap;
-        padding: 5px 0;
-    }
-
-
-    .imageLogo {
-        width: 80px;
-        height: auto;
-    }
-
-    .headerBottom {
-        height: auto;
-        /* Altura automática para a nova fonte */
-        padding: 8px 0;
-        /* Um pouco de espaço vertical */
-
-        /* Propriedades de Scroll (movidas do .ulNav) */
-        overflow-x: auto;
-        overflow-y: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-    }
-
-    .h1HEADER {
-        font-size: clamp(18px, 5vw, 24px);
-    }
-
-    .searchBar {
-        margin: 10px 15px 5px 15px;
-        min-width: 120px;
-        width: auto;
-        /* Deixa o flex-basis cuidar da largura */
-        order: 3;
-    }
-
-    .headerBottom::-webkit-scrollbar {
-        display: none;
-        /* sumir a barra scroll no chrome */
-    }
-
-    .ulNav {
-
-        gap: 10px 15px;
-        /* Espaço vertical e horizontal */
-        margin-left: 0;
-        /* Remove margem esquerda */
-        padding: 0 40px;
-
-        gap: 20px;
-
-        scroll-snap-type: x mandatory;
-
-        padding: 0 45px;
-
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-
-        width: auto;
-        white-space: nowrap;
-
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-    }
-
-    .ulNav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .ulNav li {
-        /* Diz para CADA item da lista "travar" no centro */
-        scroll-snap-align: center;
-    }
-
-    .ulNav li:first-child {
-        padding-left: 0;
-    }
-
-    .ulNav li {
-        scroll-snap-align: center;
-    }
-
-    /* Aumenta a fonte e o peso dos links no menu */
-    .decorationHeaderMenu {
-        font-size: 1.15rem;
-        font-weight: 400;
-    }
-
-    .item-direita {
-        margin: 0;
-    }
-
-    /* --- MAIN --- */
-    main {
-        padding: 15px;
-    }
-
-    /* --- FOOTER --- */
-    .footerDad {
-        flex-direction: column;
-        min-height: auto;
-        padding: 30px 15px;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .footerSection {
-        width: 95%;
-        max-width: unset;
-        height: auto;
-        align-items: center;
-        text-align: center;
-        padding: 0;
-    }
-
-    .logoFooterSection {
-        align-self: center;
-        margin: 0 0 15px 0;
-    }
-
-    .footerSection:first-child::after {
-        display: none;
-    }
-
-    .emailLineFooter {
-        justify-content: center;
-    }
-
-    .imagensFooter {
-        justify-content: center;
-        padding: 10px 0;
-    }
-
-    .buttonFooter {
-        width: 50%;
-        min-width: 150px;
-    }
-
-    #Map {
-        padding: 20px 0 0 0;
-        width: 100%;
-    }
-
-    .mapa-estilizado {
-        max-width: 100%;
-    }
-
-    #AdmAcess {
-        align-self: center;
-        margin-top: 20px;
-    }
 }
