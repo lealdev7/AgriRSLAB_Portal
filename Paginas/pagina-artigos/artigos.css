@@ -245,10 +245,10 @@ main {
 }
 
 .publication-card {
-  background-color: var(--color-card-background);
-  border-radius: 12px;
+  background-color: var(--azul-clarinho1);
+  border-radius: 9px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -306,8 +306,12 @@ main {
 
 /* ===================== RESPONSIVIDADE ===================== */
 @media (max-width: 767px) {
+  main {
+    padding: 15px;
+  }
+
   .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .interactive-filters {
@@ -319,6 +323,14 @@ main {
     width: 100%;
     padding: 0 10px;
   }
+
+
+    .card-image-box img {
+    height: 130px;
+}
+  
+  .publication-card {
+  border-radius: 0.7em;}
 
   .filter-dropdown {
     min-width: 80%;

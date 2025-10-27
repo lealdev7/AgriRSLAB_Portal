@@ -82,22 +82,22 @@ body {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 30px 60px;
 }
 
 #titulo-membros {
   font-size: 1.6em;
   color: var(--cor-texto-escuro);
   text-align: center;
-  margin: 40px 0 10px 0;
+  margin: 25px 0 10px 0;
   border-bottom: none;
 }
 
 #subtitulo-membros {
   font-size: 1.2em;
   color: var(--cor-texto-escuro);
-  font-weight: 300;
-  margin-bottom: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -164,7 +164,7 @@ body {
   height: 100%;
   border-radius: 10px;
   transition: opacity 0.5s ease;
-      font-size: 1em;
+  font-size: 1em;
 }
 
 .card-frente {
@@ -198,7 +198,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom: none; /* remove linha azul */
 }
 
 .nome-membro-banner h3 {
@@ -289,7 +288,7 @@ body {
 
   .grade-membros {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 9px;
     justify-items: center;
   }
 
@@ -298,18 +297,39 @@ body {
   }
 
   .card-verso {
-    font-size: 0.65em;
+    font-size: 0.57em !important;
   }
 
-  .nome-membro-banner {
-    height: 40px;
-  }
+.nome-membro-banner {
+  height: auto;
+  padding: 5px 6px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal; /* deixa quebrar em mais de uma linha */
+  line-height: 1.2;
+}
 
-  .nome-membro-banner h3 {
-    font-size: 0.8em;
-  }
+#subtitulo-membros {
+  font-size: 1em;
+  color: var(--cor-texto-escuro);
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-align: center;
+}
 
-  .nome-membro-banner p {
-    font-size: 0.7em;
-  }
+.nome-membro-banner h3 {
+  font-size: 0.75em ;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.nome-membro-banner p {
+  font-size: 0.6em;
+  margin: 2px 0 0 0;
+  text-align: center;
+  overflow-wrap: break-word;
+}
 }
