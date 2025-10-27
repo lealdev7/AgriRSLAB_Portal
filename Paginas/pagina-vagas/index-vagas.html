@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vagas - AgriRS</title>
+  <title>Vagas</title>
   <link rel="stylesheet" href="style-vagas.css?v=5">
 
+  
   <script src="javascript-vagas.js" defer> </script>
-          <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+            rel="stylesheet">       
+        
+       
 </head>
 <body>
 
  <header>
         <div class="headerTop">
-            <img class="imageLogo" src="../../imagens/1.2 Equipe/Logo.png" alt="Logo do site">
-            <h1 class="h1HEADER">AgriRS</h1>
+            <img class="imageLogo" src="../HeaderFooter/imagens/logo.png" alt="Logo do site">
+            <h1 class="h1HEADER">Vagas</h1>
 
             <div class="searchBar">
                 <input id="search" class="inputSearch" type="search" placeholder="Pesquisar...">
@@ -51,7 +53,7 @@
                 </ul>
             </nav>
         </div>   
-    </header>
+        </header>
 
   <section class="banner-vagas">
     <div class="container-vagas">
@@ -86,10 +88,9 @@
               <li>Flexibilidade de horário</li>
             </ul>
 
-            <a class="btn-vagas btn-primary-vagas"href="./candidatura.html"
-   aria-label="Ir para a página de candidatura">
-  Candidatar-se
-</a>
+            <a href="../pagina-vagas/vagas-candidatura.html" class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</a>
+ 
+
           </div>
 
           <div class="card-vagas">
@@ -110,7 +111,7 @@
               <li>Ambiente de pesquisa e desenvolvimento</li>
             </ul>
 
-            <button class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</button>
+            <a href="../pagina-vagas/vagas-candidatura.html" class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</a>
           </div>
         </div>
       </div>
@@ -199,17 +200,29 @@
 
   </main>
 
- <footer>
-       <div class="footerDad">
-            <div class="footerSection">
+<footer>
+       <div id="FooterDad" class="footerDad">
+            <div id="FooterSectionOne" class="footerSection">
+                <div id="LogoFooterSection" 
+                    class="logoFooterSection">
+                    <img class="imageLogoFooter" 
+                    src="../HeaderFooter/imagens/logo.png" 
+                    alt="Logo do site">
+                </div>
                 <p style="font-size: 20px">Entre em contato com a gente</p>
-                <button class="buttonFooter">Fale Conosco</button>
-                <p class="textFooter">Nosso E-mail:</p>
-                <p style="font-size: 14px">agrirs@inpe.br</p>
+                <button id="ButtonFooter" class="buttonFooter">Fale Conosco</button>
+                <div class="emailLineFooter">
+                    <p id="TextFooter" class="textFooter">Nosso E-mail:</p>
+                    <p style="font-size: 16px">agrirs@inpe.br</p>
+                </div>
+               
                 <p class="textFooter">Nossas redes sociais:</p>
-                <div class="imagensFooter">
-                   
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <div id="ImagensFooter" class="imagensFooter">   
+                    <a 
+                    id="GitLink"
+                    href="https://www.instagram.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
                         <svg 
                             width="98" 
                             height="96" 
@@ -221,7 +234,11 @@
                                 fill="#fff"/>
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <a 
+                    id="LinkIndLink"
+                    href="https://www.instagram.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
                         <svg 
                             fill="#ffffff"  
                             width="108" 
@@ -232,7 +249,11 @@
                          <path d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"/>
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <a 
+                    id="InstagramLink"
+                    href="https://www.instagram.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
                         <svg 
                             fill="#ffffff"  
                             width="108" 
@@ -244,18 +265,14 @@
                             <path d="M0 8.219v15.563c0 1.469 1.156 2.625 2.625 2.625h15.563c0.719 0 1.406-0.344 1.844-0.781 0.469-0.469 0.781-1.063 0.781-1.844v-15.563c0-1.469-1.156-2.625-2.625-2.625h-15.563c-0.781 0-1.375 0.313-1.844 0.781-0.438 0.438-0.781 1.125-0.781 1.844zM2.813 10.281c0-1 0.813-1.875 1.813-1.875 1.031 0 1.875 0.875 1.875 1.875 0 1.031-0.844 1.844-1.875 1.844-1 0-1.813-0.813-1.813-1.844zM7.844 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.656c0.375 0 0.375 0.438 0.375 0.719 0.75-0.75 1.719-0.938 2.719-0.938 2.438 0 4 1.156 4 3.719v6.438c0 0.219-0.188 0.406-0.375 0.406h-2.75c-0.219 0-0.375-0.219-0.375-0.406v-5.813c0-0.969-0.281-1.5-1.375-1.5-1.375 0-1.719 0.906-1.719 2.125v5.188c0 0.219-0.219 0.406-0.438 0.406h-2.719c-0.156 0-0.375-0.219-0.375-0.406zM2.875 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.719c0.25 0 0.406 0.156 0.406 0.406v9.531c0 0.219-0.188 0.406-0.406 0.406h-2.719c-0.188 0-0.375-0.219-0.375-0.406z"></path>
                         </svg>
                     </a>
-                    
-                    
-                    
-                   
                 </div>
             </div>
-            <div class="footerSection">
-                <p class="textFooter">Nossas localização:</p>
-                <p style="font-size: 14px">
+            <div id="FooterSectionTwo"class="footerSection">
+                <p class="textFooter">Nossa localização:</p>
+                <p style="font-size: 15px">
                     Av. dos Astronautas, 1758 - Jardim da Granja, São José dos Campos - SP, 12227-010
                 </p>
-                <div>
+                <div id="Map">
                     <iframe
                          class="mapa-estilizado" 
                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.625695692633!2d-45.86240292394749!3d-23.182866647225646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4e870c5e7b7d%3A0x7d28e6c78a2d1d5b!2sAv.%20dos%20Astronautas%2C%201758%20-%20Jardim%20da%20Granja%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012227-010!5e0!3m2!1spt-BR!2sbr!4v1728777400618!5m2!1spt-BR!2sbr" 
@@ -266,11 +283,11 @@
                          referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                </div>
-                
+               <a id="AdmAcess" href="#">Acesso administrativo</a> 
             </div>    
        </div>
-    </footer>
+        </footer>
 
-  <script src="script.js"></script>
+
 </body>
 </html>
