@@ -161,13 +161,17 @@ body {
 
 
 /* Responsividade: Exemplo para telas menores */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .projetos-galeria {
         /* Em telas menores, todos os itens (incluindo o destaque) ocupam uma única coluna */
         grid-template-columns: 1fr;
         margin: 0 10%;
         /* ocupa 80% da tela */
         padding: 0;
+    }
+
+    #titulo-projetos {
+        font-size: 0.7em;
     }
 
     .item-destaque {
@@ -727,6 +731,13 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 /* =============== MOBILE (ABAIXO DE 768px) =============== */
 @media (max-width: 767px) {
 
+    .item-galeria::before {
+        opacity: 1 !important;
+        /* sombra sempre visível */
+        transition: none !important;
+        /* remove o fade */
+    }
+
     /* --- HEADER --- */
     .headerTop {
         height: 20vh;
@@ -735,44 +746,52 @@ ul:hover .decorationHeaderMenu:not(:hover) {
         padding: 5px 0;
     }
 
-    .imageLogo {
-        width: 80px;
-        height: auto;
+    .overlay-texto {
+        opacity: 1 !important;
+        font-size: 15px;
+        font-weight: 400;
+        /* regular */
     }
+}
 
-    .headerBottom {
-        height: auto;
-        /* Altura automática para a nova fonte */
-        padding: 8px 0;
-        /* Um pouco de espaço vertical */
+.imageLogo {
+    width: 80px;
+    height: auto;
+}
 
-        /* Propriedades de Scroll (movidas do .ulNav) */
-        overflow-x: auto;
-        overflow-y: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+.headerBottom {
+    height: auto;
+    /* Altura automática para a nova fonte */
+    padding: 8px 0;
+    /* Um pouco de espaço vertical */
 
-    }
+    /* Propriedades de Scroll (movidas do .ulNav) */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-    .h1HEADER {
-        font-size: clamp(18px, 5vw, 24px);
-    }
+}
 
-    .header-top,
-    h1,
-    .integrantes,
-    .objetivo-pesquisa {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+.h1HEADER {
+    font-size: clamp(18px, 5vw, 24px);
+}
 
-    h1 {
-        font-size: 16px;
-    }
+.header-top,
+h1,
+.integrantes,
+.objetivo-pesquisa {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
-    .integrantes {
-        font-size: 12px;
-    }
+h1 {
+    font-size: 16px;
+}
+
+.integrantes {
+    font-size: 12px;
+}
 
 .objetivo-pesquisa {
     font-size: 15px;
@@ -789,130 +808,130 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     padding: 10px 0px;
     /* espaço interno nas laterais e topo/fundo */
 }
-    .searchBar {
-        margin: 10px 15px 5px 15px;
-        min-width: 120px;
-        width: auto;
-        /* Deixa o flex-basis cuidar da largura */
-        order: 3;
-    }
 
-    .headerBottom::-webkit-scrollbar {
-        display: none;
-        /* sumir a barra scroll no chrome */
-    }
+.searchBar {
+    margin: 10px 15px 5px 15px;
+    min-width: 120px;
+    width: auto;
+    /* Deixa o flex-basis cuidar da largura */
+    order: 3;
+}
 
-    .ulNav {
+.headerBottom::-webkit-scrollbar {
+    display: none;
+    /* sumir a barra scroll no chrome */
+}
 
-        gap: 10px 15px;
-        /* Espaço vertical e horizontal */
-        margin-left: 0;
-        /* Remove margem esquerda */
-        padding: 0 40px;
+.ulNav {
 
-        gap: 20px;
+    gap: 10px 15px;
+    /* Espaço vertical e horizontal */
+    margin-left: 0;
+    /* Remove margem esquerda */
+    padding: 0 40px;
 
-        scroll-snap-type: x mandatory;
+    gap: 20px;
 
-        padding: 0 45px;
+    scroll-snap-type: x mandatory;
 
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
+    padding: 0 45px;
 
-        width: auto;
-        white-space: nowrap;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+    width: auto;
+    white-space: nowrap;
 
-    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-    .ulNav::-webkit-scrollbar {
-        display: none;
-    }
+}
 
-    .ulNav li {
-        /* Diz para CADA item da lista "travar" no centro */
-        scroll-snap-align: center;
-    }
+.ulNav::-webkit-scrollbar {
+    display: none;
+}
 
-    .ulNav li:first-child {
-        padding-left: 0;
-    }
+.ulNav li {
+    /* Diz para CADA item da lista "travar" no centro */
+    scroll-snap-align: center;
+}
 
-    .ulNav li {
-        scroll-snap-align: center;
-    }
+.ulNav li:first-child {
+    padding-left: 0;
+}
 
-    /* Aumenta a fonte e o peso dos links no menu */
-    .decorationHeaderMenu {
-        font-size: 1.15rem;
-        font-weight: 400;
-    }
+.ulNav li {
+    scroll-snap-align: center;
+}
 
-    .item-direita {
-        margin: 0;
-    }
+/* Aumenta a fonte e o peso dos links no menu */
+.decorationHeaderMenu {
+    font-size: 1.15rem;
+    font-weight: 400;
+}
 
-    /* --- MAIN --- */
-    main {
-        padding: 15px;
-    }
+.item-direita {
+    margin: 0;
+}
 
-    /* --- FOOTER --- */
-    .footerDad {
-        flex-direction: column;
-        min-height: auto;
-        padding: 30px 15px;
-        align-items: center;
-        gap: 30px;
-    }
+/* --- MAIN --- */
+main {
+    padding: 15px;
+}
 
-    .footerSection {
-        width: 95%;
-        max-width: unset;
-        height: auto;
-        align-items: center;
-        text-align: center;
-        padding: 0;
-    }
+/* --- FOOTER --- */
+.footerDad {
+    flex-direction: column;
+    min-height: auto;
+    padding: 30px 15px;
+    align-items: center;
+    gap: 30px;
+}
 
-    .logoFooterSection {
-        align-self: center;
-        margin: 0 0 15px 0;
-    }
+.footerSection {
+    width: 95%;
+    max-width: unset;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
 
-    .footerSection:first-child::after {
-        display: none;
-    }
+.logoFooterSection {
+    align-self: center;
+    margin: 0 0 15px 0;
+}
 
-    .emailLineFooter {
-        justify-content: center;
-    }
+.footerSection:first-child::after {
+    display: none;
+}
 
-    .imagensFooter {
-        justify-content: center;
-        padding: 10px 0;
-    }
+.emailLineFooter {
+    justify-content: center;
+}
 
-    .buttonFooter {
-        width: 50%;
-        min-width: 150px;
-    }
+.imagensFooter {
+    justify-content: center;
+    padding: 10px 0;
+}
 
-    #Map {
-        padding: 20px 0 0 0;
-        width: 100%;
-    }
+.buttonFooter {
+    width: 50%;
+    min-width: 150px;
+}
 
-    .mapa-estilizado {
-        max-width: 100%;
-    }
+#Map {
+    padding: 20px 0 0 0;
+    width: 100%;
+}
 
-    #AdmAcess {
-        align-self: center;
-        margin-top: 20px;
-    }
+.mapa-estilizado {
+    max-width: 100%;
+}
+
+#AdmAcess {
+    align-self: center;
+    margin-top: 20px;
 }
