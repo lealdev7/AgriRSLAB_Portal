@@ -130,12 +130,12 @@ body {
   height: 10px;
   border-right: 3px solid var(--cor-verde-principal-escuro);
   border-bottom: 3px solid var(--cor-verde-principal-escuro);
-  transform: rotate(45deg);
+  transform: rotate(-85deg);
   transition: transform 0.3s ease;
 }
 
 .grupo-membros.aberto .toggle-btn .seta {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 /* === Grade de membros === */
