@@ -4,11 +4,11 @@ const setaDireita = document.querySelector('.seta-direita');
 const cardsDefesas = document.querySelector('.cards-defesas');
 
 setaDireita.addEventListener('click', () => {
-  cardsDefesas.scrollBy({ left: 300, behavior: 'smooth' });
+  cardsDefesas.scrollBy({ left: 200, behavior: 'smooth' });
 });
 
 setaEsquerda.addEventListener('click', () => {
-  cardsDefesas.scrollBy({ left: -300, behavior: 'smooth' });
+  cardsDefesas.scrollBy({ left: -200, behavior: 'smooth' });
 });
 
 // Carrossel vertical (linha do tempo)

@@ -547,6 +547,22 @@ h2 {
     justify-content: center;
   }
 
+    .carrossel-horizontal {
+    width: 90%;        /* ocupa 90% da tela no mobile */
+    margin: 0 auto;    /* centraliza */
+    overflow-x: auto;  /* garante que o carrossel deslize */
+  }
+
+  .carrossel-item {
+    min-width: 200px;  /* cards menores no mobile */
+  }
+
+  .seta-esquerda,
+  .seta-direita {
+    height: 24px;
+    width: 24px;       /* botões menores */
+  }
+
   /* --- FOOTER --- */
   .footerDad {
     flex-direction: column;
@@ -855,7 +871,7 @@ h2 {
   border: none;
   cursor: pointer;
   color: var(--verde);
-  padding: 10px;
+  padding: 10px 0;
   transition: transform 0.2s;
 }
 
