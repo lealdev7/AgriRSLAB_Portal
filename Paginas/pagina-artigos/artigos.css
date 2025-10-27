@@ -1,39 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Variáveis para cores baseadas na imagem */
+/* ===================== VARIÁVEIS GERAIS ===================== */
 :root {
-  --color-background-page: #F8F9Fa;
-  /* Verde muito claro, quase branco */
+  --color-background-page: #F8F9FA;
   --color-card-background: #d4e8f8;
-  /* Azul claro para o card */
   --color-text-dark: #333;
   --color-title-green: #55A357;
-  /* Verde escuro para títulos de seção */
   --color-link-blue: #0F5289;
-  /* Azul padrão para links */
   --color-search-btn: #f0f0f0;
   --cor-amarelo-ver: #D3D840;
 
+  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho2: #BCE2F7;
+  --verde-1: #36794E;
+  --verde-2: #55A357;
+  --marrom: #604639;
+  --azul1: #0F5289;
+  --azul2: #487DB4;
 }
 
-/* Reset e Fonte */
+/* ===================== RESET E BASE ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: var(--color-background-page);
   color: var(--color-text-dark);
-  flex-grow: 1;
-  /* alinhamento com o header */
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* 1. Container Principal do Cabeçalho */
-/* Estilo para a área do Logo e Título Juntos */
+main {
+  flex-grow: 1;
+  padding: 20px 50px 20px 20px;
+}
+
+/* ===================== CABEÇALHO ===================== */
 .logo-title-area {
   display: flex;
   align-items: center;
@@ -75,9 +82,12 @@ body {
   transition: background-color 0.3s;
 }
 
+.search-box button:hover {
+  background-color: #eaeaea;
+}
+
 .btn-contato {
   background-color: var(--cor-amarelo-ver);
-  /* Amarelo */
   color: var(--color-text-dark);
   text-decoration: none;
   padding: 5px 15px;
@@ -86,17 +96,12 @@ body {
   font-size: 0.9rem;
 }
 
-.search-box button:hover {
-  background-color: #eaeaea;
-}
-
-/* 3. Navigation Bar (Links principais) */
+/* ===================== MENU PRINCIPAL ===================== */
 .main-nav-bar {
   display: flex;
   justify-content: center;
   padding: 10px 0;
   border-bottom: 2px solid #000;
-  /* Linha preta final */
 }
 
 .main-nav-bar a {
@@ -113,17 +118,13 @@ body {
   border-radius: 4px;
 }
 
-/* 4. Filtros de Navegação (Barra de botões de filtro) */
-/* 4. Filtros Interativos (Dropdowns) */
-
-
+/* ===================== FILTROS INTERATIVOS ===================== */
 .interactive-filters {
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 15px;
   flex-wrap: wrap;
-  /* permite quebrar se a tela for menor */
   background-color: var(--color-background-page);
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
@@ -138,14 +139,14 @@ body {
 
 .filter-toggle {
   width: 100%;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   color: var(--color-text-dark);
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 8px 12px;
-  display: flex;
-  align-items: center;
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s;
@@ -156,14 +157,12 @@ body {
   border-color: var(--color-title-green);
 }
 
-/* Estilo para o botão ATIVO (após o clique) */
 .filter-dropdown.open .filter-toggle {
   background-color: var(--color-background-page);
   border-color: var(--color-title-green);
   color: var(--color-text-dark);
 }
 
-/* Estilo para o Painel de Opções (Dropdown Content) */
 .filter-panel {
   position: absolute;
   top: 110%;
@@ -180,12 +179,10 @@ body {
   z-index: 20;
 }
 
-/* Estado de exibição forçado pelo JavaScript */
 .filter-dropdown.open .filter-panel {
   display: flex;
 }
 
-/* Estilo dos elementos internos (inputs e labels) */
 .filter-panel label,
 .filter-panel input,
 .filter-panel .filter-input-text {
@@ -226,8 +223,7 @@ body {
   display: none !important;
 }
 
-
-/* 6. Conteúdo Principal e Cards */
+/* ===================== CONTEÚDO E CARDS ===================== */
 .publications-main-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -241,7 +237,6 @@ body {
   font-weight: 700;
   border-bottom: 1px solid var(--color-title-green);
 }
-
 
 .cards-grid {
   display: grid;
@@ -309,108 +304,26 @@ body {
   color: white;
 }
 
-
-
-/* ================================ MOBILE (TESTE CHECKBOXES E BARRA DE PESQUISA) ================================ */
-
-
-/* ================================= HEADER E FOOTER     ================================= */
-
-:root {
-  --azul-clarinho1: #DDF1FB;
-  --azul-clarinho2: #BCE2F7;
-  --verde-1: #36794E;
-  --verde-2: #55A357;
-  --marrom: #604639;
-  --azul1: #0F5289;
-  --azul2: #487DB4;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
-  /* alinhamento com o header */
-  padding: 20px 50px 20px 20px;
-}
-
-* {
-  font-family: 'Montserrat', sans-serif;
-  /*Garante que o tamanho de elemento considera padding*/
-  box-sizing: border-box;
-}
-
-/*====================FONTES==================================*/
-/* Montserrat - Google Fonts (weight 100-900) 
-Defina o  font-weight conforme:
-light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
-styles: normal ou italic
-*/
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Merriweather - Google Fonts (weight 400-900) 
-Defina o  font-weight conforme:
-light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
-styles: normal ou italic
-*/
-.merriweather {
-  font-family: 'Montserrat', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-
-
-
-/* =============== MOBILE (ABAIXO DE 768px) =============== */
+/* ===================== RESPONSIVIDADE ===================== */
 @media (max-width: 767px) {
   .cards-grid {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
   }
 
-  /* =====================FILTROS==================== */
-
-  /* container dos filtros */
-.interactive-filters {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  justify-content: center; /* centraliza os filtros no container */
-  align-items: center;
-  width: 100%;
-  padding: 0 10px; /* cria margem lateral */
-  box-sizing: border-box;
-}
-
-.filter-dropdown {
-  position: center;
-  flex: 1;
-  min-width: 80%; 
-  max-width: 100%;
-}
-
-  /* Estado de exibição forçado pelo JavaScript */
-  .filter-dropdown.open .filter-panel {
-    display: flex;
+  .interactive-filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
   }
 
-  /* Estilo para o botão ATIVO (após o clique) */
+  .filter-dropdown {
+    min-width: 80%;
+    max-width: 100%;
+  }
 
   .filter-toggle {
     font-size: 0.9rem;
@@ -420,180 +333,12 @@ styles: normal ou italic
     text-align: center;
   }
 
-
-
   .search-box {
-  min-width: 50%;
-  max-width:100%;
-}
-
-
-.btn-contato {
-  padding: 10px;
-}
-
-.search-box button:hover {
-  background-color: var(--color-background-page);
-}
-
-
-
-  /* ================================= HEADER E FOOTER     ================================= */
-
-  .headerTop {
-    height: 20vh;
-    min-height: 60px;
-    flex-wrap: wrap;
-    padding: 5px 0;
-  }
-
-  .imageLogo {
-    width: 80px;
-    height: auto;
-  }
-
-  .headerBottom {
-    height: auto;
-    /* Altura automática para a nova fonte */
-    padding: 8px 0;
-    /* Um pouco de espaço vertical */
-
-    /* Propriedades de Scroll (movidas do .ulNav) */
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-  }
-
-  .h1HEADER {
-    font-size: clamp(18px, 5vw, 24px);
-  }
-
-  .searchBar {
-    margin: 10px 15px 5px 15px;
-    min-width: 80px;
-    width: auto;
-    /* Deixa o flex-basis cuidar da largura */
-    order: 3;
-  }
-
-  .headerBottom::-webkit-scrollbar {
-    display: none;
-    /* sumir a barra scroll no chrome */
-  }
-
-  .ulNav {
-
-    gap: 10px 15px;
-    /* Espaço vertical e horizontal */
-    margin-left: 0;
-    /* Remove margem esquerda */
-    padding: 0 40px;
-
-    gap: 20px;
-
-    scroll-snap-type: x mandatory;
-
-    padding: 0 45px;
-
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-
-    width: auto;
-    white-space: nowrap;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-  }
-
-  .ulNav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .ulNav li {
-    /* Diz para CADA item da lista "travar" no centro */
-    scroll-snap-align: center;
-  }
-
-  .ulNav li:first-child {
-    padding-left: 0;
-  }
-
-  .ulNav li {
-    scroll-snap-align: center;
-  }
-
-  /* Aumenta a fonte e o peso dos links no menu */
-  .decorationHeaderMenu {
-    font-size: 1.15rem;
-    font-weight: 400;
-  }
-
-  .item-direita {
-    margin: 0;
-  }
-
-  /* --- MAIN --- */
-  main {
-    padding: 15px;
-  }
-
-  /* --- FOOTER --- */
-  .footerDad {
-    flex-direction: column;
-    min-height: auto;
-    padding: 30px 15px;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .footerSection {
-    width: 95%;
-    max-width: unset;
-    height: auto;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-  }
-
-  .logoFooterSection {
-    align-self: center;
-    margin: 0 0 15px 0;
-  }
-
-  .footerSection:first-child::after {
-    display: none;
-  }
-
-  .emailLineFooter {
-    justify-content: center;
-  }
-
-  .imagensFooter {
-    justify-content: center;
-    padding: 10px 0;
-  }
-
-  .buttonFooter {
-    width: 50%;
-    min-width: 150px;
-  }
-
-  #Map {
-    padding: 20px 0 0 0;
-    width: 100%;
-  }
-
-  .mapa-estilizado {
+    min-width: 50%;
     max-width: 100%;
   }
 
-  #AdmAcess {
-    align-self: center;
-    margin-top: 20px;
+  .btn-contato {
+    padding: 10px;
   }
 }
