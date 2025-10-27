@@ -133,8 +133,13 @@ main {
 .filter-dropdown {
   position: relative;
   flex: 1;
-  min-width: 220px;
+  width: 100%;
+  min-width: 240px;
+  /* largura mínima confortável */
   max-width: 260px;
+  /* evita esticar demais */
+  display: flex;
+  flex-direction: column;
 }
 
 .filter-toggle {
@@ -150,6 +155,8 @@ main {
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s;
+  box-sizing: border-box;
+  /* garante largura exata */
 }
 
 .filter-toggle:hover {
@@ -318,31 +325,30 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     padding: 0 10px;
   }
 
 
-    .card-image-box img {
+  .card-image-box img {
     height: 130px;
-}
-  
+  }
+
   .publication-card {
-  border-radius: 0.7em;}
+    border-radius: 0.5em;
+  }
 
   .filter-dropdown {
-    min-width: 80%;
+    width: 100%;
+    min-width: 100%;
     max-width: 100%;
   }
 
   .filter-toggle {
-    font-size: 0.9rem;
+    width: 100%;
+    font-size: 0.8rem;
     padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    text-align: center;
+    color: rgba(51, 51, 51, 0.6);
   }
 
   .search-box {
@@ -353,4 +359,9 @@ main {
   .btn-contato {
     padding: 10px;
   }
+
+  .search-box input {
+    font-size: 0.8rem;
+  }
+
 }
