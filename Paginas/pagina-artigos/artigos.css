@@ -1,45 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-/* ===================== VARIÁVEIS GERAIS ===================== */
-:root {
-  --color-background-page: #F8F9FA;
-  --color-card-background: #d4e8f8;
-  --color-text-dark: #333;
-  --color-title-green: #55A357;
-  --color-link-blue: #0F5289;
-  --color-search-btn: #f0f0f0;
-  --cor-amarelo-ver: #D3D840;
-
-  --azul-clarinho1: #DDF1FB;
-  --azul-clarinho2: #BCE2F7;
-  --verde-1: #36794E;
-  --verde-2: #55A357;
-  --marrom: #604639;
-  --azul1: #0F5289;
-  --azul2: #487DB4;
-}
-
-/* ===================== RESET E BASE ===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
-
-body {
-  background-color: var(--color-background-page);
-  color: var(--color-text-dark);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
-  padding: 20px 50px 20px 20px;
-}
-
 /* ===================== CABEÇALHO ===================== */
 .logo-title-area {
   display: flex;
@@ -60,7 +18,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--cor-texto-branco);
 }
 
 .search-box input {
@@ -69,13 +27,13 @@ main {
   border: none;
   outline: none;
   font-size: 0.95rem;
-  color: var(--color-text-dark);
-  background-color: #fff;
+  color: var(--texto-escuro);
+  background-color: var(--cor-texto-branco);
 }
 
 .search-box button {
-  background-color: var(--color-background-page);
-  color: var(--color-text-dark);
+  background-color: var(--fundo-branco);
+  color: var(--texto-escuro);
   border: none;
   padding: 8px 12px;
   cursor: pointer;
@@ -87,8 +45,8 @@ main {
 }
 
 .btn-contato {
-  background-color: var(--cor-amarelo-ver);
-  color: var(--color-text-dark);
+  background-color: var(--amarelo-ver);
+  color: var(--texto-escuro);
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 4px;
@@ -105,7 +63,7 @@ main {
 }
 
 .main-nav-bar a {
-  color: white;
+  color: var(--cor-texto-branco);
   text-decoration: none;
   margin: 0 15px;
   font-size: 0.9rem;
@@ -125,7 +83,7 @@ main {
   align-items: stretch;
   gap: 15px;
   flex-wrap: wrap;
-  background-color: var(--color-background-page);
+  background-color: var(--fundo-branco);
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
 }
@@ -135,9 +93,7 @@ main {
   flex: 1;
   width: 100%;
   min-width: 240px;
-  /* largura mínima confortável */
   max-width: 260px;
-  /* evita esticar demais */
   display: flex;
   flex-direction: column;
 }
@@ -147,8 +103,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  color: var(--color-text-dark);
+  background-color: var(--cor-texto-branco);
+  color: var(--texto-escuro);
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 8px 12px;
@@ -156,25 +112,24 @@ main {
   font-weight: 500;
   transition: all 0.3s;
   box-sizing: border-box;
-  /* garante largura exata */
 }
 
 .filter-toggle:hover {
   background-color: #f8f8f8;
-  border-color: var(--color-title-green);
+  border-color: var(--verde-titulo);
 }
 
 .filter-dropdown.open .filter-toggle {
-  background-color: var(--color-background-page);
-  border-color: var(--color-title-green);
-  color: var(--color-text-dark);
+  background-color: var(--fundo-branco);
+  border-color: var(--verde-titulo);
+  color: var(--texto-escuro);
 }
 
 .filter-panel {
   position: absolute;
   top: 110%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--cor-texto-branco);
   border: 1px solid #ddd;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -193,12 +148,12 @@ main {
 .filter-panel label,
 .filter-panel input,
 .filter-panel .filter-input-text {
-  color: var(--color-text-dark);
+  color: var(--texto-escuro);
   font-size: 0.95rem;
 }
 
 .filter-panel input[type="checkbox"] {
-  accent-color: var(--color-title-green);
+  accent-color: var(--verde-titulo);
 }
 
 .filter-input-text {
@@ -206,14 +161,14 @@ main {
   padding: 6px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: var(--color-background-page);
+  background-color: var(--fundo-branco);
   font-size: 0.9rem;
 }
 
 .btn-apply-filter {
   width: 100%;
-  background-color: var(--color-title-green);
-  color: white;
+  background-color: var(--verde-titulo);
+  color: var(--cor-texto-branco);
   border: none;
   padding: 8px 0;
   border-radius: 4px;
@@ -223,7 +178,7 @@ main {
 }
 
 .btn-apply-filter:hover {
-  background-color: var(--color-link-blue);
+  background-color: var(--azul-escuro);
 }
 
 .publicacao.hidden {
@@ -237,13 +192,6 @@ main {
   padding: 0 20px;
 }
 
-.section-title {
-  color: var(--color-text-dark);
-  margin: 25px 10px 15px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  border-bottom: 1px solid var(--color-title-green);
-}
 
 .cards-grid {
   display: grid;
@@ -263,7 +211,7 @@ main {
 }
 
 .card-image-box {
-  background-color: white;
+  background-color: var(--cor-texto-branco);
   border: 1px solid #cce;
   border-radius: 8px;
   overflow: hidden;
@@ -280,7 +228,7 @@ main {
 .card-title {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--color-text-dark);
+  color: var(--texto-escuro);
   flex-grow: 1;
   margin-bottom: 15px;
   line-height: 1.4;
@@ -294,12 +242,12 @@ main {
 }
 
 .btn-card {
-  background-color: white;
-  color: var(--color-link-blue);
+  background-color: var(--cor-texto-branco);
+  color: var(--azul-escuro);
   text-decoration: none;
   padding: 5px 12px;
   border-radius: 5px;
-  border: 1px solid var(--color-link-blue);
+  border: 1px solid var(--azul-escuro);
   font-size: 0.8rem;
   font-weight: bold;
   min-width: 60px;
@@ -307,8 +255,8 @@ main {
 }
 
 .btn-card:hover {
-  background-color: var(--color-link-blue);
-  color: white;
+  background-color: var(--azul-escuro);
+  color: var(--cor-texto-branco);
 }
 
 /* ===================== RESPONSIVIDADE ===================== */
@@ -328,7 +276,6 @@ main {
     width: 100%;
     padding: 0 10px;
   }
-
 
   .card-image-box img {
     height: 130px;
@@ -363,5 +310,7 @@ main {
   .search-box input {
     font-size: 0.8rem;
   }
-
+}
+.titulo-secao::after {
+  background-color: green; /* só pra testar */
 }
