@@ -556,7 +556,10 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   #Map {
     width: 100%;
     padding: 20px 0 0 0;
-  }
+        width: 95%;
+        align-items: center;            /* Centraliza os itens */
+    text-align: center;
+   }
 
   .mapa-estilizado {
     max-width: 100%;
