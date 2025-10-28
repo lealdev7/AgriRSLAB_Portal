@@ -112,6 +112,8 @@
   font-weight: 500;
   transition: all 0.3s;
   box-sizing: border-box;
+      color: rgba(51, 51, 51, 0.6);
+
 }
 
 .filter-toggle:hover {
@@ -295,7 +297,6 @@
     width: 100%;
     font-size: 0.8rem;
     padding: 10px;
-    color: rgba(51, 51, 51, 0.6);
   }
 
   .search-box {
