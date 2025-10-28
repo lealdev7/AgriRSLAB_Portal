@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* ======================================
    VARIÁVEIS GERAIS
@@ -25,9 +23,11 @@
 
   --amarelo-ver: #D3D840;
 }
+
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;}
+  font-family: "Montserrat", "Open Sans", Arial, sans-serif;
+}
 
 /* ======================================
    BASE
