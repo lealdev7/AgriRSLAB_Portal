@@ -263,6 +263,7 @@ img {
   list-style: none;
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 20px;
   margin: 0;
   margin-left: 2.5vw;
@@ -274,10 +275,9 @@ img {
 }
 
 .item-direita {
-  margin-left: auto;
+  margin-left: auto !important;
   margin-right: 50px;
 }
-
 .decorationHeaderMenu {
   display: block;
   text-decoration: none;
