@@ -190,7 +190,7 @@ textarea.caixas-contato {
 }
 
 /* Celulares */
-@media (max-width: 600px) {
+@media (max-width: 678px) {
   .area-contato {
     padding: 20px 10px;
   }
