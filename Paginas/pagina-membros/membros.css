@@ -253,7 +253,7 @@
   }
 
   .card-membro {
-    height: 300px;
+    height: 250px;
   }
 
   .card-verso {
@@ -262,7 +262,7 @@
 
   .nome-membro-banner {
     height: auto;
-    padding: 5px 6px;
+    padding: 4px 4px;
     overflow: hidden;
     word-wrap: break-word;
     text-overflow: ellipsis;
@@ -280,14 +280,14 @@
 
   .nome-membro-banner h3 {
     font-size: 0.75em;
-    font-weight: 600;
+    font-weight: 550;
     margin: 0;
     text-align: center;
     overflow-wrap: break-word;
   }
 
   .nome-membro-banner p {
-    font-size: 0.6em;
+    font-size: 0.65em;
     margin: 2px 0 0 0;
     text-align: center;
     overflow-wrap: break-word;
