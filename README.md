@@ -126,9 +126,8 @@ A apresentação da Sprint 1 em vídeo pode ser acessada [aqui](https://youtu.be
 | ES-010  | Documentar passo a passo de atualização de conteúdo pelos membros | 20 | ES | 2 |
 | ES-011  | DoD (Definition of Done) | 5  | ES | 1 |
 | ES-012  | DoR (Definiton of Ready) | 5  | ES | 1 |
-| DD-012  | Criar layout no Figma (Administrativo) | 20 | DD | 2 |
-| DW-025  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
-| DW-026  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
+| DW-011  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
+| DW-011.1  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
 | ES-013  | UML - User Cases | 5  | ES | 1 |
 | DW-027  | Criar header e footer padrão (HTML e CSS) | 13 | DW | 1 |
 | SO-004  | Configuração VScode | 5 | SO | 1 |
