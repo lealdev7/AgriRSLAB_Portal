@@ -117,7 +117,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-007.7 |      Adicionar fontes padrão         | João Otávio            | 17/10 |     00      |      DW      |          RF08           |  ✅     |
 | DW-007.8 |      Estilização do formulário          | João Otávio            | 17/10 |     00      |      DW      |          RF08           |  ✅     |
 | DW-007.9 |       Estilização do card de localização          | João Otávio            | 17/10 |     00      |      DW      |          RF08           |  ✅     |
-| DW-07.10 |       Configuração do GitHub          | João Otávio            | 21/10 |     00      |      SO     |                    |  ✅     |
+| SO-005 |       Configuração do GitHub          | João Otávio            | 21/10 |     00      |      SO     |                    |  ✅     |
 | DW-008 |       Criação da estrutura da página sobre em HTML          | João Augusto            | 13/10 |     00      |      DW      |          RF02           |  ✅    |
 | DW-008.1 |      Adicionar imagem e logo de colaboradores           | João Augusto            | 13/10 |     00      |      DW      |          RF02           |  ✅    |
 | DW-008.2 |      Criação de um arquivo CSS para a estlização           | João Augusto            | 13/10 |     00      |      DW      |          RF02           |  ✅    |
