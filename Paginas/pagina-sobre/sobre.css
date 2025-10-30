@@ -1,0 +1,708 @@
+/* ===============================================
+   RESET E CONFIGURAÇÕES GERAIS
+   =============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* ===============================================
+   HEADER
+   =============================================== */
+.headerTop {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(141, 38%, 34%);
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+}
+
+.imageLogo {
+    height: 60px;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    margin: auto 15px auto 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.h1HEADER {
+    font-size: 30px;
+    color: white;
+    font-size: clamp(20px, 2.5vw, 30px);
+    flex-shrink: 1;
+    white-space: nowrap;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+/* Barra de pesquisa */
+.searchBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 35px 0 auto;
+    flex-shrink: 1;
+    min-width: 150px;
+}
+
+.inputSearch {
+    padding: 8px 40px 8px 15px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    font-size: 14px;
+    outline: none;
+}
+
+.searchBtn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 35px;
+    width: 35px;
+}
+
+/* Menu de navegação */
+.headerBottom {
+    background-color: #55A357;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navBar {
+    width: 100%;
+    display: flex;
+}
+
+.ulNav {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.item-direita {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.decorationHeaderMenu {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.decorationHeaderMenu:hover {
+    text-decoration: underline;
+    text-decoration-color: #E0F9D5;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    transform: scale(1.05);
+}
+
+.decorationHeaderMenu.active {
+    text-decoration: underline;
+    text-decoration-color: #E0F9D5;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    font-weight: 600;
+}
+
+ul:hover .decorationHeaderMenu:not(:hover) {
+    opacity: 0.7;
+}
+
+/* ===============================================
+   MAIN CONTENT - SEÇÃO SOBRE
+   =============================================== */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-section {
+    padding: 40px 0;
+    margin-bottom: 60px;
+}
+
+.grid-container {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 700px;
+}
+
+/* Primeira caixa de texto */
+.text-box-1 {
+    position: absolute;
+    top: 195px;
+    left: -80px;
+    width: 450px;
+    background-color: #55A357;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.text-box-1 p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Container da imagem */
+.team-image-container {
+    position: absolute;
+    top: 50px;
+    left: 350px;
+    width: 75%;
+    height: 380px;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Segunda caixa de texto */
+.text-box-2 {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    right: 0;
+    background-color: #3b743e;
+    color: white;
+    z-index: 1;
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.text-box-2 p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.text-box-2 p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===============================================
+   SEÇÃO DE PARCEIROS
+   =============================================== */
+.partners-section {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.partners-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.partners-logos img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(0%);
+    transition: all 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+.partners-logos img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1.1);
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+footer {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.footerDad {
+    background-color: #604639;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    padding: 40px 20px;
+    gap: 60px;
+}
+
+.footerSection {
+    width: 45%;
+    max-width: 500px;
+}
+
+.logoFooterSection {
+    margin-bottom: 20px;
+}
+
+.imageLogoFooter {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footerTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.textFooter {
+    text-decoration: underline;
+    text-decoration-color: #55A357;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+    font-weight: 500;
+}
+
+.emailLineFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.emailText {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.addressText {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.buttonFooter {
+    background-color: #55A357;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: -4px -4px 0 0 #3b743e;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.buttonFooter:hover {
+    background-color: #4a9149;
+    transform: translate(-2px, -2px);
+    box-shadow: -6px -6px 0 0 #3b743e;
+}
+
+.imagensFooter {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.imagensFooter a {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.imagensFooter a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.imagensFooter svg {
+    width: 40px;
+    height: 40px;
+}
+
+.mapa-estilizado {
+    border: 4px solid #3b3b3b;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+}
+
+#AdmAcess {
+    color: #55A357;
+    text-decoration: underline;
+    margin-top: 25px;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#AdmAcess:hover {
+    color: #6bc36e;
+    text-decoration: none;
+}
+
+/* ===============================================
+   RESPONSIVIDADE - TABLET (768px - 1024px)
+   =============================================== */
+@media screen and (max-width: 1024px) {
+    .content-wrapper {
+        padding: 30px 15px;
+    }
+
+    .grid-container {
+        height: 600px;
+        max-width: 950px;
+    }
+
+    .text-box-1 {
+        width: 380px;
+        padding: 40px 30px;
+    }
+
+    .text-box-1 p {
+        font-size: 16px;
+    }
+
+    .team-image-container {
+        width: 700px;
+        height: 320px;
+        top: 60px;
+        left: 280px;
+    }
+
+    .text-box-2 {
+        padding: 40px 30px;
+        left: 80px;
+    }
+
+    .text-box-2 p {
+        font-size: 15px;
+    }
+
+    .partners-logos {
+        gap: 40px;
+    }
+
+    .partners-logos img {
+        height: 70px;
+    }
+
+    .footerDad {
+        gap: 40px;
+    }
+}
+
+/* ===============================================
+   RESPONSIVIDADE - MOBILE (ABAIXO DE 768px)
+   =============================================== */
+@media screen and (max-width: 767px) {
+
+    /* --- HEADER --- */
+    .headerTop {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .imageLogo {
+        height: 50px;
+        width: 50px;
+        margin: auto 10px auto 15px;
+    }
+
+    .h1HEADER {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .searchBar {
+        margin: 10px 15px 5px 15px;
+        min-width: 100px;
+        width: 100%;
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .inputSearch {
+        width: 100%;
+    }
+
+    .headerBottom {
+        height: auto;
+        padding: 10px 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .headerBottom::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ulNav {
+        gap: 20px;
+        padding: 0 20px;
+        white-space: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        justify-content: flex-start;
+    }
+
+    .ulNav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .decorationHeaderMenu {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .item-direita {
+        margin: 0;
+    }
+
+    /* --- MAIN CONTENT --- */
+    .content-wrapper {
+        padding: 20px 10px;
+    }
+
+    .about-section {
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+
+    .grid-container {
+        position: static;
+        height: auto;
+    }
+
+    .text-box-1 {
+        position: static;
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 15px 15px 0 0;
+        margin-bottom: 0;
+    }
+
+    .text-box-1 p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .team-image-container {
+        position: static;
+        width: 100%;
+        height: 300px;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .text-box-2 {
+        position: static;
+        width: 100%;
+        padding: 30px 20px;
+        border-radius: 0 0 15px 15px;
+        margin-top: 0;
+    }
+
+    .text-box-2 p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    /* --- PARCEIROS --- */
+    .partners-section {
+        padding: 40px 15px;
+    }
+
+    .partners-section h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .partners-logos {
+        gap: 30px;
+        padding: 15px;
+    }
+
+    .partners-logos img {
+        height: 60px;
+    }
+
+    /* --- FOOTER --- */
+    .footerDad {
+        flex-direction: column;
+        min-height: auto;
+        padding: 40px 20px;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footerSection {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .logoFooterSection {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .emailLineFooter {
+        align-items: center;
+    }
+
+    .imagensFooter {
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .buttonFooter {
+        width: auto;
+        min-width: 200px;
+    }
+
+    #Map {
+        padding: 20px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mapa-estilizado {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    #AdmAcess {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+/* ===============================================
+   RESPONSIVIDADE - MOBILE PEQUENO (ABAIXO DE 480px)
+   =============================================== */
+@media screen and (max-width: 480px) {
+    .h1HEADER {
+        font-size: 18px;
+    }
+
+    .text-box-1 p {
+        font-size: 14px;
+    }
+
+    .text-box-2 p {
+        font-size: 13px;
+    }
+
+    .partners-section h2 {
+        font-size: 18px;
+    }
+
+    .partners-logos {
+        gap: 20px;
+    }
+
+    .partners-logos img {
+        height: 50px;
+    }
+
+    .decorationHeaderMenu {
+        font-size: 14px;
+    }
+
+    .footerTitle,
+    .textFooter {
+        font-size: 16px;
+    }
+
+    .emailText,
+    .addressText {
+        font-size: 14px;
+    }
+
+    .imagensFooter svg {
+        width: 35px;
+        height: 35px;
+    }
