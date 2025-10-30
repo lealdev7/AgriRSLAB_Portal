@@ -107,6 +107,24 @@ img {
 }
 
 /* ======================================
+MENU HAMBURGUER 
+====================================== */
+
+.hamburguer {
+  display: none;
+}
+
+/* Configuração básica das barrinhas */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--cor-texto-branco);
+  /* estava var(--verde-1) */
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ======================================
    Texto principal (.texto-conteudo / .objetivo-pesquisa)
 ====================================== */
 
@@ -194,27 +212,28 @@ img {
 .h1HEADER {
   color: var(--cor-texto-branco);
   font-size: clamp(16px, 2.2vw, 22px);
-  white-space: normal;   /* permite quebra */
+  white-space: normal;
+  /* permite quebra */
   flex: 1;
 }
 
 /* Barra de pesquisa */
 .searchBar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 35px 0 auto;
-    flex-shrink: 1;
-    min-width: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 35px 0 auto;
+  flex-shrink: 1;
+  min-width: 150px;
 }
 
 .inputSearch {
-    padding: 8px 40px 8px 15px;
-    border-radius: 20px;
-    border: none;
-    width: 250px;
-    font-size: 14px;
-    outline: none;
+  padding: 8px 40px 8px 15px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+  font-size: 14px;
+  outline: none;
 }
 
 .inputSearch::placeholder {
@@ -222,28 +241,30 @@ img {
 }
 
 .searchBtn {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    height: 35px;
-    width: 35px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 35px;
+  width: 35px;
 }
 
 /* Menu */
 .headerBottom {
   background-color: var(--verde-claro);
-  height: 5vh;
+  min-height: 50px;
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
+  padding: 8px 0;
 }
 
 .navBar {
@@ -569,9 +590,9 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   }
 
   #Map p {
-  margin: 0;
-  text-align: center;
-}
+    margin: 0;
+    text-align: center;
+  }
 
   .mapa-estilizado {
     max-width: 100%;
@@ -581,4 +602,73 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     align-self: center;
     margin-top: 20px;
   }
+
+  /* ======================================
+MENU HAMBURGUER 
+====================================== */
+
+.hamburguer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    z-index: 3000;
+  }
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-texto-branco);
+    border-radius: 2px;
+  }
+
+  /* Esconde o menu até clicar */
+  .ulNav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--verde-claro);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+    z-index: 2000;
+  }
+
+  /* Mostra o menu quando clicado */
+  .ulNav.active {
+    display: flex !important;
+  }
+
+  .ulNav li {
+    margin: 10px 0;
+  }
+
+  .ulNav li a {
+    color: var(--cor-texto-branco);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Esconde a barra de busca */
+  .searchBar {
+    display: none;
+  }
+
+  /* Garante que o container não corte o menu */
+  .headerBottom {
+    overflow: visible;
+    position: relative;
+  }
+
 }
