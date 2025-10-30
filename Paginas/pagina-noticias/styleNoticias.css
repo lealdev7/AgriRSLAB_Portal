@@ -127,7 +127,7 @@
   position: relative;
   align-items: center;
   gap: 8px;
-  background-color: var(--azul-clarinho2);
+  background-color: #fff;  
   padding: 5px;
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--sombra);
@@ -492,7 +492,7 @@
 }
 
 .tagEvent {
-  color: var(--cor-texto-claro);
+  color:#fff;
   font-size: 1.2em;
   font-weight: 300;
   padding: 0.6em;
@@ -550,8 +550,8 @@
 }
 
 .yearSelection {
-  background-color: var(--azul-escuro);
-  color: var(--cor-texto-claro);
+  background-color: var(--azul-claro);
+  color:#fff;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
