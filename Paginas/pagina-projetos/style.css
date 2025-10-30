@@ -1,224 +1,217 @@
-:root {
-    --vdEscuro: #36794E;
-    /* verde escuro */
-    --vdClaro: #55A357;
-    /* verde claro */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-    --vdClarinho: #E0F9D5;
-    /* verde clarinho */
 
-    --fundo: #F8F9FA;
-    --marrom: #604639;
-
-    --azulEscuro: #0F5289;
-    --azulClaro: #487DB4;
-
-    --cor-texto: #ffffff;
-    /* Texto branco */
-
-    --cor-sombra: rgba(0, 0, 0, 0.3);
-    /* Sombra suave */
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: var(--fundo);
+#titulo-projetos {
+  max-width: 80%;
+  margin: 20px auto auto auto;
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--texto-escuro);
 }
 
 /* Container Principal (Galeria) */
 .projetos-galeria {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    /* Espaço entre os itens */
-    padding: 20px;
+  max-width: 90%;
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
 }
 
-/* Estilo Básico dos Itens */
 .item-galeria {
-    background: rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    /* Garante que a imagem não saia do limite */
-    text-decoration: none;
-    color: white;
-    align-items: center;
-    border-radius: 5%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--vdClaro);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) ;
-    /* Adiciona uma sombra ao texto para melhor legibilidade */
+  background: rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+  border-radius: 2.5px;
+  border: 2px solid #bebebe00;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.item-galeria::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.37);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
 }
 
 .item-galeria img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* Garante que a imagem seja exibida por completo, sem cortes */
-    display: block;
-    /* Melhora o comportamento padrão da imagem */
-    transition: transform 0.3s ease;
-    /* Efeito de zoom no hover */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  z-index: 0;
+  border-radius: 2.5px;
 }
 
-/* Efeito de Zoom (opcional) */
 .item-galeria:hover img {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-/* Estilo do Item em Destaque (Maior) */
 .item-destaque {
-    /* Faz o item ocupar 2 colunas */
-    grid-column: 1 / span 2;
-    border-radius: clamp(10px, 1.25vw, 20px);
-    /* Você pode ajustar o grid-row se quiser que ele ocupe mais linhas também */
+  grid-column: span 2;
+  height: 300px;
 }
 
-/* Estilo do Overlay de Texto (Legenda) */
 .overlay-texto {
-    position: absolute;
-    top: 50%;
-    /* Alterado de bottom para top */
-    left: 0;
-    /* Ocupa toda a largura */
-    right: 0;
-    /* Ocupa toda a largura */
-    background: rgba(0, 0, 0, 0.4);
-    /* Fundo semi-transparente */
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.2rem, 4vw, 2em);
-    display: flex;
-    /* Adicionado para usar flexbox */
-    justify-content: center;
-    /* Adicionado para centralizar horizontalmente */
-    align-items: center;
-    /* Alterado para centralizar verticalmente */
-    padding: 15px 10%;
-    /* Adiciona espaçamento vertical e horizontal */
-    transform: translateY(-50%);
-    /* Adicionado para centralizar verticalmente de forma precisa */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    /* Adiciona uma sombra ao texto para melhor legibilidade */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  background: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 4vw, 1em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10%;
+  transform: translateY(-50%);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-/* Responsividade: Exemplo para telas menores */
-@media (max-width: 768px) {
-    .projetos-galeria {
-        /* Em telas menores, todos os itens (incluindo o destaque) ocupam uma única coluna */
-        grid-template-columns: 1fr;
-    }
+.item-galeria:hover::before,
+.item-galeria:hover .overlay-texto {
+  opacity: 2;
+}
 
-    .item-destaque {
-        /* Reseta para 1 coluna em telas menores */
-        grid-column: 1 / span 1;
-    }
+/* Responsividade */
+@media (max-width: 768px) {
+  .projetos-galeria {
+    grid-template-columns: 1fr;
+    margin: 0 10%;
+    padding: 0;
+  }
+
+  #titulo-projetos {
+    font-size: 0.7em;
+  }
+
+  .item-destaque {
+    grid-column: 1 / span 1;
+  }
+
+  .botao-filtro {
+    width: 100px !important;
+    font-size: 0.8rem !important;
+  }
 }
 
 /* --------------------------------------------------------------------------- */
 /* página de detalhes do projeto */
 
-/* Estilos CSS */
 .detalhes_projetos {
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: var(--fundo);
+  line-height: 1.6;
+  background-color: white;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 40px 0px;
+  border-left: 3px solid rgba(85, 163, 87, 0.123);
+  border-right: 3px solid rgba(85, 163, 87, 0.123);
+  box-sizing: border-box;
+  border-radius: 2.5px;
 }
 
-/* O CONTAINER OCUPA A LARGURA TOTAL SEM LIMITES */
+#mensagem {
+  display: none;
+  text-align: center;
+  color: var(--texto-escuro);
+  width: 100%;
+  grid-column: 1 / span 2;
+}
+
 .container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos de conteúdo interno: aplicamos um padding horizontal (à esquerda e à direita)
-   para o texto não "colar" nas bordas da tela. */
-.header-top,
-h1,
-.integrantes,
-.objetivo-pesquisa {
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-/* Estilo para o ícone de seta (simulado com texto) */
-.header-top {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-top: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .back-arrow {
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    color: #000000;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
 }
 
-/* Título Principal */
-h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-    margin-top: 0;
-    text-align: center;
-}
-
-/* Informações dos Integrantes */
 .integrantes {
-    font-size: 25px;
-    color: #555;
-    margin-bottom: 30px;
-    padding-left: 45px;
-    text-align: center;
-    /* Leve recuo para alinhar com o texto abaixo */
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+  padding-left: 45px;
+  text-align: center;
 }
 
-/* Parágrafo de Objetivo da Pesquisa */
-.objetivo-pesquisa {
-    font-size: 30px;
-    line-height: 1.8;
-    text-align: justify;
-    color: #333;
-}
-
-/* Destaque das palavras sublinhadas */
-.objetivo-pesquisa u {
-    text-decoration: underline;
-    text-decoration-color: #000000;
-    text-decoration-thickness: 1px;
-}
-
-/* Bloco do Diagrama/Fluxograma - OCUPA A LARGURA TOTAL */
 .diagrama-bloco {
-    margin-top: 40px;
-    padding: 0;
-    text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
+  margin-top: 10px;
+  padding: 0;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .diagrama-img {
-    max-width: 100%;
-    /* Garante que a imagem não ultrapasse a largura da tela */
-    height: auto;
-    display: block;
-    margin: 0;
-    border-radius: 8px;
-    border: 1.5px solid #000000;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 4px;
+  border: 1.5px solid var(--texto-escuro);
+}
+
+/* ========================= FILTROS DE PROJETOS ========================= */
+
+.filtros-section {
+  width: 100%;
+  text-align: center;
+  background-color: var(--fundo-branco);
+  padding: 25px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.botao-filtro {
+  background-color: #fff;
+  color: var(--texto-escuro);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 180px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.botao-filtro:hover {
+  background-color: white;
+  border-color: var(--verde-claro);
+}
+
+.botao-filtro.ativo {
+  background-color: var(--verde-claro);
+  color: white;
+  border-color: var(--verde-claro);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
