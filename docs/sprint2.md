@@ -94,7 +94,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-005.2 |       Criação da estrutura dos cards das vagas em HTML           | Luiza            | 13/10 |     00      |      DW      |          RF04           |  ✅    |
 | DW-005.3 |       Criação da estrutura do formulário de candidatura em HTML          | Luiza            | 13/10 |     00      |      DW      |          RF04           |   ✅   |
 | DW-005.4 |       Criação de um arquivo CSS para a página de vagas          | Luiza            | 13/10 |     00      |      DW      |          RF04           |   ✅   |
-| SO-005 |       Criação de um arquivo CSS para a página de vagas          | Luiza            | 15/10 |     00      |      SO     |                     |   ✅   |
+| SO-005 |       Configuração GitHub          | Luiza            | 15/10 |     00      |      SO     |                     |   ✅   |
 | DW-005.5 |       Estilização da página         | Luiza            | 17/10 |     00      |      DW      |          RF04           |   ✅   |
 | DW-005.6 |       Criação de um arquivo CSS para a página de candidatura          | Luiza            | 21/10 |     00      |      DW      |          RF04           |  ✅    |
 | DW-005.7 |       Estilização da página         | Luiza            | 21/10 |     00      |      DW      |          RF04           |  ✅    |
