@@ -130,6 +130,9 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-00.1 |        Estilizar o footer em CSS         | Willian            | 15/10 |     00      |      DW      |          RF01.3           |   ✅   |
 | DW-011 |        Criar a estrutura da página administrativa em HTML          |   João Otávio            | ---- |     00      |      DW      |   RNF02                  |  ⬜     |
 | DW-11.1 |       Estilizar a página administrativa em CSS          |    João Otávio         | ---- |     00      |      DW      |  RNF02                   |  ⬜     |
+| DW-012 |        Criação da estrutura HTML menu hamburguer.       |   Ariana          | 29/10 |     00      |      DW      |                   |  ⬜     |
+| DW-12.1 |        Estilização do menu hamburguer.       |   Ariana          | 29/10 |     00      |      DW      |                   |  ⬜     |
+| DW-012 |        Criação do menu hamburguer em HTML.       |   Ariana          | 29/10 |     00      |      DW      |                   |  ⬜     |
 | DW-007 |        Refinamento página de contato.       |   Luiza          | 23/10 |     00      |      DW      |     RF08                |  ✅     |
 | DW-001 |        Refinamento página de artigos.              | Ariana            | 23/10 |     00      |      DW      |  RF07                   |  ✅     |
 | DW-004 |        Refinamento página de projetos.         |  Ariana           | 23/10 |     00      |      DW      |       RF05              |  ✅     |
