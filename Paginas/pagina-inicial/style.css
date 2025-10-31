@@ -122,7 +122,7 @@ a {
 }
 
 .area-card {
-    background-color: var(--cor-azul-terciaria);
+    background-color: var(--azul-clarinho1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -366,9 +366,9 @@ a {
   }
 
   .area-card-fundo {
-    width: 100%;
+    width: 90%;
     max-width: 420px;
-    height: 250px;
+    height: auto;
   }
 
   .noticia-principal-content {

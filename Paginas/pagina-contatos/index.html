@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--responsividade-->
 
     <!-- Linkando o CSS -->
-         <link rel="stylesheet" href="style.css">
-         <link rel="stylesheet" href="../HeaderFooter/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../HeaderFooter/style.css">
 
 
     <!-- Importando fonte 1 (MONTSERRAT)-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link 
-            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
-            rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
 </head>
@@ -41,7 +41,14 @@
             </div>
 
         </div>
+
         <div class="headerBottom">
+            <button class="hamburguer" id="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <nav id="navHeader" class="navBar">
                 <ul class="ulNav">
                     <li><a class="decorationHeaderMenu" href="../../Paginas/pagina-inicial/index.html">Página
@@ -57,7 +64,8 @@
                     <li><a class="decorationHeaderMenu" href="../../Paginas/pagina-sobre/sobre.html">Sobre</a></li>
                     <li><a class="decorationHeaderMenu" href="../../Paginas/pagina-vagas/index-vagas.html">Vagas</a>
                     </li>
-                    <li class="item-direita"><a class="decorationHeaderMenu alignFaleConosco"
+                    <li class="item-direita">
+                        <a class="decorationHeaderMenu alignFaleConosco"
                             href="../../Paginas/pagina-contatos/index.html">Fale Conosco</a>
                     </li>
                 </ul>
@@ -65,7 +73,7 @@
         </div>
     </header>
 
-<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
 
 
     <!-- id elementos é a flexbox para que o form divida o espaço da tela com o mapa -->
@@ -156,9 +164,9 @@
             </div>
         </div>
     </section>
-</body>
 
-<!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
 
     <footer>
         <div id="FooterDad" class="footerDad">
@@ -219,5 +227,7 @@
 
         </div>
     </footer>
+    <script src="../HeaderFooter/menu-header.js"></script>
+</body>
 
 </html>
