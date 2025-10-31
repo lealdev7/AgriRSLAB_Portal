@@ -284,14 +284,16 @@ MENU HAMBURGUER
   padding-left: 0;
 }
 
+.item-direita {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
 .ulNav li:first-child {
   padding-left: 7.05vh;
 }
 
-.item-direita {
-  margin-left: auto !important;
-  margin-right: 50px;
-}
+
 
 .decorationHeaderMenu {
   display: block;
@@ -526,8 +528,8 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     font-size: 1.1rem;
   }
 
-  .item-direita {
-    margin: 0;
+  .ulNav li:first-child {
+    padding-left: 0;
   }
 
   /* FOOTER */
@@ -618,7 +620,7 @@ MENU HAMBURGUER
     border: none;
     cursor: pointer;
     position: absolute;
-    right: 20px;
+    left: 20px;
     z-index: 3000;
   }
 
@@ -633,21 +635,26 @@ MENU HAMBURGUER
   .ulNav {
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--verde-claro);
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
+    width: 220px;
+    padding: 20px 40px;
     margin: 0;
     list-style: none;
     z-index: 2000;
+    margin-left: 0 !important;
   }
 
   /* Mostra o menu quando clicado */
   .ulNav.active {
     display: flex !important;
+  }
+
+  .item-direita {
+    margin-left: 0;
+    margin-right: 50px;
   }
 
   .ulNav li {
@@ -656,9 +663,9 @@ MENU HAMBURGUER
 
   .ulNav li a {
     color: var(--cor-texto-branco);
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    align-items: flex-start;
   }
 
   /* Esconde a barra de busca */
@@ -672,4 +679,11 @@ MENU HAMBURGUER
     position: relative;
   }
 
+  
+.decorationHeaderMenu {
+  display: flex;
+  color: var(--cor-texto-branco);
+  font-size: 16px !important;
+  transition: 0.5s;
+}
 }
