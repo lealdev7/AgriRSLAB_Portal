@@ -1,9 +1,9 @@
 .junte-time {
   background-color: var(--verde-clarinho);
   color: var(--texto-escuro);
-  padding: 15px 30px;
+  padding: 40px 30px;
   text-align: left;
-    border: 1px inset;
+  border: 1px inset;
 }
 
 

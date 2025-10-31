@@ -51,7 +51,7 @@ body {
 /* Mantém o conteúdo sempre ocupando o restante da tela */
 main {
   margin: 0 auto;
-  padding: 10px 10px;
+  padding: 40px 30px;
   /* reduz o espaço lateral e superior */
   max-width: 95%;
 }
@@ -476,7 +476,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
   /* HEADER */
   .headerTop {
-    height: 20vh;
+    height: 15vh;
     min-height: 60px;
     flex-wrap: wrap;
     padding: 5px 0;
