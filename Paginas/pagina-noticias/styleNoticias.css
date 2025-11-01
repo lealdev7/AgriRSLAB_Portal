@@ -7,18 +7,22 @@
 }
 
 .btn-ver-mais {
-  background-color: var(--azul-escuro);
-  color: var(--cor-texto-claro);
+  background-color: var(--azul-claro);
+  color: #fff;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.btn-ver-mais:hover {
+  background-color: var(--azul-escuro);
+  transform: scale(1.03);
+}
+
+
 
 .cardBoxBottomTag {
   padding: 3% 0 3% 0;
@@ -84,14 +88,24 @@
 }
 
 .card-noticia {
-  background-color: #fff;
-  align-items: center;
-  border-radius: 10px;
   display: flex;
-  padding: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;           /* fixa largura total */
+  min-height: 150px;     /* mantém altura constante */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  flex-shrink: 0;        /* impede encolhimento */
+}
+
+.card-noticia.hidden {
+  visibility: hidden;    /* esconde sem quebrar layout */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .card-noticia:hover {
@@ -121,21 +135,6 @@
   color: #555;
 }
 
-.cardNotice {
-  display: flex;
-  position: relative;
-  align-items: center;
-  gap: 8px;
-  background-color: #fff;  
-  padding: 5px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px var(--sombra);
-  width: 80vw;
-  margin-left: 40px;
-  margin-bottom: 8px;
-  max-width: 1000px;
-  min-width: 500px;
-}
 
 .cards-defesas {
   display: flex;
@@ -158,9 +157,8 @@
 }
 
 .cards-noticias a {
-  text-decoration: none;
-  color: inherit;
   display: block;
+  width: 100%;
 }
 
 .cards-noticias a:hover {
@@ -278,7 +276,6 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -338,8 +335,13 @@
 }
 
 .labelYearSelection {
-  font-size: 1.1rem;
+  background-color: #fff;
+  color: var(--azul-claro);
+  padding: 8px 14px;
+  border-radius: 3px;
   font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
 }
 
 .linha-do-tempo {
@@ -490,18 +492,6 @@
   transform: scale(1.2);
 }
 
-.tagEvent {
-  color:#fff;
-  font-size: 1.2em;
-  font-weight: 300;
-  padding: 0.6em;
-  background-color: var(--azul-claro);
-  border-radius: 3px;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-bottom: auto;
-}
-
 .titleMonth {
   display: inline-block;
   position: relative;
@@ -527,8 +517,11 @@
 }
 
 .ver-todas {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
   margin-top: 15px;
+  width: auto;              /* deixa o container só do tamanho do botão */
 }
 
 .ver-todas a {
@@ -543,25 +536,130 @@
 }
 
 .ver-todas a:hover {
-  background-color: var(--azul-clarinho1);
-  transform: scale(1);
-  color: var(--cor-texto-escuro);
+  background-color: var(--azul-escuro);
+  transform: scale(1.03);
 }
+
+/* ================================
+   SELETORES E BOTÕES DE FILTRO
+================================ */
+
+/* ================================
+   SELETORES E BOTÕES DE FILTRO - VERSÃO VERDE
+================================ */
+
+/* ================================
+   FILTROS - ESTILO VERDE ELEGANTE
+================================ */
+
+/* ================================
+   FILTROS - ESTILO VERDE ELEGANTE
+================================ */
 
 .yearSelection {
-  background-color: var(--azul-claro);
-  color:#fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 1rem;
+  background-color: #ffffff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde-claro);
+  border-radius: 25px;
+  padding: 9px 18px;
   font-weight: 500;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
+.yearSelection:hover,
+.yearSelection:focus {
+  background-color: var(--verde-claro);
+  color: #ffffff;
+  border-color: var(--verde-claro);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+/* Opções dentro do select */
 .yearSelection option {
-  background-color: var(--cor-texto-claro);
-  color: var(--cor-texto-escuro);
+  background-color: #ffffff;
+  color: var(--verde-escuro);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Botão "Limpar filtro" */
+.btn-limpar-filtro {
+  background-color: #ffffff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde-claro);
+  border-radius: 25px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Aparência quando o botão estiver visível (ou seja, filtro ativo) */
+.btn-limpar-filtro:not([style*="display: none"]) {
+  background-color: var(--verde-claro);
+  color: #ffffff;
+  border-color: var(--verde-claro);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover e clique */
+.btn-limpar-filtro:hover {
+  background-color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+
+.hidden {
+  display: none;
+}
+
+.mensagem-nenhum {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin: 40px 0;
+  font-weight: 500;
+}
+
+
+.tagEvent {
+  background-color: whitesmoke;
+  color: var(--verde-escuro);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* === FILTROS SUPERIORES === */
+.filtros-superiores {
+  display: flex;
+  flex-direction: column; /* empilha as linhas */
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+  background: transparent;
+}
+
+.filtros-linha {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
@@ -588,5 +686,3 @@
     order: 1;
   }
 }
-
-

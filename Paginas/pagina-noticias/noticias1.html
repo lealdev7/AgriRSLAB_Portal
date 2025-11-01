@@ -28,9 +28,9 @@
           -->
     <header>
         <div class="headerTop">
-<a href="../pagina-inicial/index.html">
-  <img class="imageLogo" src="../HeaderFooter/imagens/logo.png" alt="Logo do site">
-</a>
+            <a href="../pagina-inicial/index.html">
+                <img class="imageLogo" src="../HeaderFooter/imagens/logo.png" alt="Logo do site">
+            </a>
             <h1 class="h1HEADER">Notícias</h1>
 
             <div class="searchBar">
@@ -77,80 +77,309 @@
         </div>
     </header>
 
-    <main>
+    <main id="todas-noticias">
 
-        <div id="FillterYearSelection" class="filterYearSelection">
-            <label for="YearSelection" class="labelYearSelection">Selecione o ano:</label>
-            <select name="YearSelection" id="YearSelection" class="yearSelection">
-                <option value="2025" selected>2025</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-            </select>
-        </div>
-
-
-        <h2 id="Mes" class="titleMonth">Janeiro</h2>
-
-        <article id="CardNotice" class="cardNotice">
-            <div id="imageConteinerNotice" class="imageConteinerNotice">
-                <img class="imageNotice" src="imagens/imagetest.png" alt="imagem noticia"></img>
+        <div class="filtros-superiores">
+            <div class="filterCategorySelection">
+                <select name="CategorySelection" id="CategorySelection" class="yearSelection">
+                    <option value="todas" selected>Categoria</option>
+                    <option value="curso">Curso</option>
+                    <option value="defesa">Defesa</option>
+                    <option value="informativo">Informativo</option>
+                </select>
             </div>
-            <div id="CardBoxNotice" class="cardBoxNotice">
-                <h3 id="TitleNotice" class="titleNotice">Notícia EXEMPLO</h3>
-                <p class="contentNotice">
-                    Texto para descrição e informações sobre a
-                    notícia.               
-                </p>
-                <div id="CardBoxBottomTag" class="cardBoxBottomTag">
-                    <span class="dateEvent"><time datetime="2025-05-08">21/01/25</time></span>
-                    <span class="tagEvent">Curso</span>
-                </div>
-            </div>
-            <a id="SeeMore" href="#" class="seeMore">Ver Detalhes</a>
-        </article>
 
-        <h2 id="Mes" class="titleMonth">Fevereiro</h2>
 
-        <article id="CardNotice" class="cardNotice">
-            <div id="imageConteinerNotice" class="imageConteinerNotice">
-                <img class="imageNotice" src="imagens/imagetest.png" alt="imagem noticia"></img>
+            <div id="FillterYearSelection" class="filterYearSelection">
+                <select name="YearSelection" id="YearSelection" class="yearSelection">
+                    <option value="todos" selected>Ano</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
             </div>
-            <div id="CardBoxNotice" class="cardBoxNotice">
-                <h3 id="TitleNotice" class="titleNotice">Seminário</h3>
-                <p class="contentNotice">
-                    Texto para descrição e informações sobre a notícia.
-                </p>
-                <div id="CardBoxBottomTag" class="cardBoxBottomTag">
-                    <span class="dateEvent"><time datetime="2025-05-08">22/02/25</time></span>
-                    <span class="tagEvent">Defesa</span>
-                </div>
-            </div>
-            <a id="SeeMore" href="#" class="seeMore">Ver Detalhes</a>
-        </article>
 
-        <article id="CardNotice" class="cardNotice">
-            <div id="imageConteinerNotice" class="imageConteinerNotice">
-                <img class="imageNotice" src="imagens/imagetest.png" alt="imagem noticia"></img>
-            </div>
-            <div id="CardBoxNotice" class="cardBoxNotice">
-                <h3 id="TitleNotice" class="titleNotice">Defesa de mestrado</h3>
-                <p class="contentNotice">
-                    Texto para descrição e informações sobre a notícia.
-                </p>
-                <div id="CardBoxBottomTag" class="cardBoxBottomTag">
-                    <span class="dateEvent"><time datetime="2025-05-08">28/02/25</time></span>
-                    <span class="tagEvent">Informativo</span>
-                </div>
-            </div>
-            <a id="SeeMore" href="#" class="seeMore">Ver Detalhes</a>
-        </article>
 
-        <div class="container-ver-mais">
-            <a href="#" class="btn-ver-mais">Ver mais</a>
-        </div>
+
+            <div class="cards-noticias">
+
+                <h2 id="Mes" class="titulo-mes">Outubro</h2>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Evt_Simpósio-geoprocessamento.png"
+                            alt="Simpósio de Geoprocessamento">
+                        <div class="texto"> <span class="tagEvent" data-category="informativo">Infomativo</span>
+                            <h3>Simpósio de Geoprocessamento destaca avanços na Modelagem de Sistemas Hídricos</h3>
+                            <p>Evento reúne pesquisadores e estudantes para discutir o uso de tecnologias espaciais
+                                no
+                                monitoramento e gestão inteligente dos recursos hídricos.</p>
+                            <span class="dateEvent"><time datetime="2025-10-22">22/10/25</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Evt_SEMAT.jpg" alt="Semana de materiais agricolas">
+                        <div class="texto">
+                            <span class="tagEvent" data-category="informativo">Informativo</span>
+                            <h3>Último dia de inscrição para a I SEMAT — Semana de Materiais Agrícolas</h3>
+                            <p>Evento reúne especialistas e estudantes para debater inovação, sustentabilidade e
+                                novos
+                                materiais aplicados ao setor agrícola.</p>
+                            <span class="dateEvent"><time datetime="2025-10-22">22/10/25</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+                        </div>
+                    </div>
+                </a>
+
+                <h2 id="Mes" class="titulo-mes">Dezembro</h2>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="informativo">Infomativo</span>
+                            <h3>AgriRS Lab desenvolve satélite-raiz para monitorar crescimento de culturas no Brasil
+                            </h3>
+                            <p>Projeto pioneiro do INPE usa radar e inteligência artificial para analisar o
+                                crescimento
+                                subterrâneo das plantas e prever produtividade com até 30 dias de antecedência.</p>
+                            <span class="dateEvent"><time datetime="2024-12-08">08/12/24</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="informativo">Infomativo</span>
+                            <h3>AgriRS Lab desenvolve satélite-raiz para monitorar crescimento de culturas no Brasil
+                            </h3>
+                            <p>Projeto pioneiro do INPE usa radar e inteligência artificial para analisar o
+                                crescimento
+                                subterrâneo das plantas e prever produtividade com até 30 dias de antecedência.</p>
+                            <span class="dateEvent"><time datetime="2024-12-08">08/12/24</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="informativo">Infomativo</span>
+                            <h3>AgriRS Lab desenvolve satélite-raiz para monitorar crescimento de culturas no Brasil
+                            </h3>
+                            <p>Projeto pioneiro do INPE usa radar e inteligência artificial para analisar o
+                                crescimento
+                                subterrâneo das plantas e prever produtividade com até 30 dias de antecedência.</p>
+                            <span class="dateEvent"><time datetime="2024-12-08">08/12/24</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>Curso de Capacitação em Sensoriamento Remoto aplicado à Agricultura
+                            </h3>
+                            <p>Treinamento oferece aulas práticas sobre análise de imagens de satélite e uso de ferramentas geoespaciais no campo.</p>
+                            <span class="dateEvent"><time datetime="2024-12-08">08/12/24</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+                <h2 id="Mes" class="titulo-mes">Novembro</h2>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>Minicurso: Introdução ao Geoprocessamento com QGIS
+                            </h3>
+                            <p>Atividade gratuita voltada a estudantes e profissionais que desejam aprender o básico sobre o software QGIS.</p>
+                            <span class="dateEvent"><time datetime="2023-11-08">08/11/23</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>AgriRS Lab promove curso interno sobre Processamento de Dados Climáticos
+                            </h3>
+                            <p>Iniciativa busca atualizar a equipe em técnicas de modelagem e interpretação de séries temporais.</p>
+                            <span class="dateEvent"><time datetime="2023-11-08">08/11/23</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Evt_Simpósio-geoprocessamento.png"
+                            alt="Simpósio de Geoprocessamento">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>INPE e AgriRS Lab lançam curso de Agricultura de Precisão em parceria com universidades federais</h3>
+                            <p>A formação combina aulas teóricas e práticas sobre o uso de dados espaciais no manejo sustentável.</p>
+                            <span class="dateEvent"><time datetime="2023-11-08">08/11/23</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Evt_SEMAT.jpg" alt="Semana de materiais agricolas">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>Curso on-line ensina fundamentos de Machine Learning para dados agrícolas</h3>
+                            <p>Programa apresenta conceitos de IA e suas aplicações no monitoramento e previsão de safras.</p>
+                            <span class="dateEvent"><time datetime="2023-11-08">08/11/23</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+                        </div>
+                    </div>
+                </a>
+                <h2 id="Mes" class="titulo-mes">Outubro</h2>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="curso">Curso</span>
+                            <h3>Curso Avançado em Análise de Dados Agrícolas com Python</h3>
+                            <p>Voltado a profissionais e pesquisadores, o curso aborda desde o tratamento de dados até a criação de modelos preditivos voltados ao agronegócio.</p>
+                            <span class="dateEvent"><time datetime="2022-10-08">08/10/22</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="defesa">Defesa</span>
+                            <h3>Defesa de mestrado aborda uso de sensores IOT no monitoramento de culturas agrícolas
+                            </h3>
+                            <p>Trabalho propõe uma rede de sensores para coleta automática de dados de umidade e temperatura no solo, otimizando a irrigação em pequenas propriedades.</p>
+                            <span class="dateEvent"><time datetime="2022-10-07">07/10/22</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="defesa">Defesa</span>
+                            <h3>Aluno do AgriRS Lab defende tese sobre modelagem hidrológica em bacias amazônicas
+                            </h3>
+                            <p>Pesquisa utiliza dados de sensoriamento remoto para estimar o impacto das mudanças climáticas no regime hídrico da região norte do Brasil.</p>
+                            <span class="dateEvent"><time datetime="2022-10-08">08/10/22</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="defesa">Defesa</span>
+                            <h3>Defesa de doutorado investiga o uso de imagens de radar na estimativa de produtividade agrícola
+                            </h3>
+                            <p>O estudo propõe algoritmos que relacionam índices de vegetação obtidos por satélite com dados de campo de culturas de soja e milho.</p>
+                            <span class="dateEvent"><time datetime="2021-10-09">09/10/21</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="defesa">Defesa</span>
+                            <h3>Pesquisa de mestrado analisa o papel da inteligência artificial na previsão de safras
+                            </h3>
+                            <p>A dissertação demonstra como modelos de aprendizado de máquina podem antecipar variações de rendimento em plantações com base em dados climáticos.</p>
+                            <span class="dateEvent"><time datetime="2021-10-10">10/10/21</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+
+
+
+                <a href="noticias2.html">
+                    <div class="card-noticia">
+                        <img src="../../imagens/4. Eventos/Nt_AgriRS.png"
+                            alt="Defesa de mestrado Sistemas IOT na agricultura.">
+                        <div class="texto"> <span class="tagEvent" data-category="defesa">Defesa</span>
+                            <h3>Estudo de doutorado avalia a eficiência de modelos de evapotranspiração na agricultura de precisão
+                            </h3>
+                            <p>O trabalho compara diferentes métodos de estimativa e propõe melhorias para o uso em ambientes semiáridos.</p>
+                            <span class="dateEvent"><time datetime="2021-10-21">11/10/21</time></span>
+                            <p class="continuar-lendo">Ler mais</p>
+
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="ver-todas">
+                <button class="btn-ver-mais">Ver mais notícias</button>
+            </div>
 
     </main>
 
@@ -208,12 +437,18 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <a id="AdmAcess" href="#">Acesso administrativo</a>
-            </div>
 
+
+
+            </div>
+                <div class="footer-copy">
+  <p>&copy; 2025 AgriRS Lab. Todos os direitos reservados.</p>
+</div>
         </div>
     </footer>
-        <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="noticias.js" defer></script>
 
 </body>
+
 </html>
