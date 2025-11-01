@@ -164,7 +164,7 @@ a {
 .decorationHeaderMenu {
   display: block;
   text-decoration: none;
-  color: var(--cor-texto-branco);
+  color: var(--texto-claro);
   font-size: 16px;
   transition: 0.5s;
 }
@@ -235,8 +235,10 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .section-areas {
     padding: 50px 80px;
+    justify-content: center;
     background-color: var( --fundo-branco);
     color: var( --texto-escuro);
+    
 }
 
 
@@ -251,8 +253,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .areas-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 30px;
     justify-content: center;
 }
@@ -260,13 +261,13 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 .area-card-fundo{
     background-color: var( --azul-escuro);
     border-radius: 20px;
-    width: 350px;
+    width: 300px;
     height: 450px;
     padding: 5px 7px 10px;
 }
 
 .area-card {
-    width: 350px;
+    width: 300px;
     height: 100%; 
     display: flex;
     flex-direction: column; 
@@ -285,8 +286,9 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 .area-card p{
     font-family: var(--fonte-principal);
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     text-align: start;
+    line-height: 1.4;
 }
 
 
@@ -306,7 +308,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .linha-divisoria-projetos{
     background-color: var(--verde-escuro);
-    width: 90%;
+    width: 100%;
     height: 5px;
     border-radius: 10px;
     margin-bottom: 60px;
@@ -323,7 +325,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 }
 
 .projeto-img{
-    width: 90%;
+    width: 100%;
     height: 600px; 
     /* Removido margin-left: 50px; para centralizar melhor */
     
@@ -345,7 +347,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     border-radius: 10px;
 }
 
-/* Novo container para posicionar o texto e o botão sobre a imagem */
 .projeto-destaque-container {
     /* CHAVE 2: Posiciona o container ABSOLUTAMENTE sobre a imagem */
     position: absolute;
@@ -388,7 +389,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .ver-projeto-bt {
     background-color: var(--cor-verde-secundaria); 
-    color: var(--cor-fundo); 
+    color: var(--fundo-branco); 
     font-family: var(--fonte-principal);
     font-weight: 600;
     padding: 12px 25px; 
@@ -398,6 +399,10 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     font-size: 18px;
     /* Ajuste de cor e estilo para corresponder exatamente à imagem */
     background-color: rgba(94, 150, 94, 0.9); /* Um verde com leve transparência/sombra, ou apenas sólido (verde-secundaria) */
+}
+
+.ver-projeto-bt:hover {
+    background-color: var(--verde-claro); 
 }
 
 /* Manter o botão "Ver todos os projetos" no mesmo lugar (canto inferior direito da SECTION) */
@@ -459,7 +464,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .linha-divisoria-noticia{
     background-color: var(--azul-escuro);
-    width: 90%;
+    width: 100%;
     height: 5px;
     border-radius: 10px;
     margin-bottom: 60px;
@@ -508,8 +513,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     border-radius: 10px;
 }
 
-
-
 .noticias-btn{
     background:var(--azul-clarinho2);
     color: var(--texto-escuro);
@@ -550,6 +553,8 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     font-family: var(--fonte-principal);
     font-size: 20px;
 }
+
+
 
 /* ---------------------------------------------------- */
 /* 6. FOOTER */
@@ -673,9 +678,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 /* MEDIA QUERIES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 720PX) */
 /* ---------------------------------------------------- */
 @media (max-width: 720px) {
-    :root {
-        /* ... (Mantenha suas variáveis se houver) ... */
-    }
 
     /* 2. ESTILOS GERAIS */
     .section-areas,
@@ -687,7 +689,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
 
-    /* 3. CABEÇALHO E NAVEGAÇÃO */
+    /* 3. CABEÇALHO E NAVEGAÇÃO (MANTIDO ORIGINAL) */
     /* --- HEADER --- */
     .headerTop {
         height: 20vh;
@@ -701,11 +703,12 @@ ul:hover .decorationHeaderMenu:not(:hover) {
         aspect-ratio: 1 / 1;
         margin: auto 10px auto 15px;
     }
-    .headerBottom {
-        height: auto; /* Altura automática para a nova fonte */
-        padding: 8px 0; /* Um pouco de espaço vertical */
 
-        /* Propriedades de Scroll (movidas do .ulNav) */
+    .headerBottom {
+        height: auto;
+        padding: 8px 0;
+
+        /* Propriedades de Scroll (mantidas) */
         overflow-x: auto;
         overflow-y: hidden;
         scrollbar-width: none;
@@ -719,16 +722,16 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     .searchBar {
         margin: 10px 15px 5px 15px;
         min-width: 120px;
-        width: auto; /* Deixa o flex-basis cuidar da largura */
+        width: auto;
         order: 3;
     }
 
     .headerBottom::-webkit-scrollbar {
-        display: none; /* sumir a barra scroll no chrome */
+        display: none;
     }
 
     .ulNav {
-        gap: 20px; /* Reduzi o gap da versão desktop */
+        gap: 20px;
         margin-left: 0;
         padding: 0 45px;
         display: flex;
@@ -746,7 +749,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
     .ulNav li {
-        /* Mantido scroll-snap-align para o efeito de "travamento" */
         scroll-snap-align: center;
     }
 
@@ -754,7 +756,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
         padding-left: 0;
     }
 
-    /* Aumenta a fonte e o peso dos links no menu */
     .decorationHeaderMenu {
         font-size: 1.15rem;
         font-weight: 400;
@@ -765,60 +766,82 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
     /*--------------------------------------------*/
-    /* 4. HERO SECTION (ANÚNCIO) */
+    /* 4. HERO SECTION (ANÚNCIO) (OTIMIZADA) */
     .anuncio {
-        height: 40vh; /* Diminui um pouco a altura */
+        width: 100%;
+        height: 470px;    
+    }
+
+    .imagem_anuncio{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; 
+    }
+
+    .anuncio_img {
+    width: 100%;
+    height: 100%; /* Ajuste para preencher a altura do .anuncio */
+    object-fit: cover; /* Adicione aqui */
+    display: block;
     }
 
     .anuncio_container {
-        /* Garante que o texto fique centralizado horizontalmente */
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center; 
         align-items: center;
-        /* Remove o margin-top que estava puxando para baixo */
-        margin-top: 0;
+        text-align: center; 
         padding: 0 20px;
+    
     }
 
     .anuncio_texto {
-        font-size: 24px; /* Ajuste para o celular */
+        font-size: 24px;
     }
 
     .anuncio_p {
-        font-size: 16px; /* Ajuste para o celular */
+        font-size: 16px;
         margin-top: 5px;
     }
 
 
     /*-----------------------------------------------*/
-    /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
+    /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) (OTIMIZADA) */
     .section-areas h2 {
-        font-size: 26px; /* Ajuste para celular */
+        font-size: 24px;
     }
 
     .areas-grid {
+        /* Garante empilhamento vertical no mobile */
+        display: block; 
         gap: 20px;
     }
 
     .area-card-fundo{
-        /* Centraliza o card no meio da tela */
         width: 100%;
-        max-width: 420px; /* Mantém um máximo se o container for muito grande */
-        height: 250px;
-        padding: 0px 0px 10px 10px;
+        max-width: 420px;
+        height: auto; /* Ajuste para flexibilidade */
+        padding: 0px 0px 5px 5px;
+        margin: 20px auto 0; /* Centraliza e separa os cards */
     }
     .area-card {
         width: 100%;
-        height: 240px;
+        height: auto; /* Ajuste para flexibilidade */
+        padding: 20px;
     }
 
     .area-card p{
-        font-size: 18px; /* Ajuste de fonte */
+        font-size: 15px;
+        line-height: 1.2;
     }
 
 
     /*----------------------------------------------------*/
-    /* 6. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
+    /* 6. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) (OTIMIZADA) */
     .section-projetos {
-        height: auto; /* Permite que a seção se ajuste ao conteúdo */
+        height: auto;
     }
 
     .linha-divisoria-projetos {
@@ -827,7 +850,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
     .projetos-slogan {
-        font-size: 22px; /* Reduzido um pouco */
+        font-size: 24px;
         text-align: start;
         font-weight: 600;
         margin-bottom: 15px;
@@ -835,50 +858,45 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
     .projeto-img {
         width: 100%;
-        height: 350px; /* Aumentei um pouco a altura da imagem para melhor visualização */
-        margin: 0; /* Removendo margens desnecessárias */
+        height: 350px;
+        margin: 0;
     }
 
-    /* ********** CHAVE PARA MOBILE ********** */
     .projeto-destaque-container {
-        /* Ajuste do padding e alinhamento para o mobile */
         padding: 0 20px;
-        justify-content: flex-end; /* Posiciona o texto na parte inferior */
+        justify-content: flex-end;
         padding-bottom: 20px;
-        margin-top: 0; /* Remove o margin-top */
+        margin-top: 0;
     }
 
     .projeto-destaque-titulo {
-        font-size: 24px; /* Aumentei o título para ser mais legível */
-        /* Garante quebra de linha em telas pequenas */
-        line-height: 1.2; 
+        font-size: 24px;
+        line-height: 1.2;
     }
 
     .projeto-destaque-p {
         font-size: 16px;
-        margin-bottom: 15px; /* Reduz o espaço antes do botão */
+        margin-bottom: 15px;
     }
 
     .ver-projeto-bt {
         padding: 8px 15px;
         font-size: 16px;
     }
-    /* *************************************** */
 
     .acesso-projetos-bt {
         position: static;
-        width: 50%;
         max-width: 200px;
-        height: 45px;
+        height: 35px;
         margin-top: 30px;
-        margin-left: auto; /* Alinha o botão à direita na linha */
-        align-self: flex-end; /* Alinha o botão à direita na coluna flexível */
+        margin-left: auto;
+        align-self: flex-end;
     }
 
     /*----------------------------------------------------*/
-    /* 7. SEÇÃO NOTÍCIAS (News) */
-    .noticia-section {
-        font-size: 26px; /* Ajuste do tamanho do título da seção */
+    /* 7. SEÇÃO NOTÍCIAS (News) (OTIMIZADA) */
+    .noticia-section h2 { /* Título unificado para estilo */
+        font-size: 24px;
     }
     
     .linha-divisoria-noticia {
@@ -898,7 +916,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
     .noticia-principal-img {
-        height: 200px; /* Reduzido um pouco mais */
+        height: 200px;
     }
     
     .noticia-principal-content {
@@ -907,77 +925,77 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     }
 
     .noticia-principal-texto {
-        font-size: 18px; /* Ajuste para o corpo do texto */
+        font-size: 18px;
     }
     
     .noticias-btn-fundo {
-        margin: 20px auto 10px auto; /* Centraliza o botão e ajusta margens */
+        margin: 20px auto 10px auto;
     }
 
     .noticias-secundarias-item {
         width: 100%;
-        height: 180px; /* Altura um pouco menor */
+        height: 180px;
         padding: 15px;
     }
 
     .noticia-texto {
-        font-size: 18px; /* Ajuste para o texto secundário */
+        font-size: 18px;
     }
 
 
-    /* 8. FOOTER */
-   .footerDad {
-    flex-direction: column;
-    min-height: auto;
-    padding: 30px 15px;
-    align-items: center;
-    gap: 30px;
-}
-.footerSection {
-    width: 95%;
-    max-width: unset;
-    height: auto;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-}
+    /* 8. FOOTER (MANTIDO ORIGINAL) */
+    .footerDad {
+        flex-direction: column;
+        min-height: auto;
+        padding: 30px 15px;
+        align-items: center;
+        gap: 30px;
+    }
+    .footerSection {
+        width: 95%;
+        max-width: unset;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
 
-.logoFooterSection {
-    align-self: center;
-    margin: 0 0 15px 0;
-}
+    .logoFooterSection {
+        align-self: center;
+        margin: 0 0 15px 0;
+    }
 
-.footerSection:first-child::after {
-    display: none;
-}
+    .footerSection:first-child::after {
+        display: none;
+    }
 
-.emailLineFooter {
-    justify-content: center;
-}
+    .emailLineFooter {
+        justify-content: center;
+    }
 
-.imagensFooter {
-    justify-content: center;
-    padding: 10px 0;
-}
+    .imagensFooter {
+        justify-content: center;
+        padding: 10px 0;
+    }
 
-.buttonFooter {
-    width: 50%;
-    min-width: 150px;
-}
+    .buttonFooter {
+        width: 50%;
+        min-width: 150px;
+    }
 
- #Map {
-     padding: 20px 0 0 0;
-     width: 100%;
- }
+    #Map {
+        padding: 20px 0 0 0;
+        width: 100%;
+    }
 
- .mapa-estilizado {
-    max-width: 100%;
- }
+    .mapa-estilizado {
+        max-width: 100%;
+    }
 
- #AdmAcess {
-     align-self: center;
-     margin-top: 20px;
- }
+    #AdmAcess {
+        align-self: center;
+        margin-top: 20px;
+    }
 }
 
 
