@@ -46,6 +46,10 @@ A equipe entregou para o cliente o prototipo do site, seguindo os requisitos par
 
 
 ## Burndown Sprint 1
+<img width="1595" height="659" alt="sprint1 burndown" src="https://github.com/user-attachments/assets/3bdfaf2f-02eb-4a9e-b638-9a0ab931ae19" />
+
+
+
 
 
 

@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-/* VARIÁVEIS CSS */
+/* VARIÁVEIS */
 :root {
   --verde-escuro: #36794E;
   --verde-claro: #55A357;
@@ -26,8 +25,7 @@
   --fonte-principal:
 }
 
-
-/* ESTILOS GERAIS E RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -35,11 +33,11 @@
     font-family:  "Montserrat", "Open Sans", Arial, sans-serif;
 }
 
-
 body {
     font-family: var(--fonte-principal);
     color: var(--cor-fonte);
     line-height: 1.6;
+    background-color: var(--cor-fundo);
 }
 
 a {
@@ -47,6 +45,7 @@ a {
     color: inherit;
 }
 
+/* 1. SEÇÃO DESTAQUE (ANÚNCIO) */
 
 /* 1. CABEÇALHO E NAVEGAÇÃO */
 
@@ -193,27 +192,29 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     background-color: var(--fundo-branco);
 }
 
-
-.anuncio_img{
-   width: 100%;
-   height: 100%;
+.imagem_anuncio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* faz preencher tudo sem distorcer */
+    display: block;
 }
 
-/*---TEXTO DO ANÚNCIO---*/
-.anuncio_container{
-    /* CHAVE 2: Posiciona o container ABSOLUTAMENTE sobre a imagem */
+.anuncio_container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* CHAVE 3: Usa Flexbox para centralizar o conteúdo verticalmente e horizontalmente */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    margin-top: 50px;
-    align-items: center; /* Alinha o conteúdo ao centro da imagem */
-    padding: 0 50px; /* Adiciona um padding para o texto não colar nas bordas */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.2);
+    /* leve sombra pra destacar o texto */
 }
 
 .anuncio_texto{
@@ -224,15 +225,14 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     color: var( --fundo-branco);
 }
 
-.anuncio_p{
-    font-size: 20px;
+.anuncio_p {
+    font-size: clamp(14px, 2.5vw, 20px);
     font-weight: 500;
-    margin-top: 10px;
+    max-width: 800px;
+    color: #fff;
 }
 
-
-/* 3. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
-
+/* 2. SEÇÃO ÁREAS DE PESQUISA */
 .section-areas {
     padding: 50px 80px;
     justify-content: center;
@@ -241,21 +241,19 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     
 }
 
-
-.areas-titulo{
+.areas-titulo {
     font-family: var(--fonte-principal);
     font-size: 30px;
     font-weight: 600;
-    text-align: start;
     margin-bottom: 5px;
 }
-
 
 .areas-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
     justify-content: center;
+    gap: 30px;
 }
 
 .area-card-fundo{
@@ -276,26 +274,20 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     overflow: hidden;
     padding: 25px;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    transform: translateX(0);
 }
 
-.area-card:hover{
+.area-card:hover {
     transform: translateY(-8px);
 }
 
-.area-card p{
-    font-family: var(--fonte-principal);
+.area-card p {
     font-size: 20px;
     font-weight: 500;
     text-align: start;
     line-height: 1.4;
 }
 
-
-
-/* ---------------------------------------------------- */
-/* 4. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
-/* ---------------------------------------------------- */
+/* 3. SEÇÃO PROJETOS */
 .section-projetos {
     display: flex;
     flex-direction: column;
@@ -314,8 +306,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     margin-bottom: 60px;
 }
 
-.projetos-slogan{
-    font-family: var(--fonte-principal);
+.projetos-slogan {
     font-size: 30px;
     font-weight: 600;
     color: var(--texto-escuro);
@@ -330,17 +321,12 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     /* Removido margin-left: 50px; para centralizar melhor */
     
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    /* CHAVE 1: Define o contexto para posicionamento absoluto */
-    position: relative; 
-    /* Garante que o conteúdo que vaza da imagem não apareça */
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-.imagem_projeto{
+.imagem_projeto {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -348,25 +334,16 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 }
 
 .projeto-destaque-container {
-    /* CHAVE 2: Posiciona o container ABSOLUTAMENTE sobre a imagem */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* CHAVE 3: Usa Flexbox para centralizar o conteúdo verticalmente e horizontalmente */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    margin-top: 50px;
-    align-items: flex-start; /* Alinha o conteúdo à esquerda */
-    padding: 0 50px; /* Adiciona um padding para o texto não colar nas bordas */
-}
-
-.projeto-destaque-txt{
-    margin-left: 0;
-    /* O texto parece estar alinhado à esquerda e não centralizado na segunda imagem */
-    text-align: left; 
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
 }
 
 .projeto-destaque-titulo{
@@ -409,10 +386,8 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 .acesso-projetos-bt{
     background-color: var(--cor-verde-secundaria);
     color: var(--cor-fundo);
-    font-family: var(--fonte-principal);
     font-weight: 600;
-    width: 200px;
-    height: 50px;
+    padding: 9px 25px;
     border-radius: 5px;
     border: none;
     position: absolute;
@@ -440,24 +415,15 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 
 
-
-/* ---------------------------------------------------- */
-/* 5. SEÇÃO NOTÍCIAS (News) */
-/* ---------------------------------------------------- */
+/* 4. SEÇÃO NOTÍCIAS */
 .noticia-section {
-    font-size: 30px;
-    font-weight: 500;
-    text-align: start;
-    margin-bottom: 5px;
     padding: 50px 80px;
     color: var(--texto-escuro);
 }
 
-.noticia-titulo{
-    font-family: var(--fonte-principal);
+.noticia-titulo {
     font-size: 30px;
     font-weight: 600;
-    text-align: start;
     margin-bottom: 5px;
     color: var(--texto-escuro);
 }
@@ -472,14 +438,11 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 .noticia-layout {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Coluna grande e coluna pequena */
-    gap: 5px;
-}
-
-.noticia-principal-texto{
-    font-family: var(--fonte-principal);
-    font-size: 24px;
-    font-weight: 600;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .noticia-principal-card {
@@ -487,9 +450,11 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    box-shadow: var(--sombra-leve);
-    width: 750px;
-    height: 700px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .noticia-principal-content {
@@ -500,13 +465,13 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     gap: 20px;
 }
 
-.noticia-principal-img{
+.noticia-principal-img {
     height: 400px;
     width: 100%;
     border-radius: 10px;
 }
 
-.noticia-principal-imagem{
+.noticia-principal-imagem {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -530,7 +495,6 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     transition: transform .1s ease-in-out, background-color .2s ease;
 }
 
-
 .noticias-secundarias {
     display: flex;
     flex-direction: column;
@@ -542,8 +506,8 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     color: var(--fundo-branco);
     padding: 10px;
     border-radius: 10px;
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     overflow: hidden; 
@@ -627,6 +591,8 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   max-width: 40px;
   height: auto;
 }
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
 
 .mapa-estilizado {
   border: none;
@@ -942,6 +908,12 @@ ul:hover .decorationHeaderMenu:not(:hover) {
         font-size: 18px;
     }
 
+  .noticias-secundarias-item {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 20px;
+  }
 
     /* 8. FOOTER (MANTIDO ORIGINAL) */
     .footerDad {
@@ -1138,11 +1110,13 @@ ul:hover .decorationHeaderMenu:not(:hover) {
         right: -2%;
     }
 
-    #Map {
-        padding: 20px 0 0 0;
-    }
+  .noticia-principal-img {
+    height: auto;
+    max-height: 220px;
+  }
 
-    .buttonFooter {
-        width: 30%;
-    }
+  .areas-titulo,
+  .noticia-titulo {
+    font-size: 20px;
+  }
 }

@@ -13,6 +13,7 @@
   --azul-clarinho1: #DDF1FB;
   --azul-clarinho2: #BCE2F7;
   --azul-card: #d4e8f8;
+  
 
   --marrom: #604639;
   --fundo-branco: #F8F9FA;
@@ -50,7 +51,8 @@ body {
 /* Mantém o conteúdo sempre ocupando o restante da tela */
 main {
   margin: 0 auto;
-  padding: 10px 10px; /* reduz o espaço lateral e superior */
+  padding: 40px 30px;
+  /* reduz o espaço lateral e superior */
   max-width: 95%;
 }
 
@@ -78,7 +80,8 @@ img {
   color: #333;
   position: relative;
   display: inline-block;
-  margin: 30px 0 10px 0; /* espaço antes do título */
+  margin: 30px 0 10px 0;
+  /* espaço antes do título */
   padding-bottom: 6px;
 }
 
@@ -105,6 +108,24 @@ img {
 }
 
 /* ======================================
+MENU HAMBURGUER 
+====================================== */
+
+.hamburguer {
+  display: none;
+}
+
+/* Configuração básica das barrinhas */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--cor-texto-branco);
+  /* estava var(--verde-1) */
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ======================================
    Texto principal (.texto-conteudo / .objetivo-pesquisa)
 ====================================== */
 
@@ -124,7 +145,8 @@ img {
   line-height: 1.8;
   text-align: justify;
   color: var(--texto-escuro);
-  font-weight: 600; /* leve negrito, mas ainda elegante */
+  font-weight: 600;
+  /* leve negrito, mas ainda elegante */
 }
 
 /* ======================================
@@ -146,6 +168,7 @@ img {
   color: var(--azul-escuro);
   margin: 0;
 }
+
 .icones-compartilhar {
   display: flex;
   align-items: center;
@@ -189,34 +212,29 @@ img {
 
 .h1HEADER {
   color: var(--cor-texto-branco);
-  font-size: clamp(20px, 2.5vw, 30px);
-  white-space: nowrap;
-  flex-shrink: 1;
+  font-size: clamp(16px, 2.2vw, 22px);
+  white-space: normal;
+  /* permite quebra */
+  flex: 1;
 }
 
 /* Barra de pesquisa */
 .searchBar {
+  position: relative;
   display: flex;
   align-items: center;
-  margin: 0 50px 0 auto;
-  background-color: var(--cor-texto-branco);
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-  height: 38px;
-  min-width: 240px;
-  max-width: 280px;
+  margin: 0 35px 0 auto;
+  flex-shrink: 1;
+  min-width: 150px;
 }
 
 .inputSearch {
-  flex: 1;
+  padding: 8px 40px 8px 15px;
+  border-radius: 20px;
   border: none;
+  width: 250px;
+  font-size: 14px;
   outline: none;
-  height: 100%;
-  padding: 0 10px;
-  font-size: 0.95rem;
-  color: var(--texto-escuro);
-  background-color: var(--cor-texto-branco);
 }
 
 .inputSearch::placeholder {
@@ -224,34 +242,30 @@ img {
 }
 
 .searchBtn {
-  background-color: var(--verde-claro);
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
   border: none;
-  height: 100%;
-  width: 45px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.searchBtn:hover {
-  background-color: var(--verde-escuro);
-}
-
-.searchBtn svg {
-  fill: var(--cor-texto-branco);
-  width: 18px;
-  height: 18px;
+  padding: 0;
+  height: 35px;
+  width: 35px;
 }
 
 /* Menu */
 .headerBottom {
   background-color: var(--verde-claro);
-  height: 5vh;
+  min-height: 50px;
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
+  padding: 8px 0;
 }
 
 .navBar {
@@ -270,14 +284,17 @@ img {
   padding-left: 0;
 }
 
+.item-direita {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
 .ulNav li:first-child {
   padding-left: 7.05vh;
 }
 
-.item-direita {
-  margin-left: auto !important;
-  margin-right: 50px;
-}
+
+
 .decorationHeaderMenu {
   display: block;
   text-decoration: none;
@@ -389,14 +406,14 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 }
 
 .buttonFooter {
-  width: 30%;
+  width: 180px;
   background-color: var(--verde-claro);
   border: none;
   color: var(--cor-texto-branco);
   padding: 10px 15px;
   font-size: 1rem;
   border-radius: 7px;
-  margin: 10px 2px;
+  margin: 2px 2px;
   box-shadow: -3px -3px 0 0 var(--verde-escuro);
 }
 
@@ -418,12 +435,14 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   .titulo-secao {
     font-size: 1.2rem;
     font-weight: 600;
-    margin: 25px 0 8px 10px; /* pequeno recuo e menos espaço vertical */
+    margin: 25px 0 8px 10px;
+    /* pequeno recuo e menos espaço vertical */
     padding-bottom: 4px;
   }
 
   .titulo-secao::after {
-    width: 60%; /* linha mais curta pra caber melhor em telas pequenas */
+    width: 60%;
+    /* linha mais curta pra caber melhor em telas pequenas */
     height: 2px;
   }
 
@@ -454,10 +473,10 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     text-align: justify;
   }
 
-  
+
   /* HEADER */
   .headerTop {
-    height: 20vh;
+    height: 15vh;
     min-height: 60px;
     flex-wrap: wrap;
     padding: 5px 0;
@@ -472,11 +491,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     font-size: clamp(18px, 5vw, 24px);
   }
 
-  .searchBar {
-    margin: 10px 15px 5px 15px;
-    min-width: 120px;
-    order: 3;
-  }
+
 
   .headerBottom {
     height: auto;
@@ -513,22 +528,24 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     font-size: 1.1rem;
   }
 
-  .item-direita {
-    margin: 0;
+  .ulNav li:first-child {
+    padding-left: 0;
   }
 
   /* FOOTER */
   .footerDad {
     flex-direction: column;
-    padding: 30px 15px;
-    gap: 30px;
+    padding: 10px 8px;
+    gap: 10px;
     text-align: center;
   }
+
 
   .footerSection {
     width: 95%;
     align-items: center;
     padding: 0;
+    /* tira excesso interno */
   }
 
   .footerSection:first-child::after {
@@ -536,30 +553,49 @@ ul:hover .decorationHeaderMenu:not(:hover) {
   }
 
   .logoFooterSection {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    /* antes estava 15px */
   }
 
   .emailLineFooter {
     justify-content: center;
   }
 
+  .textFooter {
+    margin-bottom: 5px;
+    /* aproxima os textos */
+    font-size: 16px;
+    /* levemente menor */
+  }
+
   .imagensFooter {
     justify-content: center;
-    padding: 10px 0;
+    padding: 5px 0;
+    /* reduz espaço vertical */
+    gap: 10px;
   }
 
   .buttonFooter {
-    width: 50%;
-    min-width: 150px;
+    width: 180px;
+    min-width: 130px;
+    padding: 8px 10px;
+    /* botão mais compacto */
+    font-size: 0.95rem;
   }
 
   #Map {
     width: 100%;
-    padding: 20px 0 0 0;
-        width: 95%;
-        align-items: center;            /* Centraliza os itens */
+    padding: 10px 0 0 0;
+    width: 95%;
+    align-items: center;
+    /* Centraliza os itens */
     text-align: center;
-   }
+  }
+
+  #Map p {
+    margin: 0;
+    text-align: center;
+  }
 
   .mapa-estilizado {
     max-width: 100%;
@@ -569,4 +605,85 @@ ul:hover .decorationHeaderMenu:not(:hover) {
     align-self: center;
     margin-top: 20px;
   }
+
+  /* ======================================
+MENU HAMBURGUER 
+====================================== */
+
+.hamburguer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    z-index: 3000;
+  }
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-texto-branco);
+    border-radius: 2px;
+  }
+
+  /* Esconde o menu até clicar */
+  .ulNav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--verde-claro);
+    position: absolute;
+    top: 100%;
+    width: 220px;
+    padding: 20px 40px;
+    margin: 0;
+    list-style: none;
+    z-index: 2000;
+    margin-left: 0 !important;
+  }
+
+  /* Mostra o menu quando clicado */
+  .ulNav.active {
+    display: flex !important;
+  }
+
+  .item-direita {
+    margin-left: 0;
+    margin-right: 50px;
+  }
+
+  .ulNav li {
+    margin: 10px 0;
+  }
+
+  .ulNav li a {
+    color: var(--cor-texto-branco);
+    font-size: 16px;
+    font-weight: 400;
+    align-items: flex-start;
+  }
+
+  /* Esconde a barra de busca */
+  .searchBar {
+    display: none;
+  }
+
+  /* Garante que o container não corte o menu */
+  .headerBottom {
+    overflow: visible;
+    position: relative;
+  }
+
+  
+.decorationHeaderMenu {
+  display: flex;
+  color: var(--cor-texto-branco);
+  font-size: 16px !important;
+  transition: 0.5s;
+}
 }

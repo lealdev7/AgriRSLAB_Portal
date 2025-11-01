@@ -4,13 +4,20 @@
   --verde-1: #36794E;
   --verde-2: #55A357;
   --marrom: #604639;
-  --azul1:#0F5289;
+  --azul1: #0F5289;
   --azul2: #487DB4;
-  --cinza-BACK:#f8f9fa;
-   --cinza-borda:#e6e6e6;
+  --cinza-BACK: #f8f9fa;
+  --cinza-borda: #e6e6e6;
   --branco-card: #fff;
 }
-body{
+
+/* ==================== BASE ==================== */
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -18,269 +25,123 @@ body{
   min-height: 100%;
   background-color: var(--cinza-BACK);
 }
-main{
-  flex-grow: 1;
-  /* alinhamento com o header */
-  padding: 20px 50px 20px 20px;
-}
-*{
-   font-family: "Montserrat", sans-serif;
-   /*Garante que o tamanho de elemento considera padding*/
-   box-sizing: border-box; 
-}
-/*====================FONTES==================================*/
-/* Montserrat - Google Fonts (weight 100-900) 
-Defina o  font-weight conforme:
-light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
-styles: normal ou italic
-*/
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 
-/* Merriweather - Google Fonts (weight 400-900) 
-Defina o  font-weight conforme:
-light (weight 300), regular (weight 400) , bold (weight 700), semibold (600)
-styles: normal ou italic
-*/
-.merriweather{
-  font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-/*====================== HEADER ======================*/
-
-.headerTop{
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--verde-1);
-    align-items: center;
-    width: 100%;
-    height: 15vh;
-    padding: 0;
-    margin: 0;
-    min-height: 50px; /* minimo de diminuição*/
-}
-.imageLogo{
-  height: 90%;
-  aspect-ratio: 1 / 1;
-  margin: auto 1.5vw auto 2.5vw; 
-  width: auto;
-  border-radius: 50%;
-  box-sizing: border-box;
-  padding: 3px;
-  /* Impede esmagamento */
-  flex-shrink: 0; 
-}   
-.h1HEADER{
-    font-size: 30px;
-    color: white;
-    
-    font-size: clamp(20px, 2.5vw, 30px);
-    flex-shrink: 1;
-    white-space: nowrap;
-    
-    font-family: "Montserrat", sans-serif;
-}
-.decorationHeaderMenu{
-  text-decoration: none;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  transition: 0.5s;
-  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
-  display: block; 
-}
-/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
-.searchBar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 50px 0 auto;
-
-    flex-shrink: 1;
-    min-width: 150px;
-   
-}
-.searchBtn {
-  position: absolute; /* Posição absoluta em relação ao .search-container */
-  right: 5px; 
-  top: 50%;
-  transform: translateY(-50%); 
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  height: 35px; 
-  width: 35px; 
-}
-/* Elementos  nav  VER HEIGHT RESPONSIVO*/
-.headerBottom{
-    background-color: var(--verde-2);
-    height: 5vh;
-    display: flex;  
-    align-items: center; 
-    width: 100%;
-}
-.navBar{
-  width: 100%;
-  display: flex;
-}
-.ulNav{
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  width: 100%; 
-  align-items: center;
-  margin-left: 0;
-  padding-left: 0; /* existe um padding pagraõ de 40px do navegador para listas*/
-}
-.ulNav li:first-child {
-    /* garantir alinhamento com o centro da logo*/
-    padding-left: 7.05vh;
-}
-.item-direita {
-    margin-left: auto; 
-    margin-right: 50px;
-}
-.inputSearch{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 4px;
-}
-/* Efeito hover nos links do menu */
-.decorationHeaderMenu:hover{
-    text-decoration: solid underline #E0F9D5 2px;
-    opacity: 1;
-    transform: scale(1.2);
-}
-ul:hover  .decorationHeaderMenu:not(:hover){
-    opacity: 0.7;}
-
-
-
-/* ----------------------------------------------------------------------------------------------------------------------------------- */
-
-
-/* Form do fale conosco - Feito pelo João Otávio */
+/* ==================== SEÇÃO FALE CONOSCO ==================== */
 .area-contato {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
+  padding: 40px 20px;
+  background-color: var(--cinza-BACK);
 }
 
 .elementos-contato {
-  margin: 50px 50px;
   display: flex;
-  gap: 40px;
-  box-sizing: border-box;
   flex-wrap: wrap;
-  flex: 1 1;
+  gap: 40px;
   align-items: flex-start;
   justify-content: center;
-  max-width: 1000px;
-  
-}
-
-.form-contato {
-  padding: 0px 30px;
-  padding-bottom: 30px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-}
-
-.mapa-contato {
-  display: flex;
-  flex: 1 1;
-}
-
-.h3-contato {
-  font-weight: 500;
-  font-style: normal;
-  font-size: 30px;
-  color: #55A357;
-}
-
-.endereco-contato {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.h3-faleconosco {
-  font-weight: 500;
-  font-style: normal;
-  font-size: 30px;
-}
-
-.caixas-contato{
-  width: 400px;
-  padding: 12px;
-  font: 200 16px/1.4 "Montserrat", sans-serif;
-
-  /* aparência limpa, sem sombra escura */
-  border: 1px solid #cac2c2ce;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: none;
-  outline: none;
-
-  -webkit-appearance: none;  /* remove inner shadow padrão (Safari/Chrome) */
-  -moz-appearance: none;     /* Firefox */
-  appearance: none;
-  
-}
-
-
-
-.btn-faleconosco {
-  display: inline-flex;
-  align-items: center;           /* "left" não é válido; center é o correto */
-  justify-content: center;
-  gap: .5rem;
-  font: 600 .95rem/1.2 "Montserrat", sans-serif;
-  border: 0;
-  border-radius: 10px;
-  padding: .75rem 1rem;
-  cursor: pointer;
-  transition: transform .1s ease, background-color .2s ease, box-shadow .2s ease;
-}
-
-
-.btn--primary-faleconosco {
-  background: #55A357;
-  color: #fff;
-  box-shadow: 0 4px 0 #36794E;
-}
-.btn--primary-faleconosco:hover { background: #4b924d; }
-.btn--primary-faleconosco:active { transform: translateY(3px); box-shadow: 0 1px 0 #36794E; }
-
-
-.btn--block-faleconosco {
-  display: block;
+  max-width: 1200px;
   width: 100%;
 }
 
-/* Padronização dos SVGs de redes sociais  */
+/* ===== FORMULÁRIO ===== */
+.form-contato {
+  flex: 1 1 420px;
+  padding: 25px 30px 35px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.h3-faleconosco {
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--verde-2);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.caixas-contato {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  font: 400 16px/1.4 "Montserrat", sans-serif;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 8px;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.caixas-contato:focus {
+  border-color: var(--verde-2);
+}
+
+textarea.caixas-contato {
+  resize: none;
+  height: 150px;
+}
+
+.btn-faleconosco {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: var(--verde-2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-faleconosco:hover {
+  background: #4b924d;
+}
+
+.btn-faleconosco:active {
+  transform: translateY(2px);
+}
+
+/* ===== MAPA E REDES ===== */
+.mapa-contato {
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 15px;
+}
+
+.h3-contato {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--verde-2);
+  margin-bottom: 10px;
+}
+
+.endereco-contato {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.mapa-estilizado {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 260px;
+}
+
+/* ===== ÍCONES REDES SOCIAIS ===== */
 .contato-redes-sociais {
-  height: 50px;
-  width: 50px;
+  height: 42px;
+  width: 42px;
+  margin-right: 10px;
 }
 
 .contato-redes-sociais path,
@@ -288,288 +149,84 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 .contato-redes-sociais polyline,
 .contato-redes-sociais circle,
 .contato-redes-sociais rect {
-
-  stroke: #55A357;
+  stroke: var(--verde-2);
   stroke-width: 2px;
-  /* grossura visual igual para ambos */
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
   vector-effect: non-scaling-stroke;
- 
-  /* impede que o traço mude ao escalar o SVG */
-
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* ==================== RESPONSIVIDADE ==================== */
 
-
-
-
-/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
-.searchBar {
-  /*position: relative; 
-    display: flex; 
+/* Tablets */
+@media (max-width: 1024px) {
+  .elementos-contato {
+    flex-direction: column;
     align-items: center;
-    margin-right: 35px;
-    margin-left: auto;*/
-
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 0 35px 0 auto;
-  /* Remove margens verticais e ajusta as laterais */
-
-  /* Permite que a barra de busca encolha se não houver espaço */
-  flex-shrink: 1;
-  min-width: 150px;
-
-}
-
-.searchBtn {
-  position: absolute;
-  /* Posição absoluta em relação ao .search-container */
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  height: 35px;
-  width: 35px;
-}
-
-/* Montserrat - Google Fonts */
-.montserrat-normal {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 20;
-  font-style: normal;
-}
-
-.montserrat-bold {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 20;
-  font-style: bold;
-}
-
-.montserrat-italic {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 20;
-  font-style: italic;
-}
-
-/* Libre Baskerville - Google Fonts */
-.libre-baskerville-regular {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.libre-baskerville-bold {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.libre-baskerville-regular-italic {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.h1HEADER {
-  font-size: 30px;
-  color: white;
-
-  font-size: clamp(20px, 2.5vw, 30px);
-  flex-shrink: 1;
-  white-space: nowrap;
-
-  font-family: "Montserrat", sans-serif;
-}
-
-.decorationHeaderMenu {
-  text-decoration: none;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  transition: 0.5s;
-  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
-  display: block;
-}
-
-/* Elementos  nav*/
-.headerBottom {
-  background-color: #55A357;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  width: 100vw;
-}
-
-.navBar {
-  width: 100%;
-  display: flex;
-}
-
-.ulNav {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  width: 100%;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.item-direita {
-  margin-left: auto;
-  margin-right: 50px;
-}
-
-.inputSearch {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5px;
-  margin-left: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 4px;
-}
-
-/* Efeito hover nos links do menu */
-.decorationHeaderMenu:hover {
-  text-decoration: solid underline #E0F9D5 2px;
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-ul:hover .decorationHeaderMenu:not(:hover) {
-  opacity: 0.7;
-}
-
-/*=============================================================================================*/
-/* Footer*/
-footer{
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.footerDad{
-  padding: 20px 0;
-  background-color: var(--marrom);
-  min-height: 70vh;
-  
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  align-items: center;
-}
-.logoFooterSection{
-  height: 12vh;
-  width: 12vh;
-  margin: 2vh 2vw 0 0;
-  flex-shrink: 0; 
-}
-.imageLogoFooter{
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  box-sizing: border-box;
-  box-shadow: 0 3px 10px var(--verde-2);
-}
-.footerSection{
-  position: relative;
-  width: 45%;
-  padding: 0 15px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-}
-.footerSection:first-child::after{
-  content: '';
-  background-color: white; 
-  height: 25vw;               
-  width: 1.5px;
-  position: absolute;
-  
-  right: 7%; 
-  top: 50%;
-  transform: translateY(-50%);
-}
-.textFooter{
-  text-decoration: solid underline #55A357 2px;
-  font-size: 20px;
-}
-.emailLineFooter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    gap: 10px; 
-}
-.mapa-estilizado {
-  border: none;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-
-    width: 100%;       
-    max-width: 400px;  
-    height: 250px;
-}
-.buttonFooter{
-  width: 30%;
-  background-color: var(--verde-2);
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  margin: 10px 2px;
-  border-radius: 5px;
-  /* Sombra deslocada para o canto superior esquerdo */
-  box-shadow: -5px -5px 0 0 var(--verde-1); 
-}
-#Map{
-  display: flex;
-  padding: 6vh 5vw 0 0;
-  justify-content: center;
-}
-#AdmAcess{
-  display: flex;
-  margin-top: 15px; 
-  align-self: flex-end;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: white;
-  text-decoration: none;
-}
-.imagensFooter a svg {
-    max-width: 50px; /* Define um tamanho máximo */
-    height: auto;    /* Mantém a proporção */
-}
-
-.imagensFooter {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
+    gap: 30px;
   }
 
-  
+  .form-contato, .mapa-contato {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .h3-faleconosco {
+    font-size: 26px;
+  }
+
+  .h3-contato {
+    text-align: center;
+  }
+
+  .endereco-contato {
+    text-align: center;
+  }
+
+  .mapa-estilizado {
+    height: 220px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 678px) {
+  .area-contato {
+    padding: 20px 10px;
+  }
+
+  .elementos-contato {
+    margin: 0;
+    gap: 20px;
+  }
+
+  .form-contato {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .h3-faleconosco,
+  .h3-contato {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .caixas-contato {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .btn-faleconosco {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .mapa-estilizado {
+    height: 200px;
+  }
+
+  .contato-redes-sociais {
+    height: 38px;
+    width: 38px;
+  }
+}

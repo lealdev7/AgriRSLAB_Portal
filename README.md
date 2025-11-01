@@ -118,17 +118,12 @@ A apresentação da Sprint 1 em vídeo pode ser acessada [aqui](https://youtu.be
 | SO-002  | Testar responsividade em dispositivos distintos | 20 | SO | 2 |
 | AL-001  | Sistema de login para área administrativa | 40 | AL | 3 |
 | AL-002  | Seletor de idioma (Português/Inglês) | 20 | AL | 2 |
-| SO-003  | Subir projeto | 13 | SO | 3 |
 | MB-001  | Modelagem do banco de dados | 40 | MB | 3 |
 | MB-002  | Criar API para requisições do front-end | 20 | MB | 2 |
 | MB-003  | Layout e funcionalidades da área de administração | 20 | MB | 3 |
 | MB-004  | Inserir dados iniciais de teste no banco | 13 | MB | 2 |
-| ES-010  | Documentar passo a passo de atualização de conteúdo pelos membros | 20 | ES | 2 |
-| ES-011  | DoD (Definition of Done) | 5  | ES | 1 |
-| ES-012  | DoR (Definiton of Ready) | 5  | ES | 1 |
-| DD-012  | Criar layout no Figma (Administrativo) | 20 | DD | 2 |
-| DW-025  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
-| DW-026  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
+| DW-011  | Criar arquivo HTML (Administrativo) | 13 | DW | 2 |
+| DW-011.1  | Aplicar design CSS (Administrativo) | 13 | DW | 2 |
 | ES-013  | UML - User Cases | 5  | ES | 1 |
 | DW-027  | Criar header e footer padrão (HTML e CSS) | 13 | DW | 1 |
 | SO-004  | Configuração VScode | 5 | SO | 1 |

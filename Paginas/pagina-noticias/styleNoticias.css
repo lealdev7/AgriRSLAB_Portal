@@ -4,12 +4,11 @@
   align-items: stretch;
   flex-wrap: wrap;
   gap: 40px;
-  padding-top: 30px;
 }
 
 .btn-ver-mais {
-  background-color: var(--azul-escuro);
-  color: var(--cor-texto-claro);
+  background-color: var(--azul-claro);
+  color:#fff;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -18,13 +17,18 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn-ver-mais:hover{
+    background-color: var(--azul-clarinho1);
+    transform: scale(1);
+    color: var(--cor-texto-escuro);
 }
 
 .cardBoxBottomTag {
   padding: 3% 0 3% 0;
   display: inline-flex;
-  width: 90%;
+  width: 30%;
 }
 
 .cardBoxNotice {
@@ -127,13 +131,13 @@
   position: relative;
   align-items: center;
   gap: 8px;
-  background-color: var(--azul-clarinho2);
-  padding: 5px;
+  background-color: #fff;  
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--sombra);
   width: 80vw;
   margin-left: 40px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   max-width: 1000px;
   min-width: 500px;
 }
@@ -492,9 +496,9 @@
 }
 
 .tagEvent {
-  color: var(--cor-texto-claro);
-  font-size: 1.2em;
-  font-weight: 300;
+  color:#fff;
+  font-size: 16px;
+  font-weight: 600;
   padding: 0.6em;
   background-color: var(--azul-claro);
   border-radius: 3px;
@@ -550,8 +554,8 @@
 }
 
 .yearSelection {
-  background-color: var(--azul-escuro);
-  color: var(--cor-texto-claro);
+  background-color: var(--azul-claro);
+  color:#fff;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
