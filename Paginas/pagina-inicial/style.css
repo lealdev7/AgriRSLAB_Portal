@@ -4,18 +4,26 @@
 
 /* VARIÁVEIS CSS */
 :root {
-    --cor-verde-primaria: #36794E;
-    --cor-verde-secundaria: #55A357; 
-    --cor-verde-fundo:#e0f9d5;
-    --cor-azul-primaria: #0F5289;
-    --cor-azul-secundaria: #487DB4; 
-    --cor-azul-terciaria: #DDF1FB;
-    --cor-footer: #604639;
-    --cor-fundo: #F8F9FA; /* BACKGROUD COLOR */
-    --cor-fonte:#252525;
+  --verde-escuro: #36794E;
+  --verde-claro: #55A357;
+  --verde-clarinho: #E0F9D5;
 
-    --fonte-principal: 'Roboto', sans-serif;
-    --fonte-titulos: 'Libre Baskerville';
+  --azul-escuro: #0F5289;
+  --azul-claro: #487DB4;
+  --azul-clarinho1: #DDF1FB;
+  --azul-clarinho2: #BCE2F7;
+  --azul-card: #d4e8f8;
+
+  --marrom: #604639;
+  --fundo-branco: #F8F9FA;
+  --texto-escuro: #333;
+  --texto-claro: #f0f2f5;
+  --cor-texto-branco: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.3);
+
+  --amarelo-ver: #D3D840;
+
+  --fonte-principal:
 }
 
 
@@ -24,6 +32,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:  "Montserrat", "Open Sans", Arial, sans-serif;
 }
 
 
@@ -41,136 +50,136 @@ a {
 
 /* 1. CABEÇALHO E NAVEGAÇÃO */
 
-.headerTop{
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--cor-verde-primaria);
-    align-items: center;
-    width: 100%;
-    height: 15vh;
-    padding: 0;
-    margin: 0;
-    min-height: 50px; /* minimo de diminuição*/
+.headerTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--verde-escuro);
 }
-.imageLogo{
-  height: 90%;
+
+.imageLogo {
+  height: 80px;
   aspect-ratio: 1 / 1;
-  margin: auto 1.5vw auto 2.5vw; 
-  width: auto;
+  margin: auto 1.5vw auto 2.5vw;
   border-radius: 50%;
-  box-sizing: border-box;
   padding: 3px;
-  /* Impede esmagamento */
-  flex-shrink: 0; 
-}   
-.h1HEADER{
-    font-size: 40px;
-    color: var(--cor-fundo);
-    flex-shrink: 1;
-    white-space: nowrap;
-    font-family: "Montserrat", sans-serif;
-}
-.decorationHeaderMenu{
-  text-decoration: none;
-  color: var(--cor-fundo);
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  transition: 0.5s;
-  /* Faz com que o link ocupe todo o espaço do item da lista  necessario em efeito de salto*/
-  display: block; 
+  flex-shrink: 0;
 }
 
-/* Barra de pesquisa  TESTE RESPONSIVIDADE*/
-.searchBar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0 50px 0 auto;
-
-    flex-shrink: 1;
-    min-width: 150px;
-   
+.h1HEADER {
+  color: var(--cor-texto-branco);
+  font-size: clamp(20px, 2.5vw, 30px);
+  white-space: nowrap;
+  flex-shrink: 1;
 }
+
+/* Barra de pesquisa*/
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 0 auto;
+  background-color: var(--cor-texto-branco);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 38px;
+  min-width: 240px;
+  max-width: 280px;
+}
+
+.inputSearch {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 0.95rem;
+  color: var(--texto-escuro);
+  background-color: var(--cor-texto-branco);
+}
+
+.inputSearch::placeholder {
+  color: #777;
+}
+
 .searchBtn {
-    height: 40px; 
-    width: 40px; 
-    position: absolute; /* Posição absoluta em relação ao .search-container */
-    right: 5px; 
-    top: 50%;
-    transform: translateY(-50%); 
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* Elementos  nav  VER HEIGHT RESPONSIVO*/
-.headerBottom{
-    background-color: var(--cor-verde-secundaria);
-    height: 60px;
-    display: flex;  
-    align-items: center; 
-    width: 100%;
+  background-color: var(--verde-claro);
+  border: none;
+  height: 100%;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.navBar{
+.searchBtn:hover {
+  background-color: var(--verde-escuro);
+}
+
+.searchBtn svg {
+  fill: var(--cor-texto-branco);
+  width: 18px;
+  height: 18px;
+}
+
+/* Menu */
+.headerBottom {
+  background-color: var(--verde-claro);
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navBar {
   width: 100%;
   display: flex;
 }
 
-.ulNav{
+.ulNav {
   list-style: none;
   display: flex;
+  align-items: center;
+  width: 100%;
   gap: 20px;
   margin: 0;
-  width: 100%; 
-  align-items: center;
   margin-left: 2.5vw;
-  padding-left: 0; /* existe um padding pagraõ de 40px do navegador para listas*/
+  padding-left: 0;
 }
 
 .ulNav li:first-child {
-    /* garantir alinhamento com o centro da logo*/
-    padding-left: 7.05vh;
+  padding-left: 7.05vh;
 }
 
 .item-direita {
-    margin-left: auto; 
-    margin-right: 50px;
+  margin-left: auto !important;
+  margin-right: 50px;
+}
+.decorationHeaderMenu {
+  display: block;
+  text-decoration: none;
+  color: var(--cor-texto-branco);
+  font-size: 16px;
+  transition: 0.5s;
 }
 
-.inputSearch{
-    background-color: var(--cor-fundo);
-    width: 300px;
-    height: 60px; 
-    border-radius: 10px; 
-    border: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 5px;
-    margin-left: auto;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    padding: 20px;
-    font-family: var(--fonte-principal);
-    font-size: 14px;
+.decorationHeaderMenu:hover {
+  text-decoration: underline solid var(--verde-clarinho) 2px;
+  transform: scale(1.2);
 }
 
-
-/* Efeito hover nos links do menu */
-.decorationHeaderMenu:hover{
-    text-decoration: solid underline #E0F9D5 2px;
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-ul:hover  .decorationHeaderMenu:not(:hover){
-    opacity: 0.7;
+ul:hover .decorationHeaderMenu:not(:hover) {
+  opacity: 0.7;
 }
 
 
+/*--------------------*/
 /* 2. ANUNCIO SECTION */
 
 .anuncio {
@@ -181,7 +190,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    background-color: var(--cor-fundo);
+    background-color: var(--fundo-branco);
 }
 
 
@@ -212,7 +221,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     font-family: var(--fonte-principal);
     font-size: 30px;
     font-weight: 600;
-    color: var(--cor-fundo);
+    color: var( --fundo-branco);
 }
 
 .anuncio_p{
@@ -226,8 +235,8 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 
 .section-areas {
     padding: 50px 80px;
-    background-color: var(--cor-fundo);
-    color: var(--cor-fonte);
+    background-color: var( --fundo-branco);
+    color: var( --texto-escuro);
 }
 
 
@@ -249,8 +258,8 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 }
 
 .area-card-fundo{
-    background-color: var(--cor-azul-primaria);
-    border-radius: 10px;
+    background-color: var( --azul-escuro);
+    border-radius: 20px;
     width: 350px;
     height: 450px;
     padding: 5px 7px 10px;
@@ -261,10 +270,10 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     height: 100%; 
     display: flex;
     flex-direction: column; 
-    background-color: var(--cor-azul-terciaria);
-    border-radius: 10px;
+    background-color: var(--azul-card);
+    border-radius: 20px;
     overflow: hidden;
-    padding: 20px;
+    padding: 25px;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     transform: translateX(0);
 }
@@ -289,14 +298,14 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     display: flex;
     flex-direction: column;
     height: 960px;  
-    background-color: var(--cor-verde-fundo);
+    background-color: var(--verde-clarinho);
     padding: 50px 80px;
     position: relative;
 }
 
 
 .linha-divisoria-projetos{
-    background-color: var(--cor-verde-primaria);
+    background-color: var(--verde-escuro);
     width: 90%;
     height: 5px;
     border-radius: 10px;
@@ -307,7 +316,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     font-family: var(--fonte-principal);
     font-size: 30px;
     font-weight: 600;
-    color: var(--cor-fonte);
+    color: var(--texto-escuro);
     text-align: start;
     /* Adicionado margem inferior, como na primeira imagem */
     margin-bottom: 20px; 
@@ -361,7 +370,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 
 .projeto-destaque-titulo{
     font-family: var(--fonte-principal);
-    color: var(--cor-fundo); 
+    color: var(--fundo-branco); 
     font-size: 40px; /* Aumentado para corresponder ao tamanho da segunda imagem */
     font-weight: 600; /* Pode ser necessário para dar destaque */
     /* Remove a margem superior padrão do h2 */
@@ -372,7 +381,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 .projeto-destaque-p{
     font-family: var(--fonte-principal);
     font-size: 25px; 
-    color: var(--cor-fundo); 
+    color: var(--fundo-branco); 
     margin-top: 0;
     margin-bottom: 30px; /* Adiciona espaço antes do botão */
 }
@@ -406,30 +415,25 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     right: 80px; 
 }
 
-.acesso-projetos-bt:active{
-    background-color: var(--cor-verde-primaria);
-    transform: scale(0.90);
-}
 
 .acesso-projetos-bt{
-    background-color: var(--cor-verde-secundaria);
-    color: var(--cor-fundo);
-    font-family: var(--fonte-principal);
-    font-weight: 600;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
+    background:var(--verde-claro);
+    color: #fff;
     border: none;
-    position: absolute;
-    bottom: 60px;
-    right: 160px;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 16px;
+    font-size: .95rem;
+    gap: 10px;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    box-shadow: 0 4px 0 var(--verde-escuro);
+    transition: transform .1s ease-in-out, background-color .2s ease;
 }
 
-.acesso-projetos-bt:active{
-    background-color: var(--cor-verde-primaria);
-    /*transform: translateY(5px);*/
-    transform: scale(0.90); /* Diminui o tamanho em 2% */
-}
+
 
 
 /* ---------------------------------------------------- */
@@ -441,7 +445,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     text-align: start;
     margin-bottom: 5px;
     padding: 50px 80px;
-    color: var(--cor-fonte);
+    color: var(--texto-escuro);
 }
 
 .noticia-titulo{
@@ -450,11 +454,11 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     font-weight: 600;
     text-align: start;
     margin-bottom: 5px;
-    color: var(--cor-fonte);
+    color: var(--texto-escuro);
 }
 
 .linha-divisoria-noticia{
-    background-color: var(--cor-azul-primaria);
+    background-color: var(--azul-escuro);
     width: 90%;
     height: 5px;
     border-radius: 10px;
@@ -474,7 +478,7 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 }
 
 .noticia-principal-card {
-    border: 2px solid var(--cor-azul-primaria);
+    border: 2px solid var(--azul-escuro);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -494,7 +498,6 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 .noticia-principal-img{
     height: 400px;
     width: 100%;
-    background-color: var(--cor-azul-secundaria);
     border-radius: 10px;
 }
 
@@ -505,27 +508,23 @@ ul:hover  .decorationHeaderMenu:not(:hover){
     border-radius: 10px;
 }
 
-.noticias-btn-fundo{
-    background-color: var(--cor-azul-primaria);
-    border-radius: 5px;
-    width: 148px;
-    height: 42px;
-    padding: 3px ;
-    margin-top: 20px;
-    margin-left: auto;    
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
+
 
 .noticias-btn{
-    background-color: var(--cor-azul-terciaria);
-    border-radius: 5px;
-    width: 147px;
-    height: 110%;
-    font-family: var(--fonte-principal);
-    font-weight: 600;
-    color: var(--cor-azul-primaria);
+    background:var(--azul-clarinho2);
+    color: var(--texto-escuro);
     border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 16px;
+    font-size: 15px;
+    gap: 10px;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    box-shadow: 0 4px 0 var(--azul-escuro);
+    transition: transform .1s ease-in-out, background-color .2s ease;
 }
 
 
@@ -536,8 +535,8 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 }
 
 .noticias-secundarias-item {
-    background-color: var(--cor-azul-secundaria);
-    color: var(--cor-fundo);
+    background-color: var(--azul-claro);
+    color: var(--fundo-branco);
     padding: 10px;
     border-radius: 10px;
     width: 400px;
@@ -555,129 +554,119 @@ ul:hover  .decorationHeaderMenu:not(:hover){
 /* ---------------------------------------------------- */
 /* 6. FOOTER */
 /* ---------------------------------------------------- */
-footer{
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  margin: 0;
-  
-}
-
-.footerDad{
-  padding: 65px 60px 65px 60px;
-  background-color: var(--cor-footer);
-  min-height: 70vh;
+.footerDad {
+  padding: 10px;
+  background-color: var(--marrom);
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  font-family: "Montserrat", sans-serif;
-  color:  var(--cor-fundo);
+  justify-content: center;
   align-items: center;
+  color: var(--texto-claro);
+  gap: 10px;
 }
 
-.logoFooterSection{
-  height: 100px;
-  width: 100px;
-  margin: 2vh 2vw 0 0;
-  flex-shrink: 0; 
-}
-
-.imageLogoFooter{
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  box-sizing: border-box;
-  box-shadow: 0 3px 10px var(--verde-2);
-}
-
-.footerSection{
+.footerSection {
   position: relative;
   width: 45%;
   padding: 0 15px;
   display: flex;
   flex-direction: column;
   height: 100%;
-
 }
 
-.footerSection:first-child::after{
+.logoFooterSection {
+  flex: 1;
+  padding: 2px;
+}
+
+.imageLogoFooter {
+  max-width: 80px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footerSection:first-child::after {
   content: '';
-  background-color: white; 
-  height: 25vw;               
+  background-color: var(--fundo-branco);
+  height: 80%;
+  max-height: 220px;
   width: 1.5px;
   position: absolute;
-  
-  right: 7%; 
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.textFooter{
-  text-decoration: solid underline #55A357 2px;
-  font-size: 20px;
+.textFooter {
+  text-decoration: underline solid var(--verde-claro) 0.5px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .emailLineFooter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    gap: 10px; 
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.imagensFooter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.imagensFooter a svg {
+  max-width: 40px;
+  height: auto;
 }
 
 .mapa-estilizado {
   border: none;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 100%;       
-    max-width: 400px;  
-    height: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px var(--sombra);
+  width: 90%;
+  height: 200px;
 }
 
-.buttonFooter{
+#Map {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+#Map p {
+  margin: 0;
+  text-align: left;
+}
+
+.buttonFooter {
   width: 30%;
-  background-color: var(--cor-verde-secundaria);
+  background-color: var(--verde-claro);
   border: none;
-  color: var(--cor-fundo);
+  color: var(--cor-texto-branco);
   padding: 10px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 1rem;
+  border-radius: 7px;
   margin: 10px 2px;
-  border-radius: 5px;
-
-  /* Sombra deslocada para o canto superior esquerdo */
-  box-shadow: -4px 4px 0 0 var(--cor-verde-primaria); 
+  box-shadow: -3px -3px 0 0 var(--verde-escuro);
 }
 
-#Map{
+#AdmAcess {
   display: flex;
-  padding: 6vh 5vw 0 0;
-  justify-content: center;
-}
-
-#AdmAcess{
-  display: flex;
-  margin-top: 15px; 
+  margin-top: 15px;
   align-self: flex-end;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 15px;
-  color: white;
+  color: var(--cor-texto-branco);
   text-decoration: none;
 }
-.imagensFooter a svg {
-    max-width: 50px; /* Define um tamanho máximo */
-    height: auto;    /* Mantém a proporção */
-}
 
-.imagensFooter {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-}
+
 
 
 /* ---------------------------------------------------- */
