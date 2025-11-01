@@ -54,6 +54,7 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-001.7 | Adicionar as cores e fontes padrões aos cards             | Eloah  |21/10  |    2       |      DW      |           RF07          |  ✅    |
 | DW-001.8 | Adicionar imagens dos artigos                 | Eloah            | 21/10  |    2       |     DW       |        RF07             |   ✅   |
 | SO-005 |         Configuração GitHub        | Eloah            | 15/10 |     15      |      DW      |                     |  ✅    |
+| ES-015 |        Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação.        | Eloah            | 15/10 |     20      |      ES      |                     |  ✅    |
 | DW-002 | Criaçaõ da estrutura da página inicial em HTML | Pedro           | 13/10 |    5       |     DW       |       RF01              | ✅     |
 | DW-002.1 | Criação da estrutura dos cards da section "Atuação" em HTML                    | Pedro            | 13/10 |    8       |     DW       |           RF01          | ✅     |
 | DW-002.2 | Criação da estrutura do cards da section "Projetos" em HTML       | Pedro            | 13/10 |     8      |      DW      |         RF01            | ✅     |
@@ -131,10 +132,10 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | DW-009.1 |       Estilizar o Header em CSS          | Willian            | 15/10 |     10      |      DW      |          RF01.1           |   ✅   |
 | DW-010 |        Criar a estrutura em HTML para o Footer         | Willian            | 15/10 |     10      |      DW      |          RF01.3           |   ✅   |
 | DW-00.1 |        Estilizar o footer em CSS         | Willian            | 15/10 |     10      |      DW      |          RF01.3           |   ✅   |
-| DW-011 |        Criar a estrutura da página administrativa em HTML          |   João Otávio            | ---- |     5      |      DW      |   RNF02                  |  ⬜     |
-| DW-11.1 |       Estilizar a página administrativa em CSS          |    João Otávio         | ---- |     10      |      DW      |  RNF02                   |  ⬜     |
-| DW-012 |        Criação da estrutura HTML menu hamburguer.       |   Ariana          | 29/10 |     10      |      DW      |                   |  ⬜     |
-| DW-12.1 |        Estilização do menu hamburguer em CSS.       |   Ariana          | 29/10 |     8      |      DW      |                   |  ⬜     |
+| DW-011 |        Criar a estrutura da página administrativa em HTML          |   João Otávio            | 31/10 |     5      |      DW      |   RNF02                  |  ⬜     |
+| DW-11.1 |       Estilizar a página administrativa em CSS          |    João Otávio         | 31/10 |     10      |      DW      |  RNF02                   |  ⬜     |
+| DW-012 |        Criação da estrutura HTML menu hamburguer.       |   Ariana          | 31/10 |     10      |      DW      |                   |  ⬜     |
+| DW-12.1 |        Estilização do menu hamburguer em CSS.       |   Ariana          | 31/10 |     8      |      DW      |                   |  ⬜     |
 | DW-007 |        Refinamento página de contato.       |   Luiza          | 23/10 |     6      |      DW      |     RF08                |  ✅     |
 | DW-001 |        Refinamento página de artigos.              | Ariana            | 23/10 |     6      |      DW      |  RF07                   |  ✅     |
 | DW-004 |        Refinamento página de projetos.         |  Ariana           | 23/10 |     6      |      DW      |       RF05              |  ✅     |
@@ -144,10 +145,10 @@ Use esta tabela para acompanhar todas as tasks do projeto. Marque ⬜ para pende
 | AL-001 |        Ligação com o BD        |   William          | 23/10 |     20      |      AL     |                     |  ⬜     |
 | MB-001 |        Testes no BD         |   William         | 23/10 |     20      |      MB      |                     |  ⬜     |
 | MB-001 |        Testes no BD         |   João Otávio         | 23/10 |     20      |      MB      |                     |  ⬜     |
-
-
-
-
-
-
-
+| DW-008 |        Refinamento página sobre         |  Luiza           | 31/10 |     6      |      DW      |       RF02              |  ✅     |
+| DW-003 |        Refinamento página de notícias.         |  Ariana           | 31/10 |     6      |      DW      |    RF06                 |  ✅     |
+| DW-002 |        Refinamento página inicial         |  Pedro           | 31/10 |     6      |      DW      |    RF01                 |  ✅     |
+| SO-005 |        Configuração GitHub        | Eloah            | 31/10 |     15      |      DW      |                     |  ✅    |
+| ES-015 |        Refinar e priorizar backlog, alinhar requisitos com stakeholders, validar entregas nas reviews e garantir clareza nos critérios de aceitação.        | Eloah            | 31/10 |     20      |      ES      |                     |  ✅    |
+| AL-001 |        Ligação com o BD        |   William          | 31/10 |     20      |      AL     |                     |  ⬜     |
+| AL-001 |        Ligação com o BD        |   Felipe          | 31/10 |     20      |      AL     |                     |  ⬜     |
