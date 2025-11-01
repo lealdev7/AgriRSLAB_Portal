@@ -30,6 +30,9 @@
 
 ## Burndown Sprint 2
 
+<img width="1421" height="573" alt="burndownsprint2" src="https://github.com/user-attachments/assets/296a4e1f-2ecf-4e59-acbf-3d6ea0279449" />
+
+
 
 
 
