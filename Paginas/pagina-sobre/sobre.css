@@ -117,30 +117,33 @@ body {
   /* texto de cima */
   .sobre-card-top {
     order: 1;
+    height: 135px;
     position: static;
     margin-bottom: 1px;
     background: transparent;
     box-shadow: none;
     width: 100%;
     color: #234;
+    margin-bottom: 12px;
+    margin-top: 4px;
   }
 
-  .sobre-card-top p {
-    margin-bottom: 0px;   /* ou 0 se quiser colado */
-  }
+
 
   /* foto no meio */
   .sobre-img {
+    margin-top: 10px;
     order: 2;
     position: static;
-    width: 100%;
+    width: 320px;            
+    margin: 12px 12px 12px 12px;
     height: 210px;
     border-radius: 20px;
     overflow: hidden;
   }
   .sobre-img img {
     width: 100%;
-    height: 100%;
+    display: block;
     object-fit: cover;
   }
 
@@ -156,12 +159,46 @@ body {
   }
 
   .sobre-wrapper {
-    padding: 50px 18px 30px;   /* ↑ ↓ | ← → */
+    
+    text-align: -webkit-left;
+    padding: 1px 2px 2px 2px !important;  /* ↑ ↓ | ← → */
   }
 
-  .sobre-card-top,
-  .sobre-card-bottom {
-    padding: 7px 7px 2px 2px;            
+
+  .sobre-card-top p,
+  .sobre-card-bottom p {
+    text-align: center;           /* garante nos <p> */
+    margin-left: 20PX;
+    margin-right: 20PX;
+    max-width: 80%;               /* pra não colar na borda */
+  }
+
+ .sobre-partners {
+    padding: 30px 16px 10px;
+    text-align: center;
+  }
+
+  .sobre-partners h2 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .sobre-partners-logos {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .sobre-partners-logos img {
+    height: 50px;
+    max-width: 110px;
   }
 }
+
+
+
+
+
+
+
 
