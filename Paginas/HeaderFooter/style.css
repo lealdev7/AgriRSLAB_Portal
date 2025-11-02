@@ -187,6 +187,9 @@ MENU HAMBURGUER
   opacity: 0.8;
 }
 
+
+
+
 /* ======================================
    HEADER
 ====================================== */
@@ -216,6 +219,10 @@ MENU HAMBURGUER
   white-space: normal;
   /* permite quebra */
   flex: 1;
+}
+
+.pagina-noticias .h1HEADER::first-line {
+  font-size: 0.6em;
 }
 
 /* Barra de pesquisa */
@@ -428,9 +435,40 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 }
 
 /* ======================================
+    COPYRIGHT 
+====================================== */
+.footerDad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--marrom);
+  color: var(--texto-claro);
+  padding: 30px 40px;
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-size: 0.6rem;
+  color: var(--cor-texto-branco);
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.9;
+}
+
+/* ======================================
    RESPONSIVIDADE
 ====================================== */
 @media (max-width: 768px) {
+
+  main {
+  margin: 0 auto;
+  padding: 20px 10px;
+  /* reduz o espaço lateral e superior */
+  max-width: 100%;
+}
 
   .titulo-secao {
     font-size: 1.2rem;
