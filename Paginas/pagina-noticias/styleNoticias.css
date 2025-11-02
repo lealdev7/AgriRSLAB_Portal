@@ -8,13 +8,18 @@
 
 .btn-ver-mais {
   background-color: var(--azul-claro);
+<<<<<<< HEAD
   color:#fff;
+=======
+  color: #fff;
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+<<<<<<< HEAD
   text-decoration: none;
   display: inline-block;
   transition: background-color 0.3s, transform 0.2s;
@@ -31,6 +36,22 @@
   width: 30%;
 }
 
+=======
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ver-mais:hover {
+  background-color: var(--azul-escuro);
+  transform: scale(1.03);
+}
+
+.cardBoxBottomTag {
+  padding: 3% 0 3% 0;
+  display: inline-flex;
+  width: 30%;
+}
+
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 .cardBoxNotice {
   flex-grow: 1;
   min-width: 0;
@@ -90,13 +111,17 @@
 
 .card-noticia {
   background-color: #fff;
+<<<<<<< HEAD
   align-items: center;
+=======
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
   border-radius: 10px;
   display: flex;
   padding: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   position: relative;
+<<<<<<< HEAD
 
   scroll-snap-type: x mandatory; 
   -webkit-overflow-scrolling: touch;
@@ -107,6 +132,10 @@
 
 
 
+=======
+}
+
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 .card-noticia:hover {
   transform: scale(1.02);
 }
@@ -134,6 +163,7 @@
   color: #555;
 }
 
+<<<<<<< HEAD
 .cardNotice {
   display: flex;
   position: relative;
@@ -149,6 +179,8 @@
   max-width: 1000px;
   min-width: 500px;
 }
+=======
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 
 .cards-defesas {
   display: flex;
@@ -353,6 +385,11 @@
 .labelYearSelection {
   font-size: 1.1rem;
   font-weight: 600;
+<<<<<<< HEAD
+=======
+  font-size: 1rem;
+  display: inline-block;
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 }
 
 .linha-do-tempo {
@@ -503,6 +540,7 @@
   transform: scale(1.2);
 }
 
+<<<<<<< HEAD
 .tagEvent {
   color:#fff;
   font-size: 16px;
@@ -515,6 +553,8 @@
   margin-bottom: auto;
 }
 
+=======
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 .titleMonth {
   display: inline-block;
   position: relative;
@@ -542,6 +582,10 @@
 .ver-todas {
   text-align: right;
   margin-top: 15px;
+<<<<<<< HEAD
+=======
+  width: auto;              /* deixa o container só do tamanho do botão */
+>>>>>>> bde84436c4e5c7b4668c75220098909bb6dfd602
 }
 
 .ver-todas a {
