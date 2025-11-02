@@ -1,363 +1,317 @@
-/* Variáveis para cores baseadas na imagem */
-:root {
-    --color-background-page: #e9f5e9; /* Verde muito claro, quase branco */
-    --color-header-footer: #0a4f0a; /* Verde escuro para barra e rodapé */
-    --color-card-background: #d4e8f8; /* Azul claro para o card */
-    --color-text-dark: #333;
-    --color-title-green: #006000; /* Verde escuro para títulos de seção */
-    --color-link-blue: #007bff; /* Azul padrão para links */
-    --color-search-btn: #f0f0f0;
-}
-
-/* Reset e Fonte */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: var(--color-background-page);
-    color: var(--color-text-dark);
-}
-
-/* 1. Container Principal do Cabeçalho */
-.main-header {
-    background-color: var(--color-header-footer);
-    color: white;
-}
-
-/* 2. Top Bar (Logo, Título e Pesquisa/Contato) */
-.top-header {
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
-}
-
-.header-content {
-    max-width: 1850px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Estilo para a área do Logo e Título Juntos */
+/* ===================== CABEÇALHO ===================== */
 .logo-title-area {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .site-logo {
-    width: 120px; 
-    height: auto; 
-}
-
-/* Estilo do Título "Publicações" no Header */
-.page-header-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-left: 10px; 
-    color: white;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
+  width: 120px;
+  height: auto;
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid white;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-right: 15px; 
+  flex: 1;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--cor-texto-branco);
 }
 
 .search-box input {
-    padding: 4px 8px;
-    border: none;
-    outline: none;
-    width: 150px;
-    font-size: 0.85rem;
-    color: var(--color-text-dark);
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--texto-escuro);
+  background-color: var(--cor-texto-branco);
 }
 
 .search-box button {
-    padding: 4px 8px;
-    border: none;
-    background-color: var(--color-search-btn);
-    color: var(--color-text-dark);
-    cursor: pointer;
+  background-color: var(--fundo-branco);
+  color: var(--texto-escuro);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #eaeaea;
 }
 
 .btn-contato {
-    background-color: #f4c20d; /* Amarelo */
-    color: var(--color-text-dark);
-    text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.9rem;
+  background-color: var(--amarelo-ver);
+  color: var(--texto-escuro);
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-/* 3. Navigation Bar (Links principais) */
+/* ===================== MENU PRINCIPAL ===================== */
 .main-nav-bar {
-    display: flex;
-    justify-content: center; 
-    padding: 10px 0;
-    border-bottom: 2px solid #000; /* Linha preta final */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #000;
 }
 
 .main-nav-bar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.9rem;
-    padding: 5px;
-    transition: background-color 0.2s;
+  color: var(--cor-texto-branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  padding: 5px;
+  transition: background-color 0.2s;
 }
 
 .main-nav-bar a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
-/* 4. Filtros de Navegação (Barra de botões de filtro) */
-/* 4. Filtros Interativos (Dropdowns) */
+/* ===================== FILTROS INTERATIVOS ===================== */
 .interactive-filters {
-    background-color: white;
-    padding: 10px 0;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center; /* Centraliza a barra na horizontal */
-    border-bottom: 1px solid #ddd;
-    gap: 15px; /* Espaçamento entre os filtros */
-    position: relative; /* Necessário para posicionar os painéis */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+  flex-wrap: wrap;
+  background-color: var(--fundo-branco);
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .filter-dropdown {
-    position: relative;
-    z-index: 10; /* Garante que os dropdowns apareçam sobre o conteúdo abaixo */
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-width: 240px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
 }
 
 .filter-toggle {
-    /* Estilo do botão visível (o que o usuário clica) */
-    background-color: white; 
-    color: var(--color-text-dark);
-    border: 1px solid #ccc;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-texto-branco);
+  color: var(--texto-escuro);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-sizing: border-box;
+      color: rgba(51, 51, 51, 0.6);
+
 }
 
 .filter-toggle:hover {
-    background-color: #f5f5f5;
-    border-color: #aaa;
+  background-color: #f8f8f8;
+  border-color: var(--verde-titulo);
 }
 
-/* Estilo para o botão ATIVO (após o clique) */
 .filter-dropdown.open .filter-toggle {
-    background-color: var(--color-link-blue); /* Fundo azul quando aberto */
-    color: white;
-    border-color: var(--color-link-blue);
+  background-color: var(--fundo-branco);
+  border-color: var(--verde-titulo);
+  color: var(--texto-escuro);
 }
 
-/* Estilo para o Painel de Opções (Dropdown Content) */
 .filter-panel {
-    position: absolute;
-    top: 100%; /* Posiciona logo abaixo do botão */
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 10px;
-    margin-top: 5px;
-    min-width: 220px;
-    z-index: 20;
-    
-    /* Inicialmente escondido pelo CSS */
-    display: none; 
-    flex-direction: column;
-    gap: 8px;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--cor-texto-branco);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
 }
 
-/* Estado de exibição forçado pelo JavaScript */
 .filter-dropdown.open .filter-panel {
-    display: flex; 
+  display: flex;
 }
 
-/* Estilo dos elementos internos (inputs e labels) */
-.filter-panel label {
-    display: block;
-    font-size: 0.9rem;
-    cursor: pointer;
+.filter-panel label,
+.filter-panel input,
+.filter-panel .filter-input-text {
+  color: var(--texto-escuro);
+  font-size: 0.95rem;
+}
+
+.filter-panel input[type="checkbox"] {
+  accent-color: var(--verde-titulo);
 }
 
 .filter-input-text {
-    width: 100%;
-    padding: 6px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--fundo-branco);
+  font-size: 0.9rem;
 }
 
 .btn-apply-filter {
-    background-color: var(--color-link-blue);
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    align-self: flex-end; /* Alinha o botão à direita */
+  width: 100%;
+  background-color: var(--verde-titulo);
+  color: var(--cor-texto-branco);
+  border: none;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+.btn-apply-filter:hover {
+  background-color: var(--azul-escuro);
+}
 
 .publicacao.hidden {
-    display: none !important; 
+  display: none !important;
 }
 
-
-/* 6. Conteúdo Principal e Cards */
+/* ===================== CONTEÚDO E CARDS ===================== */
 .publications-main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.section-title {
-    color: var(--color-title-green);
-    margin: 25px 0 15px;
-    font-size: 1.3rem;
-    font-weight: 700;
-}
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .publication-card {
-    background-color: var(--color-card-background); 
-    border-radius: 12px; 
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: 100%; 
+  background-color: var(--azul-clarinho1);
+  border-radius: 9px;
+  padding: 15px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
 }
 
 .card-image-box {
-    background-color: white;
-    border: 1px solid #cce; 
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 10px;
+  background-color: var(--cor-texto-branco);
+  border: 1px solid #cce;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .card-image-box img {
-    width: 100%;
-    height: 160px; 
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
 }
 
 .card-title {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: #444;
-    flex-grow: 1; 
-    margin-bottom: 15px;
-    line-height: 1.4;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--texto-escuro);
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .card-links {
-    display: flex;
-    justify-content: center; 
-    gap: 10px;
-    margin-top: auto; 
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .btn-card {
-    background-color: white;
-    color: var(--color-link-blue);
-    text-decoration: none;
-    padding: 5px 12px;
-    border-radius: 5px;
-    border: 1px solid var(--color-link-blue);
-    font-size: 0.8rem;
-    font-weight: bold;
-    min-width: 60px;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: var(--cor-texto-branco);
+  color: var(--azul-escuro);
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--azul-escuro);
+  font-size: 0.8rem;
+  font-weight: bold;
+  min-width: 60px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-card:hover {
-    background-color: var(--color-link-blue);
-    color: white;
+  background-color: var(--azul-escuro);
+  color: var(--cor-texto-branco);
 }
 
-/* 7. Rodapé */
-.main-footer {
-    background-color: #f7f7f7; 
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-size: 0.9rem;
-}
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
 
-.footer-left {
-    flex: 1;
-    max-width: 400px;
-}
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 
-.footer-logo-footer img {
-    width: 100px; 
-    margin-bottom: 10px;
-}
-
-.footer-left p {
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.social-icons {
-    margin-top: 15px;
-}
-
-.social-icons a {
-    color: #555;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
-.footer-right {
-    flex: 1;
-    max-width: 400px;
-}
-
-.footer-right h4 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.map-placeholder {
+  .interactive-filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     width: 100%;
-    height: 180px;
-    background-color: #ccc; 
-    border: 1px solid #999;
+    padding: 0 10px;
+  }
+
+  .card-image-box img {
+    height: 130px;
+  }
+
+  .publication-card {
+    border-radius: 0.5em;
+  }
+
+  .filter-dropdown {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .filter-toggle {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+
+  .search-box {
+    min-width: 50%;
+    max-width: 100%;
+  }
+
+  .btn-contato {
+    padding: 10px;
+  }
+
+  .search-box input {
+    font-size: 0.8rem;
+  }
+}
+.titulo-secao::after {
+  background-color: green; /* só pra testar */
 }

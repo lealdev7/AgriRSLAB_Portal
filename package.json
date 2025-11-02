@@ -1,0 +1,32 @@
+{
+  "name": "agrirslab_portal",
+  "version": "1.0.0",
+  "description": "<a id=\"topo\"></a>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon ./Paginas",
+    "start": "node ./Paginas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamM4x/AgriRSLAB_Portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/WilliamM4x/AgriRSLAB_Portal/issues"
+  },
+  "homepage": "https://github.com/WilliamM4x/AgriRSLAB_Portal#readme",
+  "dependencies": {
+    "db": "^6.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.3"
+  }
+}

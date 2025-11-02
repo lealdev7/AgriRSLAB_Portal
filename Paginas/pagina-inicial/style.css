@@ -1,41 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-/* VARIÁVEIS CSS */
+/* VARIÁVEIS */
 :root {
     --cor-verde-primaria: #36794E;
-    --cor-verde-secundaria: #55A357; 
-    --cor-verde-fundo:#e0f9d5;
+    --cor-verde-secundaria: #55A357;
+    --cor-verde-fundo: #e0f9d5;
     --cor-azul-primaria: #0F5289;
-    --cor-azul-secundaria: #487DB4; 
+    --cor-azul-secundaria: #487DB4;
     --cor-azul-terciaria: #DDF1FB;
-    --cor-footer: #604639;
-    --cor-fundo: #F8F9FA; /* BACKGROUD COLOR */
-    --cor-fonte:#252525;
-
+    --cor-fundo: #F8F9FA;
+    --cor-fonte: #252525;
     --fonte-principal: 'Roboto', sans-serif;
     --fonte-titulos: 'Libre Baskerville';
 }
 
-
-/* ESTILOS GERAIS E RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: var(--fonte-principal);
     color: var(--cor-fonte);
     line-height: 1.6;
-}
-
-h1, h2, h3 {
-    font-family: var(--fonte-principal);
-    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo);
 }
 
 a {
@@ -43,101 +34,86 @@ a {
     color: inherit;
 }
 
-
-/* 1. CABEÇALHO E NAVEGAÇÃO */
-
-.header {
-    background-color: var(--cor-verde-escuro);
-    color: var(--cor-texto-claro);
-    padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header .logo {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-}
-
-.search-contact {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.search-contact input {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-}
-
-.contact-btn {
-    background-color: #38b456; /* Cor do botão Fale Conosco */
-    color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-
-/* 2. HERO SECTION */
+/* 1. SEÇÃO DESTAQUE (ANÚNCIO) */
 
 .anuncio {
-    height: 50vh;
-    background: url('https://via.placeholder.com/1500x800/228B22/004d00?text=Background+Image+Forest') no-repeat center center/cover; /* Placeholder Imagem */
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+
+    /* ocupa 80% da altura da tela */
+    position: relative;
+    overflow: hidden;
+    /* impede que a imagem ultrapasse */
+    background-color: var(--cor-fundo);
+}
+
+.anuncio_img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imagem_anuncio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* faz preencher tudo sem distorcer */
+    display: block;
+}
+
+.anuncio_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--cor-texto-claro);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.2);
+    /* leve sombra pra destacar o texto */
 }
 
-.anuncio h1 {
-    font-size: 48px;
-    color: var(--cor-texto-claro);
+.anuncio_texto h1 {
+    font-size: clamp(28px, 6vw, 60px);
+    font-weight: 700;
+    color: #fff;
     margin-bottom: 10px;
 }
 
-.anuncio p {
-    font-size: 18px;
-    max-width: 600px;
+.anuncio_p {
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 500;
+    max-width: 800px;
+    color: #fff;
 }
 
-
-/* 3. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
-
+/* 2. SEÇÃO ÁREAS DE PESQUISA */
 .section-areas {
     padding: 50px 80px;
     background-color: var(--cor-fundo);
-    color: var(--cor-fonte);
 }
 
-
-.section-areas h2 {
-    text-align: start;
+.areas-titulo {
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+    font-weight: 600;
     margin-bottom: 5px;
 }
-
 
 .areas-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
     justify-content: center;
+    gap: 30px;
 }
 
-.area-card-fundo{
+.area-card-fundo {
     background-color: var(--cor-azul-primaria);
     border-radius: 10px;
     width: 350px;
@@ -146,107 +122,107 @@ a {
 }
 
 .area-card {
-    width: 350px;
-    height: 100%; 
-    display: flex;
-    flex-direction: column; 
-    background-color: var(--cor-azul-terciaria);
+    background-color: var(--azul-clarinho1);
     border-radius: 10px;
-    overflow: hidden;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    transform: translateX(0);
 }
 
-.area-card:hover{
+.area-card:hover {
     transform: translateY(-8px);
 }
 
-.area-card p{
-    font-family: var(--fonte-principal);
+.area-card p {
     font-size: 20px;
     font-weight: 600;
-    text-align: center;
+    text-align: start;
 }
 
-
-
-/* ---------------------------------------------------- */
-/* 4. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
-/* ---------------------------------------------------- */
+/* 3. SEÇÃO PROJETOS */
 .section-projetos {
     display: flex;
     flex-direction: column;
-    height: 960px;
+    min-height: 600px;
+    height: auto;
     background-color: var(--cor-verde-fundo);
     padding: 50px 80px;
     position: relative;
-    /*text-align: center;*/
 }
 
-.linha-divisoria-projetos{
-    background-color: var(--cor-verde-secundaria);
+.linha-divisoria-projetos {
+    background-color: var(--cor-verde-primaria);
     width: 90%;
     height: 5px;
     border-radius: 10px;
     margin-bottom: 60px;
 }
 
-.projetos-slogan{
-    font-family: var(--fonte-principal);
+.projetos-slogan {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--cor-fonte);
-    text-align: start;
+    margin-bottom: 20px;
 }
 
-.projeto-img{
+.projeto-img {
     width: 90%;
     height: 600px;
-    background-color: var(--cor-verde-primaria);
-    margin: 15px;
-    margin-left: 50px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.imagem_projeto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.projeto-destaque-txt{
-  display: flex;
-  flex-direction: column;
-  margin-top: 300px;
-  margin-left: 20px;
-}
-
-.projeto-destaque-titulo{
-    font-family: var(--fonte-principal);
-    color: var(--cor-fundo);
-    font-size: 30px;
-}
-
-.projeto-destaque-p{
-    font-family: var(--fonte-principal);
-    font-size: 20px;
-    color: var(--cor-fundo);
-}
-
-.projeto-card-footer {
-    padding: 15px;
-}
-
-.projeto-card-footer button {
-    background-color: var(--cor-verde-escuro);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.projeto-destaque-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
 }
 
-.acesso-projetos-bt{
+.projeto-destaque-titulo {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--cor-fundo);
+    margin-bottom: 10px;
+}
+
+.projeto-destaque-p {
+    font-size: 25px;
+    color: var(--cor-fundo);
+    margin-bottom: 30px;
+}
+
+.ver-projeto-bt {
     background-color: var(--cor-verde-secundaria);
     color: var(--cor-fundo);
-    font-family: var(--fonte-principal);
+    font-weight: 600;
+    padding: 9px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.acesso-projetos-bt {
+    background-color: var(--cor-verde-secundaria);
+    color: var(--cor-fundo);
     font-weight: 600;
     width: 200px;
     height: 50px;
@@ -254,29 +230,33 @@ a {
     border: none;
     position: absolute;
     bottom: 60px;
-    right: 160px;
+    right: 80px;
+
+    display: flex;
+    align-items: center;
+    /* centraliza texto verticalmente */
+    justify-content: center;
+    /* centraliza texto horizontalmente */
+    text-align: center;
 }
 
-.acesso-projetos-bt:active{
+.acesso-projetos-bt:active {
     background-color: var(--cor-verde-primaria);
-    /*transform: translateY(5px);*/
-    transform: scale(0.90); /* Diminui o tamanho em 2% */
+    transform: scale(0.9);
 }
 
-
-/* ---------------------------------------------------- */
-/* 5. SEÇÃO NOTÍCIAS (News) */
-/* ---------------------------------------------------- */
+/* 4. SEÇÃO NOTÍCIAS */
 .noticia-section {
-    font-size: 30px;
-    font-weight: 500;
-    text-align: start;
-    margin-bottom: 5px;
     padding: 50px 80px;
-    color: var(--cor-fonte);
 }
 
-.linha-divisoria-noticia{
+.noticia-titulo {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.linha-divisoria-noticia {
     background-color: var(--cor-azul-primaria);
     width: 90%;
     height: 5px;
@@ -286,14 +266,11 @@ a {
 
 .noticia-layout {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Coluna grande e coluna pequena */
-    gap: 5px;
-}
-
-.noticia-principal-texto{
-    font-family: var(--fonte-principal);
-    font-size: 24px;
-    font-weight: 600;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .noticia-principal-card {
@@ -301,9 +278,11 @@ a {
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    box-shadow: var(--sombra-leve);
-    width: 750px;
-    height: 700px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .noticia-principal-content {
@@ -314,36 +293,43 @@ a {
     gap: 20px;
 }
 
-.noticia-principal-img{
+.noticia-principal-img {
     height: 400px;
     width: 100%;
     background-color: var(--cor-azul-secundaria);
     border-radius: 10px;
 }
 
-.noticias-btn-fundo{
+.noticia-principal-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.noticia-principal-texto {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.noticias-btn-fundo {
     background-color: var(--cor-azul-primaria);
     border-radius: 5px;
     width: 148px;
     height: 42px;
-    padding: 3px ;
+    padding: 3px;
     margin-top: 20px;
-    margin-left: auto;    
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
-.noticias-btn{
+.noticias-btn {
     background-color: var(--cor-azul-terciaria);
     border-radius: 5px;
     width: 147px;
     height: 110%;
-    font-family: var(--fonte-principal);
     font-weight: 600;
     color: var(--cor-azul-primaria);
     border: none;
 }
-
 
 .noticias-secundarias {
     display: flex;
@@ -354,230 +340,98 @@ a {
 .noticias-secundarias-item {
     background-color: var(--cor-azul-secundaria);
     color: var(--cor-fundo);
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    overflow: hidden; 
-}
-
-.noticia-texto{
-    font-family: var(--fonte-principal);
-    font-size: 20px;
-}
-
-/* ---------------------------------------------------- */
-/* 6. FOOTER */
-/* ---------------------------------------------------- */
-.footer {
-    background-color: var(--cor-marrom-rodape);
-    color: var(--cor-texto-claro);
-    padding: 40px 80px;
-    display: flex;
     justify-content: space-between;
-    gap: 50px;
 }
-
-.footer h3 {
-    color: var(--cor-texto-claro);
-    margin-bottom: 15px;
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    font-size: 24px;
-    margin-top: 10px;
-}
-
-.footer-map .map-placeholder {
-    width: 300px;
-    height: 150px;
-    background-color: #aaa;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 150px;
-    font-size: 14px;
-}
-
-
-/* ---------------------------------------------------- */
-/* MEDIA QUERIES PARA DISPOSITIVOS MÓVEIS (MAX-WIDTH: 768PX) */
-/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
 
-    /* 1. VARIÁVEIS (Ajuste opcional) */
-    :root {
-        /* Se quiser ajustar tamanhos de fonte ou espaçamentos */
-        /* --padding-geral: 20px; */
-    }
+  .section-areas,
+  .section-projetos,
+  .noticia-section {
+    padding: 30px 15px;
+  }
 
-    /* 2. ESTILOS GERAIS */
-    .section-areas, 
-    .section-projetos, 
-    .noticia-section, 
-    .footer {
-        /* Diminui o padding geral das seções em telas pequenas */
-        padding: 30px 20px;
-    }
+  .anuncio {
+    height: 40vh;
+  }
 
+  .anuncio_texto {
+    font-size: 24px;
+  }
 
-    /* 3. CABEÇALHO E NAVEGAÇÃO */
-    .header {
-        /* Muda para layout de coluna e centraliza itens */
-        flex-direction: column;
-        align-items: flex-start; /* Alinha o logo à esquerda */
-        padding: 15px 20px;
-    }
+  .area-card-fundo {
+    width: 90%;
+    max-width: 420px;
+    height: auto;
+  }
 
-    .nav-links {
-        /* Esconde a navegação principal (pode ser revelada com JS/botão menu) */
-        /* Ou mantém visível, mas em coluna */
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin: 10px 0;
-    }
+  .noticia-principal-content {
+    width: 100%;
+    padding: 10px;
+  }
 
-    .search-contact {
-        /* Coloca busca e contato em coluna */
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
+  .noticias-secundarias-item {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 20px;
+  }
 
-    .search-contact input,
-    .contact-btn {
-        /* Faz os elementos de busca e botão ocuparem a largura total */
-        width: 100%; 
-    }
+  .section-projetos {
+    height: auto;
+  }
 
-    /* 4. HERO SECTION (ANÚNCIO) */
-    .anuncio {
-        height: 40vh; /* Diminui um pouco a altura */
-    }
-    
-    .anuncio h1 {
-        font-size: 32px; /* Reduz o tamanho da fonte do título */
-    }
+  .projetos-slogan {
+    font-size: 22px;
+  }
 
-    .anuncio p {
-        font-size: 16px; /* Reduz o tamanho da fonte do parágrafo */
-        padding: 0 10px;
-    }
+  .projeto-img {
+    height: 350px;
+  }
 
-    /* 5. SEÇÃO ÁREAS DE PESQUISA (CARDS AZUIS) */
-    .areas-grid {
-        /* A grid não precisa de muitas mudanças, pois os cards já se quebram com flex-wrap */
-        gap: 20px;
-    }
+  .projeto-destaque-container {
+    padding: 0 20px;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+  }
 
-    .area-card-fundo,
-    .area-card {
-        /* Limita a largura do card à largura total da tela - padding */
-        width: 100%; 
-        height: auto;
-        max-width: 350px; /* Mantém um limite para não ficar muito largo em telas maiores que 768px */
-    }
+  .projeto-destaque-titulo {
+    font-size: 18px;
+  }
 
-    /* 6. SEÇÃO PROJETOS EM DESTAQUE (FUNDO VERDE CLARO) */
-    .section-projetos {
-        height: auto; /* Permite que a seção se ajuste ao conteúdo */
-    }
+  .projeto-destaque-p {
+    font-size: 14px;
+  }
 
-    .linha-divisoria-projetos {
-        width: 100%; 
-        margin-bottom: 30px;
-    }
+  .acesso-projetos-bt {
+    position: static;
+    width: 50%;
+    margin-top: 30px;
+  }
 
-    .projeto-img {
-        /* Permite que o container da imagem ocupe a largura total */
-        width: 100%; 
-        height: 300px; /* Altura menor para mobile */
-        margin: 15px 0 0 0; /* Remove margem lateral */
-    }
+  .noticia-layout {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
 
-    .projeto-destaque-txt {
-        /* Reposiciona o texto do projeto para o topo da imagem para melhor visualização */
-        margin-top: 50px;
-        margin-left: 10px;
-    }
+  .noticia-principal-card {
+    max-width: 100%;
+    margin: 0;
+  }
 
-    .projeto-destaque-titulo {
-        font-size: 24px;
-    }
+  .noticia-principal-img {
+    height: auto;
+    max-height: 220px;
+  }
 
-    .projeto-destaque-p {
-        font-size: 16px;
-    }
-
-    .acesso-projetos-bt {
-        /* Reposiciona o botão de acesso */
-        position: static; /* Volta para o fluxo normal do layout */
-        width: 100%;
-        height: 45px;
-        margin-top: 30px; /* Adiciona espaçamento após o projeto */
-        right: auto;
-        bottom: auto;
-    }
-
-
-    /* 7. SEÇÃO NOTÍCIAS (News) */
-    .noticia-layout {
-        /* Altera o grid para uma única coluna */
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .noticia-principal-card {
-        /* Ocupa a largura total da tela */
-        width: 100%;
-        height: auto;
-        flex-direction: column; /* Se houver flexbox, empilha o conteúdo */
-    }
-
-    .noticia-principal-img {
-        height: 250px; /* Altura da imagem menor */
-    }
-
-    .noticia-principal-texto {
-        font-size: 20px;
-    }
-
-    .noticias-secundarias-item {
-        /* Ocupa a largura total e tem altura auto */
-        width: 100%;
-        height: auto;
-        padding: 15px;
-    }
-    
-    .noticia-texto {
-        font-size: 18px;
-    }
-
-    .noticias-btn-fundo {
-        /* Centraliza o botão de notícias */
-        margin: 20px auto 0 auto;
-    }
-
-
-    /* 8. FOOTER */
-    .footer {
-        /* Empilha as colunas do footer */
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-map .map-placeholder {
-        /* Largura total para o mapa */
-        width: 100%;
-    }
+  .areas-titulo,
+  .noticia-titulo {
+    font-size: 20px;
+  }
 }

@@ -1,0 +1,83 @@
+### Criar uma notícia
+POST http://localhost:3000/api/noticias
+Content-Type: application/json
+
+{
+"titulo":"Simpósio de Geoprocessamento destaca avanços na Modelagem de Sistemas Hídrico",
+"subtitulo": "Matricula no semestre 2025.1.",
+"data": "2025-10-18",
+"url_imagem":"../../imagens/4. Eventos/Evt_Simpósio-geoprocessamento.png",
+"texto": "Evento reúne pesquisadores e estudantes para discutir o uso de tecnologias espaciais no monitoramento e gestão inteligente dos recursos hídricos.",
+"categoria": "Curso",
+"url_noticia": "noticias2.html",
+"destaque": true
+}
+
+### Criar uma notícia
+POST http://localhost:3000/api/noticias
+Content-Type: application/json
+
+{
+"titulo":"AgriRS Lab desenvolve satélite-raiz para monitorar crescimento de culturas no Brasil",
+"subtitulo": "AgriRS Lab desenvolve satélite-raiz para monitorar crescimento de culturas no Brasil",
+"data": "2025-11-22",
+"url_imagem":"../../imagens/4. Eventos/Nt_AgriRS.png",
+"texto": "Projeto pioneiro do INPE usa radar e inteligência artificial para analisar o crescimento ubterrâneo das plantas e prever produtividade com até 30 dias de antecedência.",
+"categoria": "Informativo",
+"url_noticia": "noticias2.html",
+"destaque": true
+}
+
+### Criar uma notícia
+POST http://localhost:3000/api/noticias
+Content-Type: application/json
+
+{
+"titulo":"Teste 90",
+"subtitulo": "Matricula no semestre 2025.1.",
+"data": "2025-11-20",
+"url_imagem":"imagens/imagetest.png",
+"texto": "Está chegando o prazo final para matricula no semestre letivo, não perca tempo.",
+"categoria": "Informativo",
+"url_noticia": "noticias2.html",
+"destaque": true
+}
+
+### Criar uma notícia
+POST http://localhost:3000/api/noticias
+Content-Type: application/json
+
+{
+"titulo":"Teste 90",
+"subtitulo": "Matricula no semestre 2025.1.",
+"data": "2025-11-20",
+"url_imagem":"imagens/imagetest.png",
+"texto": "Está chegando o prazo final para matricula no semestre letivo, não perca tempo.",
+"categoria": "Informativo",
+"url_noticia": "noticias2.html",
+"destaque": true
+}
+
+### Criar uma notícia
+POST http://localhost:3000/api/noticias
+Content-Type: application/json
+
+{
+"titulo":"Teste 90",
+"subtitulo": "Matricula no semestre 2025.1.",
+"data": "2025-11-20",
+"url_imagem":"imagens/imagetest.png",
+"texto": "Está chegando o prazo final para matricula no semestre letivo, não perca tempo.",
+"categoria": "Curso",
+"url_noticia": "noticias2.html",
+"destaque": false
+}
+
+
+
+### ⚠️ DELETAR TODAS AS NOTÍCIAS (AÇÃO DESTRUTIVA)
+#
+# Isso executa TRUNCATE na tabela 'noticias'.
+# Todos os dados serão perdidos e os IDs reiniciados.
+#
+DELETE http://localhost:3000/api/noticias
