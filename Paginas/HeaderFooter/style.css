@@ -525,14 +525,7 @@ ul:hover .decorationHeaderMenu:not(:hover) {
 
 
 
-  .headerBottom {
-    height: auto;
-    padding: 8px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+
 
   .headerBottom::-webkit-scrollbar {
     display: none;
@@ -741,6 +734,13 @@ MENU HAMBURGUER
   .headerBottom {
     overflow: visible;
     position: relative;
+    height: auto;
+    padding: 8px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: var(--verde-escuro) !important;
   }
 
 
