@@ -1,6 +1,6 @@
 // script.js
 
-const API_PUBLIC_URL = 'http://localhost:3000/api/public-artigos';
+const API_PUBLIC_URL = 'http://localhost:3000/api/artigos/publicos';
 
 /**
  * Converte o caminho de arquivo local (se for o caso) para a URL completa.

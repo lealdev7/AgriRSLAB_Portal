@@ -33,7 +33,7 @@ const upload = multer({
     { name: 'pdf', maxCount: 1 }     // Campo 'pdf' para o upload
 ]); 
 // ------------------------------------------
-
+router.get('/publicos', artigosController.listarArtigosPublicos);
 
 // Rotas CRUD
 // POST: Criar Artigo (com upload)
