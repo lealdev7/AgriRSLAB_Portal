@@ -53,7 +53,7 @@ main {
   margin: 0 auto;
   padding: 40px 30px;
   /* reduz o espaço lateral e superior */
-  max-width: 95%;
+  max-width: 100%;
 }
 
 /* Define comportamento padrão para links e imagens */
