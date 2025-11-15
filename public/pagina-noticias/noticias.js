@@ -146,9 +146,10 @@ async function carregarDestaques() {
         container.innerHTML = ''; 
 
         destaques.slice(0, 3).forEach(noticia => {
+
             const dataFormatada = new Date(noticia.data_criacao).toLocaleDateString('pt-BR', {
                 day: '2-digit', month: 'short', year: 'numeric'
-            }).toUpperCase().replace('.', '');
+            }).toUpperCase().replace('.', '').replace(/ DE /g, ' ');
 
             const html = `
                 <a href="${noticia.url_noticia || '#'}" class="card-destaque-link">

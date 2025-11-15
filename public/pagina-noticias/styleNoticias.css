@@ -7,12 +7,12 @@
 }
 
 #todas-noticias{
-  width: 95%;
-  padding: 10px 10px 10px 10px;
+  width: 90%;
+  padding: 20px 20px 20px 20px;
 }
 .noticias-container{
   width: 95%;
-  padding: 10px 10px 10px 10px;
+   padding: 10px 10px 10px 10px ;
 }
 
 #container-noticias-dinamicas {
@@ -499,61 +499,6 @@
   font-size: 1.3em;
   flex-shrink: 0;
 }
-
-.linha-do-tempo {
-    position: relative;
-    /* Adiciona espaço para as setas não ficarem sobre o conteúdo */
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-/* ESTILO BASE PARA AS NOVAS SETAS */
-.seta {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 50%; /* <-- Contorno circular */
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    
-    /* Centraliza o "V" (chevron) */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Posicionamento */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    z-index: 10;
-}
-
-/* Desenha o "V" (chevron) dentro da div */
-.seta::before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    /* Cor da seta (verde do seu site) */
-    border-left: 3px solid #16a085; 
-    border-bottom: 3px solid #16a085;
-}
-
-/* POSIÇÃO E ROTAÇÃO DE CADA SETA */
-.seta-cima {
-    top: 10px; /* Posição no topo */
-}
-.seta-cima::before {
-    transform: rotate(135deg); /* Aponta o "V" para cima */
-}
-
-.seta-baixo {
-    bottom: 10px; /* Posição embaixo */
-}
-.seta-baixo::before {
-    transform: rotate(-45deg); /* Aponta o "V" para baixo */
-}
-
 
 .seta-esquerda,
 .seta-direita {
