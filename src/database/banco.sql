@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS noticias (
     categoria varchar(30) NOT NULL,           
     url_noticia varchar(255),
     destaque boolean NOT NULL DEFAULT FALSE,
+    exibir BOOLEAN DEFAULT TRUE,
     CONSTRAINT noticias_fk_categoria
         FOREIGN KEY (categoria) 
         REFERENCES categoria_noticias (categoria)
