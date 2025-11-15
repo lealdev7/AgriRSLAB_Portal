@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (containerDestaques) {
         carregarDestaques();
         carregarDefesas();
+        carregarEventosDoMes();
     }
     
     configurarCarrosseis();
@@ -77,7 +78,6 @@ async function carregarTodasNoticias() {
         container.innerHTML = '<p class="erro">Erro ao carregar notícias.</p>';
     }
 }
-
 function aplicarFiltros(resetar = false) {
     const filtroAnoEl = document.getElementById("YearSelection");
     const filtroCatEl = document.getElementById("CategorySelection");
@@ -130,8 +130,6 @@ function aplicarFiltros(resetar = false) {
 
     carregarMaisNoticias();
 }
-
-
 // =========================================
 // LÓGICA: PÁGINA HOME
 // =========================================
@@ -175,7 +173,6 @@ async function carregarDestaques() {
         container.innerHTML = '<p>Não foi possível carregar os destaques.</p>';
     }
 }
-
 async function carregarDefesas() {
     const container = document.querySelector('.cards-defesas');
     if (!container) return; // Se não estiver na página home, não faz nada
@@ -212,7 +209,43 @@ async function carregarDefesas() {
         container.innerHTML = '<p style="padding: 20px; color: red; width: 100%; text-align: center;">Erro ao carregar defesas.</p>';
     }
 }
+async function carregarEventosDoMes() {
+    const container = document.querySelector('.conteudo-linha');
+    if (!container) return; // Só roda na página noticias.html
 
+    container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Carregando eventos...</p>';
+
+    try {
+        const response = await fetch('/api/noticias/eventos');
+        if (!response.ok) throw new Error('Erro API Eventos');
+        
+        const eventos = await response.json();
+        container.innerHTML = ''; // Limpa o "carregando"
+
+        if (eventos.length === 0) {
+            container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Nenhum evento este mês.</p>';
+            return;
+        }
+
+        eventos.forEach(evento => {
+            // Recria o HTML estático com dados dinâmicos
+            const htmlEvento = `
+                <div class="evento">
+                    <img src="${evento.url_imagem}" alt="${evento.titulo}" onerror="this.src='../../imagens/1.1Imagens Git/logo_404notfound.png'">
+                    <div class="info">
+                        <span class="data-evento">${formatarDataEvento(evento.data_criacao)}</span>
+                        <p>${evento.titulo}</p>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', htmlEvento);
+        });
+
+    } catch (error) {
+        console.error(error);
+        container.innerHTML = '<p style="padding: 20px; color: red; width: 100%; text-align: center;">Erro ao carregar eventos.</p>';
+    }
+}
 // =========================================
 // FUNÇÕES Página notícias 1
 // =========================================
@@ -310,5 +343,14 @@ function configurarCompartilhamento() {
     setHref("shareWhatsApp", `https://api.whatsapp.com/send?text=${title}%20${url}`);
     setHref("shareEmail", `mailto:?subject=${title}&body=Veja%20essa%20matéria:%20${url}`);
     setHref("shareLinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${url}`);
+}
+
+function formatarDataEvento(dataISO) {
+    if (!dataISO) return '';
+    const data = new Date(dataISO);
+    const dia = String(data.getUTCDate()).padStart(2, '0');
+    // Pega a abreviação do mês (ex: SET, OUT, NOV)
+    const mes = data.toLocaleString('pt-BR', { month: 'short', timeZone: 'UTC' }).toUpperCase().replace('.', '');
+    return `${dia} ${mes}`;
 }
 

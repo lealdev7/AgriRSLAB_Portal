@@ -24,15 +24,34 @@ async function getDestaqueNoticias(_req, res) {
   }
 };
 
+//GET notícias DEFESA
 async function getDefesasNoticias(_req, res) {
   try {
     const result = await pool.query(
-      "SELECT * FROM noticias WHERE categoria = Defesa AND exibir = true ORDER BY data_criacao DESC"
+      "SELECT * FROM noticias WHERE categoria = 'Defesa' AND exibir = true ORDER BY data_criacao DESC"
     );
     res.status(200).json(result.rows);
   } catch (error) {
     console.error('Erro ao buscar notícias de defesa:', error);
     res.status(500).json({ error: 'Erro ao buscar notícias de defesa' });
+  }
+};
+
+// GET apenas Eventos do Mês Atual
+async function getEventosMesAtual(_req, res) {
+  try {
+    const result = await pool.query(
+      `SELECT * FROM noticias 
+       WHERE 
+         exibir = true 
+         AND EXTRACT(MONTH FROM data_criacao) = EXTRACT(MONTH FROM NOW())
+         AND EXTRACT(YEAR FROM data_criacao) = EXTRACT(YEAR FROM NOW())
+       ORDER BY data_criacao DESC`
+    );
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Erro ao buscar eventos do mês:', error);
+    res.status(500).json({ error: 'Erro ao buscar eventos do mês' });
   }
 };
 
@@ -139,6 +158,7 @@ async function updateNoticia(req, res) {
 module.exports = {
   createNoticia,
   getAllNoticias,
+  getEventosMesAtual,
   getDestaqueNoticias,
   getDefesasNoticias,
   updateNoticia,

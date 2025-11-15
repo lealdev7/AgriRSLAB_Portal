@@ -7,10 +7,12 @@
 }
 
 #todas-noticias{
-  width: 100%;
+  width: 95%;
+  padding: 10px 10px 10px 10px;
 }
-#noticias-container{
-  width: 100%;
+.noticias-container{
+  width: 95%;
+  padding: 10px 10px 10px 10px;
 }
 
 #container-noticias-dinamicas {
