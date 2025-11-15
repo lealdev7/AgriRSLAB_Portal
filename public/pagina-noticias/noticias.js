@@ -230,13 +230,17 @@ async function carregarEventosDoMes() {
         eventos.forEach(evento => {
             // Recria o HTML estático com dados dinâmicos
             const htmlEvento = `
+
                 <div class="evento">
-                    <img src="${evento.url_imagem}" alt="${evento.titulo}" onerror="this.src='../../imagens/1.1Imagens Git/logo_404notfound.png'">
-                    <div class="info">
-                        <span class="data-evento">${formatarDataEvento(evento.data_criacao)}</span>
-                        <p>${evento.titulo}</p>
-                    </div>
-                </div>
+                            <div class="data">
+                                <span class="dia">${formatarDataEventoDIA(evento.data_criacao)}</span>
+                                <span class="mes">${formatarDataEventoMES(evento.data_criacao)}</span>
+                            </div>
+                            <div class="info">
+                                <h3>${evento.titulo}</h3>
+                                <p>${evento.subtitulo}</p>
+                            </div>
+                        </div>
             `;
             container.insertAdjacentHTML('beforeend', htmlEvento);
         });
@@ -345,12 +349,22 @@ function configurarCompartilhamento() {
     setHref("shareLinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${url}`);
 }
 
-function formatarDataEvento(dataISO) {
+function formatarDataEventoDIA(dataISO) {
     if (!dataISO) return '';
     const data = new Date(dataISO);
     const dia = String(data.getUTCDate()).padStart(2, '0');
     // Pega a abreviação do mês (ex: SET, OUT, NOV)
     const mes = data.toLocaleString('pt-BR', { month: 'short', timeZone: 'UTC' }).toUpperCase().replace('.', '');
-    return `${dia} ${mes}`;
+    return `${dia}`;
 }
+
+function formatarDataEventoMES(dataISO) {
+    if (!dataISO) return '';
+    const data = new Date(dataISO);
+    const dia = String(data.getUTCDate()).padStart(2, '0');
+    // Pega a abreviação do mês (ex: SET, OUT, NOV)
+    const mes = data.toLocaleString('pt-BR', { month: 'short', timeZone: 'UTC' }).toUpperCase().replace('.', '');
+    return `${mes}`;
+}
+
 
