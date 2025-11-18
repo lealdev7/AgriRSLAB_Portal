@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerCompleto = document.getElementById('container-noticias-dinamicas'); 
     const containerDestaques = document.getElementById('cards-noticias'); 
 
-    // PÁGINA "TODAS AS NOTÍCIAS"
+    // PÁGINA "TODAS AS NOTÍCIAS" (notícias1)
     if (containerCompleto) {
         const filtroAno = document.getElementById("YearSelection");
         const filtroCategoria = document.getElementById("CategorySelection");
@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // PÁGINA HOME
     else if (containerDestaques) {
         carregarDestaques();
+        carregarDefesas();
+        carregarEventosDoMes();
     }
     
     configurarCarrosseis();
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================================
-// LÓGICA PRINCIPAL
+// LÓGICA PRINCIPAL (notícias1)
 // =========================================
 async function carregarTodasNoticias() {
     const container = document.getElementById('container-noticias-dinamicas');
@@ -76,7 +78,6 @@ async function carregarTodasNoticias() {
         container.innerHTML = '<p class="erro">Erro ao carregar notícias.</p>';
     }
 }
-
 function aplicarFiltros(resetar = false) {
     const filtroAnoEl = document.getElementById("YearSelection");
     const filtroCatEl = document.getElementById("CategorySelection");
@@ -110,8 +111,6 @@ function aplicarFiltros(resetar = false) {
     noticiasFiltradas.sort((a, b) => {
         const dataA = new Date(a.data_criacao);
         const dataB = new Date(b.data_criacao);
-
-        // Primeiro compara o MÊS (0 a 11)
         const mesDiff = dataA.getMonth() - dataB.getMonth();
         
         if (mesDiff !== 0) {
@@ -131,7 +130,130 @@ function aplicarFiltros(resetar = false) {
 
     carregarMaisNoticias();
 }
+// =========================================
+// LÓGICA: PÁGINA HOME
+// =========================================
+async function carregarDestaques() {
+    const container = document.getElementById('cards-noticias');
+    const btnVerTodasOriginal = container.querySelector('.ver-todas');
+    container.innerHTML = '<p>Carregando destaques...</p>';
 
+    try {
+        const response = await fetch('/api/noticias/destaques'); 
+        if (!response.ok) throw new Error('Erro API Destaques');
+        
+        const destaques = await response.json();
+        container.innerHTML = ''; 
+
+        destaques.slice(0, 3).forEach(noticia => {
+
+            const dataFormatada = new Date(noticia.data_criacao).toLocaleDateString('pt-BR', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            }).toUpperCase().replace('.', '').replace(/ DE /g, ' ');
+
+            const html = `
+                <a href="${noticia.url_noticia || '#'}" class="card-destaque-link">
+                    <div class="card-noticia">
+                        <img src="${noticia.url_imagem}" alt="${noticia.titulo}" onerror="this.style.display='none'">
+                        <div class="texto">
+                            <h3>${noticia.titulo}</h3>
+                            <p>${noticia.subtitulo || ''}</p>
+                            <span>${dataFormatada}</span>
+                            <p class="continuar-lendo">Ler mais</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+
+        if (btnVerTodasOriginal) container.appendChild(btnVerTodasOriginal);
+
+    } catch (error) {
+        console.error(error);
+        container.innerHTML = '<p>Não foi possível carregar os destaques.</p>';
+    }
+}
+async function carregarDefesas() {
+    const container = document.querySelector('.cards-defesas');
+    if (!container) return; // Se não estiver na página home, não faz nada
+
+    container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Carregando defesas...</p>';
+
+    try {
+        const response = await fetch('/api/noticias/defesas');
+        if (!response.ok) throw new Error('Erro API Defesas');
+        
+        const defesas = await response.json();
+        container.innerHTML = ''; // Limpa o "carregando"
+
+        if (defesas.length === 0) {
+            container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Nenhuma defesa agendada no momento.</p>';
+            return;
+        }
+
+        defesas.forEach(defesa => {
+            // Este HTML é baseado nos cards estáticos que estavam em noticias.html
+            const htmlCard = `
+                <div class="card-defesa">
+                    <img src="${defesa.url_imagem}" alt="${defesa.titulo}" onerror="this.src='../../imagens/1.1Imagens Git/logo_404notfound.png'">
+                    <h3>${defesa.titulo}</h3>
+                    <p>${defesa.subtitulo || ''}</p>
+                    <span>${formatarData(defesa.data_criacao)}</span>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', htmlCard);
+        });
+
+    } catch (error) {
+        console.error(error);
+        container.innerHTML = '<p style="padding: 20px; color: red; width: 100%; text-align: center;">Erro ao carregar defesas.</p>';
+    }
+}
+async function carregarEventosDoMes() {
+    const container = document.querySelector('.conteudo-linha');
+    if (!container) return; // Só roda na página noticias.html
+
+    container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Carregando eventos...</p>';
+
+    try {
+        const response = await fetch('/api/noticias/eventos');
+        if (!response.ok) throw new Error('Erro API Eventos');
+        
+        const eventos = await response.json();
+        container.innerHTML = ''; // Limpa o "carregando"
+
+        if (eventos.length === 0) {
+            container.innerHTML = '<p style="padding: 20px; color: #555; width: 100%; text-align: center;">Nenhum evento este mês.</p>';
+            return;
+        }
+
+        eventos.forEach(evento => {
+            // Recria o HTML estático com dados dinâmicos
+            const htmlEvento = `
+
+                <div class="evento">
+                            <div class="data">
+                                <span class="dia">${formatarDataEventoDIA(evento.data_criacao)}</span>
+                                <span class="mes">${formatarDataEventoMES(evento.data_criacao)}</span>
+                            </div>
+                            <div class="info">
+                                <h3>${evento.titulo}</h3>
+                                <p>${evento.subtitulo}</p>
+                            </div>
+                        </div>
+            `;
+            container.insertAdjacentHTML('beforeend', htmlEvento);
+        });
+
+    } catch (error) {
+        console.error(error);
+        container.innerHTML = '<p style="padding: 20px; color: red; width: 100%; text-align: center;">Erro ao carregar eventos.</p>';
+    }
+}
+// =========================================
+// FUNÇÕES Página notícias 1
+// =========================================
 function carregarMaisNoticias() {
     const container = document.getElementById('container-noticias-dinamicas');
     const btnContainer = document.querySelector(".ver-todas");
@@ -149,9 +271,7 @@ function carregarMaisNoticias() {
         const dataNoticia = noticia.data_criacao; 
         const nomeMes = getNomeMes(dataNoticia);
         
-        // CORREÇÃO DO AGRUPAMENTO:
-        // Usa apenas o nome do mês como chave. 
-        // Isso junta Jan 2025 e Jan 2024 sob o mesmo título "Janeiro"
+        //AGRUPAMENTO:
         const chaveMes = nomeMes;
 
         if (chaveMes !== ultimoMesRenderizado) {
@@ -192,53 +312,6 @@ function carregarMaisNoticias() {
     }
 }
 // =========================================
-// LÓGICA: PÁGINA HOME (DESTAQUES)
-// =========================================
-async function carregarDestaques() {
-    const container = document.getElementById('cards-noticias');
-    const btnVerTodasOriginal = container.querySelector('.ver-todas');
-    container.innerHTML = '<p>Carregando destaques...</p>';
-
-    try {
-        const response = await fetch('/api/noticias/destaques'); 
-        if (!response.ok) throw new Error('Erro API Destaques');
-        
-        const destaques = await response.json();
-        container.innerHTML = ''; 
-
-        destaques.slice(0, 3).forEach(noticia => {
-            const dataFormatada = new Date(noticia.data_criacao).toLocaleDateString('pt-BR', {
-                day: '2-digit', month: 'short', year: 'numeric'
-            }).toUpperCase().replace('.', '');
-
-            const html = `
-                <a href="${noticia.url_noticia || '#'}" class="card-destaque-link">
-                    <div class="card-noticia">
-                        <img src="${noticia.url_imagem}" alt="${noticia.titulo}" onerror="this.style.display='none'">
-                        <div class="texto">
-                            <h3>${noticia.titulo}</h3>
-                            <p>${noticia.subtitulo || ''}</p>
-                            <span>${dataFormatada}</span>
-                            <p class="continuar-lendo">Ler mais</p>
-                        </div>
-                    </div>
-                </a>
-            `;
-            container.insertAdjacentHTML('beforeend', html);
-        });
-
-        if (btnVerTodasOriginal) container.appendChild(btnVerTodasOriginal);
-
-    } catch (error) {
-        console.error(error);
-        container.innerHTML = '<p>Não foi possível carregar os destaques.</p>';
-    }
-}
-async function carregarDefesas() {
-
-}
-
-// =========================================
 // FUNÇÕES GERAIS
 // =========================================
 function configurarCarrosseis() {
@@ -276,4 +349,23 @@ function configurarCompartilhamento() {
     setHref("shareEmail", `mailto:?subject=${title}&body=Veja%20essa%20matéria:%20${url}`);
     setHref("shareLinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${url}`);
 }
+
+function formatarDataEventoDIA(dataISO) {
+    if (!dataISO) return '';
+    const data = new Date(dataISO);
+    const dia = String(data.getUTCDate()).padStart(2, '0');
+    // Pega a abreviação do mês (ex: SET, OUT, NOV)
+    const mes = data.toLocaleString('pt-BR', { month: 'short', timeZone: 'UTC' }).toUpperCase().replace('.', '');
+    return `${dia}`;
+}
+
+function formatarDataEventoMES(dataISO) {
+    if (!dataISO) return '';
+    const data = new Date(dataISO);
+    const dia = String(data.getUTCDate()).padStart(2, '0');
+    // Pega a abreviação do mês (ex: SET, OUT, NOV)
+    const mes = data.toLocaleString('pt-BR', { month: 'short', timeZone: 'UTC' }).toUpperCase().replace('.', '');
+    return `${mes}`;
+}
+
 

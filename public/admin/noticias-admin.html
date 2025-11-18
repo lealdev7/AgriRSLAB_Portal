@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gerenciar Notícias</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="headerTop">
+            <h1 class="h1HEADER">Painel Administrativo</h1>
+        </div>
+        <div class="header-actions">
+            <a href="paginas.html" class="btn-secondary">Voltar</a>
+            <button id="btn-abrir-cadastro" class="btn-add">
+                + Cadastrar Nova Notícia
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <h2>Gerenciamento de Notícias</h2>
+
+        <div class="filtros-superiores">
+            <select id="CategorySelection" class="filtro-select">
+                <option value="todas" selected>Todas as Categorias</option>
+                <option value="Curso">Curso</option>
+                <option value="Defesa">Defesa</option>
+                <option value="Informativo">Informativo</option>
+            </select>
+            <select id="YearSelection" class="filtro-select">
+                <option value="todos" selected>Todos os Anos</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        <div id="noticias-container" class="admin-noticias-lista">
+            </div>
+
+        <div class="ver-todas">
+            <button class="btn-secondary btn-ver-mais">Ver mais notícias</button>
+        </div>
+    </main>
+
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Cadastrar Nova Notícia</h3>
+            <form id="form-cadastro" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label for="cadastro-titulo">Título *</label>
+                    <input type="text" id="cadastro-titulo" name="titulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cadastro-subtitulo">Subtítulo (Opcional)</label>
+                    <input type="text" id="cadastro-subtitulo" name="subtitulo">
+                </div>
+
+                <div class="form-group">
+                    <label for="cadastro-texto">Texto Completo (Opcional)</label>
+                    <textarea id="cadastro-texto" name="texto" rows="5"></textarea>
+                </div>
+
+                <div class="form-group-grid-2">
+                    <div class="form-group">
+                        <label for="cadastro-data">Data da Notícia *</label>
+                        <input type="date" id="cadastro-data" name="data_criacao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastro-categoria">Categoria *</label>
+                        <select id="cadastro-categoria" name="categoria" required>
+                            <option value="Informativo" selected>Informativo</option>
+                            <option value="Curso">Curso</option>
+                            <option value="Defesa">Defesa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cadastro-url_noticia">URL (link) da Notícia (Opcional)</label>
+                    <input type="text" id="cadastro-url_noticia" name="url_noticia" placeholder="https://exemplo.com/noticia-completa">
+                </div>
+
+                <div class="form-group">
+                    <label>Imagem de Capa *</label>
+                    <input type="file" id="cadastro-imagem-input" name="imagem" accept="image/*" required>
+                </div>
+
+                <div class="form-group-grid-2">
+                     <div class="form-group switch-group">
+                        <label for="cadastro-destaque">Destaque?</label>
+                        <label class="switch">
+                            <input type="checkbox" id="cadastro-destaque" name="destaque">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="form-group switch-group">
+                        <label for="cadastro-exibir">Exibir no site?</label>
+                        <label class="switch">
+                            <input type="checkbox" id="cadastro-exibir" name="exibir" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-add">Cadastrar Notícia</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-edicao" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Editar Notícia</h3>
+            <form id="form-edicao" enctype="multipart/form-data">
+                <input type="hidden" id="edit-id" name="id">
+                
+                <div class="form-group">
+                    <label for="edit-titulo">Título *</label>
+                    <input type="text" id="edit-titulo" name="titulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-subtitulo">Subtítulo</label>
+                    <input type="text" id="edit-subtitulo" name="subtitulo">
+                </div>
+                 <div class="form-group">
+                    <label for="edit-texto">Texto Completo</label>
+                    <textarea id="edit-texto" name="texto" rows="5"></textarea>
+                </div>
+
+                <div class="form-group-grid-2">
+                    <div class="form-group">
+                        <label for="edit-data">Data da Notícia *</label>
+                        <input type="date" id="edit-data" name="data_criacao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-categoria">Categoria *</label>
+                        <select id="edit-categoria" name="categoria" required>
+                            <option value="Informativo">Informativo</option>
+                            <option value="Curso">Curso</option>
+                            <option value="Defesa">Defesa</option>
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="edit-url_noticia">URL (link) da Notícia</label>
+                    <input type="text" id="edit-url_noticia" name="url_noticia">
+                </div>
+
+                <div class="form-group">
+                    <label>Trocar Imagem (Opcional)</label>
+                    <input type="file" id="edit-imagem-input" name="imagem" accept="image/*">
+                </div>
+
+                <div class="form-group-grid-2">
+                     <div class="form-group switch-group">
+                        <label for="edit-destaque">Destaque?</label>
+                        <label class="switch">
+                            <input type="checkbox" id="edit-destaque" name="destaque">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="form-group switch-group">
+                        <label for="edit-exibir">Exibir?</label>
+                        <label class="switch">
+                            <input type="checkbox" id="edit-exibir" name="exibir">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-update">Atualizar Notícia</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-delecao" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Confirmação de Deleção</h3>
+            <p>Tem certeza que deseja deletar a notícia: <strong id="delete-titulo-confirm"></strong>?</p>
+            <div class="modal-actions">
+                <button id="btn-cancelar-delecao" class="btn-secondary">Cancelar</button>
+                <button id="btn-confirmar-delecao" class="btn-delete">Deletar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="noticias-admin.js"></script>
+</body>
+</html>

@@ -6,6 +6,15 @@
   gap: 40px;
 }
 
+#todas-noticias{
+  width: 90%;
+  padding: 20px 20px 20px 20px;
+}
+.noticias-container{
+  width: 95%;
+   padding: 10px 10px 10px 10px ;
+}
+
 #container-noticias-dinamicas {
     display: flex;
     flex-direction: column;
@@ -381,6 +390,22 @@
   margin-top: 10px;
 }
 
+.card-noticia .imageNotice {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 8px;
+    flex-shrink: 0;  
+}
+
+/* 2. Destaques (noticias.html) */
+.eventos .card-noticia img {
+    width: 150px;
+    height: 150px; /* Altura fixa */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
 .link-fale-conosco:hover {
   background-color: var(--azul-claro);
 }
@@ -726,3 +751,4 @@
     order: 1;
   }
 }
+
