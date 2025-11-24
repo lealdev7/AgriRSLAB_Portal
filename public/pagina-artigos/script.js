@@ -23,7 +23,7 @@ function criarArtigoCard(artigo) {
     const card = document.createElement('div');
     // Mantém a estrutura de classes original da página de artigos
     card.className = 'publication-card article-card publicacao';
-
+    card.classList.add(artigo.categoria_nome.toLowerCase().split(' ')[0]); // Adiciona classe como 'artigos', 'conferencia', etc.
     const imagemUrl = getFullUrl(artigo.url_imagem);
     const pdfUrl = getFullUrl(artigo.link_pdf);
 
@@ -44,6 +44,13 @@ function criarArtigoCard(artigo) {
     return card;
 }
 /**
+ * Retorna o texto traduzido para uma chave específica.
+ */
+function getTranslatedText(key) {
+    const lang = localStorage.getItem('lang') || 'pt';
+    return translations[lang][key] || key;
+}
+/**
  * Busca os artigos públicos na API e os renderiza na página.
  */
 async function carregarArtigosPublicos() {
@@ -57,7 +64,7 @@ async function carregarArtigosPublicos() {
 
     // Limpa todos os containers antes de carregar
     Object.values(containers).forEach(container => {
-        if (container) container.innerHTML = '<h2>Carregando...</h2>';
+        if (container) container.innerHTML = `<h2 data-i18n="artigos.carregando">${getTranslatedText('artigos.carregando')}</h2>`;
     });
 
     try {
@@ -86,11 +93,15 @@ async function carregarArtigosPublicos() {
             }
         });
 
+        // Dispara um evento para o artigos.js saber que os cards foram carregados
+        document.dispatchEvent(new Event('cardsLoaded'));
+
     } catch (error) {
         console.error('Erro ao carregar artigos:', error);
         const mainContent = document.querySelector('.publications-main-content');
         if (mainContent) {
-            mainContent.innerHTML = '<h2>❌ Erro ao carregar publicações. Verifique a conexão com o servidor.</h2>';
+            const errorText = getTranslatedText('artigos.erro');
+            mainContent.innerHTML = `<h2>${errorText}</h2>`;
         }
     }
 }

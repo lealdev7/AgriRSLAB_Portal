@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function inicializarFiltros() {
   // ===================== 1. ABRIR / FECHAR DROPDOWNS =====================
   const toggleButtons = document.querySelectorAll('.filter-toggle');
   toggleButtons.forEach(button => {
@@ -92,4 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+// Aguarda o evento 'cardsLoaded' disparado pelo script.js
+document.addEventListener('cardsLoaded', inicializarFiltros);

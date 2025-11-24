@@ -1,5 +1,22 @@
 const translations = {
   pt: {
+    // Header
+    "header.inicio":"Início",
+    "header.artigos.publicações":"Artigos e Publicações",
+    "header.noticias":"Noticias",
+    "header.membros":"Membros",
+    "header.projetos":"Projetos",
+    "header.sobre":"Sobre",
+    "header.vagas":"Vagas",
+    "header.fale.conosco":"Fale conosco",
+    // Footer
+    "footer.admin.acesso": "Acesso à área administrativa:",
+    "footer.admin.botao": "Acesso",
+    "footer.email.titulo": "Nosso E-mail:",
+    "footer.redes.titulo": "Nossas redes sociais:",
+    "footer.localizacao.titulo": "Nossa localização:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
     // Seção Anúncio
     "anuncio-titulo": "AgriRS",
     "anuncio-paragrafo": "Conectando tecnologia, ciência e responsabilidade socioambiental para gerar conhecimento e apoiar a tomada de decisões.",
@@ -32,6 +49,23 @@ const translations = {
     "ver-noticias-link": "Ver todas as notícias"
   },
   en: {
+    // Header
+    "header.inicio":"Start",
+    "header.artigos.publicações":"Articles and publications",
+    "header.noticias":"News",
+    "header.membros":"Members",
+    "header.projetos":"Projects",
+    "header.sobre":"About us",
+    "header.vagas":"Vacancies",
+    "header.fale.conosco":"Talk to us",
+    // Footer
+    "footer.admin.acesso": "Access to administrative area:",
+    "footer.admin.botao": "Access",
+    "footer.email.titulo": "Our E-mail:",
+    "footer.redes.titulo": "Our social networks:",
+    "footer.localizacao.titulo": "Our location:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
     // Section Announcement
     "anuncio-titulo": "AgriRS",
     "anuncio-paragrafo": "Connecting technology, science, and socio-environmental responsibility to generate knowledge and support decision-making.",
@@ -67,22 +101,40 @@ const translations = {
  
 let currentLang = "pt";
  
-function setLanguage(lang) {
+function setPageLanguage(lang) {
   currentLang = lang;
-  document.documentElement.lang = lang; // <html lang="pt">
+  // A linguagem do documento já é definida pelo script do header
   document
     .querySelectorAll("[data-i18n]")
     .forEach(el => {
       const key = el.getAttribute("data-i18n");
       const text = translations[lang][key];
-      if (text) el.textContent = text;
+      if (text) {
+        // Preserva o span do ano no copyright
+        if (key === 'footer.copyright' && el.querySelector('#ano')) el.firstChild.textContent = text;
+        else el.textContent = text;
+      }
     });
-  localStorage.setItem("lang", lang);
 }
+
+// Disponibiliza a função globalmente para ser usada pelo header
+window.setPageLanguage = setPageLanguage;
  
-window.addEventListener("DOMContentLoaded", () => {
+// Ouve o evento 'headerLoaded' para garantir que o header exista antes de traduzir.
+document.addEventListener('footerLoaded', () => {
   const saved = localStorage.getItem("lang");
-  setLanguage(saved || "pt");
+  setPageLanguage(saved || "pt");
 });
 
+// Ouve o evento 'headerLoaded' para garantir que o header exista antes de traduzir.
+document.addEventListener('headerLoaded', () => {
+  const saved = localStorage.getItem("lang");
+  setPageLanguage(saved || "pt");
+});
+
+// Uma chamada de segurança caso o evento não dispare ou para páginas sem header dinâmico.
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("lang");
+  setPageLanguage(saved || "pt");
+});
  

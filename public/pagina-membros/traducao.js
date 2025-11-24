@@ -1,31 +1,97 @@
 const translations = {
   pt: {
-    "hero.title":"O AgrIRS Lab é um laboratório vinculado a Divisão de Observação da Terra e Geoinformática (DIOTG) do Instituto Nacional de Pesquisas Espaciais (INPE).",
-    "hero.subtitle": "Somos um laboratório de sensoriamento remoto com foco na agricultura, estudando e monitorando cultivos agrícolas com o apoio de imagens de satélite e dados geoespaciais.Também desenvolvemos pesquisas em áreas ambientais e sociais, como detecção do desmatamento e mudanças no uso e cobertura da terra.Buscamos conectar tecnologia, ciência e responsabilidade socioambiental para gerar conhecimento e apoiar a tomada de decisões.",
+    // Header
+    "header.inicio":"Início",
+    "header.artigos.publicações":"Artigos e Publicações",
+    "header.noticias":"Noticias",
+    "header.membros":"Membros",
+    "header.projetos":"Projetos",
+    "header.sobre":"Sobre",
+    "header.vagas":"Vagas",
+    "header.fale.conosco":"Fale conosco",
+    // Footer
+    "footer.admin.acesso": "Acesso à área administrativa:",
+    "footer.admin.botao": "Acesso",
+    "footer.email.titulo": "Nosso E-mail:",
+    "footer.redes.titulo": "Nossas redes sociais:",
+    "footer.localizacao.titulo": "Nossa localização:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
+    // Página de Membros
+    "membros.titulo_pagina": "AgriRS - Membros",
+    "membros.junte_se_titulo": "Junte-se ao nosso time!",
+    "membros.junte_se_subtitulo": "Conecte-se com pesquisadores, acompanhe projetos inovadores e tenha acesso a conteúdos e experiências exclusivas.",
+    "membros.junte_se_botao": "Clique aqui e se torne um membro!",
+    "membros.titulo_principal": "Conheça nossa Equipe",
+    "membros.subtitulo_principal": "Os membros do AGRiRS Lab trabalham juntos para avançar nas pesquisas ambientais e atmosféricas.",
+    "membros.cat.coordenacao": "Coordenação",
+    "membros.cat.pesquisadores": "Pesquisadores",
+    "membros.cat.doutorandos": "Doutorandos",
+    "membros.cat.mestrandos": "Mestrandos",
+    "membros.cat.bolsistas": "Bolsistas",
+    "membros.lattes": "Currículo Lattes",
+    // Mensagens do script.js
+    "membros.carregando": "Carregando membros...",
+    "membros.erro": "❌ Erro ao carregar membros. Verifique a conexão com o servidor."
   },
   en: {
-    "hero.title": "Welcome to our websiteThe AgrIRS Lab is a laboratory linked to the Earth Observation and Geoinformatics Division (DIOTG) of the National Institute for Space Research (INPE).",
-    "hero.subtitle": "We are a remote sensing laboratory focused on agriculture, studying and monitoring agricultural crops with the support of satellite imagery and geospatial data. We also conduct research in environmental and social areas, such as deforestation detection and changes in land use and land cover. We seek to connect technology, science, and socio-environmental responsibility to generate knowledge and support decision-making.Simple solutions for your business",
+    // Header
+    "header.inicio":"Start",
+    "header.artigos.publicações":"Articles and publications",
+    "header.noticias":"News",
+    "header.membros":"Members",
+    "header.projetos":"Projects",
+    "header.sobre":"About us",
+    "header.vagas":"Vacancies",
+    "header.fale.conosco":"Talk to us",
+    // Footer
+    "footer.admin.acesso": "Access to administrative area:",
+    "footer.admin.botao": "Access",
+    "footer.email.titulo": "Our E-mail:",
+    "footer.redes.titulo": "Our social networks:",
+    "footer.localizacao.titulo": "Our location:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
+    // Members Page
+    "membros.titulo_pagina": "AgriRS - Members",
+    "membros.junte_se_titulo": "Join our team!",
+    "membros.junte_se_subtitulo": "Connect with researchers, follow innovative projects, and get access to exclusive content and experiences.",
+    "membros.junte_se_botao": "Click here to become a member!",
+    "membros.titulo_principal": "Meet our Team",
+    "membros.subtitulo_principal": "The members of AGRiRS Lab work together to advance environmental and atmospheric research.",
+    "membros.cat.coordenacao": "Coordination",
+    "membros.cat.pesquisadores": "Researchers",
+    "membros.cat.doutorandos": "PhD Students",
+    "membros.cat.mestrandos": "MSc Students",
+    "membros.cat.bolsistas": "Fellows",
+    "membros.lattes": "Lattes Curriculum",
+    // Messages from script.js
+    "membros.carregando": "Loading members...",
+    "membros.erro": "❌ Error loading members. Check the server connection."
   }
 };
- 
-let currentLang = "pt";
- 
-function setLanguage(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang; // <html lang="pt">
-  document
-    .querySelectorAll("[data-i18n]")
-    .forEach(el => {
-      const key = el.getAttribute("data-i18n");
+
+function setPageLanguage(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
       const text = translations[lang][key];
-      if (text) el.textContent = text;
-    });
-  localStorage.setItem("lang", lang);
+      if (key === 'footer.copyright' && el.querySelector('#ano')) {
+        el.firstChild.textContent = text;
+      } else {
+        el.textContent = text;
+      }
+    }
+  });
 }
- 
-window.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("lang");
-  setLanguage(saved || "pt");
-});
- 
+
+window.setPageLanguage = setPageLanguage;
+
+function applyInitialTranslation() {
+  const saved = localStorage.getItem("lang") || "pt";
+  setPageLanguage(saved);
+}
+
+document.addEventListener('headerLoaded', applyInitialTranslation);
+document.addEventListener('footerLoaded', applyInitialTranslation);
+window.addEventListener("DOMContentLoaded", applyInitialTranslation);

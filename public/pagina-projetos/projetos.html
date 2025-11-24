@@ -1,49 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title id="titulo-pagina" data-i18n="projetos.titulo_pagina">AgriRS - Projetos</title>
     <link rel="stylesheet" href="../HeaderFooter/style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-
     <header></header>
 
-    <h3 id="titulo-projetos">O AgriRS Lab conduz projetos voltados ao mapeamento e monitoramento de áreas agrícolas no
-        Brasil.
-        Utilizando sensoriamento remoto, modelagem e inteligência artificial, buscamos gerar conhecimento que apoie a
-        agricultura sustentável e a segurança alimentar.</h3>
-    <section class="filtros-section">
+    <main class="projects-main-content">
+        <h1 class="titulo-secao" data-i18n="projetos.titulo_principal"></h1>
+        <div class="linha-divisoria"></div>
 
-        <div class="filtros">
+        <p id="titulo-projetos" data-i18n="projetos.descricao"></p>
 
-            <button class="botao-filtro ativo" data-filtro="todos">Todos</button>
-            <button class="botao-filtro" data-filtro="em-andamento">Em andamento</button>
-            <button class="botao-filtro" data-filtro="finalizado">Finalizados</button>
+        <section class="filtros-section">
+            <div class="filtros">
+                <button class="botao-filtro ativo" data-filtro="todos" data-i18n="projetos.filtro.todos"></button>
+                <button class="botao-filtro" data-filtro="em-andamento" data-i18n="projetos.filtro.andamento"></button>
+                <button class="botao-filtro" data-filtro="finalizado" data-i18n="projetos.filtro.finalizados"></button>
+            </div>
+        </section>
+
+        <div class="projetos-galeria">
+            <!-- Os projetos serão carregados aqui -->
         </div>
-    </section>
-
-
-    <section class="projetos-galeria">
-
-    </section>
-
-    <div id="mensagem">Nenhum projeto encontrado para este filtro.</div>
-
+        <p id="mensagem" style="display: none;" data-i18n="projetos.nenhum_encontrado"></p>
+    </main>
 
     <footer></footer>
-    <script src="projetos.js"></script>
+
     <script src="../HeaderFooter/menu-header.js"></script>
-
+    <script src="../HeaderFooter/traducao-header.js"></script>
+    <script src="traducao.js"></script>
+    <script src="projetos.js"></script>
 </body>
-
 </html>

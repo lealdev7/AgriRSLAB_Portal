@@ -1,31 +1,104 @@
 const translations = {
   pt: {
-    "hero.title":"O AgrIRS Lab é um laboratório vinculado a Divisão de Observação da Terra e Geoinformática (DIOTG) do Instituto Nacional de Pesquisas Espaciais (INPE).",
-    "hero.subtitle": "Somos um laboratório de sensoriamento remoto com foco na agricultura, estudando e monitorando cultivos agrícolas com o apoio de imagens de satélite e dados geoespaciais.Também desenvolvemos pesquisas em áreas ambientais e sociais, como detecção do desmatamento e mudanças no uso e cobertura da terra.Buscamos conectar tecnologia, ciência e responsabilidade socioambiental para gerar conhecimento e apoiar a tomada de decisões.",
+    // Header (copiado para garantir consistência)
+    "header.inicio":"Início",
+    "header.artigos.publicações":"Artigos e Publicações",
+    "header.noticias":"Noticias",
+    "header.membros":"Membros",
+    "header.projetos":"Projetos",
+    "header.sobre":"Sobre",
+    "header.vagas":"Vagas",
+    "header.fale.conosco":"Fale conosco",
+    // Footer
+    "footer.admin.acesso": "Acesso à área administrativa:",
+    "footer.admin.botao": "Acesso",
+    "footer.email.titulo": "Nosso E-mail:",
+    "footer.redes.titulo": "Nossas redes sociais:",
+    "footer.localizacao.titulo": "Nossa localização:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
+    // Página de Artigos
+    "artigos.titulo_pagina": "AgriRS - Publicações",
+    "artigos.titulo_principal": "Publicações",
+    "artigos.filtro.tipo": "Tipo",
+    "artigos.filtro.titulo_ano": "Título/Ano",
+    "artigos.filtro.placeholder": "Digite um título ou ano...",
+    "artigos.filtro.aplicar": "Aplicar",
+    "artigos.cat.artigos": "Artigos",
+    "artigos.cat.conferencia": "Artigos de Conferência (AC)",
+    "artigos.cat.livros": "Capítulos de livros (CL)",
+    "artigos.cat.notas": "Notas Técnicas (NT)",
+    // Mensagens do script.js
+    "artigos.carregando": "Carregando...",
+    "artigos.erro": "❌ Erro ao carregar publicações. Verifique a conexão com o servidor."
   },
   en: {
-    "hero.title": "Welcome to our websiteThe AgrIRS Lab is a laboratory linked to the Earth Observation and Geoinformatics Division (DIOTG) of the National Institute for Space Research (INPE).",
-    "hero.subtitle": "We are a remote sensing laboratory focused on agriculture, studying and monitoring agricultural crops with the support of satellite imagery and geospatial data. We also conduct research in environmental and social areas, such as deforestation detection and changes in land use and land cover. We seek to connect technology, science, and socio-environmental responsibility to generate knowledge and support decision-making.Simple solutions for your business",
+    // Header
+    "header.inicio":"Start",
+    "header.artigos.publicações":"Articles and publications",
+    "header.noticias":"News",
+    "header.membros":"Members",
+    "header.projetos":"Projects",
+    "header.sobre":"About us",
+    "header.vagas":"Vacancies",
+    "header.fale.conosco":"Talk to us",
+    // Footer
+    "footer.admin.acesso": "Access to administrative area:",
+    "footer.admin.botao": "Access",
+    "footer.email.titulo": "Our E-mail:",
+    "footer.redes.titulo": "Our social networks:",
+    "footer.localizacao.titulo": "Our location:",
+    "footer.localizacao.texto": "Av. dos Astronautas, 1758, Jardim da Granja\nSão José dos Campos - SP",
+    "footer.copyright": "Copyright © AgriRS ",
+    // Articles Page
+    "artigos.titulo_pagina": "AgriRS - Publications",
+    "artigos.titulo_principal": "Publications",
+    "artigos.filtro.tipo": "Type",
+    "artigos.filtro.titulo_ano": "Title/Year",
+    "artigos.filtro.placeholder": "Enter a title or year...",
+    "artigos.filtro.aplicar": "Apply",
+    "artigos.cat.artigos": "Articles",
+    "artigos.cat.conferencia": "Conference Papers (AC)",
+    "artigos.cat.livros": "Book Chapters (CL)",
+    "artigos.cat.notas": "Technical Notes (NT)",
+    // Messages from script.js
+    "artigos.carregando": "Loading...",
+    "artigos.erro": "❌ Error loading publications. Check the server connection."
   }
 };
  
 let currentLang = "pt";
  
-function setLanguage(lang) {
+function setPageLanguage(lang) {
   currentLang = lang;
-  document.documentElement.lang = lang; // <html lang="pt">
-  document
-    .querySelectorAll("[data-i18n]")
-    .forEach(el => {
-      const key = el.getAttribute("data-i18n");
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
       const text = translations[lang][key];
-      if (text) el.textContent = text;
-    });
-  localStorage.setItem("lang", lang);
+      // Lógica especial para o copyright para não apagar o span do ano
+      if (key === 'footer.copyright' && el.querySelector('#ano')) {
+        el.firstChild.textContent = text;
+      } else {
+        el.textContent = text;
+      }
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
 }
- 
-window.addEventListener("DOMContentLoaded", () => {
+
+window.setPageLanguage = setPageLanguage;
+
+function applyInitialTranslation() {
   const saved = localStorage.getItem("lang");
-  setLanguage(saved || "pt");
-});
+  setPageLanguage(saved || "pt");
+}
+
+document.addEventListener('headerLoaded', applyInitialTranslation);
+document.addEventListener('footerLoaded', applyInitialTranslation);
+window.addEventListener("DOMContentLoaded", applyInitialTranslation);
  

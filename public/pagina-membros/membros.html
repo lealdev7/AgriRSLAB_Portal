@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membros AgriRSLab</title>
-    <link rel="stylesheet" href="membros.css">
+    <title data-i18n="membros.titulo_pagina">Membros AgriRSLab</title>    <link rel="stylesheet" href="membros.css">
     <link rel="stylesheet" href="../HeaderFooter/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="membros.js" defer></script>
 </head>
 
 <body>
@@ -18,23 +15,21 @@
 
     <div class="junte-time">
         <div class="container">
-            <h2 class="titulo-secao">Junte-se ao nosso time!</h2>
-            <h3>Conecte-se com pesquisadores, acompanhe projetos inovadores e tenha acesso a conteúdos e experiências
-                exclusivas.</h3>
-            <a href="../pagina-vagas/index-vagas.html" class="btn"> Clique aqui e se torne um membro!</a>
+            <h2 class="titulo-secao" data-i18n="membros.junte_se_titulo"></h2>
+            <h3 data-i18n="membros.junte_se_subtitulo"></h3>
+            <a href="../pagina-vagas/index-vagas.html" class="btn" data-i18n="membros.junte_se_botao"></a>
         </div>
     </div>
 
     <main class="container">
 
-        <h2 id="titulo-membros">Conheça nossa Equipe</h2>
-        <h3 id="subtitulo-membros">Os membros do AGRiRS Lab trabalham juntos para avançar nas pesquisas ambientais e
-            atmosféricas.</h3>
+        <h2 id="titulo-membros" data-i18n="membros.titulo_principal"></h2>
+        <h3 id="subtitulo-membros" data-i18n="membros.subtitulo_principal"></h3>
 
         <!-- COORDENAÇÃO (grupo_id = 1) -->
         <section class="grupo-membros" data-grupo="coordenadores">
             <button class="toggle-btn">
-                <h2 class="titulo-secao">Coordenação</h2><span class="seta"></span>
+                <h2 class="titulo-secao" data-i18n="membros.cat.coordenacao"></h2><span class="seta"></span>
             </button>
             <div class="grade-membros">
                 <!-- Cards de coordenadores serão inseridos via JS -->
@@ -44,7 +39,7 @@
         <!-- PESQUISADORES (grupo_id = 2) -->
         <section class="grupo-membros" data-grupo="pesquisadores">
             <button class="toggle-btn">
-                <h2 class="titulo-secao">Pesquisadores</h2><span class="seta"></span>
+                <h2 class="titulo-secao" data-i18n="membros.cat.pesquisadores"></h2><span class="seta"></span>
             </button>
             <div class="grade-membros">
                 <!-- Cards de pesquisadores serão inseridos via JS -->
@@ -54,7 +49,7 @@
         <!-- DOUTORANDOS (grupo_id = 3) -->
         <section class="grupo-membros" data-grupo="doutorandos">
             <button class="toggle-btn">
-                <h2 class="titulo-secao">Doutorandos</h2><span class="seta"></span>
+                <h2 class="titulo-secao" data-i18n="membros.cat.doutorandos"></h2><span class="seta"></span>
             </button>
             <div class="grade-membros">
                 <!-- Cards de doutorandos serão inseridos via JS -->
@@ -64,7 +59,7 @@
         <!-- MESTRANDOS (grupo_id = 4) -->
         <section class="grupo-membros" data-grupo="mestrandos">
             <button class="toggle-btn">
-                <h2 class="titulo-secao">Mestrandos</h2><span class="seta"></span>
+                <h2 class="titulo-secao" data-i18n="membros.cat.mestrandos"></h2><span class="seta"></span>
             </button>
             <div class="grade-membros">
                 <!-- Cards de mestrandos serão inseridos via JS -->
@@ -74,7 +69,7 @@
         <!-- BOLSISTAS (grupo_id = 5) -->
         <section class="grupo-membros" data-grupo="bolsistas">
             <button class="toggle-btn">
-                <h2 class="titulo-secao">Bolsistas</h2><span class="seta"></span>
+                <h2 class="titulo-secao" data-i18n="membros.cat.bolsistas"></h2><span class="seta"></span>
             </button>
             <div class="grade-membros">
                 <!-- Cards de bolsistas serão inseridos via JS -->
@@ -87,6 +82,9 @@
     </footer>
 
     <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="../HeaderFooter/traducao-header.js"></script>    
+    <script src="traducao.js"></script>
+    <script src="membros.js"></script>
 </body>
 
 </html>

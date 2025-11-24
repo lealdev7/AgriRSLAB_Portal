@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - AGRIRS LAB</title>
+  <title data-i18n="sobre.titulo_pagina">Sobre - AGRIRS LAB</title>
 
   <!-- Header/footer -->
   <link rel="stylesheet" href="../HeaderFooter/style.css">
   <!-- CSS desta página -->
-  <link rel="stylesheet" href="./sobre.css">
+  <link rel="stylesheet" href="sobre.css">
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="traducao.js" defer></script>
 </head>
 <body>
   <!-- HEADER  -->
@@ -28,23 +27,21 @@
         <div class="sobre-img">
           <img src="../../imagens/5. Parceiros/membros.png" alt="Equipe AgrIRS Lab">
         </div>
-        <button onclick="setLanguage('pt')">PT</button>
-        <button onclick="setLanguage('en')">EN</button>
 
         <!-- caixa de cima (verde clara) -->
         <div class="sobre-card-top">
-          <p data-i18n="hero.title"></p>
+          <p data-i18n="sobre.paragrafo1"></p>
         </div>
 
         <!-- caixa de baixo (verde escura) -->
         <div class="sobre-card-bottom">
-          <p data-i18n="hero.subtitle"></p>
+          <p data-i18n="sobre.paragrafo2"></p>
         </div>
       </div>
     </section>
 
     <section class="sobre-partners">
-      <h2>AGÊNCIAS DE FOMENTO E COLABORADORES</h2>
+      <h2 data-i18n="sobre.parceiros_titulo"></h2>
       <div class="sobre-partners-logos">
         <img src="../../imagens/5. Parceiros/FAP.png" alt="Logo FAPESP">
         <img src="../../imagens/5. Parceiros/capes.png" alt="Logo CAPES">
@@ -55,6 +52,8 @@
 
   <!-- FOOTER PADRÃO -->
       <footer></footer>
-        <script src="../HeaderFooter/menu-header.js"></script>
+      <script src="../HeaderFooter/menu-header.js"></script>
+      <script src="../HeaderFooter/traducao-header.js"></script>
+      <script src="traducao.js"></script>
 </body>
 </html>

@@ -8,20 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.querySelector("header").innerHTML = data;
 
-      const script = document.createElement('script');
-      script.src = "../HeaderFooter/traducao-header.js";
-      script.defer = true;
-
-
-      script.onload = () => {
-        if (typeof window.setLanguage === 'function') {
-          const saved = localStorage.getItem("lang");
-          setLanguage(saved || "pt");
-          console.log("Header Traduzido no Carregamento Inicial.");
-        }
-      };
-
-      document.body.appendChild(script);
+      // Dispara um evento personalizado para avisar que o header foi carregado.
+      const event = new Event('headerLoaded');
+      document.dispatchEvent(event);
 
       // Só executa o controle do menu depois do header existir
       inicializarMenuHamburguer();
@@ -37,11 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.querySelector("footer").innerHTML = data;
 
+      // Dispara um evento personalizado para avisar que o footer foi carregado.
+      const event = new Event('footerLoaded');
+      document.dispatchEvent(event);
+
+      // Carrega o script de tradução do footer
+      const script = document.createElement('script');
+      script.src = "../HeaderFooter/traducao-footer.js";
+      document.body.appendChild(script);
+
       // === INSERIR ANO AUTOMÁTICO ===
       const anoElemento = document.getElementById("ano");
       if (anoElemento) {
         anoElemento.textContent = new Date().getFullYear();
       }
+
+      // Reaplica a tradução para garantir que o footer seja traduzido
+      const savedLang = localStorage.getItem("lang") || "pt";
+      if (typeof window.setPageLanguage === 'function') window.setPageLanguage(savedLang);
     })
     .catch(error => console.error("Erro ao carregar footer:", error));
 });
@@ -70,5 +72,3 @@ function inicializarMenuHamburguer() {
     }
   });
 }
-
-
