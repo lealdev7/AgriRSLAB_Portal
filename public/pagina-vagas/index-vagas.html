@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vagas</title>
+  <title data-i18n="vagas.titulo_pagina">Vagas</title>
   <link rel="stylesheet" href="style-vagas.css?v=5">
   <link rel="stylesheet" href="../HeaderFooter/style.css">
-  <script src="javascript-vagas.js" defer>  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -23,159 +22,95 @@
 
   <section class="banner-vagas">
     <div class="container-vagas">
-      <p class="chamada-vagas">Chamadas de Mestrado e Doutorado variam conforme edital do PGSER</p>
-      <h2>Mestrado e Doutorado em Sensoriamento Remoto aplicado à Agricultura</h2>
-      <p>O AgriRS Lab pertence à Divisão de Sensoriamento Remoto do INPE e desenvolve pesquisa e desenvolvimento em
-        geoinformática e sensoriamento remoto para agricultura...</p>
-      <button class="btn-vagas btn-primary-vagas" onclick="scrollToSection()"> Ver inscrições</button>
+      <p class="chamada-vagas" data-i18n="vagas.banner.chamada"></p>
+      <h2 data-i18n="vagas.banner.titulo"></h2>
+      <p data-i18n="vagas.banner.descricao"></p>
+      <button class="btn-vagas btn-primary-vagas" onclick="document.getElementById('verMestrado').scrollIntoView({behavior: 'smooth'})" data-i18n="vagas.banner.botao"></button>
     </div>
   </section>
 
   <main>
     <section class="oportunidades-vagas">
       <div class="container-vagas">
-        <h3 class="section-title-vagas">🌱 Oportunidades de Trabalho</h3>
+        <h3 class="section-title-vagas" data-i18n="vagas.oportunidades.titulo"></h3>
 
-        <div class="cards-vagas">
-          <div class="card-vagas">
-            <h4>🔬 Pesquisador(a) em Sensoriamento Remoto</h4>
-            <p>Atuação em projetos de monitoramento agrícola utilizando imagens de satélite e técnicas de
-              geoprocessamento.</p>
-
-            <h5>Requisitos:</h5>
-            <ul>
-              <li>Formação em Engenharia Agronômica, Geografia...</li>
-              <li>Conhecimento em QGIS, Python, Google Earth Engine</li>
-              <li>Experiência com dados de satélite (Sentinel, Landsat)</li>
-            </ul>
-
-            <h5>Benefícios:</h5>
-            <ul>
-              <li>Bolsa de pesquisa</li>
-              <li>Ambiente colaborativo</li>
-              <li>Flexibilidade de horário</li>
-            </ul>
-
-            <a href="../pagina-vagas/vagas-candidatura.html"
-              class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</a>
-
-
-          </div>
-
-          <div class="card-vagas">
-            <h4>💻 Desenvolvedor(a) de Sistemas Geoespaciais</h4>
-            <p>Desenvolvimento de aplicações web para visualização e análise de dados espaciais.</p>
-
-            <h5>Requisitos:</h5>
-            <ul>
-              <li>Experiência com JavaScript, React, APIs REST</li>
-              <li>Conhecimento em PostGIS</li>
-              <li>Desejável experiência em Leaflet ou OpenLayers</li>
-            </ul>
-
-            <h5>Benefícios:</h5>
-            <ul>
-              <li>Contrato de colaboração técnica</li>
-              <li>Participação em projetos inovadores</li>
-              <li>Ambiente de pesquisa e desenvolvimento</li>
-            </ul>
-
-            <a href="../pagina-vagas/vagas-candidatura.html"
-              class="btn-vagas btn-primary-vagas btn-sm-vagas">Candidatar-se</a>
-          </div>
+        <div id="jobs-container" class="cards-vagas">
+          <!-- Vagas carregadas dinamicamente pelo script.js aparecerão aqui -->
         </div>
       </div>
     </section>
 
     <section class="inscricoes-vagas" id="verMestrado">
       <div class="container-vagas">
-        <h3 class="section-title-vagas">📄 Inscrições para Mestrado e Doutorado</h3>
+        <h3 class="section-title-vagas" data-i18n="vagas.inscricoes.titulo"></h3>
         <div class="card-vagas">
-          <p>As inscrições são centralizadas pelo Programa de Pós Graduação em Sensoriamento Remoto do INPE.
-            Acesse o link para editais e orientações.</p>
+          <p data-i18n="vagas.inscricoes.texto"></p>
 
           <a class="btn-vagas btn-sm-vagas btn-primary-vagas"
-            href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao" target="_blank">Abrir página de
-            inscrições e editais do PGSER </a>
+            href="https://www.gov.br/inpe/pt-br/area-conhecimento/posgraduacao" target="_blank" data-i18n="vagas.inscricoes.botao"></a>
 
-          <p>Contato da secretaria do programa:
-            <a href="mailto:posgraduacao@inpe.br">posgraduacao@inpe.br</a>
-          </p>
+          <p><span data-i18n="vagas.inscricoes.contato_texto"></span> <a href="mailto:posgraduacao@inpe.br">posgraduacao@inpe.br</a></p>
         </div>
       </div>
     </section>
 
     <section class="linhas-vagas">
       <div class="container-vagas">
-        <h3 class="section-title-vagas">📊 Linhas de pesquisa e temas</h3>
+        <h3 class="section-title-vagas" data-i18n="vagas.linhas_pesquisa.titulo"></h3>
 
         <div class="cards-grid-vagas">
           <div class="card-vagas">
-            <h4>Agricultura de precisão</h4>
-            <p>Variabilidade espacial, sensores em campo e integração com dados de máquinas.</p>
+            <h4 data-i18n="vagas.linhas_pesquisa.card1_titulo"></h4>
+            <p data-i18n="vagas.linhas_pesquisa.card1_texto"></p>
           </div>
 
           <div class="card-vagas">
-            <h4>Imagens orbitais e aéreas</h4>
-            <p>Uso de satélites e VANTs para monitoramento de culturas e fenologia.</p>
+            <h4 data-i18n="vagas.linhas_pesquisa.card2_titulo"></h4>
+            <p data-i18n="vagas.linhas_pesquisa.card2_texto"></p>
           </div>
 
           <div class="card-vagas">
-            <h4>Processamento e modelagem</h4>
-            <p>Processamento de imagens, séries temporais e aprendizado de máquina aplicado ao agro.</p>
+            <h4 data-i18n="vagas.linhas_pesquisa.card3_titulo"></h4>
+            <p data-i18n="vagas.linhas_pesquisa.card3_texto"></p>
           </div>
         </div>
 
         <div class="card-full-vagas">
-          <p>As linhas específicas do PGSER incluem áreas como sensoriamento remoto aplicado à agricultura,
-            processamento de imagens e geoprocessamento. Consulte a página do programa para a lista completa e
-            atualizada.</p>
+          <p data-i18n="vagas.linhas_pesquisa.detalhes"></p>
         </div>
       </div>
     </section>
 
     <section class="comoingressar-vagas">
       <div class="container-vagas">
-        <h3 class="section-title-vagas">📥 Como ingressar</h3>
+        <h3 class="section-title-vagas" data-i18n="vagas.como_ingressar.titulo"></h3>
 
         <div class="cards-ingressar-vagas">
-
           <div class="card-vagas">
-            <h4>1. Leia o edital do PGSER</h4>
-            <p>Verifique requisitos, cronograma e documentos.
-              O PGSER do INPE publica os editais no site oficial.</p>
+            <h4 data-i18n="vagas.como_ingressar.passo1_titulo"></h4>
+            <p data-i18n="vagas.como_ingressar.passo1_texto"></p>
           </div>
 
           <div class="card-vagas">
-            <h4>2. Prepare a inscrição</h4>
-            <ul>
-              <li>Histórico e diploma ou declaração de concluinte</li>
-              <li>Currículo Lattes</li>
-              <li>Carta de motivação</li>
-              <li>Cartas de recomendação (quando exigido)</li>
-              <li>Anteprojeto conforme edital</li>
-            </ul>
+            <h4 data-i18n="vagas.como_ingressar.passo2_titulo"></h4>
+            <p data-i18n="vagas.como_ingressar.passo2_texto"></p>
           </div>
 
           <div class="card-vagas">
-            <h4>3. Submeta e acompanhe</h4>
-            <p>Envie pelo sistema indicado no edital e acompanhe entrevistas ou provas.
-              Resultados são divulgados no site do PGSER.</p>
+            <h4 data-i18n="vagas.como_ingressar.passo3_titulo"></h4>
+            <p data-i18n="vagas.como_ingressar.passo3_texto"></p>
           </div>
-
-        </div>
-
-        <div class="card-full-vagas" style="margin-top: 20px;">
-          <p>Mais detalhes sobre linhas, seleção e contatos estão na página do PGSER do INPE.</p>
         </div>
       </div>
     </section>
-
   </main>
 
     <footer></footer>
 
     <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="../HeaderFooter/traducao-header.js"></script>
+    <script src="../pagina-vagas/traducao.js"></script>
+    <script src="../pagina-vagas/script.js"></script>
 
 </body>
 
