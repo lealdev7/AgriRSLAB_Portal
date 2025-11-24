@@ -8,13 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.querySelector("header").innerHTML = data;
 
+      const script = document.createElement('script');
+      script.src = "../HeaderFooter/traducao-header.js";
+      script.defer = true;
+
+
+      script.onload = () => {
+        if (typeof window.setLanguage === 'function') {
+          const saved = localStorage.getItem("lang");
+          setLanguage(saved || "pt");
+          console.log("Header Traduzido no Carregamento Inicial.");
+        }
+      };
+
+      document.body.appendChild(script);
+
       // Só executa o controle do menu depois do header existir
       inicializarMenuHamburguer();
     })
     .catch(error => console.error("Erro ao carregar header:", error));
 
   // === CARREGAR FOOTER ===
- fetch("../HeaderFooter/footer.html")
+  fetch("../HeaderFooter/footer.html")
     .then(response => {
       if (!response.ok) throw new Error("Erro ao carregar o footer");
       return response.text();
