@@ -3,12 +3,13 @@ const translations = {
     // Header (copiado para garantir consistência)
     "header.inicio":"Início",
     "header.artigos.publicações":"Artigos e Publicações",
-    "header.noticias":"Noticias",
+    "header.noticias":"Notícias",
     "header.membros":"Membros",
     "header.projetos":"Projetos",
     "header.sobre":"Sobre",
     "header.vagas":"Vagas",
     "header.fale.conosco":"Fale conosco",
+    "header.pesquisar": "Pesquisar...",
     // Footer
     "footer.admin.acesso": "Acesso à área administrativa:",
     "footer.admin.botao": "Acesso",
@@ -34,7 +35,7 @@ const translations = {
   },
   en: {
     // Header
-    "header.inicio":"Start",
+    "header.inicio":"Home",
     "header.artigos.publicações":"Articles and publications",
     "header.noticias":"News",
     "header.membros":"Members",
@@ -42,6 +43,7 @@ const translations = {
     "header.sobre":"About us",
     "header.vagas":"Vacancies",
     "header.fale.conosco":"Talk to us",
+    "header.pesquisar": "Search...",
     // Footer
     "footer.admin.acesso": "Access to administrative area:",
     "footer.admin.botao": "Access",

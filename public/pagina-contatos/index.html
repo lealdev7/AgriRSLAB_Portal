@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fale Conosco</title>
+    <title data-i18n="contato.titulo_pagina">Fale Conosco - AgriRS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--responsividade-->
 
     <!-- Linkando o CSS -->
@@ -33,28 +33,29 @@
     <section class="area-contato">
         <div class="elementos-contato">
             <div class="form-contato">
-                <form class="envio-de-email-contato">
-                    <h3 class="h3-faleconosco">Fale Conosco</h3>
+                <form id="contact-form" class="envio-de-email-contato">
+                    <h3 class="h3-faleconosco" data-i18n="contato.titulo_principal">Fale Conosco</h3>
+                    <p data-i18n="contato.descricao" style="text-align: center; margin-bottom: 20px; font-size: 0.95rem; color: #555;">Tem alguma dúvida, sugestão ou interesse em parcerias? Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
                     <div>
-                        <p><input type="text" class="caixas-contato" name="nome" id="nome" placeholder="Nome"></p>
-                        <p><input type="text" class="caixas-contato" name="email" id="email" placeholder="E-mail"></p>
-                        <p><input type="text" class="caixas-contato" name="assunto" id="assunto" placeholder="Assunto">
+                        <p><input type="text" class="caixas-contato" name="nome" id="nome" data-i18n-placeholder="contato.form.nome" placeholder="Nome Completo" required></p>
+                        <p><input type="email" class="caixas-contato" name="email" id="email" data-i18n-placeholder="contato.form.email" placeholder="Seu E-mail" required></p>
+                        <p><input type="text" class="caixas-contato" name="assunto" id="assunto" data-i18n-placeholder="contato.form.assunto" placeholder="Assunto" required>
                         </p>
-                        <p><textarea class="caixas-contato" name="comentario" id="comentario" maxlength="500" rows="15"
-                                placeholder="Escreva seu comentário, sugestão ou deixe uma mensagem para nossos integrantes."></textarea>
+                        <p><textarea class="caixas-contato" name="mensagem" id="mensagem" maxlength="500" rows="10"
+                                data-i18n-placeholder="contato.form.mensagem" placeholder="Sua Mensagem" required></textarea>
                         </p>
-                        <button class="btn-faleconosco btn--primary-faleconosco btn--block-faleconosco">Enviar</button>
+                        <button type="submit" class="btn-faleconosco btn--primary-faleconosco btn--block-faleconosco" data-i18n="contato.form.botao_enviar">Enviar Mensagem</button>
                     </div>
                 </form>
             </div>
 
             <div class="mapa-contato">
                 <div>
-                    <h3 class="h3-contato">
+                    <h3 class="h3-contato" data-i18n="footer.localizacao.titulo">
                         Localização
                     </h3>
                     <p>
-                    <div class="endereco-contato">
+                    <div class="endereco-contato" data-i18n="footer.localizacao.texto">
                         <div>Av. dos Astronautas, 1758 - Jardim da Granja</div>
                         <div>São José dos Campos/SP</div>
                     </div>
@@ -68,13 +69,13 @@
                     </p>
                     <p>
                     <div>
-                        <h3 class="h3-contato">
+                        <h3 class="h3-contato" data-i18n="footer.redes.titulo">
                             Redes Sociais
                         </h3>
                         <!-- inserindo svgs diretamente com código para que eu possa mudar a cor deles -->
 
                         <p>
-                            <!-- ícone do instagram -->
+                            <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank" rel="noopener noreferrer">
                             <svg class="contato-redes-sociais" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -82,7 +83,7 @@
                                     stroke="#000000" stroke-linejoin="round" />
                             </svg>
 
-                            <!-- ícone do github -->
+                            </a><a href="https://github.com/agrirslabinpe" target="_blank" rel="noopener noreferrer">
                             <svg class="contato-redes-sociais" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -90,24 +91,20 @@
                                     stroke="#000000" stroke-linejoin="round" />
                             </svg>
 
-                            <!-- ícone do email -->
-                            <svg class="contato-redes-sociais" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve">
-                                <polyline points="11,12 21,18 31,12 " />
-                                <line x1="4" y1="12" x2="11" y2="12" />
-                                <line x1="1" y1="16" x2="12" y2="16" />
-                                <line x1="4" y1="20" x2="11" y2="20" />
-                                <path class="st0"
-                                    d="M11,12v-1c0-2.2,1.8-4,4-4h12c2.2,0,4,1.8,4,4v10c0,2.2-1.8,4-4,4H15c-2.2,0-4-1.8-4-4v-1" />
-                            </svg>
-
-                            <!-- ícone do linkedin -->
+                            </a><a href="mailto:agrirs@inpe.br">
+                                <!-- Ícone de e-mail -->
+                            </a><a href="https://www.linkedin.com/company/agrirslab/" target="_blank" rel="noopener noreferrer">
                             <svg class="contato-redes-sociais" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M22 3.47059V20.5294C22 20.9194 21.845 21.2935 21.5692 21.5693C21.2935 21.8451 20.9194 22 20.5294 22H3.47056C3.08053 22 2.70648 21.8451 2.43069 21.5693C2.15491 21.2935 1.99997 20.9194 1.99997 20.5294V3.47059C1.99997 3.08056 2.15491 2.70651 2.43069 2.43073C2.70648 2.15494 3.08053 2 3.47056 2H20.5294C20.9194 2 21.2935 2.15494 21.5692 2.43073C21.845 2.70651 22 3.08056 22 3.47059V3.47059ZM7.88232 9.64706H4.94115V19.0588H7.88232V9.64706ZM8.14703 6.41176C8.14858 6.18929 8.10629 5.96869 8.02258 5.76255C7.93888 5.55642 7.81539 5.36879 7.65916 5.21039C7.50294 5.05198 7.31705 4.92589 7.1121 4.83933C6.90715 4.75277 6.68715 4.70742 6.46468 4.70588H6.41173C5.95931 4.70588 5.52541 4.88561 5.20549 5.20552C4.88558 5.52544 4.70585 5.95934 4.70585 6.41176C4.70585 6.86419 4.88558 7.29809 5.20549 7.61801C5.52541 7.93792 5.95931 8.11765 6.41173 8.11765V8.11765C6.63423 8.12312 6.85562 8.0847 7.06325 8.00458C7.27089 7.92447 7.46071 7.80422 7.62186 7.65072C7.78301 7.49722 7.91234 7.31346 8.00245 7.10996C8.09256 6.90646 8.14169 6.6872 8.14703 6.46471V6.41176ZM19.0588 13.3412C19.0588 10.5118 17.2588 9.41177 15.4706 9.41177C14.8851 9.38245 14.3021 9.50715 13.7798 9.77345C13.2576 10.0397 12.8142 10.4383 12.4941 10.9294H12.4117V9.64706H9.64703V19.0588H12.5882V14.0529C12.5457 13.5403 12.7072 13.0315 13.0376 12.6372C13.368 12.2429 13.8407 11.9949 14.3529 11.9471H14.4647C15.4 11.9471 16.0941 12.5353 16.0941 14.0176V19.0588H19.0353L19.0588 13.3412Z"
                                     stroke="#000000" stroke-linejoin="round" />
                             </svg>
+
+                            </a><a href="https://x.com/AgriRS_Lab" target="_blank" rel="noopener noreferrer">
+                                <!-- Ícone do Twitter/X -->
+                                <svg class="contato-redes-sociais" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.15344L22.298 1.15344L14.426 10.1234L23.499 22.8464H16.706L10.993 15.1234L4.512 22.8464H1.115L9.556 13.2734L1.115 1.15344H7.983L13.223 8.19044L18.901 1.15344ZM17.61 20.6134H19.54L6.41 3.20344H4.38L17.61 20.6134Z" fill="black"/></svg>
+                            </a>
 
                         </p>
                     </div>
@@ -124,6 +121,8 @@
     <footer>
     </footer>
     <script src="../HeaderFooter/menu-header.js"></script>
+    <script src="../HeaderFooter/traducao-header.js"></script>
+    <script src="traducao.js"></script>
 </body>
 
 </html>

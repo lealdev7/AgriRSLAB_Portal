@@ -107,4 +107,4 @@ async function carregarArtigosPublicos() {
 }
 
 // Carrega os artigos quando o DOM estiver pronto
-document.addEventListener('DOMContentLoaded', carregarArtigosPublicos);
+// document.addEventListener('DOMContentLoaded', carregarArtigosPublicos);

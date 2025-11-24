@@ -1,184 +1,103 @@
-/* RESET BÁSICO DA PÁGINA */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-body {
-  background: #f5f5f5;
-}
-
-/* ===================== ÁREA SOBRE ===================== */
+/* Estilos gerais para a página Sobre */
 .sobre-wrapper {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 60px 0px 80px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Seção principal "Sobre" com o grid */
 .sobre-about {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .sobre-grid {
-  position: relative;
-  height: 540px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
+    grid-template-rows: auto auto; /* Duas linhas com altura automática */
+    gap: 20px; /* Espaçamento entre os itens do grid */
 }
 
-/* ===== IMAGEM */
+/* Área da imagem */
 .sobre-img {
-  position: absolute;
-  top: 0;
-  right: -135px;
-  width: 700px;
-  height: 300px;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  background: #d5e5f0;
-  z-index: 3;
-}
-.sobre-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ===== CARD DE CIMA (verde claro) =====
-   Figma: começa mais à esquerda, entra por baixo da imagem
-*/
-.sobre-card-top {
-  position: absolute;
-  top: 50px;        
-  left: -250px;           
-  width: 350px;
-  height: 230px;      
-  background: #55A357;
-  color: #fff;
-  padding: 40px 30px 40px 30px;
-  border-radius: 28px;
-  box-shadow: 0 14px 45px rgba(0,0,0,0.15);
-  z-index: 1;
-}
-
-/* ===== CARD DE BAIXO =====*/
-.sobre-card-bottom {
-  position: absolute;
-  top: 270px;         
-  right: -190px;
-  width: 900px;
-  background: #2f6e3a;
-  color: #fff;
-  padding: 40px 30px 30px 30px;
-  border-radius: 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.16);
-  z-index: 1;
-}
-.sobre-card-bottom p {
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-.sobre-card-bottom p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===== PARCEIROS ===== */
-.sobre-partners {
-  text-align: center;
-  padding: 10px 20px 0;
-}
-.sobre-partners h2 {
-  font-size: 24px;
-  margin-bottom: 32px;
-  color: #333;
-}
-.sobre-partners-logos {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-.sobre-partners-logos img {
-  height: 80px;
-  object-fit: contain;
-}
-
-/* ===================== RESPONSIVO ===================== */
-@media (max-width: 767px) {
-.sobre-wrapper {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px 24px 40px;   
-}
-
-  .sobre-grid {
-    position: static;
-    height: auto;
+    grid-column: 1 / 2; /* Ocupa da linha 1 à 2 da coluna */
+    grid-row: 1 / 3;    /* Ocupa da linha 1 à 3 da linha (as duas linhas) */
     display: flex;
-    flex-direction: column;
-    align-items: center;   
-  }
+    align-items: center;
+}
 
-  /* texto de cima */
-  .sobre-card-top {
-    order: 1;
-    position: static;
-    background: transparent;
-    box-shadow: none;
-    width: 100%;
-    color: #234;
-    text-align: center;
-  }
-
-  /* foto no meio */
-  .sobre-img {
-    order: 2;
-    position: static;
-    width: min(100%, 340px); 
-    height: 210px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 0 auto 8px;      
-  }
-
-  .sobre-img img {
+.sobre-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-  }
-
-  /* texto de baixo */
-  .sobre-card-bottom {
-    order: 3;
-    position: static;
-    background: transparent;
-    box-shadow: none;
-    width: 100%;
-    color: #234;
-    text-align: center;
-  }
-
-  /* textos */
-  .sobre-card-top p,
-  .sobre-card-bottom p {
-    max-width: 360px;       
-    margin: 0 auto 14px;    
-    text-align: center;
-  }
-
-  .sobre-partners {
-    padding: 24px 0 0;
-    text-align: center;
-  }
-
- img[alt="Equipe AgrIRS Lab"] {
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto 16px;  
-  }
-
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
- 
+/* Card superior (verde claro) */
+.sobre-card-top {
+    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+    grid-row: 1 / 2;    /* Ocupa a primeira linha */
+    background-color: #f0f4f0; /* Tom de verde claro sugerido */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Card inferior (verde escuro) */
+.sobre-card-bottom {
+    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+    grid-row: 2 / 3;    /* Ocupa a segunda linha */
+    background-color: #3A5946; /* Tom de verde escuro do seu site */
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.sobre-card-top p,
+.sobre-card-bottom p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Seção de parceiros */
+.sobre-partners {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sobre-partners h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.sobre-partners-logos {
+    display: flex;
+    justify-content: center;
+    align-itemsEstilos: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre-partners-logos img {
+    max-height: 60px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+.sobre-partners-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+    .sobre-img, .sobre-card-top, .sobre-card-bottom {
+        grid-column: 1 / 2; /* Todos os itens ocupam a primeira (e única) coluna */
+        grid-row: auto; /* Deixa o navegador decidir a linha */
+    }
+}

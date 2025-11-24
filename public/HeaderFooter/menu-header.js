@@ -44,8 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reaplica a tradução para garantir que o footer seja traduzido
       const savedLang = localStorage.getItem("lang") || "pt";
       if (typeof window.setPageLanguage === 'function') window.setPageLanguage(savedLang);
+
     })
     .catch(error => console.error("Erro ao carregar footer:", error));
+
+  // === CARREGAR VLIBRAS GLOBALMENTE ===
+  // Cria o elemento div que o VLibras precisa
+  const vlibrasDiv = document.createElement('div');
+  vlibrasDiv.id = 'vlibras-widget'; // Adiciona um ID para fácil referência
+  vlibrasDiv.innerHTML = `
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(vlibrasDiv);
+
+  // Carrega o script do VLibras e o inicializa
+  const vlibrasScript = document.createElement('script');
+  vlibrasScript.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+  vlibrasScript.onload = () => {
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  };
+  document.body.appendChild(vlibrasScript);
 });
 
 // === FUNÇÃO PARA CONTROLAR O MENU ===

@@ -3,12 +3,12 @@ const translations = {
     // Header
     "header.inicio":"Início",
     "header.artigos.publicações":"Artigos e Publicações",
-    "header.noticias":"Noticias",
-    "header.membros":"Membros",
+    "header.noticias":"Notícias",
     "header.projetos":"Projetos",
     "header.sobre":"Sobre",
     "header.vagas":"Vagas",
     "header.fale.conosco":"Fale conosco",
+    "header.pesquisar": "Pesquisar...",
     // Footer
     "footer.admin.acesso": "Acesso à área administrativa:",
     "footer.admin.botao": "Acesso",
@@ -46,13 +46,14 @@ const translations = {
     "vagas.como_ingressar.passo2_texto": "Histórico e diploma, Currículo Lattes, Carta de motivação, Cartas de recomendação e Anteprojeto conforme edital.",
     "vagas.como_ingressar.passo3_titulo": "3. Submeta e acompanhe",
     "vagas.como_ingressar.passo3_texto": "Envie pelo sistema indicado no edital e acompanhe entrevistas ou provas. Resultados são divulgados no site do PGSER.",
+    "vagas.como_ingressar.detalhes_finais": "Mais detalhes sobre linhas, seleção e contatos estão na página do PGSER do INPE.",
     // Mensagens do script.js
     "vagas.carregando": "Carregando vagas...",
     "vagas.erro": "❌ Erro ao carregar vagas. Verifique a conexão com o servidor."
   },
   en: {
     // Header
-    "header.inicio":"Start",
+    "header.inicio":"Home",
     "header.artigos.publicações":"Articles and publications",
     "header.noticias":"News",
     "header.membros":"Members",
@@ -60,6 +61,7 @@ const translations = {
     "header.sobre":"About us",
     "header.vagas":"Vacancies",
     "header.fale.conosco":"Talk to us",
+    "header.pesquisar": "Search...",
     // Footer
     "footer.admin.acesso": "Access to administrative area:",
     "footer.admin.botao": "Access",
@@ -97,6 +99,7 @@ const translations = {
     "vagas.como_ingressar.passo2_texto": "Transcript and diploma, Lattes CV, Letter of intent, Recommendation letters, and Research pre-project as per the announcement.",
     "vagas.como_ingressar.passo3_titulo": "3. Submit and follow up",
     "vagas.como_ingressar.passo3_texto": "Submit through the system indicated in the announcement and follow up on interviews or tests. Results are published on the PGSER website.",
+    "vagas.como_ingressar.detalhes_finais": "More details about lines, selection, and contacts are on the INPE PGSER page.",
     // Messages from script.js
     "vagas.carregando": "Loading vacancies...",
     "vagas.erro": "❌ Error loading vacancies. Check the server connection."
@@ -113,6 +116,12 @@ function setPageLanguage(lang) {
       } else {
         el.textContent = text;
       }
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
     }
   });
 }

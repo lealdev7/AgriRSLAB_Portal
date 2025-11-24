@@ -3,12 +3,13 @@ const translations = {
     // Header
     "header.inicio":"Início",
     "header.artigos.publicações":"Artigos e Publicações",
-    "header.noticias":"Noticias",
+    "header.noticias":"Notícias",
     "header.membros":"Membros",
     "header.projetos":"Projetos",
     "header.sobre":"Sobre",
     "header.vagas":"Vagas",
     "header.fale.conosco":"Fale conosco",
+    "header.pesquisar": "Pesquisar...",
     // Footer
     "footer.admin.acesso": "Acesso à área administrativa:",
     "footer.admin.botao": "Acesso",
@@ -36,7 +37,7 @@ const translations = {
   },
   en: {
     // Header
-    "header.inicio":"Start",
+    "header.inicio":"Home",
     "header.artigos.publicações":"Articles and publications",
     "header.noticias":"News",
     "header.membros":"Members",
@@ -44,6 +45,7 @@ const translations = {
     "header.sobre":"About us",
     "header.vagas":"Vacancies",
     "header.fale.conosco":"Talk to us",
+    "header.pesquisar": "Search...",
     // Footer
     "footer.admin.acesso": "Access to administrative area:",
     "footer.admin.botao": "Access",
@@ -81,6 +83,12 @@ function setPageLanguage(lang) {
       } else {
         el.textContent = text;
       }
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
     }
   });
 }
